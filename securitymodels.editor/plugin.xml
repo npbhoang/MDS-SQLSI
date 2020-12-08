@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated securitymodels -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="securitymodels.presentation.SecuritymodelsModelWizardID"
+            name="%_UI_SecuritymodelsModelWizard_label"
+            class="securitymodels.presentation.SecuritymodelsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SecuritymodelsModelFile.gif">
+         <description>%_UI_SecuritymodelsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated securitymodels -->
+      <editor
+            id="securitymodels.presentation.SecuritymodelsEditorID"
+            name="%_UI_SecuritymodelsEditor_label"
+            icon="icons/full/obj16/SecuritymodelsModelFile.gif"
+            extensions="securitymodels"
+            class="securitymodels.presentation.SecuritymodelsEditor"
+            contributorClass="securitymodels.presentation.SecuritymodelsActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated securitymodels -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="datamodels.presentation.DatamodelsModelWizardID"
+            name="%_UI_DatamodelsModelWizard_label"
+            class="datamodels.presentation.DatamodelsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DatamodelsModelFile.gif">
+         <description>%_UI_DatamodelsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated securitymodels -->
+      <editor
+            id="datamodels.presentation.DatamodelsEditorID"
+            name="%_UI_DatamodelsEditor_label"
+            icon="icons/full/obj16/DatamodelsModelFile.gif"
+            extensions="datamodels"
+            class="datamodels.presentation.DatamodelsEditor"
+            contributorClass="datamodels.presentation.DatamodelsActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

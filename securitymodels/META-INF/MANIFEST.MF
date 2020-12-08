@@ -1,8 +1,19 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: securitymodels
-Bundle-SymbolicName: securitymodels; singleton:=true
+Bundle-Name: %pluginName
+Bundle-SymbolicName: securitymodels;singleton:=true
 Bundle-Version: 0.1.0.qualifier
-Require-Bundle: org.eclipse.emf.ecore
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport
+Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: datamodels,
+ datamodels.impl,
+ datamodels.util,
+ securitymodels,
+ securitymodels.impl,
+ securitymodels.util
 Automatic-Module-Name: securitymodels

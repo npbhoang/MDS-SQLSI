@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/securitymodels/src" modelPluginID="securitymodels"
+    modelName="Securitymodels" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>securitymodels.ecore</foreignModel>
+  <genPackages prefix="Securitymodels" disposableProviderFactory="true" ecorePackage="securitymodels.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="securitymodels.ecore#//Action">
+      <genEnumLiterals ecoreEnumLiteral="securitymodels.ecore#//Action/READ"/>
+      <genEnumLiterals ecoreEnumLiteral="securitymodels.ecore#//Action/CREATE"/>
+      <genEnumLiterals ecoreEnumLiteral="securitymodels.ecore#//Action/UPDATE"/>
+      <genEnumLiterals ecoreEnumLiteral="securitymodels.ecore#//Action/DELETE"/>
+    </genEnums>
+    <genClasses ecoreClass="securitymodels.ecore#//SecurityModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute securitymodels.ecore#//SecurityModel/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference securitymodels.ecore#//SecurityModel/rules"/>
+    </genClasses>
+    <genClasses ecoreClass="securitymodels.ecore#//Rule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute securitymodels.ecore#//Rule/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference securitymodels.ecore#//Rule/roles"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference securitymodels.ecore#//Rule/resources"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute securitymodels.ecore#//Rule/action"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference securitymodels.ecore#//Rule/auths"/>
+    </genClasses>
+    <genClasses ecoreClass="securitymodels.ecore#//Role">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference securitymodels.ecore#//Role/entity"/>
+    </genClasses>
+    <genClasses ecoreClass="securitymodels.ecore#//Auth">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute securitymodels.ecore#//Auth/oclExp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute securitymodels.ecore#//Auth/sqlStm"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Datamodels" disposableProviderFactory="true" ecorePackage="datamodels.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="datamodels.ecore#//DataType">
+      <genEnumLiterals ecoreEnumLiteral="datamodels.ecore#//DataType/String"/>
+      <genEnumLiterals ecoreEnumLiteral="datamodels.ecore#//DataType/Integer"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="datamodels.ecore#//Multiplicity">
+      <genEnumLiterals ecoreEnumLiteral="datamodels.ecore#//Multiplicity/MANY"/>
+      <genEnumLiterals ecoreEnumLiteral="datamodels.ecore#//Multiplicity/ONE"/>
+    </genEnums>
+    <genClasses ecoreClass="datamodels.ecore#//DataModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodels.ecore#//DataModel/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datamodels.ecore#//DataModel/entities"/>
+    </genClasses>
+    <genClasses ecoreClass="datamodels.ecore#//Entity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodels.ecore#//Entity/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datamodels.ecore#//Entity/properties"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference datamodels.ecore#//Entity/superEntity"/>
+    </genClasses>
+    <genClasses ecoreClass="datamodels.ecore#//AssociationEnd">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodels.ecore#//AssociationEnd/multiplicity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodels.ecore#//AssociationEnd/associationName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference datamodels.ecore#//AssociationEnd/otherEnd"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference datamodels.ecore#//AssociationEnd/targetEntity"/>
+    </genClasses>
+    <genClasses ecoreClass="datamodels.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodels.ecore#//Attribute/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodels.ecore#//Attribute/isID"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="datamodels.ecore#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodels.ecore#//Property/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
