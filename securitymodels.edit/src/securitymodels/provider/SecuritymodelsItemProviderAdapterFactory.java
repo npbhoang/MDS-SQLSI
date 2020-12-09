@@ -263,9 +263,9 @@ public class SecuritymodelsItemProviderAdapterFactory extends SecuritymodelsAdap
 	 */
 	public void dispose() {
 		if (securityModelItemProvider != null) securityModelItemProvider.dispose();
+		if (authItemProvider != null) authItemProvider.dispose();
 		if (ruleItemProvider != null) ruleItemProvider.dispose();
 		if (roleItemProvider != null) roleItemProvider.dispose();
-		if (authItemProvider != null) authItemProvider.dispose();
 	}
 
 }

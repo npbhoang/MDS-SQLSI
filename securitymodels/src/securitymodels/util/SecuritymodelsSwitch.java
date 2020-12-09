@@ -72,6 +72,12 @@ public class SecuritymodelsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case SecuritymodelsPackage.AUTH: {
+				Auth auth = (Auth)theEObject;
+				T result = caseAuth(auth);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case SecuritymodelsPackage.RULE: {
 				Rule rule = (Rule)theEObject;
 				T result = caseRule(rule);
@@ -81,12 +87,6 @@ public class SecuritymodelsSwitch<T> extends Switch<T> {
 			case SecuritymodelsPackage.ROLE: {
 				Role role = (Role)theEObject;
 				T result = caseRole(role);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SecuritymodelsPackage.AUTH: {
-				Auth auth = (Auth)theEObject;
-				T result = caseAuth(auth);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -106,6 +106,21 @@ public class SecuritymodelsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSecurityModel(SecurityModel object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Auth</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Auth</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAuth(Auth object) {
 		return null;
 	}
 
@@ -136,21 +151,6 @@ public class SecuritymodelsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRole(Role object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Auth</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Auth</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAuth(Auth object) {
 		return null;
 	}
 

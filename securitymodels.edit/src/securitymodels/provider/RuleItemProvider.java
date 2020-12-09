@@ -65,8 +65,8 @@ public class RuleItemProvider
 
 			addNamePropertyDescriptor(object);
 			addRolesPropertyDescriptor(object);
-			addResourcesPropertyDescriptor(object);
 			addActionPropertyDescriptor(object);
+			addResourcesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}

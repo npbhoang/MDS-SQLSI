@@ -104,116 +104,6 @@ public interface SecuritymodelsPackage extends EPackage {
 	int SECURITY_MODEL_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link securitymodels.impl.RuleImpl <em>Rule</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see securitymodels.impl.RuleImpl
-	 * @see securitymodels.impl.SecuritymodelsPackageImpl#getRule()
-	 * @generated
-	 */
-	int RULE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RULE__NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Roles</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RULE__ROLES = 1;
-
-	/**
-	 * The feature id for the '<em><b>Resources</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RULE__RESOURCES = 2;
-
-	/**
-	 * The feature id for the '<em><b>Action</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RULE__ACTION = 3;
-
-	/**
-	 * The feature id for the '<em><b>Auths</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RULE__AUTHS = 4;
-
-	/**
-	 * The number of structural features of the '<em>Rule</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RULE_FEATURE_COUNT = 5;
-
-	/**
-	 * The number of operations of the '<em>Rule</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RULE_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link securitymodels.impl.RoleImpl <em>Role</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see securitymodels.impl.RoleImpl
-	 * @see securitymodels.impl.SecuritymodelsPackageImpl#getRole()
-	 * @generated
-	 */
-	int ROLE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE__ENTITY = 0;
-
-	/**
-	 * The number of structural features of the '<em>Role</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Role</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link securitymodels.impl.AuthImpl <em>Auth</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -221,7 +111,7 @@ public interface SecuritymodelsPackage extends EPackage {
 	 * @see securitymodels.impl.SecuritymodelsPackageImpl#getAuth()
 	 * @generated
 	 */
-	int AUTH = 3;
+	int AUTH = 1;
 
 	/**
 	 * The feature id for the '<em><b>Ocl Exp</b></em>' attribute.
@@ -258,6 +148,116 @@ public interface SecuritymodelsPackage extends EPackage {
 	 * @ordered
 	 */
 	int AUTH_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link securitymodels.impl.RuleImpl <em>Rule</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see securitymodels.impl.RuleImpl
+	 * @see securitymodels.impl.SecuritymodelsPackageImpl#getRule()
+	 * @generated
+	 */
+	int RULE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Roles</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE__ROLES = 1;
+
+	/**
+	 * The feature id for the '<em><b>Action</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE__ACTION = 2;
+
+	/**
+	 * The feature id for the '<em><b>Auths</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE__AUTHS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Resources</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE__RESOURCES = 4;
+
+	/**
+	 * The number of structural features of the '<em>Rule</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE_FEATURE_COUNT = 5;
+
+	/**
+	 * The number of operations of the '<em>Rule</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link securitymodels.impl.RoleImpl <em>Role</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see securitymodels.impl.RoleImpl
+	 * @see securitymodels.impl.SecuritymodelsPackageImpl#getRole()
+	 * @generated
+	 */
+	int ROLE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__ENTITY = 0;
+
+	/**
+	 * The number of structural features of the '<em>Role</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Role</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link securitymodels.Action <em>Action</em>}' enum.
@@ -303,6 +303,38 @@ public interface SecuritymodelsPackage extends EPackage {
 	EReference getSecurityModel_Rules();
 
 	/**
+	 * Returns the meta object for class '{@link securitymodels.Auth <em>Auth</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Auth</em>'.
+	 * @see securitymodels.Auth
+	 * @generated
+	 */
+	EClass getAuth();
+
+	/**
+	 * Returns the meta object for the attribute '{@link securitymodels.Auth#getOclExp <em>Ocl Exp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ocl Exp</em>'.
+	 * @see securitymodels.Auth#getOclExp()
+	 * @see #getAuth()
+	 * @generated
+	 */
+	EAttribute getAuth_OclExp();
+
+	/**
+	 * Returns the meta object for the attribute '{@link securitymodels.Auth#getSqlStm <em>Sql Stm</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Sql Stm</em>'.
+	 * @see securitymodels.Auth#getSqlStm()
+	 * @see #getAuth()
+	 * @generated
+	 */
+	EAttribute getAuth_SqlStm();
+
+	/**
 	 * Returns the meta object for class '{@link securitymodels.Rule <em>Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -335,17 +367,6 @@ public interface SecuritymodelsPackage extends EPackage {
 	EReference getRule_Roles();
 
 	/**
-	 * Returns the meta object for the reference list '{@link securitymodels.Rule#getResources <em>Resources</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Resources</em>'.
-	 * @see securitymodels.Rule#getResources()
-	 * @see #getRule()
-	 * @generated
-	 */
-	EReference getRule_Resources();
-
-	/**
 	 * Returns the meta object for the attribute '{@link securitymodels.Rule#getAction <em>Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -368,6 +389,17 @@ public interface SecuritymodelsPackage extends EPackage {
 	EReference getRule_Auths();
 
 	/**
+	 * Returns the meta object for the reference list '{@link securitymodels.Rule#getResources <em>Resources</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Resources</em>'.
+	 * @see securitymodels.Rule#getResources()
+	 * @see #getRule()
+	 * @generated
+	 */
+	EReference getRule_Resources();
+
+	/**
 	 * Returns the meta object for class '{@link securitymodels.Role <em>Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -387,38 +419,6 @@ public interface SecuritymodelsPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRole_Entity();
-
-	/**
-	 * Returns the meta object for class '{@link securitymodels.Auth <em>Auth</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Auth</em>'.
-	 * @see securitymodels.Auth
-	 * @generated
-	 */
-	EClass getAuth();
-
-	/**
-	 * Returns the meta object for the attribute '{@link securitymodels.Auth#getOclExp <em>Ocl Exp</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Ocl Exp</em>'.
-	 * @see securitymodels.Auth#getOclExp()
-	 * @see #getAuth()
-	 * @generated
-	 */
-	EAttribute getAuth_OclExp();
-
-	/**
-	 * Returns the meta object for the attribute '{@link securitymodels.Auth#getSqlStm <em>Sql Stm</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Sql Stm</em>'.
-	 * @see securitymodels.Auth#getSqlStm()
-	 * @see #getAuth()
-	 * @generated
-	 */
-	EAttribute getAuth_SqlStm();
 
 	/**
 	 * Returns the meta object for enum '{@link securitymodels.Action <em>Action</em>}'.
@@ -480,6 +480,32 @@ public interface SecuritymodelsPackage extends EPackage {
 		EReference SECURITY_MODEL__RULES = eINSTANCE.getSecurityModel_Rules();
 
 		/**
+		 * The meta object literal for the '{@link securitymodels.impl.AuthImpl <em>Auth</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see securitymodels.impl.AuthImpl
+		 * @see securitymodels.impl.SecuritymodelsPackageImpl#getAuth()
+		 * @generated
+		 */
+		EClass AUTH = eINSTANCE.getAuth();
+
+		/**
+		 * The meta object literal for the '<em><b>Ocl Exp</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AUTH__OCL_EXP = eINSTANCE.getAuth_OclExp();
+
+		/**
+		 * The meta object literal for the '<em><b>Sql Stm</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AUTH__SQL_STM = eINSTANCE.getAuth_SqlStm();
+
+		/**
 		 * The meta object literal for the '{@link securitymodels.impl.RuleImpl <em>Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -506,14 +532,6 @@ public interface SecuritymodelsPackage extends EPackage {
 		EReference RULE__ROLES = eINSTANCE.getRule_Roles();
 
 		/**
-		 * The meta object literal for the '<em><b>Resources</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RULE__RESOURCES = eINSTANCE.getRule_Resources();
-
-		/**
 		 * The meta object literal for the '<em><b>Action</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -528,6 +546,14 @@ public interface SecuritymodelsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RULE__AUTHS = eINSTANCE.getRule_Auths();
+
+		/**
+		 * The meta object literal for the '<em><b>Resources</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RULE__RESOURCES = eINSTANCE.getRule_Resources();
 
 		/**
 		 * The meta object literal for the '{@link securitymodels.impl.RoleImpl <em>Role</em>}' class.
@@ -546,32 +572,6 @@ public interface SecuritymodelsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROLE__ENTITY = eINSTANCE.getRole_Entity();
-
-		/**
-		 * The meta object literal for the '{@link securitymodels.impl.AuthImpl <em>Auth</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see securitymodels.impl.AuthImpl
-		 * @see securitymodels.impl.SecuritymodelsPackageImpl#getAuth()
-		 * @generated
-		 */
-		EClass AUTH = eINSTANCE.getAuth();
-
-		/**
-		 * The meta object literal for the '<em><b>Ocl Exp</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute AUTH__OCL_EXP = eINSTANCE.getAuth_OclExp();
-
-		/**
-		 * The meta object literal for the '<em><b>Sql Stm</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute AUTH__SQL_STM = eINSTANCE.getAuth_SqlStm();
 
 		/**
 		 * The meta object literal for the '{@link securitymodels.Action <em>Action</em>}' enum.

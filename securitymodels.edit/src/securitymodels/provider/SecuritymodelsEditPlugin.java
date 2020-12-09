@@ -2,6 +2,7 @@
  */
 package securitymodels.provider;
 
+import datamodels.provider.DatamodelsEditPlugin;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -38,6 +39,7 @@ public final class SecuritymodelsEditPlugin extends EMFPlugin {
 	public SecuritymodelsEditPlugin() {
 		super
 		  (new ResourceLocator [] {
+		     DatamodelsEditPlugin.INSTANCE,
 		   });
 	}
 

@@ -19,9 +19,9 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link securitymodels.Rule#getName <em>Name</em>}</li>
  *   <li>{@link securitymodels.Rule#getRoles <em>Roles</em>}</li>
- *   <li>{@link securitymodels.Rule#getResources <em>Resources</em>}</li>
  *   <li>{@link securitymodels.Rule#getAction <em>Action</em>}</li>
  *   <li>{@link securitymodels.Rule#getAuths <em>Auths</em>}</li>
+ *   <li>{@link securitymodels.Rule#getResources <em>Resources</em>}</li>
  * </ul>
  *
  * @see securitymodels.SecuritymodelsPackage#getRule()
@@ -72,22 +72,6 @@ public interface Rule extends EObject {
 	EList<Role> getRoles();
 
 	/**
-	 * Returns the value of the '<em><b>Resources</b></em>' reference list.
-	 * The list contents are of type {@link datamodels.Property}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Resources</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Resources</em>' reference list.
-	 * @see securitymodels.SecuritymodelsPackage#getRule_Resources()
-	 * @model required="true"
-	 * @generated
-	 */
-	EList<Property> getResources();
-
-	/**
 	 * Returns the value of the '<em><b>Action</b></em>' attribute.
 	 * The literals are from the enumeration {@link securitymodels.Action}.
 	 * <!-- begin-user-doc -->
@@ -131,5 +115,21 @@ public interface Rule extends EObject {
 	 * @generated
 	 */
 	EList<Auth> getAuths();
+
+	/**
+	 * Returns the value of the '<em><b>Resources</b></em>' reference list.
+	 * The list contents are of type {@link datamodels.Property}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Resources</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Resources</em>' reference list.
+	 * @see securitymodels.SecuritymodelsPackage#getRule_Resources()
+	 * @model required="true"
+	 * @generated
+	 */
+	EList<Property> getResources();
 
 } // Rule

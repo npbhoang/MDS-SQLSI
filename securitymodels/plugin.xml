@@ -14,12 +14,4 @@
             genModel="metamodels/securitymodels.genmodel"/>
    </extension>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated securitymodels -->
-      <package
-            uri="/final/metamodel/datamodels.ecore"
-            class="datamodels.DatamodelsPackage"
-            genModel="metamodels/securitymodels.genmodel"/>
-   </extension>
-
 </plugin>

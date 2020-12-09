@@ -58,9 +58,9 @@ public class SecuritymodelsFactoryImpl extends EFactoryImpl implements Securitym
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case SecuritymodelsPackage.SECURITY_MODEL: return createSecurityModel();
+			case SecuritymodelsPackage.AUTH: return createAuth();
 			case SecuritymodelsPackage.RULE: return createRule();
 			case SecuritymodelsPackage.ROLE: return createRole();
-			case SecuritymodelsPackage.AUTH: return createAuth();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -111,6 +111,16 @@ public class SecuritymodelsFactoryImpl extends EFactoryImpl implements Securitym
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Auth createAuth() {
+		AuthImpl auth = new AuthImpl();
+		return auth;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Rule createRule() {
 		RuleImpl rule = new RuleImpl();
 		return rule;
@@ -124,16 +134,6 @@ public class SecuritymodelsFactoryImpl extends EFactoryImpl implements Securitym
 	public Role createRole() {
 		RoleImpl role = new RoleImpl();
 		return role;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Auth createAuth() {
-		AuthImpl auth = new AuthImpl();
-		return auth;
 	}
 
 	/**

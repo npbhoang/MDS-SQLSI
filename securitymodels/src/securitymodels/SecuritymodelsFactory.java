@@ -31,6 +31,15 @@ public interface SecuritymodelsFactory extends EFactory {
 	SecurityModel createSecurityModel();
 
 	/**
+	 * Returns a new object of class '<em>Auth</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Auth</em>'.
+	 * @generated
+	 */
+	Auth createAuth();
+
+	/**
 	 * Returns a new object of class '<em>Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -47,15 +56,6 @@ public interface SecuritymodelsFactory extends EFactory {
 	 * @generated
 	 */
 	Role createRole();
-
-	/**
-	 * Returns a new object of class '<em>Auth</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Auth</em>'.
-	 * @generated
-	 */
-	Auth createAuth();
 
 	/**
 	 * Returns the package supported by this factory.
