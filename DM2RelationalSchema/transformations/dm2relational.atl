@@ -1,0 +1,114 @@
+-- @path datamodel=/datamodels/metamodels/datamodels.ecore
+-- @path relationaldb=/relationaldb/metamodels/relationaldb.ecore
+
+module dm2relational;
+create OUT : relationaldb from IN : datamodel;
+
+-- every datamodel can be transformed into a relational database by executing this rule
+rule datamodel2database {
+	from dm : datamodel!DataModel
+	to db : relationaldb!Database (
+		-- where the name of the datamodel is the name of the database
+		name <- dm.name,
+		-- and every entity is a relation
+		-- as well as every association is a relation (for the moment, including the one-to-one association)
+		tables <- Sequence{dm.entities, dm.getAllAssociations()}
+	)
+}
+
+-- every entity needs to be linked with its super-entity via identifier
+helper context datamodel!DataModel def :
+	getAllAssociations() : Set(datamodel!AssociationEnd) =
+		self.entities->collect(e|e.properties->select(p|p.oclIsTypeOf(datamodel!AssociationEnd)))
+		->flatten();
+
+-- every pair of association-ends can be transformed into a relation by executing this rule
+rule association2table {
+	from a : datamodel!AssociationEnd (a.name > a.otherEnd.name)
+	to t : relationaldb!Table (
+		-- where the name of the association table is the value of the property associationName
+		name <- a.associationName,
+		-- and the tuples are just references from the ends' tables
+		columns <- Sequence{thisModule.createColumnReference(a), thisModule.createColumnReference(a.otherEnd)}		
+	)
+}
+
+-- every entity needs to be linked with its super-entity via identifier
+lazy rule createColumnReference {
+	from a : datamodel!AssociationEnd
+	to r : relationaldb!Column (
+		name <- a.name,
+		type <- #"Integer",
+		isForeign <- true,
+		isPrimary <- false,
+		reference <- a.targetEntity
+	)
+}
+
+-- every entity can be transformed into a relation by executing this rule
+rule entity2table {
+	from e : datamodel!Entity
+	to t : relationaldb!Table (
+		-- where the name of the entity is the name of the relation
+		name <- e.name,
+		-- and every attribute in the entity is a tuple in the relation
+		-- including its own identifier and possibly the link to its superclass
+		columns <- 
+			if e.superEntity.oclIsUndefined()
+			then 
+				Sequence{
+					thisModule.createColumnId(e), 
+					e.properties->select(p|p.oclIsTypeOf(datamodel!Attribute))
+				}
+			else 
+				Sequence{
+					thisModule.createColumnId(e), 
+					thisModule.createColumnSuperId(e),
+					e.properties->select(p|p.oclIsTypeOf(datamodel!Attribute))
+				}
+			endif
+	)
+}
+
+-- every entity needs to be linked with its super-entity via identifier
+lazy rule createColumnSuperId {
+	from e : datamodel!Entity (not e.superEntity.oclIsUndefined())
+	to r : relationaldb!Column (
+		name <- e.superEntity.composeIdentifierName(),
+		type <- #"Integer",
+		isForeign <- true,
+		isPrimary <- false,
+		reference <- e.superEntity
+	)
+}
+
+helper context datamodel!Entity def :
+	composeIdentifierName() : String =
+		self.name.concat('ID');
+
+-- every entity needs to create an identifier for its relation
+lazy rule createColumnId {
+	from e : datamodel!Entity
+	to r : relationaldb!Column (
+		name <- e.composeIdentifierName(),
+		type <- #"Integer",
+		isForeign <- false,
+		isPrimary <- true
+	)
+}
+
+-- every attribute can be transformed into a relation tuple by executing this rule
+rule attribute2column {
+	from a : datamodel!Attribute
+	to r : relationaldb!Column (
+		-- where the name of the column is the name of the tuple
+		name <- a.name,
+		-- and the type of the column is the type of the tuple
+		type <- a.type
+		-- and currently, we constraint it to be non-derived
+		-- indeed, it is not an identifier
+		-- but, these are false by default!
+		-- isForeign <- false,
+		-- isPrimary <- false
+	)
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated relationaldb -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="relationaldb.presentation.RelationaldbModelWizardID"
+            name="%_UI_RelationaldbModelWizard_label"
+            class="relationaldb.presentation.RelationaldbModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RelationaldbModelFile.gif">
+         <description>%_UI_RelationaldbModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated relationaldb -->
+      <editor
+            id="relationaldb.presentation.RelationaldbEditorID"
+            name="%_UI_RelationaldbEditor_label"
+            icon="icons/full/obj16/RelationaldbModelFile.gif"
+            extensions="relationaldb"
+            class="relationaldb.presentation.RelationaldbEditor"
+            contributorClass="relationaldb.presentation.RelationaldbActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
