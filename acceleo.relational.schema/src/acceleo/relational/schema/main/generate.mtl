@@ -1,0 +1,10 @@
+[comment encoding = UTF-8 /]
+[module generate('/final/metamodel/relationaldb.ecore')]
+
+
+[template public generateElement(aDatabase : Database)]
+[comment @main/]
+[file (aDatabase.name, false, 'UTF-8')]
+
+[/file]
+[/template]
