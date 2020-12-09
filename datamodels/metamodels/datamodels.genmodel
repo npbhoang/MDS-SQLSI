@@ -30,7 +30,6 @@
     </genClasses>
     <genClasses ecoreClass="datamodels.ecore#//Attribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodels.ecore#//Attribute/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodels.ecore#//Attribute/isID"/>
     </genClasses>
     <genClasses image="false" ecoreClass="datamodels.ecore#//Property">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodels.ecore#//Property/name"/>
