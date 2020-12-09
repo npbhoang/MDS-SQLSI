@@ -11,7 +11,7 @@
       <package
             uri="/final/metamodel/datamodels.ecore"
             class="datamodels.DatamodelsPackage"
-            genModel="datamodels.genmodel"/>
+            genModel="metamodels/datamodels.genmodel"/>
    </extension>
 
 </plugin>
