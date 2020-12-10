@@ -1,0 +1,3 @@
+name: Uni
+roles: 
+	"Lecturer" <- "University:Lecturer"
