@@ -17,11 +17,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link securitymodels.Rule#getResources <em>Resources</em>}</li>
  *   <li>{@link securitymodels.Rule#getName <em>Name</em>}</li>
- *   <li>{@link securitymodels.Rule#getRoles <em>Roles</em>}</li>
  *   <li>{@link securitymodels.Rule#getAction <em>Action</em>}</li>
  *   <li>{@link securitymodels.Rule#getAuths <em>Auths</em>}</li>
- *   <li>{@link securitymodels.Rule#getResources <em>Resources</em>}</li>
  * </ul>
  *
  * @see securitymodels.SecuritymodelsPackage#getRule()
@@ -54,22 +53,6 @@ public interface Rule extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Roles</b></em>' reference list.
-	 * The list contents are of type {@link securitymodels.Role}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Roles</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Roles</em>' reference list.
-	 * @see securitymodels.SecuritymodelsPackage#getRule_Roles()
-	 * @model required="true"
-	 * @generated
-	 */
-	EList<Role> getRoles();
 
 	/**
 	 * Returns the value of the '<em><b>Action</b></em>' attribute.

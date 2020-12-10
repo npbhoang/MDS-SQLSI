@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<securitymodels:SecurityModel
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:datamodels="/final/metamodel/datamodels.ecore"
+    xmlns:securitymodels="/final/metamodel/securitymodels.ecore"
+    xsi:schemaLocation="/final/metamodel/datamodels.ecore ../../datamodels/metamodels/datamodels.ecore /final/metamodel/securitymodels.ecore ../metamodels/securitymodels.ecore"
+    name="UniversitySecurity">
+  <rules name="readStudentInfo">
+    <resources
+        xsi:type="datamodels:Attribute"
+        href="../../datamodels/models/UniversityDM.xmi#//@entities.0/@properties.0"/>
+    <resources
+        xsi:type="datamodels:Attribute"
+        href="../../datamodels/models/UniversityDM.xmi#//@entities.0/@properties.1"/>
+    <resources
+        xsi:type="datamodels:Attribute"
+        href="../../datamodels/models/UniversityDM.xmi#//@entities.0/@properties.2"/>
+    <resources
+        xsi:type="datamodels:Attribute"
+        href="../../datamodels/models/UniversityDM.xmi#//@entities.0/@properties.3"/>
+    <resources
+        xsi:type="datamodels:Attribute"
+        href="../../datamodels/models/UniversityDM.xmi#//@entities.2/@properties.0"/>
+    <auths textual="Any lecturer can read the info of the students who attends his/her class."
+        roles="//@roles.0"/>
+    <auths textual="Any student can read info of other students who are classmates."
+        roles="//@roles.1"/>
+  </rules>
+  <rules name="readStudentClassStatus">
+    <resources
+        xsi:type="datamodels:AssociationEnd"
+        href="../../datamodels/models/UniversityDM.xmi#//@entities.2/@properties.1"/>
+    <resources
+        xsi:type="datamodels:AssociationEnd"
+        href="../../datamodels/models/UniversityDM.xmi#//@entities.3/@properties.3"/>
+    <auths textual="Any lecturer can read the enrollment status of any of its students"
+        roles="//@roles.0"/>
+    <auths textual="Any student can read their own enrollment status"
+        roles="//@roles.1"/>
+  </rules>
+  <rules name="defaultReadBasicInformation">
+    <resources
+        xsi:type="datamodels:Attribute"
+        href="../../datamodels/models/UniversityDM.xmi#//@entities.0/@properties.0"/>
+    <resources
+        xsi:type="datamodels:Attribute"
+        href="../../datamodels/models/UniversityDM.xmi#//@entities.0/@properties.1"/>
+    <resources
+        xsi:type="datamodels:Attribute"
+        href="../../datamodels/models/UniversityDM.xmi#//@entities.0/@properties.2"/>
+    <resources
+        xsi:type="datamodels:Attribute"
+        href="../../datamodels/models/UniversityDM.xmi#//@entities.0/@properties.3"/>
+    <auths textual="Any one can read their own basic information"
+        oclExp=""
+        roles="//@roles.0 //@roles.1"/>
+  </rules>
+  <rules name="defaultReadLecturerInformation">
+    <resources
+        xsi:type="datamodels:Attribute"
+        href="../../datamodels/models/UniversityDM.xmi#//@entities.1/@properties.0"/>
+    <auths textual="Any lecturer can read their own information"
+        oclExp=""
+        roles="//@roles.0"/>
+  </rules>
+  <rules name="defaultReadStudentInformation">
+    <resources
+        xsi:type="datamodels:Attribute"
+        href="../../datamodels/models/UniversityDM.xmi#//@entities.1/@properties.0"/>
+    <auths textual="Any student can read their own basic information"
+        oclExp=""
+        roles="//@roles.1"/>
+  </rules>
+  <rules name="readCourseInfo">
+    <resources
+        xsi:type="datamodels:Attribute"
+        href="../../datamodels/models/UniversityDM.xmi#//@entities.3/@properties.0"/>
+    <resources
+        xsi:type="datamodels:Attribute"
+        href="../../datamodels/models/UniversityDM.xmi#//@entities.3/@properties.1"/>
+    <auths textual="Any one can read the course description"
+        roles="//@roles.0 //@roles.1"/>
+  </rules>
+  <rules name="readLecturerTeachingScheme">
+    <resources
+        xsi:type="datamodels:AssociationEnd"
+        href="../../datamodels/models/UniversityDM.xmi#//@entities.1/@properties.1"/>
+    <resources
+        xsi:type="datamodels:AssociationEnd"
+        href="../../datamodels/models/UniversityDM.xmi#//@entities.3/@properties.2"/>
+    <auths textual="Any lecturer can read any other lecturers' scheme."
+        oclExp=""
+        roles="//@roles.0"/>
+  </rules>
+  <roles name="lecturer">
+    <entity
+        href="../../datamodels/models/UniversityDM.xmi#//@entities.1"/>
+  </roles>
+  <roles name="student">
+    <entity
+        href="../../datamodels/models/UniversityDM.xmi#//@entities.2"/>
+  </roles>
+</securitymodels:SecurityModel>

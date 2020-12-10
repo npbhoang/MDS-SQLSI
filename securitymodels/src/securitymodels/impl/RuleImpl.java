@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import securitymodels.Action;
 import securitymodels.Auth;
-import securitymodels.Role;
 import securitymodels.Rule;
 import securitymodels.SecuritymodelsPackage;
 
@@ -35,16 +34,25 @@ import securitymodels.SecuritymodelsPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link securitymodels.impl.RuleImpl#getResources <em>Resources</em>}</li>
  *   <li>{@link securitymodels.impl.RuleImpl#getName <em>Name</em>}</li>
- *   <li>{@link securitymodels.impl.RuleImpl#getRoles <em>Roles</em>}</li>
  *   <li>{@link securitymodels.impl.RuleImpl#getAction <em>Action</em>}</li>
  *   <li>{@link securitymodels.impl.RuleImpl#getAuths <em>Auths</em>}</li>
- *   <li>{@link securitymodels.impl.RuleImpl#getResources <em>Resources</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
+	/**
+	 * The cached value of the '{@link #getResources() <em>Resources</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResources()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Property> resources;
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -64,16 +72,6 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getRoles() <em>Roles</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoles()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Role> roles;
 
 	/**
 	 * The default value of the '{@link #getAction() <em>Action</em>}' attribute.
@@ -104,16 +102,6 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	 * @ordered
 	 */
 	protected EList<Auth> auths;
-
-	/**
-	 * The cached value of the '{@link #getResources() <em>Resources</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResources()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Property> resources;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,18 +141,6 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SecuritymodelsPackage.RULE__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Role> getRoles() {
-		if (roles == null) {
-			roles = new EObjectResolvingEList<Role>(Role.class, this, SecuritymodelsPackage.RULE__ROLES);
-		}
-		return roles;
 	}
 
 	/**
@@ -234,16 +210,14 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case SecuritymodelsPackage.RULE__RESOURCES:
+				return getResources();
 			case SecuritymodelsPackage.RULE__NAME:
 				return getName();
-			case SecuritymodelsPackage.RULE__ROLES:
-				return getRoles();
 			case SecuritymodelsPackage.RULE__ACTION:
 				return getAction();
 			case SecuritymodelsPackage.RULE__AUTHS:
 				return getAuths();
-			case SecuritymodelsPackage.RULE__RESOURCES:
-				return getResources();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -257,12 +231,12 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case SecuritymodelsPackage.RULE__RESOURCES:
+				getResources().clear();
+				getResources().addAll((Collection<? extends Property>)newValue);
+				return;
 			case SecuritymodelsPackage.RULE__NAME:
 				setName((String)newValue);
-				return;
-			case SecuritymodelsPackage.RULE__ROLES:
-				getRoles().clear();
-				getRoles().addAll((Collection<? extends Role>)newValue);
 				return;
 			case SecuritymodelsPackage.RULE__ACTION:
 				setAction((Action)newValue);
@@ -270,10 +244,6 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 			case SecuritymodelsPackage.RULE__AUTHS:
 				getAuths().clear();
 				getAuths().addAll((Collection<? extends Auth>)newValue);
-				return;
-			case SecuritymodelsPackage.RULE__RESOURCES:
-				getResources().clear();
-				getResources().addAll((Collection<? extends Property>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -287,20 +257,17 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case SecuritymodelsPackage.RULE__RESOURCES:
+				getResources().clear();
+				return;
 			case SecuritymodelsPackage.RULE__NAME:
 				setName(NAME_EDEFAULT);
-				return;
-			case SecuritymodelsPackage.RULE__ROLES:
-				getRoles().clear();
 				return;
 			case SecuritymodelsPackage.RULE__ACTION:
 				setAction(ACTION_EDEFAULT);
 				return;
 			case SecuritymodelsPackage.RULE__AUTHS:
 				getAuths().clear();
-				return;
-			case SecuritymodelsPackage.RULE__RESOURCES:
-				getResources().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -314,16 +281,14 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case SecuritymodelsPackage.RULE__RESOURCES:
+				return resources != null && !resources.isEmpty();
 			case SecuritymodelsPackage.RULE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case SecuritymodelsPackage.RULE__ROLES:
-				return roles != null && !roles.isEmpty();
 			case SecuritymodelsPackage.RULE__ACTION:
 				return action != ACTION_EDEFAULT;
 			case SecuritymodelsPackage.RULE__AUTHS:
 				return auths != null && !auths.isEmpty();
-			case SecuritymodelsPackage.RULE__RESOURCES:
-				return resources != null && !resources.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -86,13 +86,22 @@ public interface SecuritymodelsPackage extends EPackage {
 	int SECURITY_MODEL__RULES = 1;
 
 	/**
+	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITY_MODEL__ROLES = 2;
+
+	/**
 	 * The number of structural features of the '<em>Security Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECURITY_MODEL_FEATURE_COUNT = 2;
+	int SECURITY_MODEL_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Security Model</em>' class.
@@ -114,13 +123,22 @@ public interface SecuritymodelsPackage extends EPackage {
 	int AUTH = 1;
 
 	/**
+	 * The feature id for the '<em><b>Textual</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTH__TEXTUAL = 0;
+
+	/**
 	 * The feature id for the '<em><b>Ocl Exp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUTH__OCL_EXP = 0;
+	int AUTH__OCL_EXP = 1;
 
 	/**
 	 * The feature id for the '<em><b>Sql Stm</b></em>' attribute.
@@ -129,7 +147,16 @@ public interface SecuritymodelsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTH__SQL_STM = 1;
+	int AUTH__SQL_STM = 2;
+
+	/**
+	 * The feature id for the '<em><b>Roles</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTH__ROLES = 3;
 
 	/**
 	 * The number of structural features of the '<em>Auth</em>' class.
@@ -138,7 +165,7 @@ public interface SecuritymodelsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTH_FEATURE_COUNT = 2;
+	int AUTH_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Auth</em>' class.
@@ -160,22 +187,22 @@ public interface SecuritymodelsPackage extends EPackage {
 	int RULE = 2;
 
 	/**
+	 * The feature id for the '<em><b>Resources</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE__RESOURCES = 0;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RULE__NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Roles</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RULE__ROLES = 1;
+	int RULE__NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' attribute.
@@ -196,22 +223,13 @@ public interface SecuritymodelsPackage extends EPackage {
 	int RULE__AUTHS = 3;
 
 	/**
-	 * The feature id for the '<em><b>Resources</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RULE__RESOURCES = 4;
-
-	/**
 	 * The number of structural features of the '<em>Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RULE_FEATURE_COUNT = 5;
+	int RULE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Rule</em>' class.
@@ -242,13 +260,22 @@ public interface SecuritymodelsPackage extends EPackage {
 	int ROLE__ENTITY = 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__NAME = 1;
+
+	/**
 	 * The number of structural features of the '<em>Role</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_FEATURE_COUNT = 1;
+	int ROLE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Role</em>' class.
@@ -303,6 +330,17 @@ public interface SecuritymodelsPackage extends EPackage {
 	EReference getSecurityModel_Rules();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link securitymodels.SecurityModel#getRoles <em>Roles</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Roles</em>'.
+	 * @see securitymodels.SecurityModel#getRoles()
+	 * @see #getSecurityModel()
+	 * @generated
+	 */
+	EReference getSecurityModel_Roles();
+
+	/**
 	 * Returns the meta object for class '{@link securitymodels.Auth <em>Auth</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -311,6 +349,17 @@ public interface SecuritymodelsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAuth();
+
+	/**
+	 * Returns the meta object for the attribute '{@link securitymodels.Auth#getTextual <em>Textual</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Textual</em>'.
+	 * @see securitymodels.Auth#getTextual()
+	 * @see #getAuth()
+	 * @generated
+	 */
+	EAttribute getAuth_Textual();
 
 	/**
 	 * Returns the meta object for the attribute '{@link securitymodels.Auth#getOclExp <em>Ocl Exp</em>}'.
@@ -335,6 +384,17 @@ public interface SecuritymodelsPackage extends EPackage {
 	EAttribute getAuth_SqlStm();
 
 	/**
+	 * Returns the meta object for the reference list '{@link securitymodels.Auth#getRoles <em>Roles</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Roles</em>'.
+	 * @see securitymodels.Auth#getRoles()
+	 * @see #getAuth()
+	 * @generated
+	 */
+	EReference getAuth_Roles();
+
+	/**
 	 * Returns the meta object for class '{@link securitymodels.Rule <em>Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -354,17 +414,6 @@ public interface SecuritymodelsPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRule_Name();
-
-	/**
-	 * Returns the meta object for the reference list '{@link securitymodels.Rule#getRoles <em>Roles</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Roles</em>'.
-	 * @see securitymodels.Rule#getRoles()
-	 * @see #getRule()
-	 * @generated
-	 */
-	EReference getRule_Roles();
 
 	/**
 	 * Returns the meta object for the attribute '{@link securitymodels.Rule#getAction <em>Action</em>}'.
@@ -419,6 +468,17 @@ public interface SecuritymodelsPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRole_Entity();
+
+	/**
+	 * Returns the meta object for the attribute '{@link securitymodels.Role#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see securitymodels.Role#getName()
+	 * @see #getRole()
+	 * @generated
+	 */
+	EAttribute getRole_Name();
 
 	/**
 	 * Returns the meta object for enum '{@link securitymodels.Action <em>Action</em>}'.
@@ -480,6 +540,14 @@ public interface SecuritymodelsPackage extends EPackage {
 		EReference SECURITY_MODEL__RULES = eINSTANCE.getSecurityModel_Rules();
 
 		/**
+		 * The meta object literal for the '<em><b>Roles</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SECURITY_MODEL__ROLES = eINSTANCE.getSecurityModel_Roles();
+
+		/**
 		 * The meta object literal for the '{@link securitymodels.impl.AuthImpl <em>Auth</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -488,6 +556,14 @@ public interface SecuritymodelsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass AUTH = eINSTANCE.getAuth();
+
+		/**
+		 * The meta object literal for the '<em><b>Textual</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AUTH__TEXTUAL = eINSTANCE.getAuth_Textual();
 
 		/**
 		 * The meta object literal for the '<em><b>Ocl Exp</b></em>' attribute feature.
@@ -506,6 +582,14 @@ public interface SecuritymodelsPackage extends EPackage {
 		EAttribute AUTH__SQL_STM = eINSTANCE.getAuth_SqlStm();
 
 		/**
+		 * The meta object literal for the '<em><b>Roles</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTH__ROLES = eINSTANCE.getAuth_Roles();
+
+		/**
 		 * The meta object literal for the '{@link securitymodels.impl.RuleImpl <em>Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -522,14 +606,6 @@ public interface SecuritymodelsPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute RULE__NAME = eINSTANCE.getRule_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Roles</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RULE__ROLES = eINSTANCE.getRule_Roles();
 
 		/**
 		 * The meta object literal for the '<em><b>Action</b></em>' attribute feature.
@@ -572,6 +648,14 @@ public interface SecuritymodelsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROLE__ENTITY = eINSTANCE.getRole_Entity();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROLE__NAME = eINSTANCE.getRole_Name();
 
 		/**
 		 * The meta object literal for the '{@link securitymodels.Action <em>Action</em>}' enum.

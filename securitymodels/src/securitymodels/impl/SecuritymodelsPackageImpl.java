@@ -158,6 +158,15 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSecurityModel_Roles() {
+		return (EReference)securityModelEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAuth() {
 		return authEClass;
 	}
@@ -167,7 +176,7 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAuth_OclExp() {
+	public EAttribute getAuth_Textual() {
 		return (EAttribute)authEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -176,8 +185,26 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAuth_SqlStm() {
+	public EAttribute getAuth_OclExp() {
 		return (EAttribute)authEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAuth_SqlStm() {
+		return (EAttribute)authEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAuth_Roles() {
+		return (EReference)authEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -195,16 +222,7 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 	 * @generated
 	 */
 	public EAttribute getRule_Name() {
-		return (EAttribute)ruleEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRule_Roles() {
-		return (EReference)ruleEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)ruleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -231,7 +249,7 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 	 * @generated
 	 */
 	public EReference getRule_Resources() {
-		return (EReference)ruleEClass.getEStructuralFeatures().get(4);
+		return (EReference)ruleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -250,6 +268,15 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 	 */
 	public EReference getRole_Entity() {
 		return (EReference)roleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRole_Name() {
+		return (EAttribute)roleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -292,20 +319,23 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 		securityModelEClass = createEClass(SECURITY_MODEL);
 		createEAttribute(securityModelEClass, SECURITY_MODEL__NAME);
 		createEReference(securityModelEClass, SECURITY_MODEL__RULES);
+		createEReference(securityModelEClass, SECURITY_MODEL__ROLES);
 
 		authEClass = createEClass(AUTH);
+		createEAttribute(authEClass, AUTH__TEXTUAL);
 		createEAttribute(authEClass, AUTH__OCL_EXP);
 		createEAttribute(authEClass, AUTH__SQL_STM);
+		createEReference(authEClass, AUTH__ROLES);
 
 		ruleEClass = createEClass(RULE);
+		createEReference(ruleEClass, RULE__RESOURCES);
 		createEAttribute(ruleEClass, RULE__NAME);
-		createEReference(ruleEClass, RULE__ROLES);
 		createEAttribute(ruleEClass, RULE__ACTION);
 		createEReference(ruleEClass, RULE__AUTHS);
-		createEReference(ruleEClass, RULE__RESOURCES);
 
 		roleEClass = createEClass(ROLE);
 		createEReference(roleEClass, ROLE__ENTITY);
+		createEAttribute(roleEClass, ROLE__NAME);
 
 		// Create enums
 		actionEEnum = createEEnum(ACTION);
@@ -347,20 +377,23 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 		initEClass(securityModelEClass, SecurityModel.class, "SecurityModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSecurityModel_Name(), ecorePackage.getEString(), "name", null, 1, 1, SecurityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSecurityModel_Rules(), this.getRule(), null, "rules", null, 0, -1, SecurityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSecurityModel_Roles(), this.getRole(), null, "roles", null, 1, -1, SecurityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(authEClass, Auth.class, "Auth", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAuth_Textual(), ecorePackage.getEString(), "textual", null, 1, 1, Auth.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAuth_OclExp(), ecorePackage.getEString(), "oclExp", null, 1, 1, Auth.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAuth_SqlStm(), ecorePackage.getEString(), "sqlStm", null, 1, 1, Auth.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAuth_Roles(), this.getRole(), null, "roles", null, 1, -1, Auth.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRule_Resources(), theDatamodelsPackage.getProperty(), null, "resources", null, 1, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRule_Name(), ecorePackage.getEString(), "name", null, 1, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRule_Roles(), this.getRole(), null, "roles", null, 1, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRule_Action(), this.getAction(), "action", null, 1, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRule_Auths(), this.getAuth(), null, "auths", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRule_Resources(), theDatamodelsPackage.getProperty(), null, "resources", null, 1, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRole_Entity(), theDatamodelsPackage.getEntity(), null, "entity", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRole_Name(), ecorePackage.getEString(), "name", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(actionEEnum, Action.class, "Action");
