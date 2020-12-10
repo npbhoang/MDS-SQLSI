@@ -9,5 +9,9 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: xtext.securitymodels.editor,
  securitymodels,
  org.eclipse.xtext.ide,
- org.eclipse.xtext.xbase.ide
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: xtext.securitymodels.ide.contentassist.antlr.internal,
+ xtext.securitymodels.ide.contentassist.antlr
+
