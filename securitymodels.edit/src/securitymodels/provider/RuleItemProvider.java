@@ -63,10 +63,9 @@ public class RuleItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
-			addRolesPropertyDescriptor(object);
-			addActionPropertyDescriptor(object);
 			addResourcesPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
+			addActionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -89,28 +88,6 @@ public class RuleItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Roles feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRolesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Rule_roles_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Rule_roles_feature", "_UI_Rule_type"),
-				 SecuritymodelsPackage.Literals.RULE__ROLES,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}

@@ -60,10 +60,34 @@ public class AuthItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addTextualPropertyDescriptor(object);
 			addOclExpPropertyDescriptor(object);
 			addSqlStmPropertyDescriptor(object);
+			addRolesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Textual feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTextualPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Auth_textual_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Auth_textual_feature", "_UI_Auth_type"),
+				 SecuritymodelsPackage.Literals.AUTH__TEXTUAL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -111,6 +135,28 @@ public class AuthItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Roles feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRolesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Auth_roles_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Auth_roles_feature", "_UI_Auth_type"),
+				 SecuritymodelsPackage.Literals.AUTH__ROLES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Auth.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -129,7 +175,7 @@ public class AuthItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Auth)object).getOclExp();
+		String label = ((Auth)object).getTextual();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Auth_type") :
 			getString("_UI_Auth_type") + " " + label;
@@ -148,6 +194,7 @@ public class AuthItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Auth.class)) {
+			case SecuritymodelsPackage.AUTH__TEXTUAL:
 			case SecuritymodelsPackage.AUTH__OCL_EXP:
 			case SecuritymodelsPackage.AUTH__SQL_STM:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
