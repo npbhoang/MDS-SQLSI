@@ -1,6 +1,7 @@
 # Workspace
 .metadata/
 .recommenders/
+/runtime-EclipseApplication
 
 # Compiled class file
 *.class
