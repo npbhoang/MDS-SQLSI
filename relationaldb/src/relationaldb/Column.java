@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link relationaldb.Column#isIsPrimary <em>Is Primary</em>}</li>
  *   <li>{@link relationaldb.Column#isIsForeign <em>Is Foreign</em>}</li>
  *   <li>{@link relationaldb.Column#getType <em>Type</em>}</li>
+ *   <li>{@link relationaldb.Column#isIsUnique <em>Is Unique</em>}</li>
  * </ul>
  *
  * @see relationaldb.RelationaldbPackage#getColumn()
@@ -157,5 +158,31 @@ public interface Column extends EObject {
 	 * @generated
 	 */
 	void setType(DataType value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Unique</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Unique</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Unique</em>' attribute.
+	 * @see #setIsUnique(boolean)
+	 * @see relationaldb.RelationaldbPackage#getColumn_IsUnique()
+	 * @model required="true"
+	 * @generated
+	 */
+	boolean isIsUnique();
+
+	/**
+	 * Sets the value of the '{@link relationaldb.Column#isIsUnique <em>Is Unique</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Unique</em>' attribute.
+	 * @see #isIsUnique()
+	 * @generated
+	 */
+	void setIsUnique(boolean value);
 
 } // Column

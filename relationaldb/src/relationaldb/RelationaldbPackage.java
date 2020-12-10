@@ -205,13 +205,22 @@ public interface RelationaldbPackage extends EPackage {
 	int COLUMN__TYPE = 4;
 
 	/**
+	 * The feature id for the '<em><b>Is Unique</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLUMN__IS_UNIQUE = 5;
+
+	/**
 	 * The number of structural features of the '<em>Column</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLUMN_FEATURE_COUNT = 5;
+	int COLUMN_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Column</em>' class.
@@ -363,6 +372,17 @@ public interface RelationaldbPackage extends EPackage {
 	EAttribute getColumn_Type();
 
 	/**
+	 * Returns the meta object for the attribute '{@link relationaldb.Column#isIsUnique <em>Is Unique</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Unique</em>'.
+	 * @see relationaldb.Column#isIsUnique()
+	 * @see #getColumn()
+	 * @generated
+	 */
+	EAttribute getColumn_IsUnique();
+
+	/**
 	 * Returns the meta object for enum '{@link relationaldb.DataType <em>Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -496,6 +516,14 @@ public interface RelationaldbPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COLUMN__TYPE = eINSTANCE.getColumn_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Unique</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COLUMN__IS_UNIQUE = eINSTANCE.getColumn_IsUnique();
 
 		/**
 		 * The meta object literal for the '{@link relationaldb.DataType <em>Data Type</em>}' enum.

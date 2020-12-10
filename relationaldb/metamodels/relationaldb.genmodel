@@ -24,6 +24,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute relationaldb.ecore#//Column/isPrimary"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute relationaldb.ecore#//Column/isForeign"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute relationaldb.ecore#//Column/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute relationaldb.ecore#//Column/isUnique"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

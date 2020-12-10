@@ -226,6 +226,15 @@ public class RelationaldbPackageImpl extends EPackageImpl implements Relationald
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getColumn_IsUnique() {
+		return (EAttribute)columnEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getDataType() {
 		return dataTypeEEnum;
 	}
@@ -272,6 +281,7 @@ public class RelationaldbPackageImpl extends EPackageImpl implements Relationald
 		createEAttribute(columnEClass, COLUMN__IS_PRIMARY);
 		createEAttribute(columnEClass, COLUMN__IS_FOREIGN);
 		createEAttribute(columnEClass, COLUMN__TYPE);
+		createEAttribute(columnEClass, COLUMN__IS_UNIQUE);
 
 		// Create enums
 		dataTypeEEnum = createEEnum(DATA_TYPE);
@@ -321,6 +331,7 @@ public class RelationaldbPackageImpl extends EPackageImpl implements Relationald
 		initEAttribute(getColumn_IsPrimary(), ecorePackage.getEBoolean(), "isPrimary", null, 1, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getColumn_IsForeign(), ecorePackage.getEBoolean(), "isForeign", null, 1, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getColumn_Type(), this.getDataType(), "type", null, 1, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getColumn_IsUnique(), ecorePackage.getEBoolean(), "isUnique", null, 1, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(dataTypeEEnum, DataType.class, "DataType");

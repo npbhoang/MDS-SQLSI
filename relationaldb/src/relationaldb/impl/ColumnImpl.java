@@ -28,6 +28,7 @@ import relationaldb.Table;
  *   <li>{@link relationaldb.impl.ColumnImpl#isIsPrimary <em>Is Primary</em>}</li>
  *   <li>{@link relationaldb.impl.ColumnImpl#isIsForeign <em>Is Foreign</em>}</li>
  *   <li>{@link relationaldb.impl.ColumnImpl#getType <em>Type</em>}</li>
+ *   <li>{@link relationaldb.impl.ColumnImpl#isIsUnique <em>Is Unique</em>}</li>
  * </ul>
  *
  * @generated
@@ -122,6 +123,26 @@ public class ColumnImpl extends MinimalEObjectImpl.Container implements Column {
 	 * @ordered
 	 */
 	protected DataType type = TYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isIsUnique() <em>Is Unique</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsUnique()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_UNIQUE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsUnique() <em>Is Unique</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsUnique()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isUnique = IS_UNIQUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -269,6 +290,27 @@ public class ColumnImpl extends MinimalEObjectImpl.Container implements Column {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isIsUnique() {
+		return isUnique;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsUnique(boolean newIsUnique) {
+		boolean oldIsUnique = isUnique;
+		isUnique = newIsUnique;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RelationaldbPackage.COLUMN__IS_UNIQUE, oldIsUnique, isUnique));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -283,6 +325,8 @@ public class ColumnImpl extends MinimalEObjectImpl.Container implements Column {
 				return isIsForeign();
 			case RelationaldbPackage.COLUMN__TYPE:
 				return getType();
+			case RelationaldbPackage.COLUMN__IS_UNIQUE:
+				return isIsUnique();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -309,6 +353,9 @@ public class ColumnImpl extends MinimalEObjectImpl.Container implements Column {
 				return;
 			case RelationaldbPackage.COLUMN__TYPE:
 				setType((DataType)newValue);
+				return;
+			case RelationaldbPackage.COLUMN__IS_UNIQUE:
+				setIsUnique((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -337,6 +384,9 @@ public class ColumnImpl extends MinimalEObjectImpl.Container implements Column {
 			case RelationaldbPackage.COLUMN__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
+			case RelationaldbPackage.COLUMN__IS_UNIQUE:
+				setIsUnique(IS_UNIQUE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -359,6 +409,8 @@ public class ColumnImpl extends MinimalEObjectImpl.Container implements Column {
 				return isForeign != IS_FOREIGN_EDEFAULT;
 			case RelationaldbPackage.COLUMN__TYPE:
 				return type != TYPE_EDEFAULT;
+			case RelationaldbPackage.COLUMN__IS_UNIQUE:
+				return isUnique != IS_UNIQUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -381,6 +433,8 @@ public class ColumnImpl extends MinimalEObjectImpl.Container implements Column {
 		result.append(isForeign);
 		result.append(", type: ");
 		result.append(type);
+		result.append(", isUnique: ");
+		result.append(isUnique);
 		result.append(')');
 		return result.toString();
 	}

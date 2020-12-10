@@ -46,6 +46,7 @@ public class AttributeItemProvider extends PropertyItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addTypePropertyDescriptor(object);
+			addIsUniquePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -68,6 +69,28 @@ public class AttributeItemProvider extends PropertyItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Unique feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsUniquePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Attribute_isUnique_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_isUnique_feature", "_UI_Attribute_type"),
+				 DatamodelsPackage.Literals.ATTRIBUTE__IS_UNIQUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -111,6 +134,7 @@ public class AttributeItemProvider extends PropertyItemProvider {
 
 		switch (notification.getFeatureID(Attribute.class)) {
 			case DatamodelsPackage.ATTRIBUTE__TYPE:
+			case DatamodelsPackage.ATTRIBUTE__IS_UNIQUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

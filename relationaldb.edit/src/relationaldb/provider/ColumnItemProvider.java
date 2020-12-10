@@ -65,6 +65,7 @@ public class ColumnItemProvider
 			addIsPrimaryPropertyDescriptor(object);
 			addIsForeignPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
+			addIsUniquePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -180,6 +181,28 @@ public class ColumnItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Is Unique feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsUniquePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Column_isUnique_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Column_isUnique_feature", "_UI_Column_type"),
+				 RelationaldbPackage.Literals.COLUMN__IS_UNIQUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Column.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -221,6 +244,7 @@ public class ColumnItemProvider
 			case RelationaldbPackage.COLUMN__IS_PRIMARY:
 			case RelationaldbPackage.COLUMN__IS_FOREIGN:
 			case RelationaldbPackage.COLUMN__TYPE:
+			case RelationaldbPackage.COLUMN__IS_UNIQUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

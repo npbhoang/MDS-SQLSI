@@ -13,6 +13,7 @@ package datamodels;
  * </p>
  * <ul>
  *   <li>{@link datamodels.Attribute#getType <em>Type</em>}</li>
+ *   <li>{@link datamodels.Attribute#isIsUnique <em>Is Unique</em>}</li>
  * </ul>
  *
  * @see datamodels.DatamodelsPackage#getAttribute()
@@ -48,5 +49,31 @@ public interface Attribute extends Property {
 	 * @generated
 	 */
 	void setType(DataType value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Unique</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Unique</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Unique</em>' attribute.
+	 * @see #setIsUnique(boolean)
+	 * @see datamodels.DatamodelsPackage#getAttribute_IsUnique()
+	 * @model required="true"
+	 * @generated
+	 */
+	boolean isIsUnique();
+
+	/**
+	 * Sets the value of the '{@link datamodels.Attribute#isIsUnique <em>Is Unique</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Unique</em>' attribute.
+	 * @see #isIsUnique()
+	 * @generated
+	 */
+	void setIsUnique(boolean value);
 
 } // Attribute

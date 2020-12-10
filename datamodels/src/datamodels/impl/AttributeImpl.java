@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link datamodels.impl.AttributeImpl#getType <em>Type</em>}</li>
+ *   <li>{@link datamodels.impl.AttributeImpl#isIsUnique <em>Is Unique</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,6 +46,26 @@ public class AttributeImpl extends PropertyImpl implements Attribute {
 	 * @ordered
 	 */
 	protected DataType type = TYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isIsUnique() <em>Is Unique</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsUnique()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_UNIQUE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsUnique() <em>Is Unique</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsUnique()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isUnique = IS_UNIQUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,11 +112,34 @@ public class AttributeImpl extends PropertyImpl implements Attribute {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isIsUnique() {
+		return isUnique;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsUnique(boolean newIsUnique) {
+		boolean oldIsUnique = isUnique;
+		isUnique = newIsUnique;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelsPackage.ATTRIBUTE__IS_UNIQUE, oldIsUnique, isUnique));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case DatamodelsPackage.ATTRIBUTE__TYPE:
 				return getType();
+			case DatamodelsPackage.ATTRIBUTE__IS_UNIQUE:
+				return isIsUnique();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,6 +154,9 @@ public class AttributeImpl extends PropertyImpl implements Attribute {
 		switch (featureID) {
 			case DatamodelsPackage.ATTRIBUTE__TYPE:
 				setType((DataType)newValue);
+				return;
+			case DatamodelsPackage.ATTRIBUTE__IS_UNIQUE:
+				setIsUnique((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,6 +173,9 @@ public class AttributeImpl extends PropertyImpl implements Attribute {
 			case DatamodelsPackage.ATTRIBUTE__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
+			case DatamodelsPackage.ATTRIBUTE__IS_UNIQUE:
+				setIsUnique(IS_UNIQUE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -140,6 +190,8 @@ public class AttributeImpl extends PropertyImpl implements Attribute {
 		switch (featureID) {
 			case DatamodelsPackage.ATTRIBUTE__TYPE:
 				return type != TYPE_EDEFAULT;
+			case DatamodelsPackage.ATTRIBUTE__IS_UNIQUE:
+				return isUnique != IS_UNIQUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -156,6 +208,8 @@ public class AttributeImpl extends PropertyImpl implements Attribute {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (type: ");
 		result.append(type);
+		result.append(", isUnique: ");
+		result.append(isUnique);
 		result.append(')');
 		return result.toString();
 	}

@@ -297,13 +297,22 @@ public interface DatamodelsPackage extends EPackage {
 	int ATTRIBUTE__TYPE = PROPERTY_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Is Unique</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE__IS_UNIQUE = PROPERTY_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_FEATURE_COUNT = PROPERTY_FEATURE_COUNT + 1;
+	int ATTRIBUTE_FEATURE_COUNT = PROPERTY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Attribute</em>' class.
@@ -484,6 +493,17 @@ public interface DatamodelsPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAttribute_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link datamodels.Attribute#isIsUnique <em>Is Unique</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Unique</em>'.
+	 * @see datamodels.Attribute#isIsUnique()
+	 * @see #getAttribute()
+	 * @generated
+	 */
+	EAttribute getAttribute_IsUnique();
 
 	/**
 	 * Returns the meta object for class '{@link datamodels.Property <em>Property</em>}'.
@@ -668,6 +688,14 @@ public interface DatamodelsPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ATTRIBUTE__TYPE = eINSTANCE.getAttribute_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Unique</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ATTRIBUTE__IS_UNIQUE = eINSTANCE.getAttribute_IsUnique();
 
 		/**
 		 * The meta object literal for the '{@link datamodels.impl.PropertyImpl <em>Property</em>}' class.

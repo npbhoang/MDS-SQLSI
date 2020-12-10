@@ -4,7 +4,7 @@
 [import acceleo::relational::schema::queries::tableQueries /]
 
 [template public generateColumn(aColumn : Column)]
-	[ aColumn.name /] [ getDataType(aColumn.type) /][if aColumn.isPrimary] [ getProperty('primarySpecification') /][elseif aColumn.isForeign] [ getProperty('foreignSpecification') /][/if][if aColumn.isForeign],
+	[ aColumn.name /] [ getDataType(aColumn.type) /][if aColumn.isPrimary] [ getProperty('primarySpecification') /][elseif aColumn.isForeign] [ getProperty('foreignSpecification') /][elseif aColumn.isUnique] [ getProperty('uniqueSpecification') /][/if][if aColumn.isForeign],
 	[ aColumn.getForeignKeySpecification() /][/if]
 [/template]
 

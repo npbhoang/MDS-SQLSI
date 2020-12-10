@@ -19,7 +19,8 @@
         name="lastname"/>
     <properties
         xsi:type="datamodels:Attribute"
-        name="email"/>
+        name="email"
+        isUnique="true"/>
   </entities>
   <entities
       name="Lecturer"

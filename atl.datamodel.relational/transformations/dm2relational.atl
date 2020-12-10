@@ -41,6 +41,7 @@ lazy rule createColumnReference {
 		type <- #"Integer",
 		isForeign <- true,
 		isPrimary <- false,
+		isUnique <- true,
 		reference <- a.targetEntity
 	)
 }
@@ -78,6 +79,7 @@ lazy rule createColumnSuperId {
 		type <- #"Integer",
 		isForeign <- true,
 		isPrimary <- false,
+		isUnique <- true,
 		reference <- e.superEntity
 	)
 }
@@ -93,7 +95,8 @@ lazy rule createColumnId {
 		name <- e.composeIdentifierName(),
 		type <- #"Integer",
 		isForeign <- false,
-		isPrimary <- true
+		isPrimary <- true,
+		isUnique <- true
 	)
 }
 
@@ -104,7 +107,9 @@ rule attribute2column {
 		-- where the name of the column is the name of the tuple
 		name <- a.name,
 		-- and the type of the column is the type of the tuple
-		type <- a.type
+		type <- a.type,
+		-- and the unique property
+		isUnique <- a.isUnique
 		-- and currently, we constraint it to be non-derived
 		-- indeed, it is not an identifier
 		-- but, these are false by default!
