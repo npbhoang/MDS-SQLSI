@@ -268,7 +268,7 @@ public class Generate extends AbstractAcceleoGenerator {
      * 
      * @return The list of properties file we need to add to the generation context.
      * @see java.util.ResourceBundle#getBundle(String)
-     * @generated
+     * @generated NOT
      */
     @Override
     public List<String> getProperties() {
@@ -306,6 +306,7 @@ public class Generate extends AbstractAcceleoGenerator {
          * 
          * To learn more about Properties Files, have a look at the Acceleo documentation (Help -> Help Contents).
          */
+    	propertiesFiles.add("acceleo.relational.schema.properties.mysql");
         return propertiesFiles;
     }
     

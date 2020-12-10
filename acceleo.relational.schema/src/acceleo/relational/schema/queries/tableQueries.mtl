@@ -1,0 +1,8 @@
+[comment encoding = UTF-8 /]
+[module tableQueries('/final/metamodel/relationaldb.ecore')]
+
+[query public getIDColumn(aTable : Table) : Column =
+aTable.columns->select(c|c.isPrimary)->first() /]
+
+[query public isLastColumn(aColumn : Column, aTable : Table) : Boolean =
+aColumn = aTable.columns->last() /]

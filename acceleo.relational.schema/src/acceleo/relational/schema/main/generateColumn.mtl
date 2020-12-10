@@ -1,0 +1,17 @@
+[comment encoding = UTF-8 /]
+[module generateColumn('/final/metamodel/relationaldb.ecore')]
+
+[import acceleo::relational::schema::queries::tableQueries /]
+
+[template public generateColumn(aColumn : Column)]
+	[ aColumn.name /] [ getDataType(aColumn.type) /][if aColumn.isPrimary] [ getProperty('primarySpecification') /][elseif aColumn.isForeign] [ getProperty('foreignSpecification') /][/if][if aColumn.isForeign],
+	[ aColumn.getForeignKeySpecification() /][/if]
+[/template]
+
+[template public getForeignKeySpecification(aColumn : Column)]
+FOREIGN KEY ([aColumn.name/]) REFERENCES [aColumn.reference.name/]([getIDColumn(aColumn.reference).name/])
+[/template]
+
+[template public getDataType(aDataType : DataType)]
+[if aDataType = DataType::String][ getProperty('stringDataType') /][else][ getProperty('integerDataType') /][/if]
+[/template]
