@@ -5,7 +5,6 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:datamodels="/final/metamodel/datamodels.ecore"
     xmlns:securitymodels="/final/metamodel/securitymodels.ecore"
-    xsi:schemaLocation="/final/metamodel/datamodels.ecore ../../datamodels/metamodels/datamodels.ecore /final/metamodel/securitymodels.ecore ../metamodels/securitymodels.ecore"
     name="UniversitySecurity">
   <rules name="readStudentInfo">
     <resources
