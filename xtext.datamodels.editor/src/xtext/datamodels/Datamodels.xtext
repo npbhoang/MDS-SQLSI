@@ -23,11 +23,11 @@ Entity returns Entity:
 	name=EString
 	('extends' superEntity=[Entity|EString])?
 	'{'
-		(properties+=Attribute ( "," properties+=Attribute)*)?
-		(properties+=AssociationEnd ( "," properties+=AssociationEnd)*)?
+		(properties+=Property ( "," properties+=Property)*)?
 	'}';
 
 AssociationEnd returns AssociationEnd:
+	"association"
 	multiplicity=Multiplicity
 	'('targetEntity=[Entity|EString]')'
 	name=EString
@@ -37,8 +37,9 @@ AssociationEnd returns AssociationEnd:
 	associationName=EString;
 
 Attribute returns Attribute:
-	isUnique?='*'
-	name=EString
+	"attribute"
+	'('name=EString')'
+	(isUnique?='unique')?
 	type=DataType;
 
 enum Multiplicity returns Multiplicity:
