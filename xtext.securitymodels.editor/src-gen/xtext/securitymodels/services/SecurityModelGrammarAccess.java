@@ -359,25 +359,6 @@ public class SecurityModelGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
 	}
-	public class EBooleanElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.securitymodels.SecurityModel.EBoolean");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cTrueKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cFalseKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		
-		//EBoolean ecore::EBoolean:
-		//	'true' | 'false';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'true' | 'false'
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//'true'
-		public Keyword getTrueKeyword_0() { return cTrueKeyword_0; }
-		
-		//'false'
-		public Keyword getFalseKeyword_1() { return cFalseKeyword_1; }
-	}
 	
 	public class ActionElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.securitymodels.SecurityModel.Action");
@@ -429,7 +410,6 @@ public class SecurityModelGrammarAccess extends AbstractGrammarElementFinder {
 	private final RoleElements pRole;
 	private final ActionElements eAction;
 	private final AuthElements pAuth;
-	private final EBooleanElements pEBoolean;
 	
 	private final Grammar grammar;
 	
@@ -446,7 +426,6 @@ public class SecurityModelGrammarAccess extends AbstractGrammarElementFinder {
 		this.pRole = new RoleElements();
 		this.eAction = new ActionElements();
 		this.pAuth = new AuthElements();
-		this.pEBoolean = new EBooleanElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -545,16 +524,6 @@ public class SecurityModelGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getAuthRule() {
 		return getAuthAccess().getRule();
-	}
-	
-	//EBoolean ecore::EBoolean:
-	//	'true' | 'false';
-	public EBooleanElements getEBooleanAccess() {
-		return pEBoolean;
-	}
-	
-	public ParserRule getEBooleanRule() {
-		return getEBooleanAccess().getRule();
 	}
 	
 	//terminal ID:

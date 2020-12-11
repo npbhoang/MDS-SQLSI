@@ -76,7 +76,4 @@ public abstract class AbstractSecurityModelProposalProvider extends TerminalsPro
 	public void complete_Auth(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}
-	public void complete_EBoolean(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		// subclasses may override
-	}
 }

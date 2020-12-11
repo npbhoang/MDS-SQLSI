@@ -32,7 +32,6 @@ public class SecurityModelParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, SecurityModelGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
-			builder.put(grammarAccess.getEBooleanAccess().getAlternatives(), "rule__EBoolean__Alternatives");
 			builder.put(grammarAccess.getActionAccess().getAlternatives(), "rule__Action__Alternatives");
 			builder.put(grammarAccess.getSecurityModelAccess().getGroup(), "rule__SecurityModel__Group__0");
 			builder.put(grammarAccess.getSecurityModelAccess().getGroup_5(), "rule__SecurityModel__Group_5__0");
