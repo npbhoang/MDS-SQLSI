@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>xtext.datamodels.xmi</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>models</name>
+			<type>2</type>
+			<location>C:/Users/ngpbh/Desktop/Formal Methods in CS/Formal Model Driven Software Engineering/2020/FinalProject/datamodels/models</location>
+		</link>
+		<link>
+			<name>runtime-EclipseXtext</name>
+			<type>2</type>
+			<location>C:/Users/ngpbh/Desktop/Formal Methods in CS/Formal Model Driven Software Engineering/2020/FinalProject/runtime-EclipseXtext</location>
+		</link>
+	</linkedResources>
+</projectDescription>
