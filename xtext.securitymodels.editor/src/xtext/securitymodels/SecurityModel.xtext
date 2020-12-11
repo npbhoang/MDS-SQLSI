@@ -10,9 +10,6 @@ SecurityModel returns SecurityModel: {SecurityModel}
 	'roles:' (roles+=Role)+
 	('rules:' (rules+=Rule)+)?;
 
-Property returns datamodels::Property:
-	AssociationEnd | Attribute;
-
 EString returns ecore::EString:
 	STRING | ID;
 
@@ -37,39 +34,3 @@ Auth returns Auth:
 		'ocl:' oclExp=EString
 		'sql:' sqlStm=EString
 	'}';
-
-AssociationEnd returns datamodels::AssociationEnd:
-	'AssociationEnd'
-	name=EString
-	'{'
-		'multiplicity' multiplicity=Multiplicity
-		'associationName' associationName=EString
-		'otherEnd' otherEnd=[datamodels::AssociationEnd|EString]
-		'targetEntity' targetEntity=[datamodels::Entity|EString]
-	'}';
-
-Attribute returns datamodels::Attribute:
-	isUnique?='isUnique'
-	'Attribute'
-	name=EString
-	'{'
-		'type' type=DataType
-	'}';
-
-enum Multiplicity returns datamodels::Multiplicity:
-				MANY = 'MANY' | ONE = 'ONE';
-
-Entity returns datamodels::Entity:
-	{datamodels::Entity}
-	'Entity'
-	name=EString
-	'{'
-		('superEntity' superEntity=[datamodels::Entity|EString])?
-		('properties' '{' properties+=Property ( "," properties+=Property)* '}' )?
-	'}';
-
-enum DataType returns datamodels::DataType:
-				String = 'String' | Integer = 'Integer';
-
-EBoolean returns ecore::EBoolean:
-	'true' | 'false';
