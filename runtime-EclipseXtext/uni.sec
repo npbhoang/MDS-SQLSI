@@ -4,12 +4,17 @@ roles:
 	Student <- "University.Student"
 rules:
 	readStudentInfo: 
-		READ("University.RegUser.firstname", "University.RegUser.lastname", "University.RegUser.middlename", "University.RegUser.email", "University.Student.intake")
+		READ("University.RegUser.firstname", 
+			"University.RegUser.lastname", 
+			"University.RegUser.middlename", 
+			"University.RegUser.email", 
+			"University.Student.intake")
 		conditions {
 			{
 				roles(Lecturer)
-				context: "Any lecturer can read the info of the students who attends his/her class."
-				ocl: ""
+				context: "Any lecturer can read the info 
+				of the students who attends his/her class."
+				ocl: "caller.taughtCourses->exists(c|c.students->includes(self))"
 				sql: ""
 			},or 
 			{
