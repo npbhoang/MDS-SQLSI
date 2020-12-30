@@ -86,13 +86,22 @@ public interface DatamodelsPackage extends EPackage {
 	int DATA_MODEL__ENTITIES = 1;
 
 	/**
+	 * The feature id for the '<em><b>Is Secured</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_MODEL__IS_SECURED = 2;
+
+	/**
 	 * The number of structural features of the '<em>Data Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_MODEL_FEATURE_COUNT = 2;
+	int DATA_MODEL_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Data Model</em>' class.
@@ -141,13 +150,22 @@ public interface DatamodelsPackage extends EPackage {
 	int ENTITY__SUPER_ENTITY = 2;
 
 	/**
+	 * The feature id for the '<em><b>Is User Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__IS_USER_CLASS = 3;
+
+	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_COUNT = 3;
+	int ENTITY_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Entity</em>' class.
@@ -377,6 +395,17 @@ public interface DatamodelsPackage extends EPackage {
 	EReference getDataModel_Entities();
 
 	/**
+	 * Returns the meta object for the attribute '{@link datamodels.DataModel#isIsSecured <em>Is Secured</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Secured</em>'.
+	 * @see datamodels.DataModel#isIsSecured()
+	 * @see #getDataModel()
+	 * @generated
+	 */
+	EAttribute getDataModel_IsSecured();
+
+	/**
 	 * Returns the meta object for class '{@link datamodels.Entity <em>Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -418,6 +447,17 @@ public interface DatamodelsPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEntity_SuperEntity();
+
+	/**
+	 * Returns the meta object for the attribute '{@link datamodels.Entity#isIsUserClass <em>Is User Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is User Class</em>'.
+	 * @see datamodels.Entity#isIsUserClass()
+	 * @see #getEntity()
+	 * @generated
+	 */
+	EAttribute getEntity_IsUserClass();
 
 	/**
 	 * Returns the meta object for class '{@link datamodels.AssociationEnd <em>Association End</em>}'.
@@ -596,6 +636,14 @@ public interface DatamodelsPackage extends EPackage {
 		EReference DATA_MODEL__ENTITIES = eINSTANCE.getDataModel_Entities();
 
 		/**
+		 * The meta object literal for the '<em><b>Is Secured</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_MODEL__IS_SECURED = eINSTANCE.getDataModel_IsSecured();
+
+		/**
 		 * The meta object literal for the '{@link datamodels.impl.EntityImpl <em>Entity</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -628,6 +676,14 @@ public interface DatamodelsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ENTITY__SUPER_ENTITY = eINSTANCE.getEntity_SuperEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Is User Class</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY__IS_USER_CLASS = eINSTANCE.getEntity_IsUserClass();
 
 		/**
 		 * The meta object literal for the '{@link datamodels.impl.AssociationEndImpl <em>Association End</em>}' class.

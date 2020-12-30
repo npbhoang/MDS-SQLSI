@@ -64,6 +64,7 @@ public class DataModelItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addIsSecuredPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -86,6 +87,28 @@ public class DataModelItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Secured feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsSecuredPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DataModel_isSecured_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataModel_isSecured_feature", "_UI_DataModel_type"),
+				 DatamodelsPackage.Literals.DATA_MODEL__IS_SECURED,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -159,6 +182,7 @@ public class DataModelItemProvider
 
 		switch (notification.getFeatureID(DataModel.class)) {
 			case DatamodelsPackage.DATA_MODEL__NAME:
+			case DatamodelsPackage.DATA_MODEL__IS_SECURED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case DatamodelsPackage.DATA_MODEL__ENTITIES:

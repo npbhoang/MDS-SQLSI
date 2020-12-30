@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link datamodels.impl.EntityImpl#getName <em>Name</em>}</li>
  *   <li>{@link datamodels.impl.EntityImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link datamodels.impl.EntityImpl#getSuperEntity <em>Super Entity</em>}</li>
+ *   <li>{@link datamodels.impl.EntityImpl#isIsUserClass <em>Is User Class</em>}</li>
  * </ul>
  *
  * @generated
@@ -77,6 +78,26 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * @ordered
 	 */
 	protected Entity superEntity;
+
+	/**
+	 * The default value of the '{@link #isIsUserClass() <em>Is User Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsUserClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_USER_CLASS_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsUserClass() <em>Is User Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsUserClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isUserClass = IS_USER_CLASS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -173,6 +194,27 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isIsUserClass() {
+		return isUserClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsUserClass(boolean newIsUserClass) {
+		boolean oldIsUserClass = isUserClass;
+		isUserClass = newIsUserClass;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelsPackage.ENTITY__IS_USER_CLASS, oldIsUserClass, isUserClass));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -197,6 +239,8 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 			case DatamodelsPackage.ENTITY__SUPER_ENTITY:
 				if (resolve) return getSuperEntity();
 				return basicGetSuperEntity();
+			case DatamodelsPackage.ENTITY__IS_USER_CLASS:
+				return isIsUserClass();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -220,6 +264,9 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 			case DatamodelsPackage.ENTITY__SUPER_ENTITY:
 				setSuperEntity((Entity)newValue);
 				return;
+			case DatamodelsPackage.ENTITY__IS_USER_CLASS:
+				setIsUserClass((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -241,6 +288,9 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 			case DatamodelsPackage.ENTITY__SUPER_ENTITY:
 				setSuperEntity((Entity)null);
 				return;
+			case DatamodelsPackage.ENTITY__IS_USER_CLASS:
+				setIsUserClass(IS_USER_CLASS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -259,6 +309,8 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 				return properties != null && !properties.isEmpty();
 			case DatamodelsPackage.ENTITY__SUPER_ENTITY:
 				return superEntity != null;
+			case DatamodelsPackage.ENTITY__IS_USER_CLASS:
+				return isUserClass != IS_USER_CLASS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -275,6 +327,8 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", isUserClass: ");
+		result.append(isUserClass);
 		result.append(')');
 		return result.toString();
 	}

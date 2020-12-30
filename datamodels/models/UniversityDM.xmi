@@ -1,23 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<datamodels:DataModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:datamodels="/final/metamodel/datamodels.ecore" name="University">
-  <entities name="RegisterUser">
-    <properties xsi:type="datamodels:Attribute" name="firstname"/>
-    <properties xsi:type="datamodels:Attribute" name="middlename"/>
-    <properties xsi:type="datamodels:Attribute" name="lastname"/>
-    <properties xsi:type="datamodels:Attribute" name="email" isUnique="true"/>
+<datamodels:DataModel
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:datamodels="/final/metamodel/datamodels.ecore"
+    name="University">
+  <entities
+      name="RegisterUser"
+      isUserClass="true">
+    <properties
+        xsi:type="datamodels:Attribute"
+        name="firstname"/>
+    <properties
+        xsi:type="datamodels:Attribute"
+        name="middlename"/>
+    <properties
+        xsi:type="datamodels:Attribute"
+        name="lastname"/>
+    <properties
+        xsi:type="datamodels:Attribute"
+        name="email"
+        isUnique="true"/>
   </entities>
-  <entities name="Lecturer" superEntity="//@entities.0">
-    <properties xsi:type="datamodels:Attribute" name="salary" type="Integer"/>
-    <properties xsi:type="datamodels:AssociationEnd" name="taught" associationName="Teaching" otherEnd="//@entities.3/@properties.2" targetEntity="//@entities.3"/>
+  <entities
+      name="Lecturer"
+      superEntity="//@entities.0">
+    <properties
+        xsi:type="datamodels:Attribute"
+        name="salary"
+        type="Integer"/>
+    <properties
+        xsi:type="datamodels:AssociationEnd"
+        name="taught"
+        associationName="Teaching"
+        otherEnd="//@entities.3/@properties.2"
+        targetEntity="//@entities.3"/>
   </entities>
-  <entities name="Student" superEntity="//@entities.0">
-    <properties xsi:type="datamodels:Attribute" name="intake" type="Integer"/>
-    <properties xsi:type="datamodels:AssociationEnd" name="enrolled" associationName="Enrollment" otherEnd="//@entities.3/@properties.3" targetEntity="//@entities.3"/>
+  <entities
+      name="Student"
+      superEntity="//@entities.0">
+    <properties
+        xsi:type="datamodels:Attribute"
+        name="intake"
+        type="Integer"/>
+    <properties
+        xsi:type="datamodels:AssociationEnd"
+        name="enrolled"
+        associationName="Enrollment"
+        otherEnd="//@entities.3/@properties.3"
+        targetEntity="//@entities.3"/>
   </entities>
-  <entities name="Course">
-    <properties xsi:type="datamodels:Attribute" name="name"/>
-    <properties xsi:type="datamodels:Attribute" name="year" type="Integer"/>
-    <properties xsi:type="datamodels:AssociationEnd" name="lecturer" multiplicity="ONE" associationName="Teaching" otherEnd="//@entities.1/@properties.1" targetEntity="//@entities.1"/>
-    <properties xsi:type="datamodels:AssociationEnd" name="students" associationName="Enrollment" otherEnd="//@entities.2/@properties.1" targetEntity="//@entities.2"/>
+  <entities
+      name="Course">
+    <properties
+        xsi:type="datamodels:Attribute"
+        name="name"/>
+    <properties
+        xsi:type="datamodels:Attribute"
+        name="year"
+        type="Integer"/>
+    <properties
+        xsi:type="datamodels:AssociationEnd"
+        name="lecturer"
+        multiplicity="ONE"
+        associationName="Teaching"
+        otherEnd="//@entities.1/@properties.1"
+        targetEntity="//@entities.1"/>
+    <properties
+        xsi:type="datamodels:AssociationEnd"
+        name="students"
+        associationName="Enrollment"
+        otherEnd="//@entities.2/@properties.1"
+        targetEntity="//@entities.2"/>
   </entities>
 </datamodels:DataModel>

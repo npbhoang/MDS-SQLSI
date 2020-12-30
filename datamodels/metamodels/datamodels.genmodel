@@ -16,11 +16,13 @@
     <genClasses ecoreClass="datamodels.ecore#//DataModel">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodels.ecore#//DataModel/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datamodels.ecore#//DataModel/entities"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodels.ecore#//DataModel/isSecured"/>
     </genClasses>
     <genClasses ecoreClass="datamodels.ecore#//Entity">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodels.ecore#//Entity/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datamodels.ecore#//Entity/properties"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference datamodels.ecore#//Entity/superEntity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodels.ecore#//Entity/isUserClass"/>
     </genClasses>
     <genClasses ecoreClass="datamodels.ecore#//AssociationEnd">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodels.ecore#//AssociationEnd/multiplicity"/>

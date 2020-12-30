@@ -169,6 +169,15 @@ public class DatamodelsPackageImpl extends EPackageImpl implements DatamodelsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getDataModel_IsSecured() {
+		return (EAttribute)dataModelEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEntity() {
 		return entityEClass;
 	}
@@ -198,6 +207,15 @@ public class DatamodelsPackageImpl extends EPackageImpl implements DatamodelsPac
 	 */
 	public EReference getEntity_SuperEntity() {
 		return (EReference)entityEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntity_IsUserClass() {
+		return (EAttribute)entityEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -339,11 +357,13 @@ public class DatamodelsPackageImpl extends EPackageImpl implements DatamodelsPac
 		dataModelEClass = createEClass(DATA_MODEL);
 		createEAttribute(dataModelEClass, DATA_MODEL__NAME);
 		createEReference(dataModelEClass, DATA_MODEL__ENTITIES);
+		createEAttribute(dataModelEClass, DATA_MODEL__IS_SECURED);
 
 		entityEClass = createEClass(ENTITY);
 		createEAttribute(entityEClass, ENTITY__NAME);
 		createEReference(entityEClass, ENTITY__PROPERTIES);
 		createEReference(entityEClass, ENTITY__SUPER_ENTITY);
+		createEAttribute(entityEClass, ENTITY__IS_USER_CLASS);
 
 		associationEndEClass = createEClass(ASSOCIATION_END);
 		createEAttribute(associationEndEClass, ASSOCIATION_END__MULTIPLICITY);
@@ -398,11 +418,13 @@ public class DatamodelsPackageImpl extends EPackageImpl implements DatamodelsPac
 		initEClass(dataModelEClass, DataModel.class, "DataModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataModel_Name(), ecorePackage.getEString(), "name", null, 1, 1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataModel_Entities(), this.getEntity(), null, "entities", null, 0, -1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataModel_IsSecured(), ecorePackage.getEBoolean(), "isSecured", "false", 0, 1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntity_Name(), ecorePackage.getEString(), "name", null, 1, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_Properties(), this.getProperty(), null, "properties", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_SuperEntity(), this.getEntity(), null, "superEntity", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntity_IsUserClass(), ecorePackage.getEBoolean(), "isUserClass", "false", 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(associationEndEClass, AssociationEnd.class, "AssociationEnd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAssociationEnd_Multiplicity(), this.getMultiplicity(), "multiplicity", null, 1, 1, AssociationEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

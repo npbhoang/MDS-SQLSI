@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link datamodels.Entity#getName <em>Name</em>}</li>
  *   <li>{@link datamodels.Entity#getProperties <em>Properties</em>}</li>
  *   <li>{@link datamodels.Entity#getSuperEntity <em>Super Entity</em>}</li>
+ *   <li>{@link datamodels.Entity#isIsUserClass <em>Is User Class</em>}</li>
  * </ul>
  *
  * @see datamodels.DatamodelsPackage#getEntity()
@@ -92,5 +93,32 @@ public interface Entity extends EObject {
 	 * @generated
 	 */
 	void setSuperEntity(Entity value);
+
+	/**
+	 * Returns the value of the '<em><b>Is User Class</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is User Class</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is User Class</em>' attribute.
+	 * @see #setIsUserClass(boolean)
+	 * @see datamodels.DatamodelsPackage#getEntity_IsUserClass()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isIsUserClass();
+
+	/**
+	 * Sets the value of the '{@link datamodels.Entity#isIsUserClass <em>Is User Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is User Class</em>' attribute.
+	 * @see #isIsUserClass()
+	 * @generated
+	 */
+	void setIsUserClass(boolean value);
 
 } // Entity

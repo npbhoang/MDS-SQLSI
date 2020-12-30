@@ -65,6 +65,7 @@ public class EntityItemProvider
 
 			addNamePropertyDescriptor(object);
 			addSuperEntityPropertyDescriptor(object);
+			addIsUserClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -109,6 +110,28 @@ public class EntityItemProvider
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is User Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsUserClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_isUserClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_isUserClass_feature", "_UI_Entity_type"),
+				 DatamodelsPackage.Literals.ENTITY__IS_USER_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -182,6 +205,7 @@ public class EntityItemProvider
 
 		switch (notification.getFeatureID(Entity.class)) {
 			case DatamodelsPackage.ENTITY__NAME:
+			case DatamodelsPackage.ENTITY__IS_USER_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case DatamodelsPackage.ENTITY__PROPERTIES:
