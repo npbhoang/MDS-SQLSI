@@ -1,0 +1,26 @@
+-- @path MM=/datamodels/metamodels/datamodels.ecore
+-- @path MM1=/datamodels/metamodels/datamodels.ecore
+
+module secdm2secdm;
+create OUT : MM1 from IN : MM;
+
+rule transform {
+	from
+		oldDM : MM!DataModel
+	to 
+		newDM : MM1!DataModel (
+			name <- oldDM.name,
+			entities <- oldDM.entities
+		)
+}
+
+rule transformE {
+	from
+		oldE : MM!Entity
+	to 
+		newE : MM1!Entity (
+			name <- oldE.name,
+			superEntity <- oldE.superEntity,
+			
+		)
+}
