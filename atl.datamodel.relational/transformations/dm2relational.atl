@@ -12,7 +12,49 @@ rule datamodel2database {
 		name <- dm.name,
 		-- and every entity is a relation
 		-- as well as every association is a relation (for the moment, including the one-to-one association)
-		tables <- Sequence{dm.entities, dm.getAllAssociations()}
+		tables <- 
+			if dm.isSecured
+			then Sequence{roleTable, roleAssociationTable, dm.entities, dm.getAllAssociations()}
+			else Sequence{dm.entities, dm.getAllAssociations()}
+			endif 
+	),
+	roleTable : relationaldb!Table (
+		name <- 'Role',
+		columns <- Sequence{roleID, roleNameColumn}
+	),
+	roleID : relationaldb!Column (
+		name <- 'RoleID',
+		type <- #"Integer",
+		isForeign <- false,
+		isPrimary <- true,
+		isUnique <- true
+	),
+	roleNameColumn : relationaldb!Column (
+		name <- 'name',
+		type <- #"String",
+		isForeign <- false,
+		isPrimary <- false,
+		isUnique <- true
+	),
+	roleAssociationTable : relationaldb!Table (
+		name <- dm.entities->select(e|e.isUserClass)->first().name+'Role',
+		columns <- Sequence{roleReference, userReference}
+	),
+	roleReference : relationaldb!Column (
+		name <- 'role',
+		type <- #"Integer",
+		isForeign <- true,
+		isPrimary <- false,
+		isUnique <- false,
+		reference <- roleTable
+	),
+	userReference : relationaldb!Column (
+		name <- dm.entities->select(e|e.isUserClass)->first().name,
+		type <- #"Integer",
+		isForeign <- true,
+		isPrimary <- false,
+		isUnique <- false,
+		reference <- dm.entities->select(e|e.isUserClass)->first()
 	)
 }
 
