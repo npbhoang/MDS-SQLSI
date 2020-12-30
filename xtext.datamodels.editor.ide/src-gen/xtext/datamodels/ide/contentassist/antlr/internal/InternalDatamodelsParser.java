@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDatamodelsParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Set'", "'Single'", "'String'", "'Integer'", "'DataModel'", "':'", "','", "'entity'", "'{'", "'}'", "'extends'", "'association'", "'('", "')'", "'oppositeTo'", "'in'", "'attribute'", "'unique'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'[*]'", "'[1]'", "'String'", "'Integer'", "'DataModel'", "':'", "','", "'entity'", "'{'", "'}'", "'extends'", "'association'", "'oppositeTo'", "'in'", "'attribute'", "'unique'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -40,8 +40,6 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
     public static final int T__26=26;
-    public static final int T__27=27;
-    public static final int T__28=28;
     public static final int RULE_INT=6;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
@@ -656,7 +654,7 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
             if ( (LA1_0==22) ) {
                 alt1=1;
             }
-            else if ( (LA1_0==27) ) {
+            else if ( (LA1_0==25) ) {
                 alt1=2;
             }
             else {
@@ -793,13 +791,13 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Multiplicity__Alternatives"
-    // InternalDatamodels.g:276:1: rule__Multiplicity__Alternatives : ( ( ( 'Set' ) ) | ( ( 'Single' ) ) );
+    // InternalDatamodels.g:276:1: rule__Multiplicity__Alternatives : ( ( ( '[*]' ) ) | ( ( '[1]' ) ) );
     public final void rule__Multiplicity__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:280:1: ( ( ( 'Set' ) ) | ( ( 'Single' ) ) )
+            // InternalDatamodels.g:280:1: ( ( ( '[*]' ) ) | ( ( '[1]' ) ) )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -817,14 +815,14 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
             }
             switch (alt3) {
                 case 1 :
-                    // InternalDatamodels.g:281:2: ( ( 'Set' ) )
+                    // InternalDatamodels.g:281:2: ( ( '[*]' ) )
                     {
-                    // InternalDatamodels.g:281:2: ( ( 'Set' ) )
-                    // InternalDatamodels.g:282:3: ( 'Set' )
+                    // InternalDatamodels.g:281:2: ( ( '[*]' ) )
+                    // InternalDatamodels.g:282:3: ( '[*]' )
                     {
                      before(grammarAccess.getMultiplicityAccess().getMANYEnumLiteralDeclaration_0()); 
-                    // InternalDatamodels.g:283:3: ( 'Set' )
-                    // InternalDatamodels.g:283:4: 'Set'
+                    // InternalDatamodels.g:283:3: ( '[*]' )
+                    // InternalDatamodels.g:283:4: '[*]'
                     {
                     match(input,11,FOLLOW_2); 
 
@@ -838,14 +836,14 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 2 :
-                    // InternalDatamodels.g:287:2: ( ( 'Single' ) )
+                    // InternalDatamodels.g:287:2: ( ( '[1]' ) )
                     {
-                    // InternalDatamodels.g:287:2: ( ( 'Single' ) )
-                    // InternalDatamodels.g:288:3: ( 'Single' )
+                    // InternalDatamodels.g:287:2: ( ( '[1]' ) )
+                    // InternalDatamodels.g:288:3: ( '[1]' )
                     {
                      before(grammarAccess.getMultiplicityAccess().getONEEnumLiteralDeclaration_1()); 
-                    // InternalDatamodels.g:289:3: ( 'Single' )
-                    // InternalDatamodels.g:289:4: 'Single'
+                    // InternalDatamodels.g:289:3: ( '[1]' )
+                    // InternalDatamodels.g:289:4: '[1]'
                     {
                     match(input,12,FOLLOW_2); 
 
@@ -2159,7 +2157,7 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
             int alt8=2;
             int LA8_0 = input.LA(1);
 
-            if ( (LA8_0==22||LA8_0==27) ) {
+            if ( (LA8_0==22||LA8_0==25) ) {
                 alt8=1;
             }
             switch (alt8) {
@@ -2772,7 +2770,7 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
             // InternalDatamodels.g:916:1: ( rule__AssociationEnd__Group__0__Impl rule__AssociationEnd__Group__1 )
             // InternalDatamodels.g:917:2: rule__AssociationEnd__Group__0__Impl rule__AssociationEnd__Group__1
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_4);
             rule__AssociationEnd__Group__0__Impl();
 
             state._fsp--;
@@ -2847,7 +2845,7 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
             // InternalDatamodels.g:943:1: ( rule__AssociationEnd__Group__1__Impl rule__AssociationEnd__Group__2 )
             // InternalDatamodels.g:944:2: rule__AssociationEnd__Group__1__Impl rule__AssociationEnd__Group__2
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_12);
             rule__AssociationEnd__Group__1__Impl();
 
             state._fsp--;
@@ -2876,31 +2874,31 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__AssociationEnd__Group__1__Impl"
-    // InternalDatamodels.g:951:1: rule__AssociationEnd__Group__1__Impl : ( ( rule__AssociationEnd__MultiplicityAssignment_1 ) ) ;
+    // InternalDatamodels.g:951:1: rule__AssociationEnd__Group__1__Impl : ( ( rule__AssociationEnd__TargetEntityAssignment_1 ) ) ;
     public final void rule__AssociationEnd__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:955:1: ( ( ( rule__AssociationEnd__MultiplicityAssignment_1 ) ) )
-            // InternalDatamodels.g:956:1: ( ( rule__AssociationEnd__MultiplicityAssignment_1 ) )
+            // InternalDatamodels.g:955:1: ( ( ( rule__AssociationEnd__TargetEntityAssignment_1 ) ) )
+            // InternalDatamodels.g:956:1: ( ( rule__AssociationEnd__TargetEntityAssignment_1 ) )
             {
-            // InternalDatamodels.g:956:1: ( ( rule__AssociationEnd__MultiplicityAssignment_1 ) )
-            // InternalDatamodels.g:957:2: ( rule__AssociationEnd__MultiplicityAssignment_1 )
+            // InternalDatamodels.g:956:1: ( ( rule__AssociationEnd__TargetEntityAssignment_1 ) )
+            // InternalDatamodels.g:957:2: ( rule__AssociationEnd__TargetEntityAssignment_1 )
             {
-             before(grammarAccess.getAssociationEndAccess().getMultiplicityAssignment_1()); 
-            // InternalDatamodels.g:958:2: ( rule__AssociationEnd__MultiplicityAssignment_1 )
-            // InternalDatamodels.g:958:3: rule__AssociationEnd__MultiplicityAssignment_1
+             before(grammarAccess.getAssociationEndAccess().getTargetEntityAssignment_1()); 
+            // InternalDatamodels.g:958:2: ( rule__AssociationEnd__TargetEntityAssignment_1 )
+            // InternalDatamodels.g:958:3: rule__AssociationEnd__TargetEntityAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__AssociationEnd__MultiplicityAssignment_1();
+            rule__AssociationEnd__TargetEntityAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getAssociationEndAccess().getMultiplicityAssignment_1()); 
+             after(grammarAccess.getAssociationEndAccess().getTargetEntityAssignment_1()); 
 
             }
 
@@ -2961,21 +2959,31 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__AssociationEnd__Group__2__Impl"
-    // InternalDatamodels.g:978:1: rule__AssociationEnd__Group__2__Impl : ( '(' ) ;
+    // InternalDatamodels.g:978:1: rule__AssociationEnd__Group__2__Impl : ( ( rule__AssociationEnd__MultiplicityAssignment_2 ) ) ;
     public final void rule__AssociationEnd__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:982:1: ( ( '(' ) )
-            // InternalDatamodels.g:983:1: ( '(' )
+            // InternalDatamodels.g:982:1: ( ( ( rule__AssociationEnd__MultiplicityAssignment_2 ) ) )
+            // InternalDatamodels.g:983:1: ( ( rule__AssociationEnd__MultiplicityAssignment_2 ) )
             {
-            // InternalDatamodels.g:983:1: ( '(' )
-            // InternalDatamodels.g:984:2: '('
+            // InternalDatamodels.g:983:1: ( ( rule__AssociationEnd__MultiplicityAssignment_2 ) )
+            // InternalDatamodels.g:984:2: ( rule__AssociationEnd__MultiplicityAssignment_2 )
             {
-             before(grammarAccess.getAssociationEndAccess().getLeftParenthesisKeyword_2()); 
-            match(input,23,FOLLOW_2); 
-             after(grammarAccess.getAssociationEndAccess().getLeftParenthesisKeyword_2()); 
+             before(grammarAccess.getAssociationEndAccess().getMultiplicityAssignment_2()); 
+            // InternalDatamodels.g:985:2: ( rule__AssociationEnd__MultiplicityAssignment_2 )
+            // InternalDatamodels.g:985:3: rule__AssociationEnd__MultiplicityAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__AssociationEnd__MultiplicityAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getAssociationEndAccess().getMultiplicityAssignment_2()); 
 
             }
 
@@ -3007,7 +3015,7 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
             // InternalDatamodels.g:997:1: ( rule__AssociationEnd__Group__3__Impl rule__AssociationEnd__Group__4 )
             // InternalDatamodels.g:998:2: rule__AssociationEnd__Group__3__Impl rule__AssociationEnd__Group__4
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_13);
             rule__AssociationEnd__Group__3__Impl();
 
             state._fsp--;
@@ -3036,31 +3044,31 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__AssociationEnd__Group__3__Impl"
-    // InternalDatamodels.g:1005:1: rule__AssociationEnd__Group__3__Impl : ( ( rule__AssociationEnd__TargetEntityAssignment_3 ) ) ;
+    // InternalDatamodels.g:1005:1: rule__AssociationEnd__Group__3__Impl : ( ( rule__AssociationEnd__NameAssignment_3 ) ) ;
     public final void rule__AssociationEnd__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1009:1: ( ( ( rule__AssociationEnd__TargetEntityAssignment_3 ) ) )
-            // InternalDatamodels.g:1010:1: ( ( rule__AssociationEnd__TargetEntityAssignment_3 ) )
+            // InternalDatamodels.g:1009:1: ( ( ( rule__AssociationEnd__NameAssignment_3 ) ) )
+            // InternalDatamodels.g:1010:1: ( ( rule__AssociationEnd__NameAssignment_3 ) )
             {
-            // InternalDatamodels.g:1010:1: ( ( rule__AssociationEnd__TargetEntityAssignment_3 ) )
-            // InternalDatamodels.g:1011:2: ( rule__AssociationEnd__TargetEntityAssignment_3 )
+            // InternalDatamodels.g:1010:1: ( ( rule__AssociationEnd__NameAssignment_3 ) )
+            // InternalDatamodels.g:1011:2: ( rule__AssociationEnd__NameAssignment_3 )
             {
-             before(grammarAccess.getAssociationEndAccess().getTargetEntityAssignment_3()); 
-            // InternalDatamodels.g:1012:2: ( rule__AssociationEnd__TargetEntityAssignment_3 )
-            // InternalDatamodels.g:1012:3: rule__AssociationEnd__TargetEntityAssignment_3
+             before(grammarAccess.getAssociationEndAccess().getNameAssignment_3()); 
+            // InternalDatamodels.g:1012:2: ( rule__AssociationEnd__NameAssignment_3 )
+            // InternalDatamodels.g:1012:3: rule__AssociationEnd__NameAssignment_3
             {
             pushFollow(FOLLOW_2);
-            rule__AssociationEnd__TargetEntityAssignment_3();
+            rule__AssociationEnd__NameAssignment_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getAssociationEndAccess().getTargetEntityAssignment_3()); 
+             after(grammarAccess.getAssociationEndAccess().getNameAssignment_3()); 
 
             }
 
@@ -3121,21 +3129,21 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__AssociationEnd__Group__4__Impl"
-    // InternalDatamodels.g:1032:1: rule__AssociationEnd__Group__4__Impl : ( ')' ) ;
+    // InternalDatamodels.g:1032:1: rule__AssociationEnd__Group__4__Impl : ( 'oppositeTo' ) ;
     public final void rule__AssociationEnd__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1036:1: ( ( ')' ) )
-            // InternalDatamodels.g:1037:1: ( ')' )
+            // InternalDatamodels.g:1036:1: ( ( 'oppositeTo' ) )
+            // InternalDatamodels.g:1037:1: ( 'oppositeTo' )
             {
-            // InternalDatamodels.g:1037:1: ( ')' )
-            // InternalDatamodels.g:1038:2: ')'
+            // InternalDatamodels.g:1037:1: ( 'oppositeTo' )
+            // InternalDatamodels.g:1038:2: 'oppositeTo'
             {
-             before(grammarAccess.getAssociationEndAccess().getRightParenthesisKeyword_4()); 
-            match(input,24,FOLLOW_2); 
-             after(grammarAccess.getAssociationEndAccess().getRightParenthesisKeyword_4()); 
+             before(grammarAccess.getAssociationEndAccess().getOppositeToKeyword_4()); 
+            match(input,23,FOLLOW_2); 
+             after(grammarAccess.getAssociationEndAccess().getOppositeToKeyword_4()); 
 
             }
 
@@ -3167,7 +3175,7 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
             // InternalDatamodels.g:1051:1: ( rule__AssociationEnd__Group__5__Impl rule__AssociationEnd__Group__6 )
             // InternalDatamodels.g:1052:2: rule__AssociationEnd__Group__5__Impl rule__AssociationEnd__Group__6
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_14);
             rule__AssociationEnd__Group__5__Impl();
 
             state._fsp--;
@@ -3196,31 +3204,31 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__AssociationEnd__Group__5__Impl"
-    // InternalDatamodels.g:1059:1: rule__AssociationEnd__Group__5__Impl : ( ( rule__AssociationEnd__NameAssignment_5 ) ) ;
+    // InternalDatamodels.g:1059:1: rule__AssociationEnd__Group__5__Impl : ( ( rule__AssociationEnd__OtherEndAssignment_5 ) ) ;
     public final void rule__AssociationEnd__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1063:1: ( ( ( rule__AssociationEnd__NameAssignment_5 ) ) )
-            // InternalDatamodels.g:1064:1: ( ( rule__AssociationEnd__NameAssignment_5 ) )
+            // InternalDatamodels.g:1063:1: ( ( ( rule__AssociationEnd__OtherEndAssignment_5 ) ) )
+            // InternalDatamodels.g:1064:1: ( ( rule__AssociationEnd__OtherEndAssignment_5 ) )
             {
-            // InternalDatamodels.g:1064:1: ( ( rule__AssociationEnd__NameAssignment_5 ) )
-            // InternalDatamodels.g:1065:2: ( rule__AssociationEnd__NameAssignment_5 )
+            // InternalDatamodels.g:1064:1: ( ( rule__AssociationEnd__OtherEndAssignment_5 ) )
+            // InternalDatamodels.g:1065:2: ( rule__AssociationEnd__OtherEndAssignment_5 )
             {
-             before(grammarAccess.getAssociationEndAccess().getNameAssignment_5()); 
-            // InternalDatamodels.g:1066:2: ( rule__AssociationEnd__NameAssignment_5 )
-            // InternalDatamodels.g:1066:3: rule__AssociationEnd__NameAssignment_5
+             before(grammarAccess.getAssociationEndAccess().getOtherEndAssignment_5()); 
+            // InternalDatamodels.g:1066:2: ( rule__AssociationEnd__OtherEndAssignment_5 )
+            // InternalDatamodels.g:1066:3: rule__AssociationEnd__OtherEndAssignment_5
             {
             pushFollow(FOLLOW_2);
-            rule__AssociationEnd__NameAssignment_5();
+            rule__AssociationEnd__OtherEndAssignment_5();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getAssociationEndAccess().getNameAssignment_5()); 
+             after(grammarAccess.getAssociationEndAccess().getOtherEndAssignment_5()); 
 
             }
 
@@ -3281,21 +3289,21 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__AssociationEnd__Group__6__Impl"
-    // InternalDatamodels.g:1086:1: rule__AssociationEnd__Group__6__Impl : ( 'oppositeTo' ) ;
+    // InternalDatamodels.g:1086:1: rule__AssociationEnd__Group__6__Impl : ( 'in' ) ;
     public final void rule__AssociationEnd__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1090:1: ( ( 'oppositeTo' ) )
-            // InternalDatamodels.g:1091:1: ( 'oppositeTo' )
+            // InternalDatamodels.g:1090:1: ( ( 'in' ) )
+            // InternalDatamodels.g:1091:1: ( 'in' )
             {
-            // InternalDatamodels.g:1091:1: ( 'oppositeTo' )
-            // InternalDatamodels.g:1092:2: 'oppositeTo'
+            // InternalDatamodels.g:1091:1: ( 'in' )
+            // InternalDatamodels.g:1092:2: 'in'
             {
-             before(grammarAccess.getAssociationEndAccess().getOppositeToKeyword_6()); 
-            match(input,25,FOLLOW_2); 
-             after(grammarAccess.getAssociationEndAccess().getOppositeToKeyword_6()); 
+             before(grammarAccess.getAssociationEndAccess().getInKeyword_6()); 
+            match(input,24,FOLLOW_2); 
+             after(grammarAccess.getAssociationEndAccess().getInKeyword_6()); 
 
             }
 
@@ -3318,22 +3326,17 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__AssociationEnd__Group__7"
-    // InternalDatamodels.g:1101:1: rule__AssociationEnd__Group__7 : rule__AssociationEnd__Group__7__Impl rule__AssociationEnd__Group__8 ;
+    // InternalDatamodels.g:1101:1: rule__AssociationEnd__Group__7 : rule__AssociationEnd__Group__7__Impl ;
     public final void rule__AssociationEnd__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1105:1: ( rule__AssociationEnd__Group__7__Impl rule__AssociationEnd__Group__8 )
-            // InternalDatamodels.g:1106:2: rule__AssociationEnd__Group__7__Impl rule__AssociationEnd__Group__8
+            // InternalDatamodels.g:1105:1: ( rule__AssociationEnd__Group__7__Impl )
+            // InternalDatamodels.g:1106:2: rule__AssociationEnd__Group__7__Impl
             {
-            pushFollow(FOLLOW_16);
-            rule__AssociationEnd__Group__7__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__AssociationEnd__Group__8();
+            rule__AssociationEnd__Group__7__Impl();
 
             state._fsp--;
 
@@ -3356,31 +3359,31 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__AssociationEnd__Group__7__Impl"
-    // InternalDatamodels.g:1113:1: rule__AssociationEnd__Group__7__Impl : ( ( rule__AssociationEnd__OtherEndAssignment_7 ) ) ;
+    // InternalDatamodels.g:1112:1: rule__AssociationEnd__Group__7__Impl : ( ( rule__AssociationEnd__AssociationNameAssignment_7 ) ) ;
     public final void rule__AssociationEnd__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1117:1: ( ( ( rule__AssociationEnd__OtherEndAssignment_7 ) ) )
-            // InternalDatamodels.g:1118:1: ( ( rule__AssociationEnd__OtherEndAssignment_7 ) )
+            // InternalDatamodels.g:1116:1: ( ( ( rule__AssociationEnd__AssociationNameAssignment_7 ) ) )
+            // InternalDatamodels.g:1117:1: ( ( rule__AssociationEnd__AssociationNameAssignment_7 ) )
             {
-            // InternalDatamodels.g:1118:1: ( ( rule__AssociationEnd__OtherEndAssignment_7 ) )
-            // InternalDatamodels.g:1119:2: ( rule__AssociationEnd__OtherEndAssignment_7 )
+            // InternalDatamodels.g:1117:1: ( ( rule__AssociationEnd__AssociationNameAssignment_7 ) )
+            // InternalDatamodels.g:1118:2: ( rule__AssociationEnd__AssociationNameAssignment_7 )
             {
-             before(grammarAccess.getAssociationEndAccess().getOtherEndAssignment_7()); 
-            // InternalDatamodels.g:1120:2: ( rule__AssociationEnd__OtherEndAssignment_7 )
-            // InternalDatamodels.g:1120:3: rule__AssociationEnd__OtherEndAssignment_7
+             before(grammarAccess.getAssociationEndAccess().getAssociationNameAssignment_7()); 
+            // InternalDatamodels.g:1119:2: ( rule__AssociationEnd__AssociationNameAssignment_7 )
+            // InternalDatamodels.g:1119:3: rule__AssociationEnd__AssociationNameAssignment_7
             {
             pushFollow(FOLLOW_2);
-            rule__AssociationEnd__OtherEndAssignment_7();
+            rule__AssociationEnd__AssociationNameAssignment_7();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getAssociationEndAccess().getOtherEndAssignment_7()); 
+             after(grammarAccess.getAssociationEndAccess().getAssociationNameAssignment_7()); 
 
             }
 
@@ -3402,172 +3405,17 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
     // $ANTLR end "rule__AssociationEnd__Group__7__Impl"
 
 
-    // $ANTLR start "rule__AssociationEnd__Group__8"
-    // InternalDatamodels.g:1128:1: rule__AssociationEnd__Group__8 : rule__AssociationEnd__Group__8__Impl rule__AssociationEnd__Group__9 ;
-    public final void rule__AssociationEnd__Group__8() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDatamodels.g:1132:1: ( rule__AssociationEnd__Group__8__Impl rule__AssociationEnd__Group__9 )
-            // InternalDatamodels.g:1133:2: rule__AssociationEnd__Group__8__Impl rule__AssociationEnd__Group__9
-            {
-            pushFollow(FOLLOW_4);
-            rule__AssociationEnd__Group__8__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__AssociationEnd__Group__9();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__AssociationEnd__Group__8"
-
-
-    // $ANTLR start "rule__AssociationEnd__Group__8__Impl"
-    // InternalDatamodels.g:1140:1: rule__AssociationEnd__Group__8__Impl : ( 'in' ) ;
-    public final void rule__AssociationEnd__Group__8__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDatamodels.g:1144:1: ( ( 'in' ) )
-            // InternalDatamodels.g:1145:1: ( 'in' )
-            {
-            // InternalDatamodels.g:1145:1: ( 'in' )
-            // InternalDatamodels.g:1146:2: 'in'
-            {
-             before(grammarAccess.getAssociationEndAccess().getInKeyword_8()); 
-            match(input,26,FOLLOW_2); 
-             after(grammarAccess.getAssociationEndAccess().getInKeyword_8()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__AssociationEnd__Group__8__Impl"
-
-
-    // $ANTLR start "rule__AssociationEnd__Group__9"
-    // InternalDatamodels.g:1155:1: rule__AssociationEnd__Group__9 : rule__AssociationEnd__Group__9__Impl ;
-    public final void rule__AssociationEnd__Group__9() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDatamodels.g:1159:1: ( rule__AssociationEnd__Group__9__Impl )
-            // InternalDatamodels.g:1160:2: rule__AssociationEnd__Group__9__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__AssociationEnd__Group__9__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__AssociationEnd__Group__9"
-
-
-    // $ANTLR start "rule__AssociationEnd__Group__9__Impl"
-    // InternalDatamodels.g:1166:1: rule__AssociationEnd__Group__9__Impl : ( ( rule__AssociationEnd__AssociationNameAssignment_9 ) ) ;
-    public final void rule__AssociationEnd__Group__9__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDatamodels.g:1170:1: ( ( ( rule__AssociationEnd__AssociationNameAssignment_9 ) ) )
-            // InternalDatamodels.g:1171:1: ( ( rule__AssociationEnd__AssociationNameAssignment_9 ) )
-            {
-            // InternalDatamodels.g:1171:1: ( ( rule__AssociationEnd__AssociationNameAssignment_9 ) )
-            // InternalDatamodels.g:1172:2: ( rule__AssociationEnd__AssociationNameAssignment_9 )
-            {
-             before(grammarAccess.getAssociationEndAccess().getAssociationNameAssignment_9()); 
-            // InternalDatamodels.g:1173:2: ( rule__AssociationEnd__AssociationNameAssignment_9 )
-            // InternalDatamodels.g:1173:3: rule__AssociationEnd__AssociationNameAssignment_9
-            {
-            pushFollow(FOLLOW_2);
-            rule__AssociationEnd__AssociationNameAssignment_9();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getAssociationEndAccess().getAssociationNameAssignment_9()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__AssociationEnd__Group__9__Impl"
-
-
     // $ANTLR start "rule__Attribute__Group__0"
-    // InternalDatamodels.g:1182:1: rule__Attribute__Group__0 : rule__Attribute__Group__0__Impl rule__Attribute__Group__1 ;
+    // InternalDatamodels.g:1128:1: rule__Attribute__Group__0 : rule__Attribute__Group__0__Impl rule__Attribute__Group__1 ;
     public final void rule__Attribute__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1186:1: ( rule__Attribute__Group__0__Impl rule__Attribute__Group__1 )
-            // InternalDatamodels.g:1187:2: rule__Attribute__Group__0__Impl rule__Attribute__Group__1
+            // InternalDatamodels.g:1132:1: ( rule__Attribute__Group__0__Impl rule__Attribute__Group__1 )
+            // InternalDatamodels.g:1133:2: rule__Attribute__Group__0__Impl rule__Attribute__Group__1
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_4);
             rule__Attribute__Group__0__Impl();
 
             state._fsp--;
@@ -3596,20 +3444,20 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Attribute__Group__0__Impl"
-    // InternalDatamodels.g:1194:1: rule__Attribute__Group__0__Impl : ( 'attribute' ) ;
+    // InternalDatamodels.g:1140:1: rule__Attribute__Group__0__Impl : ( 'attribute' ) ;
     public final void rule__Attribute__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1198:1: ( ( 'attribute' ) )
-            // InternalDatamodels.g:1199:1: ( 'attribute' )
+            // InternalDatamodels.g:1144:1: ( ( 'attribute' ) )
+            // InternalDatamodels.g:1145:1: ( 'attribute' )
             {
-            // InternalDatamodels.g:1199:1: ( 'attribute' )
-            // InternalDatamodels.g:1200:2: 'attribute'
+            // InternalDatamodels.g:1145:1: ( 'attribute' )
+            // InternalDatamodels.g:1146:2: 'attribute'
             {
              before(grammarAccess.getAttributeAccess().getAttributeKeyword_0()); 
-            match(input,27,FOLLOW_2); 
+            match(input,25,FOLLOW_2); 
              after(grammarAccess.getAttributeAccess().getAttributeKeyword_0()); 
 
             }
@@ -3633,16 +3481,16 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Attribute__Group__1"
-    // InternalDatamodels.g:1209:1: rule__Attribute__Group__1 : rule__Attribute__Group__1__Impl rule__Attribute__Group__2 ;
+    // InternalDatamodels.g:1155:1: rule__Attribute__Group__1 : rule__Attribute__Group__1__Impl rule__Attribute__Group__2 ;
     public final void rule__Attribute__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1213:1: ( rule__Attribute__Group__1__Impl rule__Attribute__Group__2 )
-            // InternalDatamodels.g:1214:2: rule__Attribute__Group__1__Impl rule__Attribute__Group__2
+            // InternalDatamodels.g:1159:1: ( rule__Attribute__Group__1__Impl rule__Attribute__Group__2 )
+            // InternalDatamodels.g:1160:2: rule__Attribute__Group__1__Impl rule__Attribute__Group__2
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_15);
             rule__Attribute__Group__1__Impl();
 
             state._fsp--;
@@ -3671,21 +3519,31 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Attribute__Group__1__Impl"
-    // InternalDatamodels.g:1221:1: rule__Attribute__Group__1__Impl : ( '(' ) ;
+    // InternalDatamodels.g:1167:1: rule__Attribute__Group__1__Impl : ( ( rule__Attribute__NameAssignment_1 ) ) ;
     public final void rule__Attribute__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1225:1: ( ( '(' ) )
-            // InternalDatamodels.g:1226:1: ( '(' )
+            // InternalDatamodels.g:1171:1: ( ( ( rule__Attribute__NameAssignment_1 ) ) )
+            // InternalDatamodels.g:1172:1: ( ( rule__Attribute__NameAssignment_1 ) )
             {
-            // InternalDatamodels.g:1226:1: ( '(' )
-            // InternalDatamodels.g:1227:2: '('
+            // InternalDatamodels.g:1172:1: ( ( rule__Attribute__NameAssignment_1 ) )
+            // InternalDatamodels.g:1173:2: ( rule__Attribute__NameAssignment_1 )
             {
-             before(grammarAccess.getAttributeAccess().getLeftParenthesisKeyword_1()); 
-            match(input,23,FOLLOW_2); 
-             after(grammarAccess.getAttributeAccess().getLeftParenthesisKeyword_1()); 
+             before(grammarAccess.getAttributeAccess().getNameAssignment_1()); 
+            // InternalDatamodels.g:1174:2: ( rule__Attribute__NameAssignment_1 )
+            // InternalDatamodels.g:1174:3: rule__Attribute__NameAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Attribute__NameAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getAttributeAccess().getNameAssignment_1()); 
 
             }
 
@@ -3708,16 +3566,16 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Attribute__Group__2"
-    // InternalDatamodels.g:1236:1: rule__Attribute__Group__2 : rule__Attribute__Group__2__Impl rule__Attribute__Group__3 ;
+    // InternalDatamodels.g:1182:1: rule__Attribute__Group__2 : rule__Attribute__Group__2__Impl rule__Attribute__Group__3 ;
     public final void rule__Attribute__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1240:1: ( rule__Attribute__Group__2__Impl rule__Attribute__Group__3 )
-            // InternalDatamodels.g:1241:2: rule__Attribute__Group__2__Impl rule__Attribute__Group__3
+            // InternalDatamodels.g:1186:1: ( rule__Attribute__Group__2__Impl rule__Attribute__Group__3 )
+            // InternalDatamodels.g:1187:2: rule__Attribute__Group__2__Impl rule__Attribute__Group__3
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_15);
             rule__Attribute__Group__2__Impl();
 
             state._fsp--;
@@ -3746,31 +3604,42 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Attribute__Group__2__Impl"
-    // InternalDatamodels.g:1248:1: rule__Attribute__Group__2__Impl : ( ( rule__Attribute__NameAssignment_2 ) ) ;
+    // InternalDatamodels.g:1194:1: rule__Attribute__Group__2__Impl : ( ( rule__Attribute__IsUniqueAssignment_2 )? ) ;
     public final void rule__Attribute__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1252:1: ( ( ( rule__Attribute__NameAssignment_2 ) ) )
-            // InternalDatamodels.g:1253:1: ( ( rule__Attribute__NameAssignment_2 ) )
+            // InternalDatamodels.g:1198:1: ( ( ( rule__Attribute__IsUniqueAssignment_2 )? ) )
+            // InternalDatamodels.g:1199:1: ( ( rule__Attribute__IsUniqueAssignment_2 )? )
             {
-            // InternalDatamodels.g:1253:1: ( ( rule__Attribute__NameAssignment_2 ) )
-            // InternalDatamodels.g:1254:2: ( rule__Attribute__NameAssignment_2 )
+            // InternalDatamodels.g:1199:1: ( ( rule__Attribute__IsUniqueAssignment_2 )? )
+            // InternalDatamodels.g:1200:2: ( rule__Attribute__IsUniqueAssignment_2 )?
             {
-             before(grammarAccess.getAttributeAccess().getNameAssignment_2()); 
-            // InternalDatamodels.g:1255:2: ( rule__Attribute__NameAssignment_2 )
-            // InternalDatamodels.g:1255:3: rule__Attribute__NameAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__Attribute__NameAssignment_2();
+             before(grammarAccess.getAttributeAccess().getIsUniqueAssignment_2()); 
+            // InternalDatamodels.g:1201:2: ( rule__Attribute__IsUniqueAssignment_2 )?
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            state._fsp--;
+            if ( (LA10_0==26) ) {
+                alt10=1;
+            }
+            switch (alt10) {
+                case 1 :
+                    // InternalDatamodels.g:1201:3: rule__Attribute__IsUniqueAssignment_2
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Attribute__IsUniqueAssignment_2();
 
+                    state._fsp--;
+
+
+                    }
+                    break;
 
             }
 
-             after(grammarAccess.getAttributeAccess().getNameAssignment_2()); 
+             after(grammarAccess.getAttributeAccess().getIsUniqueAssignment_2()); 
 
             }
 
@@ -3793,22 +3662,17 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Attribute__Group__3"
-    // InternalDatamodels.g:1263:1: rule__Attribute__Group__3 : rule__Attribute__Group__3__Impl rule__Attribute__Group__4 ;
+    // InternalDatamodels.g:1209:1: rule__Attribute__Group__3 : rule__Attribute__Group__3__Impl ;
     public final void rule__Attribute__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1267:1: ( rule__Attribute__Group__3__Impl rule__Attribute__Group__4 )
-            // InternalDatamodels.g:1268:2: rule__Attribute__Group__3__Impl rule__Attribute__Group__4
+            // InternalDatamodels.g:1213:1: ( rule__Attribute__Group__3__Impl )
+            // InternalDatamodels.g:1214:2: rule__Attribute__Group__3__Impl
             {
-            pushFollow(FOLLOW_17);
-            rule__Attribute__Group__3__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__Attribute__Group__4();
+            rule__Attribute__Group__3__Impl();
 
             state._fsp--;
 
@@ -3831,21 +3695,31 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Attribute__Group__3__Impl"
-    // InternalDatamodels.g:1275:1: rule__Attribute__Group__3__Impl : ( ')' ) ;
+    // InternalDatamodels.g:1220:1: rule__Attribute__Group__3__Impl : ( ( rule__Attribute__TypeAssignment_3 ) ) ;
     public final void rule__Attribute__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1279:1: ( ( ')' ) )
-            // InternalDatamodels.g:1280:1: ( ')' )
+            // InternalDatamodels.g:1224:1: ( ( ( rule__Attribute__TypeAssignment_3 ) ) )
+            // InternalDatamodels.g:1225:1: ( ( rule__Attribute__TypeAssignment_3 ) )
             {
-            // InternalDatamodels.g:1280:1: ( ')' )
-            // InternalDatamodels.g:1281:2: ')'
+            // InternalDatamodels.g:1225:1: ( ( rule__Attribute__TypeAssignment_3 ) )
+            // InternalDatamodels.g:1226:2: ( rule__Attribute__TypeAssignment_3 )
             {
-             before(grammarAccess.getAttributeAccess().getRightParenthesisKeyword_3()); 
-            match(input,24,FOLLOW_2); 
-             after(grammarAccess.getAttributeAccess().getRightParenthesisKeyword_3()); 
+             before(grammarAccess.getAttributeAccess().getTypeAssignment_3()); 
+            // InternalDatamodels.g:1227:2: ( rule__Attribute__TypeAssignment_3 )
+            // InternalDatamodels.g:1227:3: rule__Attribute__TypeAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__Attribute__TypeAssignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getAttributeAccess().getTypeAssignment_3()); 
 
             }
 
@@ -3867,194 +3741,18 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
     // $ANTLR end "rule__Attribute__Group__3__Impl"
 
 
-    // $ANTLR start "rule__Attribute__Group__4"
-    // InternalDatamodels.g:1290:1: rule__Attribute__Group__4 : rule__Attribute__Group__4__Impl rule__Attribute__Group__5 ;
-    public final void rule__Attribute__Group__4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDatamodels.g:1294:1: ( rule__Attribute__Group__4__Impl rule__Attribute__Group__5 )
-            // InternalDatamodels.g:1295:2: rule__Attribute__Group__4__Impl rule__Attribute__Group__5
-            {
-            pushFollow(FOLLOW_17);
-            rule__Attribute__Group__4__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Attribute__Group__5();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Attribute__Group__4"
-
-
-    // $ANTLR start "rule__Attribute__Group__4__Impl"
-    // InternalDatamodels.g:1302:1: rule__Attribute__Group__4__Impl : ( ( rule__Attribute__IsUniqueAssignment_4 )? ) ;
-    public final void rule__Attribute__Group__4__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDatamodels.g:1306:1: ( ( ( rule__Attribute__IsUniqueAssignment_4 )? ) )
-            // InternalDatamodels.g:1307:1: ( ( rule__Attribute__IsUniqueAssignment_4 )? )
-            {
-            // InternalDatamodels.g:1307:1: ( ( rule__Attribute__IsUniqueAssignment_4 )? )
-            // InternalDatamodels.g:1308:2: ( rule__Attribute__IsUniqueAssignment_4 )?
-            {
-             before(grammarAccess.getAttributeAccess().getIsUniqueAssignment_4()); 
-            // InternalDatamodels.g:1309:2: ( rule__Attribute__IsUniqueAssignment_4 )?
-            int alt10=2;
-            int LA10_0 = input.LA(1);
-
-            if ( (LA10_0==28) ) {
-                alt10=1;
-            }
-            switch (alt10) {
-                case 1 :
-                    // InternalDatamodels.g:1309:3: rule__Attribute__IsUniqueAssignment_4
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Attribute__IsUniqueAssignment_4();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getAttributeAccess().getIsUniqueAssignment_4()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Attribute__Group__4__Impl"
-
-
-    // $ANTLR start "rule__Attribute__Group__5"
-    // InternalDatamodels.g:1317:1: rule__Attribute__Group__5 : rule__Attribute__Group__5__Impl ;
-    public final void rule__Attribute__Group__5() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDatamodels.g:1321:1: ( rule__Attribute__Group__5__Impl )
-            // InternalDatamodels.g:1322:2: rule__Attribute__Group__5__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Attribute__Group__5__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Attribute__Group__5"
-
-
-    // $ANTLR start "rule__Attribute__Group__5__Impl"
-    // InternalDatamodels.g:1328:1: rule__Attribute__Group__5__Impl : ( ( rule__Attribute__TypeAssignment_5 ) ) ;
-    public final void rule__Attribute__Group__5__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDatamodels.g:1332:1: ( ( ( rule__Attribute__TypeAssignment_5 ) ) )
-            // InternalDatamodels.g:1333:1: ( ( rule__Attribute__TypeAssignment_5 ) )
-            {
-            // InternalDatamodels.g:1333:1: ( ( rule__Attribute__TypeAssignment_5 ) )
-            // InternalDatamodels.g:1334:2: ( rule__Attribute__TypeAssignment_5 )
-            {
-             before(grammarAccess.getAttributeAccess().getTypeAssignment_5()); 
-            // InternalDatamodels.g:1335:2: ( rule__Attribute__TypeAssignment_5 )
-            // InternalDatamodels.g:1335:3: rule__Attribute__TypeAssignment_5
-            {
-            pushFollow(FOLLOW_2);
-            rule__Attribute__TypeAssignment_5();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getAttributeAccess().getTypeAssignment_5()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Attribute__Group__5__Impl"
-
-
     // $ANTLR start "rule__DataModel__NameAssignment_2"
-    // InternalDatamodels.g:1344:1: rule__DataModel__NameAssignment_2 : ( ruleEString ) ;
+    // InternalDatamodels.g:1236:1: rule__DataModel__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__DataModel__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1348:1: ( ( ruleEString ) )
-            // InternalDatamodels.g:1349:2: ( ruleEString )
+            // InternalDatamodels.g:1240:1: ( ( ruleEString ) )
+            // InternalDatamodels.g:1241:2: ( ruleEString )
             {
-            // InternalDatamodels.g:1349:2: ( ruleEString )
-            // InternalDatamodels.g:1350:3: ruleEString
+            // InternalDatamodels.g:1241:2: ( ruleEString )
+            // InternalDatamodels.g:1242:3: ruleEString
             {
              before(grammarAccess.getDataModelAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -4085,17 +3783,17 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__DataModel__EntitiesAssignment_4_0"
-    // InternalDatamodels.g:1359:1: rule__DataModel__EntitiesAssignment_4_0 : ( ruleEntity ) ;
+    // InternalDatamodels.g:1251:1: rule__DataModel__EntitiesAssignment_4_0 : ( ruleEntity ) ;
     public final void rule__DataModel__EntitiesAssignment_4_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1363:1: ( ( ruleEntity ) )
-            // InternalDatamodels.g:1364:2: ( ruleEntity )
+            // InternalDatamodels.g:1255:1: ( ( ruleEntity ) )
+            // InternalDatamodels.g:1256:2: ( ruleEntity )
             {
-            // InternalDatamodels.g:1364:2: ( ruleEntity )
-            // InternalDatamodels.g:1365:3: ruleEntity
+            // InternalDatamodels.g:1256:2: ( ruleEntity )
+            // InternalDatamodels.g:1257:3: ruleEntity
             {
              before(grammarAccess.getDataModelAccess().getEntitiesEntityParserRuleCall_4_0_0()); 
             pushFollow(FOLLOW_2);
@@ -4126,17 +3824,17 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__DataModel__EntitiesAssignment_4_1_1"
-    // InternalDatamodels.g:1374:1: rule__DataModel__EntitiesAssignment_4_1_1 : ( ruleEntity ) ;
+    // InternalDatamodels.g:1266:1: rule__DataModel__EntitiesAssignment_4_1_1 : ( ruleEntity ) ;
     public final void rule__DataModel__EntitiesAssignment_4_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1378:1: ( ( ruleEntity ) )
-            // InternalDatamodels.g:1379:2: ( ruleEntity )
+            // InternalDatamodels.g:1270:1: ( ( ruleEntity ) )
+            // InternalDatamodels.g:1271:2: ( ruleEntity )
             {
-            // InternalDatamodels.g:1379:2: ( ruleEntity )
-            // InternalDatamodels.g:1380:3: ruleEntity
+            // InternalDatamodels.g:1271:2: ( ruleEntity )
+            // InternalDatamodels.g:1272:3: ruleEntity
             {
              before(grammarAccess.getDataModelAccess().getEntitiesEntityParserRuleCall_4_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -4167,17 +3865,17 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Entity__NameAssignment_2"
-    // InternalDatamodels.g:1389:1: rule__Entity__NameAssignment_2 : ( ruleEString ) ;
+    // InternalDatamodels.g:1281:1: rule__Entity__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__Entity__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1393:1: ( ( ruleEString ) )
-            // InternalDatamodels.g:1394:2: ( ruleEString )
+            // InternalDatamodels.g:1285:1: ( ( ruleEString ) )
+            // InternalDatamodels.g:1286:2: ( ruleEString )
             {
-            // InternalDatamodels.g:1394:2: ( ruleEString )
-            // InternalDatamodels.g:1395:3: ruleEString
+            // InternalDatamodels.g:1286:2: ( ruleEString )
+            // InternalDatamodels.g:1287:3: ruleEString
             {
              before(grammarAccess.getEntityAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -4208,21 +3906,21 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Entity__SuperEntityAssignment_3_1"
-    // InternalDatamodels.g:1404:1: rule__Entity__SuperEntityAssignment_3_1 : ( ( ruleEString ) ) ;
+    // InternalDatamodels.g:1296:1: rule__Entity__SuperEntityAssignment_3_1 : ( ( ruleEString ) ) ;
     public final void rule__Entity__SuperEntityAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1408:1: ( ( ( ruleEString ) ) )
-            // InternalDatamodels.g:1409:2: ( ( ruleEString ) )
+            // InternalDatamodels.g:1300:1: ( ( ( ruleEString ) ) )
+            // InternalDatamodels.g:1301:2: ( ( ruleEString ) )
             {
-            // InternalDatamodels.g:1409:2: ( ( ruleEString ) )
-            // InternalDatamodels.g:1410:3: ( ruleEString )
+            // InternalDatamodels.g:1301:2: ( ( ruleEString ) )
+            // InternalDatamodels.g:1302:3: ( ruleEString )
             {
              before(grammarAccess.getEntityAccess().getSuperEntityEntityCrossReference_3_1_0()); 
-            // InternalDatamodels.g:1411:3: ( ruleEString )
-            // InternalDatamodels.g:1412:4: ruleEString
+            // InternalDatamodels.g:1303:3: ( ruleEString )
+            // InternalDatamodels.g:1304:4: ruleEString
             {
              before(grammarAccess.getEntityAccess().getSuperEntityEntityEStringParserRuleCall_3_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -4257,17 +3955,17 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Entity__PropertiesAssignment_5_0"
-    // InternalDatamodels.g:1423:1: rule__Entity__PropertiesAssignment_5_0 : ( ruleProperty ) ;
+    // InternalDatamodels.g:1315:1: rule__Entity__PropertiesAssignment_5_0 : ( ruleProperty ) ;
     public final void rule__Entity__PropertiesAssignment_5_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1427:1: ( ( ruleProperty ) )
-            // InternalDatamodels.g:1428:2: ( ruleProperty )
+            // InternalDatamodels.g:1319:1: ( ( ruleProperty ) )
+            // InternalDatamodels.g:1320:2: ( ruleProperty )
             {
-            // InternalDatamodels.g:1428:2: ( ruleProperty )
-            // InternalDatamodels.g:1429:3: ruleProperty
+            // InternalDatamodels.g:1320:2: ( ruleProperty )
+            // InternalDatamodels.g:1321:3: ruleProperty
             {
              before(grammarAccess.getEntityAccess().getPropertiesPropertyParserRuleCall_5_0_0()); 
             pushFollow(FOLLOW_2);
@@ -4298,17 +3996,17 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Entity__PropertiesAssignment_5_1_1"
-    // InternalDatamodels.g:1438:1: rule__Entity__PropertiesAssignment_5_1_1 : ( ruleProperty ) ;
+    // InternalDatamodels.g:1330:1: rule__Entity__PropertiesAssignment_5_1_1 : ( ruleProperty ) ;
     public final void rule__Entity__PropertiesAssignment_5_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1442:1: ( ( ruleProperty ) )
-            // InternalDatamodels.g:1443:2: ( ruleProperty )
+            // InternalDatamodels.g:1334:1: ( ( ruleProperty ) )
+            // InternalDatamodels.g:1335:2: ( ruleProperty )
             {
-            // InternalDatamodels.g:1443:2: ( ruleProperty )
-            // InternalDatamodels.g:1444:3: ruleProperty
+            // InternalDatamodels.g:1335:2: ( ruleProperty )
+            // InternalDatamodels.g:1336:3: ruleProperty
             {
              before(grammarAccess.getEntityAccess().getPropertiesPropertyParserRuleCall_5_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -4338,26 +4036,75 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
     // $ANTLR end "rule__Entity__PropertiesAssignment_5_1_1"
 
 
-    // $ANTLR start "rule__AssociationEnd__MultiplicityAssignment_1"
-    // InternalDatamodels.g:1453:1: rule__AssociationEnd__MultiplicityAssignment_1 : ( ruleMultiplicity ) ;
-    public final void rule__AssociationEnd__MultiplicityAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__AssociationEnd__TargetEntityAssignment_1"
+    // InternalDatamodels.g:1345:1: rule__AssociationEnd__TargetEntityAssignment_1 : ( ( ruleEString ) ) ;
+    public final void rule__AssociationEnd__TargetEntityAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1457:1: ( ( ruleMultiplicity ) )
-            // InternalDatamodels.g:1458:2: ( ruleMultiplicity )
+            // InternalDatamodels.g:1349:1: ( ( ( ruleEString ) ) )
+            // InternalDatamodels.g:1350:2: ( ( ruleEString ) )
             {
-            // InternalDatamodels.g:1458:2: ( ruleMultiplicity )
-            // InternalDatamodels.g:1459:3: ruleMultiplicity
+            // InternalDatamodels.g:1350:2: ( ( ruleEString ) )
+            // InternalDatamodels.g:1351:3: ( ruleEString )
             {
-             before(grammarAccess.getAssociationEndAccess().getMultiplicityMultiplicityEnumRuleCall_1_0()); 
+             before(grammarAccess.getAssociationEndAccess().getTargetEntityEntityCrossReference_1_0()); 
+            // InternalDatamodels.g:1352:3: ( ruleEString )
+            // InternalDatamodels.g:1353:4: ruleEString
+            {
+             before(grammarAccess.getAssociationEndAccess().getTargetEntityEntityEStringParserRuleCall_1_0_1()); 
+            pushFollow(FOLLOW_2);
+            ruleEString();
+
+            state._fsp--;
+
+             after(grammarAccess.getAssociationEndAccess().getTargetEntityEntityEStringParserRuleCall_1_0_1()); 
+
+            }
+
+             after(grammarAccess.getAssociationEndAccess().getTargetEntityEntityCrossReference_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__AssociationEnd__TargetEntityAssignment_1"
+
+
+    // $ANTLR start "rule__AssociationEnd__MultiplicityAssignment_2"
+    // InternalDatamodels.g:1364:1: rule__AssociationEnd__MultiplicityAssignment_2 : ( ruleMultiplicity ) ;
+    public final void rule__AssociationEnd__MultiplicityAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDatamodels.g:1368:1: ( ( ruleMultiplicity ) )
+            // InternalDatamodels.g:1369:2: ( ruleMultiplicity )
+            {
+            // InternalDatamodels.g:1369:2: ( ruleMultiplicity )
+            // InternalDatamodels.g:1370:3: ruleMultiplicity
+            {
+             before(grammarAccess.getAssociationEndAccess().getMultiplicityMultiplicityEnumRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
             ruleMultiplicity();
 
             state._fsp--;
 
-             after(grammarAccess.getAssociationEndAccess().getMultiplicityMultiplicityEnumRuleCall_1_0()); 
+             after(grammarAccess.getAssociationEndAccess().getMultiplicityMultiplicityEnumRuleCall_2_0()); 
 
             }
 
@@ -4376,37 +4123,29 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__AssociationEnd__MultiplicityAssignment_1"
+    // $ANTLR end "rule__AssociationEnd__MultiplicityAssignment_2"
 
 
-    // $ANTLR start "rule__AssociationEnd__TargetEntityAssignment_3"
-    // InternalDatamodels.g:1468:1: rule__AssociationEnd__TargetEntityAssignment_3 : ( ( ruleEString ) ) ;
-    public final void rule__AssociationEnd__TargetEntityAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__AssociationEnd__NameAssignment_3"
+    // InternalDatamodels.g:1379:1: rule__AssociationEnd__NameAssignment_3 : ( ruleEString ) ;
+    public final void rule__AssociationEnd__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1472:1: ( ( ( ruleEString ) ) )
-            // InternalDatamodels.g:1473:2: ( ( ruleEString ) )
+            // InternalDatamodels.g:1383:1: ( ( ruleEString ) )
+            // InternalDatamodels.g:1384:2: ( ruleEString )
             {
-            // InternalDatamodels.g:1473:2: ( ( ruleEString ) )
-            // InternalDatamodels.g:1474:3: ( ruleEString )
+            // InternalDatamodels.g:1384:2: ( ruleEString )
+            // InternalDatamodels.g:1385:3: ruleEString
             {
-             before(grammarAccess.getAssociationEndAccess().getTargetEntityEntityCrossReference_3_0()); 
-            // InternalDatamodels.g:1475:3: ( ruleEString )
-            // InternalDatamodels.g:1476:4: ruleEString
-            {
-             before(grammarAccess.getAssociationEndAccess().getTargetEntityEntityEStringParserRuleCall_3_0_1()); 
+             before(grammarAccess.getAssociationEndAccess().getNameEStringParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getAssociationEndAccess().getTargetEntityEntityEStringParserRuleCall_3_0_1()); 
-
-            }
-
-             after(grammarAccess.getAssociationEndAccess().getTargetEntityEntityCrossReference_3_0()); 
+             after(grammarAccess.getAssociationEndAccess().getNameEStringParserRuleCall_3_0()); 
 
             }
 
@@ -4425,29 +4164,37 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__AssociationEnd__TargetEntityAssignment_3"
+    // $ANTLR end "rule__AssociationEnd__NameAssignment_3"
 
 
-    // $ANTLR start "rule__AssociationEnd__NameAssignment_5"
-    // InternalDatamodels.g:1487:1: rule__AssociationEnd__NameAssignment_5 : ( ruleEString ) ;
-    public final void rule__AssociationEnd__NameAssignment_5() throws RecognitionException {
+    // $ANTLR start "rule__AssociationEnd__OtherEndAssignment_5"
+    // InternalDatamodels.g:1394:1: rule__AssociationEnd__OtherEndAssignment_5 : ( ( ruleEString ) ) ;
+    public final void rule__AssociationEnd__OtherEndAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1491:1: ( ( ruleEString ) )
-            // InternalDatamodels.g:1492:2: ( ruleEString )
+            // InternalDatamodels.g:1398:1: ( ( ( ruleEString ) ) )
+            // InternalDatamodels.g:1399:2: ( ( ruleEString ) )
             {
-            // InternalDatamodels.g:1492:2: ( ruleEString )
-            // InternalDatamodels.g:1493:3: ruleEString
+            // InternalDatamodels.g:1399:2: ( ( ruleEString ) )
+            // InternalDatamodels.g:1400:3: ( ruleEString )
             {
-             before(grammarAccess.getAssociationEndAccess().getNameEStringParserRuleCall_5_0()); 
+             before(grammarAccess.getAssociationEndAccess().getOtherEndAssociationEndCrossReference_5_0()); 
+            // InternalDatamodels.g:1401:3: ( ruleEString )
+            // InternalDatamodels.g:1402:4: ruleEString
+            {
+             before(grammarAccess.getAssociationEndAccess().getOtherEndAssociationEndEStringParserRuleCall_5_0_1()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getAssociationEndAccess().getNameEStringParserRuleCall_5_0()); 
+             after(grammarAccess.getAssociationEndAccess().getOtherEndAssociationEndEStringParserRuleCall_5_0_1()); 
+
+            }
+
+             after(grammarAccess.getAssociationEndAccess().getOtherEndAssociationEndCrossReference_5_0()); 
 
             }
 
@@ -4466,37 +4213,29 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__AssociationEnd__NameAssignment_5"
+    // $ANTLR end "rule__AssociationEnd__OtherEndAssignment_5"
 
 
-    // $ANTLR start "rule__AssociationEnd__OtherEndAssignment_7"
-    // InternalDatamodels.g:1502:1: rule__AssociationEnd__OtherEndAssignment_7 : ( ( ruleEString ) ) ;
-    public final void rule__AssociationEnd__OtherEndAssignment_7() throws RecognitionException {
+    // $ANTLR start "rule__AssociationEnd__AssociationNameAssignment_7"
+    // InternalDatamodels.g:1413:1: rule__AssociationEnd__AssociationNameAssignment_7 : ( ruleEString ) ;
+    public final void rule__AssociationEnd__AssociationNameAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1506:1: ( ( ( ruleEString ) ) )
-            // InternalDatamodels.g:1507:2: ( ( ruleEString ) )
+            // InternalDatamodels.g:1417:1: ( ( ruleEString ) )
+            // InternalDatamodels.g:1418:2: ( ruleEString )
             {
-            // InternalDatamodels.g:1507:2: ( ( ruleEString ) )
-            // InternalDatamodels.g:1508:3: ( ruleEString )
+            // InternalDatamodels.g:1418:2: ( ruleEString )
+            // InternalDatamodels.g:1419:3: ruleEString
             {
-             before(grammarAccess.getAssociationEndAccess().getOtherEndAssociationEndCrossReference_7_0()); 
-            // InternalDatamodels.g:1509:3: ( ruleEString )
-            // InternalDatamodels.g:1510:4: ruleEString
-            {
-             before(grammarAccess.getAssociationEndAccess().getOtherEndAssociationEndEStringParserRuleCall_7_0_1()); 
+             before(grammarAccess.getAssociationEndAccess().getAssociationNameEStringParserRuleCall_7_0()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getAssociationEndAccess().getOtherEndAssociationEndEStringParserRuleCall_7_0_1()); 
-
-            }
-
-             after(grammarAccess.getAssociationEndAccess().getOtherEndAssociationEndCrossReference_7_0()); 
+             after(grammarAccess.getAssociationEndAccess().getAssociationNameEStringParserRuleCall_7_0()); 
 
             }
 
@@ -4515,29 +4254,29 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__AssociationEnd__OtherEndAssignment_7"
+    // $ANTLR end "rule__AssociationEnd__AssociationNameAssignment_7"
 
 
-    // $ANTLR start "rule__AssociationEnd__AssociationNameAssignment_9"
-    // InternalDatamodels.g:1521:1: rule__AssociationEnd__AssociationNameAssignment_9 : ( ruleEString ) ;
-    public final void rule__AssociationEnd__AssociationNameAssignment_9() throws RecognitionException {
+    // $ANTLR start "rule__Attribute__NameAssignment_1"
+    // InternalDatamodels.g:1428:1: rule__Attribute__NameAssignment_1 : ( ruleEString ) ;
+    public final void rule__Attribute__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1525:1: ( ( ruleEString ) )
-            // InternalDatamodels.g:1526:2: ( ruleEString )
+            // InternalDatamodels.g:1432:1: ( ( ruleEString ) )
+            // InternalDatamodels.g:1433:2: ( ruleEString )
             {
-            // InternalDatamodels.g:1526:2: ( ruleEString )
-            // InternalDatamodels.g:1527:3: ruleEString
+            // InternalDatamodels.g:1433:2: ( ruleEString )
+            // InternalDatamodels.g:1434:3: ruleEString
             {
-             before(grammarAccess.getAssociationEndAccess().getAssociationNameEStringParserRuleCall_9_0()); 
+             before(grammarAccess.getAttributeAccess().getNameEStringParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getAssociationEndAccess().getAssociationNameEStringParserRuleCall_9_0()); 
+             after(grammarAccess.getAttributeAccess().getNameEStringParserRuleCall_1_0()); 
 
             }
 
@@ -4556,29 +4295,33 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__AssociationEnd__AssociationNameAssignment_9"
+    // $ANTLR end "rule__Attribute__NameAssignment_1"
 
 
-    // $ANTLR start "rule__Attribute__NameAssignment_2"
-    // InternalDatamodels.g:1536:1: rule__Attribute__NameAssignment_2 : ( ruleEString ) ;
-    public final void rule__Attribute__NameAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Attribute__IsUniqueAssignment_2"
+    // InternalDatamodels.g:1443:1: rule__Attribute__IsUniqueAssignment_2 : ( ( 'unique' ) ) ;
+    public final void rule__Attribute__IsUniqueAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1540:1: ( ( ruleEString ) )
-            // InternalDatamodels.g:1541:2: ( ruleEString )
+            // InternalDatamodels.g:1447:1: ( ( ( 'unique' ) ) )
+            // InternalDatamodels.g:1448:2: ( ( 'unique' ) )
             {
-            // InternalDatamodels.g:1541:2: ( ruleEString )
-            // InternalDatamodels.g:1542:3: ruleEString
+            // InternalDatamodels.g:1448:2: ( ( 'unique' ) )
+            // InternalDatamodels.g:1449:3: ( 'unique' )
             {
-             before(grammarAccess.getAttributeAccess().getNameEStringParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_2);
-            ruleEString();
+             before(grammarAccess.getAttributeAccess().getIsUniqueUniqueKeyword_2_0()); 
+            // InternalDatamodels.g:1450:3: ( 'unique' )
+            // InternalDatamodels.g:1451:4: 'unique'
+            {
+             before(grammarAccess.getAttributeAccess().getIsUniqueUniqueKeyword_2_0()); 
+            match(input,26,FOLLOW_2); 
+             after(grammarAccess.getAttributeAccess().getIsUniqueUniqueKeyword_2_0()); 
 
-            state._fsp--;
+            }
 
-             after(grammarAccess.getAttributeAccess().getNameEStringParserRuleCall_2_0()); 
+             after(grammarAccess.getAttributeAccess().getIsUniqueUniqueKeyword_2_0()); 
 
             }
 
@@ -4597,74 +4340,29 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Attribute__NameAssignment_2"
+    // $ANTLR end "rule__Attribute__IsUniqueAssignment_2"
 
 
-    // $ANTLR start "rule__Attribute__IsUniqueAssignment_4"
-    // InternalDatamodels.g:1551:1: rule__Attribute__IsUniqueAssignment_4 : ( ( 'unique' ) ) ;
-    public final void rule__Attribute__IsUniqueAssignment_4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDatamodels.g:1555:1: ( ( ( 'unique' ) ) )
-            // InternalDatamodels.g:1556:2: ( ( 'unique' ) )
-            {
-            // InternalDatamodels.g:1556:2: ( ( 'unique' ) )
-            // InternalDatamodels.g:1557:3: ( 'unique' )
-            {
-             before(grammarAccess.getAttributeAccess().getIsUniqueUniqueKeyword_4_0()); 
-            // InternalDatamodels.g:1558:3: ( 'unique' )
-            // InternalDatamodels.g:1559:4: 'unique'
-            {
-             before(grammarAccess.getAttributeAccess().getIsUniqueUniqueKeyword_4_0()); 
-            match(input,28,FOLLOW_2); 
-             after(grammarAccess.getAttributeAccess().getIsUniqueUniqueKeyword_4_0()); 
-
-            }
-
-             after(grammarAccess.getAttributeAccess().getIsUniqueUniqueKeyword_4_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Attribute__IsUniqueAssignment_4"
-
-
-    // $ANTLR start "rule__Attribute__TypeAssignment_5"
-    // InternalDatamodels.g:1570:1: rule__Attribute__TypeAssignment_5 : ( ruleDataType ) ;
-    public final void rule__Attribute__TypeAssignment_5() throws RecognitionException {
+    // $ANTLR start "rule__Attribute__TypeAssignment_3"
+    // InternalDatamodels.g:1462:1: rule__Attribute__TypeAssignment_3 : ( ruleDataType ) ;
+    public final void rule__Attribute__TypeAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDatamodels.g:1574:1: ( ( ruleDataType ) )
-            // InternalDatamodels.g:1575:2: ( ruleDataType )
+            // InternalDatamodels.g:1466:1: ( ( ruleDataType ) )
+            // InternalDatamodels.g:1467:2: ( ruleDataType )
             {
-            // InternalDatamodels.g:1575:2: ( ruleDataType )
-            // InternalDatamodels.g:1576:3: ruleDataType
+            // InternalDatamodels.g:1467:2: ( ruleDataType )
+            // InternalDatamodels.g:1468:3: ruleDataType
             {
-             before(grammarAccess.getAttributeAccess().getTypeDataTypeEnumRuleCall_5_0()); 
+             before(grammarAccess.getAttributeAccess().getTypeDataTypeEnumRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleDataType();
 
             state._fsp--;
 
-             after(grammarAccess.getAttributeAccess().getTypeDataTypeEnumRuleCall_5_0()); 
+             after(grammarAccess.getAttributeAccess().getTypeDataTypeEnumRuleCall_3_0()); 
 
             }
 
@@ -4683,7 +4381,7 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Attribute__TypeAssignment_5"
+    // $ANTLR end "rule__Attribute__TypeAssignment_3"
 
     // Delegated rules
 
@@ -4699,13 +4397,11 @@ public class InternalDatamodelsParser extends AbstractInternalContentAssistParse
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000020002L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000280000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000008500000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000008400000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000002500000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000002400000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000001800L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000800000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000010006000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000004006000L});
 
 }

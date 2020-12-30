@@ -58,14 +58,14 @@ public class DatamodelsSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 *     AssociationEnd returns AssociationEnd
 	 *
 	 * Constraint:
-	 *     (multiplicity=Multiplicity targetEntity=[Entity|EString] name=EString otherEnd=[AssociationEnd|EString] associationName=EString)
+	 *     (targetEntity=[Entity|EString] multiplicity=Multiplicity name=EString otherEnd=[AssociationEnd|EString] associationName=EString)
 	 */
 	protected void sequence_AssociationEnd(ISerializationContext context, AssociationEnd semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DatamodelsPackage.Literals.ASSOCIATION_END__MULTIPLICITY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DatamodelsPackage.Literals.ASSOCIATION_END__MULTIPLICITY));
 			if (transientValues.isValueTransient(semanticObject, DatamodelsPackage.Literals.ASSOCIATION_END__TARGET_ENTITY) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DatamodelsPackage.Literals.ASSOCIATION_END__TARGET_ENTITY));
+			if (transientValues.isValueTransient(semanticObject, DatamodelsPackage.Literals.ASSOCIATION_END__MULTIPLICITY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DatamodelsPackage.Literals.ASSOCIATION_END__MULTIPLICITY));
 			if (transientValues.isValueTransient(semanticObject, DatamodelsPackage.Literals.PROPERTY__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DatamodelsPackage.Literals.PROPERTY__NAME));
 			if (transientValues.isValueTransient(semanticObject, DatamodelsPackage.Literals.ASSOCIATION_END__OTHER_END) == ValueTransient.YES)
@@ -74,11 +74,11 @@ public class DatamodelsSemanticSequencer extends AbstractDelegatingSemanticSeque
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DatamodelsPackage.Literals.ASSOCIATION_END__ASSOCIATION_NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAssociationEndAccess().getMultiplicityMultiplicityEnumRuleCall_1_0(), semanticObject.getMultiplicity());
-		feeder.accept(grammarAccess.getAssociationEndAccess().getTargetEntityEntityEStringParserRuleCall_3_0_1(), semanticObject.eGet(DatamodelsPackage.Literals.ASSOCIATION_END__TARGET_ENTITY, false));
-		feeder.accept(grammarAccess.getAssociationEndAccess().getNameEStringParserRuleCall_5_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getAssociationEndAccess().getOtherEndAssociationEndEStringParserRuleCall_7_0_1(), semanticObject.eGet(DatamodelsPackage.Literals.ASSOCIATION_END__OTHER_END, false));
-		feeder.accept(grammarAccess.getAssociationEndAccess().getAssociationNameEStringParserRuleCall_9_0(), semanticObject.getAssociationName());
+		feeder.accept(grammarAccess.getAssociationEndAccess().getTargetEntityEntityEStringParserRuleCall_1_0_1(), semanticObject.eGet(DatamodelsPackage.Literals.ASSOCIATION_END__TARGET_ENTITY, false));
+		feeder.accept(grammarAccess.getAssociationEndAccess().getMultiplicityMultiplicityEnumRuleCall_2_0(), semanticObject.getMultiplicity());
+		feeder.accept(grammarAccess.getAssociationEndAccess().getNameEStringParserRuleCall_3_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getAssociationEndAccess().getOtherEndAssociationEndEStringParserRuleCall_5_0_1(), semanticObject.eGet(DatamodelsPackage.Literals.ASSOCIATION_END__OTHER_END, false));
+		feeder.accept(grammarAccess.getAssociationEndAccess().getAssociationNameEStringParserRuleCall_7_0(), semanticObject.getAssociationName());
 		feeder.finish();
 	}
 	

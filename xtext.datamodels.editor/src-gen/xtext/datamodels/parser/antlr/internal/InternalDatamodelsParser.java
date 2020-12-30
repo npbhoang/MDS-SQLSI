@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDatamodelsParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'DataModel'", "':'", "','", "'entity'", "'extends'", "'{'", "'}'", "'association'", "'('", "')'", "'oppositeTo'", "'in'", "'attribute'", "'unique'", "'Set'", "'Single'", "'String'", "'Integer'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'DataModel'", "':'", "','", "'entity'", "'extends'", "'{'", "'}'", "'association'", "'oppositeTo'", "'in'", "'attribute'", "'unique'", "'[*]'", "'[1]'", "'String'", "'Integer'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -40,8 +40,6 @@ public class InternalDatamodelsParser extends AbstractInternalAntlrParser {
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
     public static final int T__26=26;
-    public static final int T__27=27;
-    public static final int T__28=28;
     public static final int RULE_INT=6;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
@@ -390,7 +388,7 @@ public class InternalDatamodelsParser extends AbstractInternalAntlrParser {
             if ( (LA3_0==18) ) {
                 alt3=1;
             }
-            else if ( (LA3_0==23) ) {
+            else if ( (LA3_0==21) ) {
                 alt3=2;
             }
             else {
@@ -740,7 +738,7 @@ public class InternalDatamodelsParser extends AbstractInternalAntlrParser {
             int alt7=2;
             int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==18||LA7_0==23) ) {
+            if ( (LA7_0==18||LA7_0==21) ) {
                 alt7=1;
             }
             switch (alt7) {
@@ -906,47 +904,73 @@ public class InternalDatamodelsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAssociationEnd"
-    // InternalDatamodels.g:366:1: ruleAssociationEnd returns [EObject current=null] : (otherlv_0= 'association' ( (lv_multiplicity_1_0= ruleMultiplicity ) ) otherlv_2= '(' ( ( ruleEString ) ) otherlv_4= ')' ( (lv_name_5_0= ruleEString ) ) otherlv_6= 'oppositeTo' ( ( ruleEString ) ) otherlv_8= 'in' ( (lv_associationName_9_0= ruleEString ) ) ) ;
+    // InternalDatamodels.g:366:1: ruleAssociationEnd returns [EObject current=null] : (otherlv_0= 'association' ( ( ruleEString ) ) ( (lv_multiplicity_2_0= ruleMultiplicity ) ) ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'oppositeTo' ( ( ruleEString ) ) otherlv_6= 'in' ( (lv_associationName_7_0= ruleEString ) ) ) ;
     public final EObject ruleAssociationEnd() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_2=null;
         Token otherlv_4=null;
         Token otherlv_6=null;
-        Token otherlv_8=null;
-        Enumerator lv_multiplicity_1_0 = null;
+        Enumerator lv_multiplicity_2_0 = null;
 
-        AntlrDatatypeRuleToken lv_name_5_0 = null;
+        AntlrDatatypeRuleToken lv_name_3_0 = null;
 
-        AntlrDatatypeRuleToken lv_associationName_9_0 = null;
+        AntlrDatatypeRuleToken lv_associationName_7_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalDatamodels.g:372:2: ( (otherlv_0= 'association' ( (lv_multiplicity_1_0= ruleMultiplicity ) ) otherlv_2= '(' ( ( ruleEString ) ) otherlv_4= ')' ( (lv_name_5_0= ruleEString ) ) otherlv_6= 'oppositeTo' ( ( ruleEString ) ) otherlv_8= 'in' ( (lv_associationName_9_0= ruleEString ) ) ) )
-            // InternalDatamodels.g:373:2: (otherlv_0= 'association' ( (lv_multiplicity_1_0= ruleMultiplicity ) ) otherlv_2= '(' ( ( ruleEString ) ) otherlv_4= ')' ( (lv_name_5_0= ruleEString ) ) otherlv_6= 'oppositeTo' ( ( ruleEString ) ) otherlv_8= 'in' ( (lv_associationName_9_0= ruleEString ) ) )
+            // InternalDatamodels.g:372:2: ( (otherlv_0= 'association' ( ( ruleEString ) ) ( (lv_multiplicity_2_0= ruleMultiplicity ) ) ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'oppositeTo' ( ( ruleEString ) ) otherlv_6= 'in' ( (lv_associationName_7_0= ruleEString ) ) ) )
+            // InternalDatamodels.g:373:2: (otherlv_0= 'association' ( ( ruleEString ) ) ( (lv_multiplicity_2_0= ruleMultiplicity ) ) ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'oppositeTo' ( ( ruleEString ) ) otherlv_6= 'in' ( (lv_associationName_7_0= ruleEString ) ) )
             {
-            // InternalDatamodels.g:373:2: (otherlv_0= 'association' ( (lv_multiplicity_1_0= ruleMultiplicity ) ) otherlv_2= '(' ( ( ruleEString ) ) otherlv_4= ')' ( (lv_name_5_0= ruleEString ) ) otherlv_6= 'oppositeTo' ( ( ruleEString ) ) otherlv_8= 'in' ( (lv_associationName_9_0= ruleEString ) ) )
-            // InternalDatamodels.g:374:3: otherlv_0= 'association' ( (lv_multiplicity_1_0= ruleMultiplicity ) ) otherlv_2= '(' ( ( ruleEString ) ) otherlv_4= ')' ( (lv_name_5_0= ruleEString ) ) otherlv_6= 'oppositeTo' ( ( ruleEString ) ) otherlv_8= 'in' ( (lv_associationName_9_0= ruleEString ) )
+            // InternalDatamodels.g:373:2: (otherlv_0= 'association' ( ( ruleEString ) ) ( (lv_multiplicity_2_0= ruleMultiplicity ) ) ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'oppositeTo' ( ( ruleEString ) ) otherlv_6= 'in' ( (lv_associationName_7_0= ruleEString ) ) )
+            // InternalDatamodels.g:374:3: otherlv_0= 'association' ( ( ruleEString ) ) ( (lv_multiplicity_2_0= ruleMultiplicity ) ) ( (lv_name_3_0= ruleEString ) ) otherlv_4= 'oppositeTo' ( ( ruleEString ) ) otherlv_6= 'in' ( (lv_associationName_7_0= ruleEString ) )
             {
-            otherlv_0=(Token)match(input,18,FOLLOW_13); 
+            otherlv_0=(Token)match(input,18,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAssociationEndAccess().getAssociationKeyword_0());
             		
-            // InternalDatamodels.g:378:3: ( (lv_multiplicity_1_0= ruleMultiplicity ) )
-            // InternalDatamodels.g:379:4: (lv_multiplicity_1_0= ruleMultiplicity )
+            // InternalDatamodels.g:378:3: ( ( ruleEString ) )
+            // InternalDatamodels.g:379:4: ( ruleEString )
             {
-            // InternalDatamodels.g:379:4: (lv_multiplicity_1_0= ruleMultiplicity )
-            // InternalDatamodels.g:380:5: lv_multiplicity_1_0= ruleMultiplicity
+            // InternalDatamodels.g:379:4: ( ruleEString )
+            // InternalDatamodels.g:380:5: ruleEString
             {
 
-            					newCompositeNode(grammarAccess.getAssociationEndAccess().getMultiplicityMultiplicityEnumRuleCall_1_0());
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getAssociationEndRule());
+            					}
             				
-            pushFollow(FOLLOW_14);
-            lv_multiplicity_1_0=ruleMultiplicity();
+
+            					newCompositeNode(grammarAccess.getAssociationEndAccess().getTargetEntityEntityCrossReference_1_0());
+            				
+            pushFollow(FOLLOW_13);
+            ruleEString();
+
+            state._fsp--;
+
+
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            // InternalDatamodels.g:394:3: ( (lv_multiplicity_2_0= ruleMultiplicity ) )
+            // InternalDatamodels.g:395:4: (lv_multiplicity_2_0= ruleMultiplicity )
+            {
+            // InternalDatamodels.g:395:4: (lv_multiplicity_2_0= ruleMultiplicity )
+            // InternalDatamodels.g:396:5: lv_multiplicity_2_0= ruleMultiplicity
+            {
+
+            					newCompositeNode(grammarAccess.getAssociationEndAccess().getMultiplicityMultiplicityEnumRuleCall_2_0());
+            				
+            pushFollow(FOLLOW_3);
+            lv_multiplicity_2_0=ruleMultiplicity();
 
             state._fsp--;
 
@@ -957,7 +981,7 @@ public class InternalDatamodelsParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"multiplicity",
-            						lv_multiplicity_1_0,
+            						lv_multiplicity_2_0,
             						"xtext.datamodels.Datamodels.Multiplicity");
             					afterParserOrEnumRuleCall();
             				
@@ -967,15 +991,46 @@ public class InternalDatamodelsParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,19,FOLLOW_3); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getAssociationEndAccess().getLeftParenthesisKeyword_2());
-            		
-            // InternalDatamodels.g:401:3: ( ( ruleEString ) )
-            // InternalDatamodels.g:402:4: ( ruleEString )
+            // InternalDatamodels.g:413:3: ( (lv_name_3_0= ruleEString ) )
+            // InternalDatamodels.g:414:4: (lv_name_3_0= ruleEString )
             {
-            // InternalDatamodels.g:402:4: ( ruleEString )
-            // InternalDatamodels.g:403:5: ruleEString
+            // InternalDatamodels.g:414:4: (lv_name_3_0= ruleEString )
+            // InternalDatamodels.g:415:5: lv_name_3_0= ruleEString
+            {
+
+            					newCompositeNode(grammarAccess.getAssociationEndAccess().getNameEStringParserRuleCall_3_0());
+            				
+            pushFollow(FOLLOW_14);
+            lv_name_3_0=ruleEString();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getAssociationEndRule());
+            					}
+            					set(
+            						current,
+            						"name",
+            						lv_name_3_0,
+            						"xtext.datamodels.Datamodels.EString");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_4=(Token)match(input,19,FOLLOW_3); 
+
+            			newLeafNode(otherlv_4, grammarAccess.getAssociationEndAccess().getOppositeToKeyword_4());
+            		
+            // InternalDatamodels.g:436:3: ( ( ruleEString ) )
+            // InternalDatamodels.g:437:4: ( ruleEString )
+            {
+            // InternalDatamodels.g:437:4: ( ruleEString )
+            // InternalDatamodels.g:438:5: ruleEString
             {
 
             					if (current==null) {
@@ -983,7 +1038,7 @@ public class InternalDatamodelsParser extends AbstractInternalAntlrParser {
             					}
             				
 
-            					newCompositeNode(grammarAccess.getAssociationEndAccess().getTargetEntityEntityCrossReference_3_0());
+            					newCompositeNode(grammarAccess.getAssociationEndAccess().getOtherEndAssociationEndCrossReference_5_0());
             				
             pushFollow(FOLLOW_15);
             ruleEString();
@@ -999,88 +1054,21 @@ public class InternalDatamodelsParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,20,FOLLOW_3); 
+            otherlv_6=(Token)match(input,20,FOLLOW_3); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getAssociationEndAccess().getRightParenthesisKeyword_4());
+            			newLeafNode(otherlv_6, grammarAccess.getAssociationEndAccess().getInKeyword_6());
             		
-            // InternalDatamodels.g:421:3: ( (lv_name_5_0= ruleEString ) )
-            // InternalDatamodels.g:422:4: (lv_name_5_0= ruleEString )
+            // InternalDatamodels.g:456:3: ( (lv_associationName_7_0= ruleEString ) )
+            // InternalDatamodels.g:457:4: (lv_associationName_7_0= ruleEString )
             {
-            // InternalDatamodels.g:422:4: (lv_name_5_0= ruleEString )
-            // InternalDatamodels.g:423:5: lv_name_5_0= ruleEString
-            {
-
-            					newCompositeNode(grammarAccess.getAssociationEndAccess().getNameEStringParserRuleCall_5_0());
-            				
-            pushFollow(FOLLOW_16);
-            lv_name_5_0=ruleEString();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getAssociationEndRule());
-            					}
-            					set(
-            						current,
-            						"name",
-            						lv_name_5_0,
-            						"xtext.datamodels.Datamodels.EString");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            otherlv_6=(Token)match(input,21,FOLLOW_3); 
-
-            			newLeafNode(otherlv_6, grammarAccess.getAssociationEndAccess().getOppositeToKeyword_6());
-            		
-            // InternalDatamodels.g:444:3: ( ( ruleEString ) )
-            // InternalDatamodels.g:445:4: ( ruleEString )
-            {
-            // InternalDatamodels.g:445:4: ( ruleEString )
-            // InternalDatamodels.g:446:5: ruleEString
+            // InternalDatamodels.g:457:4: (lv_associationName_7_0= ruleEString )
+            // InternalDatamodels.g:458:5: lv_associationName_7_0= ruleEString
             {
 
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getAssociationEndRule());
-            					}
-            				
-
-            					newCompositeNode(grammarAccess.getAssociationEndAccess().getOtherEndAssociationEndCrossReference_7_0());
-            				
-            pushFollow(FOLLOW_17);
-            ruleEString();
-
-            state._fsp--;
-
-
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            otherlv_8=(Token)match(input,22,FOLLOW_3); 
-
-            			newLeafNode(otherlv_8, grammarAccess.getAssociationEndAccess().getInKeyword_8());
-            		
-            // InternalDatamodels.g:464:3: ( (lv_associationName_9_0= ruleEString ) )
-            // InternalDatamodels.g:465:4: (lv_associationName_9_0= ruleEString )
-            {
-            // InternalDatamodels.g:465:4: (lv_associationName_9_0= ruleEString )
-            // InternalDatamodels.g:466:5: lv_associationName_9_0= ruleEString
-            {
-
-            					newCompositeNode(grammarAccess.getAssociationEndAccess().getAssociationNameEStringParserRuleCall_9_0());
+            					newCompositeNode(grammarAccess.getAssociationEndAccess().getAssociationNameEStringParserRuleCall_7_0());
             				
             pushFollow(FOLLOW_2);
-            lv_associationName_9_0=ruleEString();
+            lv_associationName_7_0=ruleEString();
 
             state._fsp--;
 
@@ -1091,7 +1079,7 @@ public class InternalDatamodelsParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"associationName",
-            						lv_associationName_9_0,
+            						lv_associationName_7_0,
             						"xtext.datamodels.Datamodels.EString");
             					afterParserOrEnumRuleCall();
             				
@@ -1124,7 +1112,7 @@ public class InternalDatamodelsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAttribute"
-    // InternalDatamodels.g:487:1: entryRuleAttribute returns [EObject current=null] : iv_ruleAttribute= ruleAttribute EOF ;
+    // InternalDatamodels.g:479:1: entryRuleAttribute returns [EObject current=null] : iv_ruleAttribute= ruleAttribute EOF ;
     public final EObject entryRuleAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -1132,8 +1120,8 @@ public class InternalDatamodelsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDatamodels.g:487:50: (iv_ruleAttribute= ruleAttribute EOF )
-            // InternalDatamodels.g:488:2: iv_ruleAttribute= ruleAttribute EOF
+            // InternalDatamodels.g:479:50: (iv_ruleAttribute= ruleAttribute EOF )
+            // InternalDatamodels.g:480:2: iv_ruleAttribute= ruleAttribute EOF
             {
              newCompositeNode(grammarAccess.getAttributeRule()); 
             pushFollow(FOLLOW_1);
@@ -1160,48 +1148,42 @@ public class InternalDatamodelsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttribute"
-    // InternalDatamodels.g:494:1: ruleAttribute returns [EObject current=null] : (otherlv_0= 'attribute' otherlv_1= '(' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ')' ( (lv_isUnique_4_0= 'unique' ) )? ( (lv_type_5_0= ruleDataType ) ) ) ;
+    // InternalDatamodels.g:486:1: ruleAttribute returns [EObject current=null] : (otherlv_0= 'attribute' ( (lv_name_1_0= ruleEString ) ) ( (lv_isUnique_2_0= 'unique' ) )? ( (lv_type_3_0= ruleDataType ) ) ) ;
     public final EObject ruleAttribute() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_1=null;
-        Token otherlv_3=null;
-        Token lv_isUnique_4_0=null;
-        AntlrDatatypeRuleToken lv_name_2_0 = null;
+        Token lv_isUnique_2_0=null;
+        AntlrDatatypeRuleToken lv_name_1_0 = null;
 
-        Enumerator lv_type_5_0 = null;
+        Enumerator lv_type_3_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalDatamodels.g:500:2: ( (otherlv_0= 'attribute' otherlv_1= '(' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ')' ( (lv_isUnique_4_0= 'unique' ) )? ( (lv_type_5_0= ruleDataType ) ) ) )
-            // InternalDatamodels.g:501:2: (otherlv_0= 'attribute' otherlv_1= '(' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ')' ( (lv_isUnique_4_0= 'unique' ) )? ( (lv_type_5_0= ruleDataType ) ) )
+            // InternalDatamodels.g:492:2: ( (otherlv_0= 'attribute' ( (lv_name_1_0= ruleEString ) ) ( (lv_isUnique_2_0= 'unique' ) )? ( (lv_type_3_0= ruleDataType ) ) ) )
+            // InternalDatamodels.g:493:2: (otherlv_0= 'attribute' ( (lv_name_1_0= ruleEString ) ) ( (lv_isUnique_2_0= 'unique' ) )? ( (lv_type_3_0= ruleDataType ) ) )
             {
-            // InternalDatamodels.g:501:2: (otherlv_0= 'attribute' otherlv_1= '(' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ')' ( (lv_isUnique_4_0= 'unique' ) )? ( (lv_type_5_0= ruleDataType ) ) )
-            // InternalDatamodels.g:502:3: otherlv_0= 'attribute' otherlv_1= '(' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ')' ( (lv_isUnique_4_0= 'unique' ) )? ( (lv_type_5_0= ruleDataType ) )
+            // InternalDatamodels.g:493:2: (otherlv_0= 'attribute' ( (lv_name_1_0= ruleEString ) ) ( (lv_isUnique_2_0= 'unique' ) )? ( (lv_type_3_0= ruleDataType ) ) )
+            // InternalDatamodels.g:494:3: otherlv_0= 'attribute' ( (lv_name_1_0= ruleEString ) ) ( (lv_isUnique_2_0= 'unique' ) )? ( (lv_type_3_0= ruleDataType ) )
             {
-            otherlv_0=(Token)match(input,23,FOLLOW_14); 
+            otherlv_0=(Token)match(input,21,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAttributeAccess().getAttributeKeyword_0());
             		
-            otherlv_1=(Token)match(input,19,FOLLOW_3); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getAttributeAccess().getLeftParenthesisKeyword_1());
-            		
-            // InternalDatamodels.g:510:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalDatamodels.g:511:4: (lv_name_2_0= ruleEString )
+            // InternalDatamodels.g:498:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalDatamodels.g:499:4: (lv_name_1_0= ruleEString )
             {
-            // InternalDatamodels.g:511:4: (lv_name_2_0= ruleEString )
-            // InternalDatamodels.g:512:5: lv_name_2_0= ruleEString
+            // InternalDatamodels.g:499:4: (lv_name_1_0= ruleEString )
+            // InternalDatamodels.g:500:5: lv_name_1_0= ruleEString
             {
 
-            					newCompositeNode(grammarAccess.getAttributeAccess().getNameEStringParserRuleCall_2_0());
+            					newCompositeNode(grammarAccess.getAttributeAccess().getNameEStringParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_15);
-            lv_name_2_0=ruleEString();
+            pushFollow(FOLLOW_16);
+            lv_name_1_0=ruleEString();
 
             state._fsp--;
 
@@ -1212,7 +1194,7 @@ public class InternalDatamodelsParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"name",
-            						lv_name_2_0,
+            						lv_name_1_0,
             						"xtext.datamodels.Datamodels.EString");
             					afterParserOrEnumRuleCall();
             				
@@ -1222,27 +1204,23 @@ public class InternalDatamodelsParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,20,FOLLOW_18); 
-
-            			newLeafNode(otherlv_3, grammarAccess.getAttributeAccess().getRightParenthesisKeyword_3());
-            		
-            // InternalDatamodels.g:533:3: ( (lv_isUnique_4_0= 'unique' ) )?
+            // InternalDatamodels.g:517:3: ( (lv_isUnique_2_0= 'unique' ) )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
-            if ( (LA8_0==24) ) {
+            if ( (LA8_0==22) ) {
                 alt8=1;
             }
             switch (alt8) {
                 case 1 :
-                    // InternalDatamodels.g:534:4: (lv_isUnique_4_0= 'unique' )
+                    // InternalDatamodels.g:518:4: (lv_isUnique_2_0= 'unique' )
                     {
-                    // InternalDatamodels.g:534:4: (lv_isUnique_4_0= 'unique' )
-                    // InternalDatamodels.g:535:5: lv_isUnique_4_0= 'unique'
+                    // InternalDatamodels.g:518:4: (lv_isUnique_2_0= 'unique' )
+                    // InternalDatamodels.g:519:5: lv_isUnique_2_0= 'unique'
                     {
-                    lv_isUnique_4_0=(Token)match(input,24,FOLLOW_18); 
+                    lv_isUnique_2_0=(Token)match(input,22,FOLLOW_16); 
 
-                    					newLeafNode(lv_isUnique_4_0, grammarAccess.getAttributeAccess().getIsUniqueUniqueKeyword_4_0());
+                    					newLeafNode(lv_isUnique_2_0, grammarAccess.getAttributeAccess().getIsUniqueUniqueKeyword_2_0());
                     				
 
                     					if (current==null) {
@@ -1259,17 +1237,17 @@ public class InternalDatamodelsParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDatamodels.g:547:3: ( (lv_type_5_0= ruleDataType ) )
-            // InternalDatamodels.g:548:4: (lv_type_5_0= ruleDataType )
+            // InternalDatamodels.g:531:3: ( (lv_type_3_0= ruleDataType ) )
+            // InternalDatamodels.g:532:4: (lv_type_3_0= ruleDataType )
             {
-            // InternalDatamodels.g:548:4: (lv_type_5_0= ruleDataType )
-            // InternalDatamodels.g:549:5: lv_type_5_0= ruleDataType
+            // InternalDatamodels.g:532:4: (lv_type_3_0= ruleDataType )
+            // InternalDatamodels.g:533:5: lv_type_3_0= ruleDataType
             {
 
-            					newCompositeNode(grammarAccess.getAttributeAccess().getTypeDataTypeEnumRuleCall_5_0());
+            					newCompositeNode(grammarAccess.getAttributeAccess().getTypeDataTypeEnumRuleCall_3_0());
             				
             pushFollow(FOLLOW_2);
-            lv_type_5_0=ruleDataType();
+            lv_type_3_0=ruleDataType();
 
             state._fsp--;
 
@@ -1280,7 +1258,7 @@ public class InternalDatamodelsParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"type",
-            						lv_type_5_0,
+            						lv_type_3_0,
             						"xtext.datamodels.Datamodels.DataType");
             					afterParserOrEnumRuleCall();
             				
@@ -1313,7 +1291,7 @@ public class InternalDatamodelsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMultiplicity"
-    // InternalDatamodels.g:570:1: ruleMultiplicity returns [Enumerator current=null] : ( (enumLiteral_0= 'Set' ) | (enumLiteral_1= 'Single' ) ) ;
+    // InternalDatamodels.g:554:1: ruleMultiplicity returns [Enumerator current=null] : ( (enumLiteral_0= '[*]' ) | (enumLiteral_1= '[1]' ) ) ;
     public final Enumerator ruleMultiplicity() throws RecognitionException {
         Enumerator current = null;
 
@@ -1324,17 +1302,17 @@ public class InternalDatamodelsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDatamodels.g:576:2: ( ( (enumLiteral_0= 'Set' ) | (enumLiteral_1= 'Single' ) ) )
-            // InternalDatamodels.g:577:2: ( (enumLiteral_0= 'Set' ) | (enumLiteral_1= 'Single' ) )
+            // InternalDatamodels.g:560:2: ( ( (enumLiteral_0= '[*]' ) | (enumLiteral_1= '[1]' ) ) )
+            // InternalDatamodels.g:561:2: ( (enumLiteral_0= '[*]' ) | (enumLiteral_1= '[1]' ) )
             {
-            // InternalDatamodels.g:577:2: ( (enumLiteral_0= 'Set' ) | (enumLiteral_1= 'Single' ) )
+            // InternalDatamodels.g:561:2: ( (enumLiteral_0= '[*]' ) | (enumLiteral_1= '[1]' ) )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
-            if ( (LA9_0==25) ) {
+            if ( (LA9_0==23) ) {
                 alt9=1;
             }
-            else if ( (LA9_0==26) ) {
+            else if ( (LA9_0==24) ) {
                 alt9=2;
             }
             else {
@@ -1345,12 +1323,12 @@ public class InternalDatamodelsParser extends AbstractInternalAntlrParser {
             }
             switch (alt9) {
                 case 1 :
-                    // InternalDatamodels.g:578:3: (enumLiteral_0= 'Set' )
+                    // InternalDatamodels.g:562:3: (enumLiteral_0= '[*]' )
                     {
-                    // InternalDatamodels.g:578:3: (enumLiteral_0= 'Set' )
-                    // InternalDatamodels.g:579:4: enumLiteral_0= 'Set'
+                    // InternalDatamodels.g:562:3: (enumLiteral_0= '[*]' )
+                    // InternalDatamodels.g:563:4: enumLiteral_0= '[*]'
                     {
-                    enumLiteral_0=(Token)match(input,25,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,23,FOLLOW_2); 
 
                     				current = grammarAccess.getMultiplicityAccess().getMANYEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getMultiplicityAccess().getMANYEnumLiteralDeclaration_0());
@@ -1362,12 +1340,12 @@ public class InternalDatamodelsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDatamodels.g:586:3: (enumLiteral_1= 'Single' )
+                    // InternalDatamodels.g:570:3: (enumLiteral_1= '[1]' )
                     {
-                    // InternalDatamodels.g:586:3: (enumLiteral_1= 'Single' )
-                    // InternalDatamodels.g:587:4: enumLiteral_1= 'Single'
+                    // InternalDatamodels.g:570:3: (enumLiteral_1= '[1]' )
+                    // InternalDatamodels.g:571:4: enumLiteral_1= '[1]'
                     {
-                    enumLiteral_1=(Token)match(input,26,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,24,FOLLOW_2); 
 
                     				current = grammarAccess.getMultiplicityAccess().getONEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getMultiplicityAccess().getONEEnumLiteralDeclaration_1());
@@ -1401,7 +1379,7 @@ public class InternalDatamodelsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDataType"
-    // InternalDatamodels.g:597:1: ruleDataType returns [Enumerator current=null] : ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'Integer' ) ) ;
+    // InternalDatamodels.g:581:1: ruleDataType returns [Enumerator current=null] : ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'Integer' ) ) ;
     public final Enumerator ruleDataType() throws RecognitionException {
         Enumerator current = null;
 
@@ -1412,17 +1390,17 @@ public class InternalDatamodelsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDatamodels.g:603:2: ( ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'Integer' ) ) )
-            // InternalDatamodels.g:604:2: ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'Integer' ) )
+            // InternalDatamodels.g:587:2: ( ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'Integer' ) ) )
+            // InternalDatamodels.g:588:2: ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'Integer' ) )
             {
-            // InternalDatamodels.g:604:2: ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'Integer' ) )
+            // InternalDatamodels.g:588:2: ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'Integer' ) )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
-            if ( (LA10_0==27) ) {
+            if ( (LA10_0==25) ) {
                 alt10=1;
             }
-            else if ( (LA10_0==28) ) {
+            else if ( (LA10_0==26) ) {
                 alt10=2;
             }
             else {
@@ -1433,12 +1411,12 @@ public class InternalDatamodelsParser extends AbstractInternalAntlrParser {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalDatamodels.g:605:3: (enumLiteral_0= 'String' )
+                    // InternalDatamodels.g:589:3: (enumLiteral_0= 'String' )
                     {
-                    // InternalDatamodels.g:605:3: (enumLiteral_0= 'String' )
-                    // InternalDatamodels.g:606:4: enumLiteral_0= 'String'
+                    // InternalDatamodels.g:589:3: (enumLiteral_0= 'String' )
+                    // InternalDatamodels.g:590:4: enumLiteral_0= 'String'
                     {
-                    enumLiteral_0=(Token)match(input,27,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,25,FOLLOW_2); 
 
                     				current = grammarAccess.getDataTypeAccess().getStringEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getDataTypeAccess().getStringEnumLiteralDeclaration_0());
@@ -1450,12 +1428,12 @@ public class InternalDatamodelsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDatamodels.g:613:3: (enumLiteral_1= 'Integer' )
+                    // InternalDatamodels.g:597:3: (enumLiteral_1= 'Integer' )
                     {
-                    // InternalDatamodels.g:613:3: (enumLiteral_1= 'Integer' )
-                    // InternalDatamodels.g:614:4: enumLiteral_1= 'Integer'
+                    // InternalDatamodels.g:597:3: (enumLiteral_1= 'Integer' )
+                    // InternalDatamodels.g:598:4: enumLiteral_1= 'Integer'
                     {
-                    enumLiteral_1=(Token)match(input,28,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,26,FOLLOW_2); 
 
                     				current = grammarAccess.getDataTypeAccess().getIntegerEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getDataTypeAccess().getIntegerEnumLiteralDeclaration_1());
@@ -1501,14 +1479,12 @@ public class InternalDatamodelsParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000018000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000860000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000260000L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000022000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000840000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000006000000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000240000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000001800000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000019000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000006400000L});
 
 }

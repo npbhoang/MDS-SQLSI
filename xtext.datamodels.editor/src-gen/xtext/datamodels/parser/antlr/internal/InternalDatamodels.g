@@ -378,9 +378,25 @@ ruleAssociationEnd returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAssociationEndAccess().getMultiplicityMultiplicityEnumRuleCall_1_0());
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAssociationEndRule());
+					}
 				}
-				lv_multiplicity_1_0=ruleMultiplicity
+				{
+					newCompositeNode(grammarAccess.getAssociationEndAccess().getTargetEntityEntityCrossReference_1_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getAssociationEndAccess().getMultiplicityMultiplicityEnumRuleCall_2_0());
+				}
+				lv_multiplicity_2_0=ruleMultiplicity
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getAssociationEndRule());
@@ -388,42 +404,18 @@ ruleAssociationEnd returns [EObject current=null]
 					set(
 						$current,
 						"multiplicity",
-						lv_multiplicity_1_0,
+						lv_multiplicity_2_0,
 						"xtext.datamodels.Datamodels.Multiplicity");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_2='('
-		{
-			newLeafNode(otherlv_2, grammarAccess.getAssociationEndAccess().getLeftParenthesisKeyword_2());
-		}
 		(
 			(
 				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAssociationEndRule());
-					}
+					newCompositeNode(grammarAccess.getAssociationEndAccess().getNameEStringParserRuleCall_3_0());
 				}
-				{
-					newCompositeNode(grammarAccess.getAssociationEndAccess().getTargetEntityEntityCrossReference_3_0());
-				}
-				ruleEString
-				{
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_4=')'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getAssociationEndAccess().getRightParenthesisKeyword_4());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getAssociationEndAccess().getNameEStringParserRuleCall_5_0());
-				}
-				lv_name_5_0=ruleEString
+				lv_name_3_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getAssociationEndRule());
@@ -431,15 +423,15 @@ ruleAssociationEnd returns [EObject current=null]
 					set(
 						$current,
 						"name",
-						lv_name_5_0,
+						lv_name_3_0,
 						"xtext.datamodels.Datamodels.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_6='oppositeTo'
+		otherlv_4='oppositeTo'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getAssociationEndAccess().getOppositeToKeyword_6());
+			newLeafNode(otherlv_4, grammarAccess.getAssociationEndAccess().getOppositeToKeyword_4());
 		}
 		(
 			(
@@ -449,7 +441,7 @@ ruleAssociationEnd returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getAssociationEndAccess().getOtherEndAssociationEndCrossReference_7_0());
+					newCompositeNode(grammarAccess.getAssociationEndAccess().getOtherEndAssociationEndCrossReference_5_0());
 				}
 				ruleEString
 				{
@@ -457,16 +449,16 @@ ruleAssociationEnd returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_8='in'
+		otherlv_6='in'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getAssociationEndAccess().getInKeyword_8());
+			newLeafNode(otherlv_6, grammarAccess.getAssociationEndAccess().getInKeyword_6());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAssociationEndAccess().getAssociationNameEStringParserRuleCall_9_0());
+					newCompositeNode(grammarAccess.getAssociationEndAccess().getAssociationNameEStringParserRuleCall_7_0());
 				}
-				lv_associationName_9_0=ruleEString
+				lv_associationName_7_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getAssociationEndRule());
@@ -474,7 +466,7 @@ ruleAssociationEnd returns [EObject current=null]
 					set(
 						$current,
 						"associationName",
-						lv_associationName_9_0,
+						lv_associationName_7_0,
 						"xtext.datamodels.Datamodels.EString");
 					afterParserOrEnumRuleCall();
 				}
@@ -503,16 +495,12 @@ ruleAttribute returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getAttributeAccess().getAttributeKeyword_0());
 		}
-		otherlv_1='('
-		{
-			newLeafNode(otherlv_1, grammarAccess.getAttributeAccess().getLeftParenthesisKeyword_1());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAttributeAccess().getNameEStringParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getAttributeAccess().getNameEStringParserRuleCall_1_0());
 				}
-				lv_name_2_0=ruleEString
+				lv_name_1_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getAttributeRule());
@@ -520,21 +508,17 @@ ruleAttribute returns [EObject current=null]
 					set(
 						$current,
 						"name",
-						lv_name_2_0,
+						lv_name_1_0,
 						"xtext.datamodels.Datamodels.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_3=')'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getAttributeAccess().getRightParenthesisKeyword_3());
-		}
 		(
 			(
-				lv_isUnique_4_0='unique'
+				lv_isUnique_2_0='unique'
 				{
-					newLeafNode(lv_isUnique_4_0, grammarAccess.getAttributeAccess().getIsUniqueUniqueKeyword_4_0());
+					newLeafNode(lv_isUnique_2_0, grammarAccess.getAttributeAccess().getIsUniqueUniqueKeyword_2_0());
 				}
 				{
 					if ($current==null) {
@@ -547,9 +531,9 @@ ruleAttribute returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAttributeAccess().getTypeDataTypeEnumRuleCall_5_0());
+					newCompositeNode(grammarAccess.getAttributeAccess().getTypeDataTypeEnumRuleCall_3_0());
 				}
-				lv_type_5_0=ruleDataType
+				lv_type_3_0=ruleDataType
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getAttributeRule());
@@ -557,7 +541,7 @@ ruleAttribute returns [EObject current=null]
 					set(
 						$current,
 						"type",
-						lv_type_5_0,
+						lv_type_3_0,
 						"xtext.datamodels.Datamodels.DataType");
 					afterParserOrEnumRuleCall();
 				}
@@ -576,7 +560,7 @@ ruleMultiplicity returns [Enumerator current=null]
 }:
 	(
 		(
-			enumLiteral_0='Set'
+			enumLiteral_0='[*]'
 			{
 				$current = grammarAccess.getMultiplicityAccess().getMANYEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
 				newLeafNode(enumLiteral_0, grammarAccess.getMultiplicityAccess().getMANYEnumLiteralDeclaration_0());
@@ -584,7 +568,7 @@ ruleMultiplicity returns [Enumerator current=null]
 		)
 		    |
 		(
-			enumLiteral_1='Single'
+			enumLiteral_1='[1]'
 			{
 				$current = grammarAccess.getMultiplicityAccess().getONEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
 				newLeafNode(enumLiteral_1, grammarAccess.getMultiplicityAccess().getONEEnumLiteralDeclaration_1());

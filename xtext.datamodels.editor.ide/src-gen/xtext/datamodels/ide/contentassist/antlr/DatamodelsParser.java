@@ -51,14 +51,14 @@ public class DatamodelsParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEntityAccess().getSuperEntityAssignment_3_1(), "rule__Entity__SuperEntityAssignment_3_1");
 			builder.put(grammarAccess.getEntityAccess().getPropertiesAssignment_5_0(), "rule__Entity__PropertiesAssignment_5_0");
 			builder.put(grammarAccess.getEntityAccess().getPropertiesAssignment_5_1_1(), "rule__Entity__PropertiesAssignment_5_1_1");
-			builder.put(grammarAccess.getAssociationEndAccess().getMultiplicityAssignment_1(), "rule__AssociationEnd__MultiplicityAssignment_1");
-			builder.put(grammarAccess.getAssociationEndAccess().getTargetEntityAssignment_3(), "rule__AssociationEnd__TargetEntityAssignment_3");
-			builder.put(grammarAccess.getAssociationEndAccess().getNameAssignment_5(), "rule__AssociationEnd__NameAssignment_5");
-			builder.put(grammarAccess.getAssociationEndAccess().getOtherEndAssignment_7(), "rule__AssociationEnd__OtherEndAssignment_7");
-			builder.put(grammarAccess.getAssociationEndAccess().getAssociationNameAssignment_9(), "rule__AssociationEnd__AssociationNameAssignment_9");
-			builder.put(grammarAccess.getAttributeAccess().getNameAssignment_2(), "rule__Attribute__NameAssignment_2");
-			builder.put(grammarAccess.getAttributeAccess().getIsUniqueAssignment_4(), "rule__Attribute__IsUniqueAssignment_4");
-			builder.put(grammarAccess.getAttributeAccess().getTypeAssignment_5(), "rule__Attribute__TypeAssignment_5");
+			builder.put(grammarAccess.getAssociationEndAccess().getTargetEntityAssignment_1(), "rule__AssociationEnd__TargetEntityAssignment_1");
+			builder.put(grammarAccess.getAssociationEndAccess().getMultiplicityAssignment_2(), "rule__AssociationEnd__MultiplicityAssignment_2");
+			builder.put(grammarAccess.getAssociationEndAccess().getNameAssignment_3(), "rule__AssociationEnd__NameAssignment_3");
+			builder.put(grammarAccess.getAssociationEndAccess().getOtherEndAssignment_5(), "rule__AssociationEnd__OtherEndAssignment_5");
+			builder.put(grammarAccess.getAssociationEndAccess().getAssociationNameAssignment_7(), "rule__AssociationEnd__AssociationNameAssignment_7");
+			builder.put(grammarAccess.getAttributeAccess().getNameAssignment_1(), "rule__Attribute__NameAssignment_1");
+			builder.put(grammarAccess.getAttributeAccess().getIsUniqueAssignment_2(), "rule__Attribute__IsUniqueAssignment_2");
+			builder.put(grammarAccess.getAttributeAccess().getTypeAssignment_3(), "rule__Attribute__TypeAssignment_3");
 		}
 	}
 	

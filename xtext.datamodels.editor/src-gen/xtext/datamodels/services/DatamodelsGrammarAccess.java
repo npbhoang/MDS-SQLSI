@@ -218,27 +218,24 @@ public class DatamodelsGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.datamodels.Datamodels.AssociationEnd");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cAssociationKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cMultiplicityAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cMultiplicityMultiplicityEnumRuleCall_1_0 = (RuleCall)cMultiplicityAssignment_1.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cTargetEntityAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cTargetEntityEntityCrossReference_3_0 = (CrossReference)cTargetEntityAssignment_3.eContents().get(0);
-		private final RuleCall cTargetEntityEntityEStringParserRuleCall_3_0_1 = (RuleCall)cTargetEntityEntityCrossReference_3_0.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cNameAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cNameEStringParserRuleCall_5_0 = (RuleCall)cNameAssignment_5.eContents().get(0);
-		private final Keyword cOppositeToKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cOtherEndAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final CrossReference cOtherEndAssociationEndCrossReference_7_0 = (CrossReference)cOtherEndAssignment_7.eContents().get(0);
-		private final RuleCall cOtherEndAssociationEndEStringParserRuleCall_7_0_1 = (RuleCall)cOtherEndAssociationEndCrossReference_7_0.eContents().get(1);
-		private final Keyword cInKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cAssociationNameAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cAssociationNameEStringParserRuleCall_9_0 = (RuleCall)cAssociationNameAssignment_9.eContents().get(0);
+		private final Assignment cTargetEntityAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cTargetEntityEntityCrossReference_1_0 = (CrossReference)cTargetEntityAssignment_1.eContents().get(0);
+		private final RuleCall cTargetEntityEntityEStringParserRuleCall_1_0_1 = (RuleCall)cTargetEntityEntityCrossReference_1_0.eContents().get(1);
+		private final Assignment cMultiplicityAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cMultiplicityMultiplicityEnumRuleCall_2_0 = (RuleCall)cMultiplicityAssignment_2.eContents().get(0);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final Keyword cOppositeToKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cOtherEndAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cOtherEndAssociationEndCrossReference_5_0 = (CrossReference)cOtherEndAssignment_5.eContents().get(0);
+		private final RuleCall cOtherEndAssociationEndEStringParserRuleCall_5_0_1 = (RuleCall)cOtherEndAssociationEndCrossReference_5_0.eContents().get(1);
+		private final Keyword cInKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cAssociationNameAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cAssociationNameEStringParserRuleCall_7_0 = (RuleCall)cAssociationNameAssignment_7.eContents().get(0);
 		
 		//AssociationEnd:
 		//	"association"
-		//	multiplicity=Multiplicity
-		//	'(' targetEntity=[Entity|EString] ')'
+		//	targetEntity=[Entity|EString] multiplicity=Multiplicity
 		//	name=EString
 		//	'oppositeTo'
 		//	otherEnd=[AssociationEnd|EString]
@@ -246,138 +243,124 @@ public class DatamodelsGrammarAccess extends AbstractGrammarElementFinder {
 		//	associationName=EString;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"association" multiplicity=Multiplicity '(' targetEntity=[Entity|EString] ')' name=EString 'oppositeTo'
+		//"association" targetEntity=[Entity|EString] multiplicity=Multiplicity name=EString 'oppositeTo'
 		//otherEnd=[AssociationEnd|EString] 'in' associationName=EString
 		public Group getGroup() { return cGroup; }
 		
 		//"association"
 		public Keyword getAssociationKeyword_0() { return cAssociationKeyword_0; }
 		
-		//multiplicity=Multiplicity
-		public Assignment getMultiplicityAssignment_1() { return cMultiplicityAssignment_1; }
-		
-		//Multiplicity
-		public RuleCall getMultiplicityMultiplicityEnumRuleCall_1_0() { return cMultiplicityMultiplicityEnumRuleCall_1_0; }
-		
-		//'('
-		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
-		
 		//targetEntity=[Entity|EString]
-		public Assignment getTargetEntityAssignment_3() { return cTargetEntityAssignment_3; }
+		public Assignment getTargetEntityAssignment_1() { return cTargetEntityAssignment_1; }
 		
 		//[Entity|EString]
-		public CrossReference getTargetEntityEntityCrossReference_3_0() { return cTargetEntityEntityCrossReference_3_0; }
+		public CrossReference getTargetEntityEntityCrossReference_1_0() { return cTargetEntityEntityCrossReference_1_0; }
 		
 		//EString
-		public RuleCall getTargetEntityEntityEStringParserRuleCall_3_0_1() { return cTargetEntityEntityEStringParserRuleCall_3_0_1; }
+		public RuleCall getTargetEntityEntityEStringParserRuleCall_1_0_1() { return cTargetEntityEntityEStringParserRuleCall_1_0_1; }
 		
-		//')'
-		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
+		//multiplicity=Multiplicity
+		public Assignment getMultiplicityAssignment_2() { return cMultiplicityAssignment_2; }
+		
+		//Multiplicity
+		public RuleCall getMultiplicityMultiplicityEnumRuleCall_2_0() { return cMultiplicityMultiplicityEnumRuleCall_2_0; }
 		
 		//name=EString
-		public Assignment getNameAssignment_5() { return cNameAssignment_5; }
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
 		//EString
-		public RuleCall getNameEStringParserRuleCall_5_0() { return cNameEStringParserRuleCall_5_0; }
+		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
 		
 		//'oppositeTo'
-		public Keyword getOppositeToKeyword_6() { return cOppositeToKeyword_6; }
+		public Keyword getOppositeToKeyword_4() { return cOppositeToKeyword_4; }
 		
 		//otherEnd=[AssociationEnd|EString]
-		public Assignment getOtherEndAssignment_7() { return cOtherEndAssignment_7; }
+		public Assignment getOtherEndAssignment_5() { return cOtherEndAssignment_5; }
 		
 		//[AssociationEnd|EString]
-		public CrossReference getOtherEndAssociationEndCrossReference_7_0() { return cOtherEndAssociationEndCrossReference_7_0; }
+		public CrossReference getOtherEndAssociationEndCrossReference_5_0() { return cOtherEndAssociationEndCrossReference_5_0; }
 		
 		//EString
-		public RuleCall getOtherEndAssociationEndEStringParserRuleCall_7_0_1() { return cOtherEndAssociationEndEStringParserRuleCall_7_0_1; }
+		public RuleCall getOtherEndAssociationEndEStringParserRuleCall_5_0_1() { return cOtherEndAssociationEndEStringParserRuleCall_5_0_1; }
 		
 		//'in'
-		public Keyword getInKeyword_8() { return cInKeyword_8; }
+		public Keyword getInKeyword_6() { return cInKeyword_6; }
 		
 		//associationName=EString
-		public Assignment getAssociationNameAssignment_9() { return cAssociationNameAssignment_9; }
+		public Assignment getAssociationNameAssignment_7() { return cAssociationNameAssignment_7; }
 		
 		//EString
-		public RuleCall getAssociationNameEStringParserRuleCall_9_0() { return cAssociationNameEStringParserRuleCall_9_0; }
+		public RuleCall getAssociationNameEStringParserRuleCall_7_0() { return cAssociationNameEStringParserRuleCall_7_0; }
 	}
 	public class AttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.datamodels.Datamodels.Attribute");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cAttributeKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cIsUniqueAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final Keyword cIsUniqueUniqueKeyword_4_0 = (Keyword)cIsUniqueAssignment_4.eContents().get(0);
-		private final Assignment cTypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cTypeDataTypeEnumRuleCall_5_0 = (RuleCall)cTypeAssignment_5.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cIsUniqueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Keyword cIsUniqueUniqueKeyword_2_0 = (Keyword)cIsUniqueAssignment_2.eContents().get(0);
+		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTypeDataTypeEnumRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
 		
 		//Attribute:
 		//	"attribute"
-		//	'(' name=EString ')'
+		//	name=EString
 		//	isUnique?='unique'?
 		//	type=DataType;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"attribute" '(' name=EString ')' isUnique?='unique'? type=DataType
+		//"attribute" name=EString isUnique?='unique'? type=DataType
 		public Group getGroup() { return cGroup; }
 		
 		//"attribute"
 		public Keyword getAttributeKeyword_0() { return cAttributeKeyword_0; }
 		
-		//'('
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-		
 		//name=EString
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
 		
 		//isUnique?='unique'?
-		public Assignment getIsUniqueAssignment_4() { return cIsUniqueAssignment_4; }
+		public Assignment getIsUniqueAssignment_2() { return cIsUniqueAssignment_2; }
 		
 		//'unique'
-		public Keyword getIsUniqueUniqueKeyword_4_0() { return cIsUniqueUniqueKeyword_4_0; }
+		public Keyword getIsUniqueUniqueKeyword_2_0() { return cIsUniqueUniqueKeyword_2_0; }
 		
 		//type=DataType
-		public Assignment getTypeAssignment_5() { return cTypeAssignment_5; }
+		public Assignment getTypeAssignment_3() { return cTypeAssignment_3; }
 		
 		//DataType
-		public RuleCall getTypeDataTypeEnumRuleCall_5_0() { return cTypeDataTypeEnumRuleCall_5_0; }
+		public RuleCall getTypeDataTypeEnumRuleCall_3_0() { return cTypeDataTypeEnumRuleCall_3_0; }
 	}
 	
 	public class MultiplicityElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.datamodels.Datamodels.Multiplicity");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cMANYEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cMANYSetKeyword_0_0 = (Keyword)cMANYEnumLiteralDeclaration_0.eContents().get(0);
+		private final Keyword cMANYLeftSquareBracketAsteriskRightSquareBracketKeyword_0_0 = (Keyword)cMANYEnumLiteralDeclaration_0.eContents().get(0);
 		private final EnumLiteralDeclaration cONEEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cONESingleKeyword_1_0 = (Keyword)cONEEnumLiteralDeclaration_1.eContents().get(0);
+		private final Keyword cONE1Keyword_1_0 = (Keyword)cONEEnumLiteralDeclaration_1.eContents().get(0);
 		
 		//enum Multiplicity:
-		//	MANY='Set' | ONE='Single';
+		//	MANY='[*]' | ONE='[1]';
 		public EnumRule getRule() { return rule; }
 		
-		//MANY='Set' | ONE='Single'
+		//MANY='[*]' | ONE='[1]'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//MANY='Set'
+		//MANY='[*]'
 		public EnumLiteralDeclaration getMANYEnumLiteralDeclaration_0() { return cMANYEnumLiteralDeclaration_0; }
 		
-		//'Set'
-		public Keyword getMANYSetKeyword_0_0() { return cMANYSetKeyword_0_0; }
+		//'[*]'
+		public Keyword getMANYLeftSquareBracketAsteriskRightSquareBracketKeyword_0_0() { return cMANYLeftSquareBracketAsteriskRightSquareBracketKeyword_0_0; }
 		
-		//ONE='Single'
+		//ONE='[1]'
 		public EnumLiteralDeclaration getONEEnumLiteralDeclaration_1() { return cONEEnumLiteralDeclaration_1; }
 		
-		//'Single'
-		public Keyword getONESingleKeyword_1_0() { return cONESingleKeyword_1_0; }
+		//'[1]'
+		public Keyword getONE1Keyword_1_0() { return cONE1Keyword_1_0; }
 	}
 	public class DataTypeElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.datamodels.Datamodels.DataType");
@@ -510,8 +493,7 @@ public class DatamodelsGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//AssociationEnd:
 	//	"association"
-	//	multiplicity=Multiplicity
-	//	'(' targetEntity=[Entity|EString] ')'
+	//	targetEntity=[Entity|EString] multiplicity=Multiplicity
 	//	name=EString
 	//	'oppositeTo'
 	//	otherEnd=[AssociationEnd|EString]
@@ -527,7 +509,7 @@ public class DatamodelsGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Attribute:
 	//	"attribute"
-	//	'(' name=EString ')'
+	//	name=EString
 	//	isUnique?='unique'?
 	//	type=DataType;
 	public AttributeElements getAttributeAccess() {
@@ -539,7 +521,7 @@ public class DatamodelsGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//enum Multiplicity:
-	//	MANY='Set' | ONE='Single';
+	//	MANY='[*]' | ONE='[1]';
 	public MultiplicityElements getMultiplicityAccess() {
 		return eMultiplicity;
 	}

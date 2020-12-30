@@ -28,8 +28,8 @@ Entity returns Entity:
 
 AssociationEnd returns AssociationEnd:
 	"association"
+	targetEntity=[Entity|EString]
 	multiplicity=Multiplicity
-	'('targetEntity=[Entity|EString]')'
 	name=EString
 	'oppositeTo'
 	otherEnd=[AssociationEnd|EString]
@@ -38,12 +38,12 @@ AssociationEnd returns AssociationEnd:
 
 Attribute returns Attribute:
 	"attribute"
-	'('name=EString')'
+	name=EString
 	(isUnique?='unique')?
 	type=DataType;
 
 enum Multiplicity returns Multiplicity:
-	MANY = 'Set' | ONE = 'Single';
+	MANY = '[*]' | ONE = '[1]';
 
 enum DataType returns DataType:
 	String = 'String' | Integer = 'Integer';
