@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import securitymodels.Action;
@@ -93,7 +92,7 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	protected EList<Auth> auths;
 
 	/**
-	 * The cached value of the '{@link #getProtectedResources() <em>Protected Resources</em>}' reference list.
+	 * The cached value of the '{@link #getProtectedResources() <em>Protected Resources</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProtectedResources()
@@ -182,7 +181,7 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	 */
 	public EList<ProtectedResource> getProtectedResources() {
 		if (protectedResources == null) {
-			protectedResources = new EObjectResolvingEList<ProtectedResource>(ProtectedResource.class, this, SecuritymodelsPackage.RULE__PROTECTED_RESOURCES);
+			protectedResources = new EObjectContainmentEList<ProtectedResource>(ProtectedResource.class, this, SecuritymodelsPackage.RULE__PROTECTED_RESOURCES);
 		}
 		return protectedResources;
 	}
@@ -197,6 +196,8 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 		switch (featureID) {
 			case SecuritymodelsPackage.RULE__AUTHS:
 				return ((InternalEList<?>)getAuths()).basicRemove(otherEnd, msgs);
+			case SecuritymodelsPackage.RULE__PROTECTED_RESOURCES:
+				return ((InternalEList<?>)getProtectedResources()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}

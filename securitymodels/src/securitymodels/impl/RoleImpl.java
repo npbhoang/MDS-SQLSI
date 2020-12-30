@@ -2,9 +2,12 @@
  */
 package securitymodels.impl;
 
+import datamodels.Entity;
+
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -21,6 +24,7 @@ import securitymodels.SecuritymodelsPackage;
  * </p>
  * <ul>
  *   <li>{@link securitymodels.impl.RoleImpl#getName <em>Name</em>}</li>
+ *   <li>{@link securitymodels.impl.RoleImpl#getUserEntity <em>User Entity</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,6 +49,16 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getUserEntity() <em>User Entity</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUserEntity()
+	 * @generated
+	 * @ordered
+	 */
+	protected Entity userEntity;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,11 +105,52 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Entity getUserEntity() {
+		if (userEntity != null && userEntity.eIsProxy()) {
+			InternalEObject oldUserEntity = (InternalEObject)userEntity;
+			userEntity = (Entity)eResolveProxy(oldUserEntity);
+			if (userEntity != oldUserEntity) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecuritymodelsPackage.ROLE__USER_ENTITY, oldUserEntity, userEntity));
+			}
+		}
+		return userEntity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Entity basicGetUserEntity() {
+		return userEntity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUserEntity(Entity newUserEntity) {
+		Entity oldUserEntity = userEntity;
+		userEntity = newUserEntity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecuritymodelsPackage.ROLE__USER_ENTITY, oldUserEntity, userEntity));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SecuritymodelsPackage.ROLE__NAME:
 				return getName();
+			case SecuritymodelsPackage.ROLE__USER_ENTITY:
+				if (resolve) return getUserEntity();
+				return basicGetUserEntity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,6 +165,9 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 		switch (featureID) {
 			case SecuritymodelsPackage.ROLE__NAME:
 				setName((String)newValue);
+				return;
+			case SecuritymodelsPackage.ROLE__USER_ENTITY:
+				setUserEntity((Entity)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,6 +184,9 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 			case SecuritymodelsPackage.ROLE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case SecuritymodelsPackage.ROLE__USER_ENTITY:
+				setUserEntity((Entity)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -140,6 +201,8 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 		switch (featureID) {
 			case SecuritymodelsPackage.ROLE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case SecuritymodelsPackage.ROLE__USER_ENTITY:
+				return userEntity != null;
 		}
 		return super.eIsSet(featureID);
 	}

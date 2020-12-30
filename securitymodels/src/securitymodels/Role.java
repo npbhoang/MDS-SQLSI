@@ -2,6 +2,8 @@
  */
 package securitymodels;
 
+import datamodels.Entity;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link securitymodels.Role#getName <em>Name</em>}</li>
+ *   <li>{@link securitymodels.Role#getUserEntity <em>User Entity</em>}</li>
  * </ul>
  *
  * @see securitymodels.SecuritymodelsPackage#getRole()
@@ -46,5 +49,31 @@ public interface Role extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>User Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>User Entity</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>User Entity</em>' reference.
+	 * @see #setUserEntity(Entity)
+	 * @see securitymodels.SecuritymodelsPackage#getRole_UserEntity()
+	 * @model required="true"
+	 * @generated
+	 */
+	Entity getUserEntity();
+
+	/**
+	 * Sets the value of the '{@link securitymodels.Role#getUserEntity <em>User Entity</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>User Entity</em>' reference.
+	 * @see #getUserEntity()
+	 * @generated
+	 */
+	void setUserEntity(Entity value);
 
 } // Role

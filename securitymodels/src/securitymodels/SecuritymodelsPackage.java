@@ -214,7 +214,7 @@ public interface SecuritymodelsPackage extends EPackage {
 	int RULE__AUTHS = 2;
 
 	/**
-	 * The feature id for the '<em><b>Protected Resources</b></em>' reference list.
+	 * The feature id for the '<em><b>Protected Resources</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -260,13 +260,22 @@ public interface SecuritymodelsPackage extends EPackage {
 	int ROLE__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>User Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__USER_ENTITY = 1;
+
+	/**
 	 * The number of structural features of the '<em>Role</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_FEATURE_COUNT = 1;
+	int ROLE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Role</em>' class.
@@ -475,10 +484,10 @@ public interface SecuritymodelsPackage extends EPackage {
 	EReference getRule_Auths();
 
 	/**
-	 * Returns the meta object for the reference list '{@link securitymodels.Rule#getProtectedResources <em>Protected Resources</em>}'.
+	 * Returns the meta object for the containment reference list '{@link securitymodels.Rule#getProtectedResources <em>Protected Resources</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Protected Resources</em>'.
+	 * @return the meta object for the containment reference list '<em>Protected Resources</em>'.
 	 * @see securitymodels.Rule#getProtectedResources()
 	 * @see #getRule()
 	 * @generated
@@ -505,6 +514,17 @@ public interface SecuritymodelsPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRole_Name();
+
+	/**
+	 * Returns the meta object for the reference '{@link securitymodels.Role#getUserEntity <em>User Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>User Entity</em>'.
+	 * @see securitymodels.Role#getUserEntity()
+	 * @see #getRole()
+	 * @generated
+	 */
+	EReference getRole_UserEntity();
 
 	/**
 	 * Returns the meta object for class '{@link securitymodels.ProtectedResource <em>Protected Resource</em>}'.
@@ -682,7 +702,7 @@ public interface SecuritymodelsPackage extends EPackage {
 		EReference RULE__AUTHS = eINSTANCE.getRule_Auths();
 
 		/**
-		 * The meta object literal for the '<em><b>Protected Resources</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Protected Resources</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -706,6 +726,14 @@ public interface SecuritymodelsPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ROLE__NAME = eINSTANCE.getRole_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>User Entity</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROLE__USER_ENTITY = eINSTANCE.getRole_UserEntity();
 
 		/**
 		 * The meta object literal for the '{@link securitymodels.impl.ProtectedResourceImpl <em>Protected Resource</em>}' class.
