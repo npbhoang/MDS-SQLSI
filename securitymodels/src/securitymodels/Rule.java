@@ -2,8 +2,6 @@
  */
 package securitymodels;
 
-import datamodels.Property;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -17,10 +15,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link securitymodels.Rule#getResources <em>Resources</em>}</li>
  *   <li>{@link securitymodels.Rule#getName <em>Name</em>}</li>
  *   <li>{@link securitymodels.Rule#getAction <em>Action</em>}</li>
  *   <li>{@link securitymodels.Rule#getAuths <em>Auths</em>}</li>
+ *   <li>{@link securitymodels.Rule#getProtectedResources <em>Protected Resources</em>}</li>
  * </ul>
  *
  * @see securitymodels.SecuritymodelsPackage#getRule()
@@ -94,25 +92,25 @@ public interface Rule extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Auths</em>' containment reference list.
 	 * @see securitymodels.SecuritymodelsPackage#getRule_Auths()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	EList<Auth> getAuths();
 
 	/**
-	 * Returns the value of the '<em><b>Resources</b></em>' reference list.
-	 * The list contents are of type {@link datamodels.Property}.
+	 * Returns the value of the '<em><b>Protected Resources</b></em>' reference list.
+	 * The list contents are of type {@link securitymodels.ProtectedResource}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Resources</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Protected Resources</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Resources</em>' reference list.
-	 * @see securitymodels.SecuritymodelsPackage#getRule_Resources()
+	 * @return the value of the '<em>Protected Resources</em>' reference list.
+	 * @see securitymodels.SecuritymodelsPackage#getRule_ProtectedResources()
 	 * @model required="true"
 	 * @generated
 	 */
-	EList<Property> getResources();
+	EList<ProtectedResource> getProtectedResources();
 
 } // Rule

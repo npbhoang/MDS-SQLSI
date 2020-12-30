@@ -22,16 +22,16 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import securitymodels.Role;
+import securitymodels.ProtectedResource;
 import securitymodels.SecuritymodelsPackage;
 
 /**
- * This is the item provider adapter for a {@link securitymodels.Role} object.
+ * This is the item provider adapter for a {@link securitymodels.ProtectedResource} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RoleItemProvider 
+public class ProtectedResourceItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -45,7 +45,7 @@ public class RoleItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoleItemProvider(AdapterFactory adapterFactory) {
+	public ProtectedResourceItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -60,9 +60,32 @@ public class RoleItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addResourcesPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Resources feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addResourcesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ProtectedResource_resources_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ProtectedResource_resources_feature", "_UI_ProtectedResource_type"),
+				 SecuritymodelsPackage.Literals.PROTECTED_RESOURCE__RESOURCES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -76,9 +99,9 @@ public class RoleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Role_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Role_name_feature", "_UI_Role_type"),
-				 SecuritymodelsPackage.Literals.ROLE__NAME,
+				 getString("_UI_ProtectedResource_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ProtectedResource_name_feature", "_UI_ProtectedResource_type"),
+				 SecuritymodelsPackage.Literals.PROTECTED_RESOURCE__NAME,
 				 true,
 				 false,
 				 false,
@@ -88,14 +111,14 @@ public class RoleItemProvider
 	}
 
 	/**
-	 * This returns Role.gif.
+	 * This returns ProtectedResource.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Role"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ProtectedResource"));
 	}
 
 	/**
@@ -106,10 +129,10 @@ public class RoleItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Role)object).getName();
+		String label = ((ProtectedResource)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Role_type") :
-			getString("_UI_Role_type") + " " + label;
+			getString("_UI_ProtectedResource_type") :
+			getString("_UI_ProtectedResource_type") + " " + label;
 	}
 
 
@@ -124,8 +147,8 @@ public class RoleItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Role.class)) {
-			case SecuritymodelsPackage.ROLE__NAME:
+		switch (notification.getFeatureID(ProtectedResource.class)) {
+			case SecuritymodelsPackage.PROTECTED_RESOURCE__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

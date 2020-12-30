@@ -187,22 +187,13 @@ public interface SecuritymodelsPackage extends EPackage {
 	int RULE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Resources</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RULE__RESOURCES = 0;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RULE__NAME = 1;
+	int RULE__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' attribute.
@@ -211,7 +202,7 @@ public interface SecuritymodelsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE__ACTION = 2;
+	int RULE__ACTION = 1;
 
 	/**
 	 * The feature id for the '<em><b>Auths</b></em>' containment reference list.
@@ -220,7 +211,16 @@ public interface SecuritymodelsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE__AUTHS = 3;
+	int RULE__AUTHS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Protected Resources</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE__PROTECTED_RESOURCES = 3;
 
 	/**
 	 * The number of structural features of the '<em>Rule</em>' class.
@@ -251,22 +251,13 @@ public interface SecuritymodelsPackage extends EPackage {
 	int ROLE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE__ENTITY = 0;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__NAME = 1;
+	int ROLE__NAME = 0;
 
 	/**
 	 * The number of structural features of the '<em>Role</em>' class.
@@ -275,7 +266,7 @@ public interface SecuritymodelsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_FEATURE_COUNT = 2;
+	int ROLE_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Role</em>' class.
@@ -287,6 +278,52 @@ public interface SecuritymodelsPackage extends EPackage {
 	int ROLE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link securitymodels.impl.ProtectedResourceImpl <em>Protected Resource</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see securitymodels.impl.ProtectedResourceImpl
+	 * @see securitymodels.impl.SecuritymodelsPackageImpl#getProtectedResource()
+	 * @generated
+	 */
+	int PROTECTED_RESOURCE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Resources</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROTECTED_RESOURCE__RESOURCES = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROTECTED_RESOURCE__NAME = 1;
+
+	/**
+	 * The number of structural features of the '<em>Protected Resource</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROTECTED_RESOURCE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Protected Resource</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROTECTED_RESOURCE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link securitymodels.Action <em>Action</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -294,7 +331,7 @@ public interface SecuritymodelsPackage extends EPackage {
 	 * @see securitymodels.impl.SecuritymodelsPackageImpl#getAction()
 	 * @generated
 	 */
-	int ACTION = 4;
+	int ACTION = 5;
 
 
 	/**
@@ -438,15 +475,15 @@ public interface SecuritymodelsPackage extends EPackage {
 	EReference getRule_Auths();
 
 	/**
-	 * Returns the meta object for the reference list '{@link securitymodels.Rule#getResources <em>Resources</em>}'.
+	 * Returns the meta object for the reference list '{@link securitymodels.Rule#getProtectedResources <em>Protected Resources</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Resources</em>'.
-	 * @see securitymodels.Rule#getResources()
+	 * @return the meta object for the reference list '<em>Protected Resources</em>'.
+	 * @see securitymodels.Rule#getProtectedResources()
 	 * @see #getRule()
 	 * @generated
 	 */
-	EReference getRule_Resources();
+	EReference getRule_ProtectedResources();
 
 	/**
 	 * Returns the meta object for class '{@link securitymodels.Role <em>Role</em>}'.
@@ -459,17 +496,6 @@ public interface SecuritymodelsPackage extends EPackage {
 	EClass getRole();
 
 	/**
-	 * Returns the meta object for the reference '{@link securitymodels.Role#getEntity <em>Entity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Entity</em>'.
-	 * @see securitymodels.Role#getEntity()
-	 * @see #getRole()
-	 * @generated
-	 */
-	EReference getRole_Entity();
-
-	/**
 	 * Returns the meta object for the attribute '{@link securitymodels.Role#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -479,6 +505,38 @@ public interface SecuritymodelsPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRole_Name();
+
+	/**
+	 * Returns the meta object for class '{@link securitymodels.ProtectedResource <em>Protected Resource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Protected Resource</em>'.
+	 * @see securitymodels.ProtectedResource
+	 * @generated
+	 */
+	EClass getProtectedResource();
+
+	/**
+	 * Returns the meta object for the reference '{@link securitymodels.ProtectedResource#getResources <em>Resources</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Resources</em>'.
+	 * @see securitymodels.ProtectedResource#getResources()
+	 * @see #getProtectedResource()
+	 * @generated
+	 */
+	EReference getProtectedResource_Resources();
+
+	/**
+	 * Returns the meta object for the attribute '{@link securitymodels.ProtectedResource#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see securitymodels.ProtectedResource#getName()
+	 * @see #getProtectedResource()
+	 * @generated
+	 */
+	EAttribute getProtectedResource_Name();
 
 	/**
 	 * Returns the meta object for enum '{@link securitymodels.Action <em>Action</em>}'.
@@ -624,12 +682,12 @@ public interface SecuritymodelsPackage extends EPackage {
 		EReference RULE__AUTHS = eINSTANCE.getRule_Auths();
 
 		/**
-		 * The meta object literal for the '<em><b>Resources</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Protected Resources</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RULE__RESOURCES = eINSTANCE.getRule_Resources();
+		EReference RULE__PROTECTED_RESOURCES = eINSTANCE.getRule_ProtectedResources();
 
 		/**
 		 * The meta object literal for the '{@link securitymodels.impl.RoleImpl <em>Role</em>}' class.
@@ -642,12 +700,30 @@ public interface SecuritymodelsPackage extends EPackage {
 		EClass ROLE = eINSTANCE.getRole();
 
 		/**
-		 * The meta object literal for the '<em><b>Entity</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROLE__ENTITY = eINSTANCE.getRole_Entity();
+		EAttribute ROLE__NAME = eINSTANCE.getRole_Name();
+
+		/**
+		 * The meta object literal for the '{@link securitymodels.impl.ProtectedResourceImpl <em>Protected Resource</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see securitymodels.impl.ProtectedResourceImpl
+		 * @see securitymodels.impl.SecuritymodelsPackageImpl#getProtectedResource()
+		 * @generated
+		 */
+		EClass PROTECTED_RESOURCE = eINSTANCE.getProtectedResource();
+
+		/**
+		 * The meta object literal for the '<em><b>Resources</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROTECTED_RESOURCE__RESOURCES = eINSTANCE.getProtectedResource_Resources();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -655,7 +731,7 @@ public interface SecuritymodelsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ROLE__NAME = eINSTANCE.getRole_Name();
+		EAttribute PROTECTED_RESOURCE__NAME = eINSTANCE.getProtectedResource_Name();
 
 		/**
 		 * The meta object literal for the '{@link securitymodels.Action <em>Action</em>}' enum.

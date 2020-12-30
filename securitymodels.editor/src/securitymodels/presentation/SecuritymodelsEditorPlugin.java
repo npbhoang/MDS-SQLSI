@@ -3,6 +3,7 @@
 package securitymodels.presentation;
 
 import datamodels.provider.DatamodelsEditPlugin;
+
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.ui.EclipseUIPlugin;

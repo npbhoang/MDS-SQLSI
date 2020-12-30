@@ -84,6 +84,10 @@ public class SecuritymodelsAdapterFactory extends AdapterFactoryImpl {
 				return createRoleAdapter();
 			}
 			@Override
+			public Adapter caseProtectedResource(ProtectedResource object) {
+				return createProtectedResourceAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -156,6 +160,20 @@ public class SecuritymodelsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRoleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link securitymodels.ProtectedResource <em>Protected Resource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see securitymodels.ProtectedResource
+	 * @generated
+	 */
+	public Adapter createProtectedResourceAdapter() {
 		return null;
 	}
 

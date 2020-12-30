@@ -63,9 +63,9 @@ public class RuleItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addResourcesPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addActionPropertyDescriptor(object);
+			addProtectedResourcesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -93,28 +93,6 @@ public class RuleItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Resources feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addResourcesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Rule_resources_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Rule_resources_feature", "_UI_Rule_type"),
-				 SecuritymodelsPackage.Literals.RULE__RESOURCES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Action feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -132,6 +110,28 @@ public class RuleItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Protected Resources feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addProtectedResourcesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Rule_protectedResources_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Rule_protectedResources_feature", "_UI_Rule_type"),
+				 SecuritymodelsPackage.Literals.RULE__PROTECTED_RESOURCES,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

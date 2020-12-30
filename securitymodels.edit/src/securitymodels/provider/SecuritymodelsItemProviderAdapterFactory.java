@@ -95,6 +95,29 @@ public class SecuritymodelsItemProviderAdapterFactory extends SecuritymodelsAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link securitymodels.Auth} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AuthItemProvider authItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link securitymodels.Auth}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAuthAdapter() {
+		if (authItemProvider == null) {
+			authItemProvider = new AuthItemProvider(this);
+		}
+
+		return authItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link securitymodels.Rule} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -141,26 +164,26 @@ public class SecuritymodelsItemProviderAdapterFactory extends SecuritymodelsAdap
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link securitymodels.Auth} instances.
+	 * This keeps track of the one adapter used for all {@link securitymodels.ProtectedResource} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AuthItemProvider authItemProvider;
+	protected ProtectedResourceItemProvider protectedResourceItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link securitymodels.Auth}.
+	 * This creates an adapter for a {@link securitymodels.ProtectedResource}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createAuthAdapter() {
-		if (authItemProvider == null) {
-			authItemProvider = new AuthItemProvider(this);
+	public Adapter createProtectedResourceAdapter() {
+		if (protectedResourceItemProvider == null) {
+			protectedResourceItemProvider = new ProtectedResourceItemProvider(this);
 		}
 
-		return authItemProvider;
+		return protectedResourceItemProvider;
 	}
 
 	/**
@@ -266,6 +289,7 @@ public class SecuritymodelsItemProviderAdapterFactory extends SecuritymodelsAdap
 		if (authItemProvider != null) authItemProvider.dispose();
 		if (ruleItemProvider != null) ruleItemProvider.dispose();
 		if (roleItemProvider != null) roleItemProvider.dispose();
+		if (protectedResourceItemProvider != null) protectedResourceItemProvider.dispose();
 	}
 
 }

@@ -2,30 +2,44 @@
  */
 package securitymodels.impl;
 
+import datamodels.Property;
+
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import securitymodels.Role;
+import securitymodels.ProtectedResource;
 import securitymodels.SecuritymodelsPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Role</b></em>'.
+ * An implementation of the model object '<em><b>Protected Resource</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link securitymodels.impl.RoleImpl#getName <em>Name</em>}</li>
+ *   <li>{@link securitymodels.impl.ProtectedResourceImpl#getResources <em>Resources</em>}</li>
+ *   <li>{@link securitymodels.impl.ProtectedResourceImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
+public class ProtectedResourceImpl extends MinimalEObjectImpl.Container implements ProtectedResource {
+	/**
+	 * The cached value of the '{@link #getResources() <em>Resources</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResources()
+	 * @generated
+	 * @ordered
+	 */
+	protected Property resources;
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -51,7 +65,7 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RoleImpl() {
+	protected ProtectedResourceImpl() {
 		super();
 	}
 
@@ -62,7 +76,45 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SecuritymodelsPackage.Literals.ROLE;
+		return SecuritymodelsPackage.Literals.PROTECTED_RESOURCE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Property getResources() {
+		if (resources != null && resources.eIsProxy()) {
+			InternalEObject oldResources = (InternalEObject)resources;
+			resources = (Property)eResolveProxy(oldResources);
+			if (resources != oldResources) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecuritymodelsPackage.PROTECTED_RESOURCE__RESOURCES, oldResources, resources));
+			}
+		}
+		return resources;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Property basicGetResources() {
+		return resources;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setResources(Property newResources) {
+		Property oldResources = resources;
+		resources = newResources;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecuritymodelsPackage.PROTECTED_RESOURCE__RESOURCES, oldResources, resources));
 	}
 
 	/**
@@ -83,7 +135,7 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecuritymodelsPackage.ROLE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, SecuritymodelsPackage.PROTECTED_RESOURCE__NAME, oldName, name));
 	}
 
 	/**
@@ -94,7 +146,10 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SecuritymodelsPackage.ROLE__NAME:
+			case SecuritymodelsPackage.PROTECTED_RESOURCE__RESOURCES:
+				if (resolve) return getResources();
+				return basicGetResources();
+			case SecuritymodelsPackage.PROTECTED_RESOURCE__NAME:
 				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -108,7 +163,10 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SecuritymodelsPackage.ROLE__NAME:
+			case SecuritymodelsPackage.PROTECTED_RESOURCE__RESOURCES:
+				setResources((Property)newValue);
+				return;
+			case SecuritymodelsPackage.PROTECTED_RESOURCE__NAME:
 				setName((String)newValue);
 				return;
 		}
@@ -123,7 +181,10 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SecuritymodelsPackage.ROLE__NAME:
+			case SecuritymodelsPackage.PROTECTED_RESOURCE__RESOURCES:
+				setResources((Property)null);
+				return;
+			case SecuritymodelsPackage.PROTECTED_RESOURCE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
 		}
@@ -138,7 +199,9 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SecuritymodelsPackage.ROLE__NAME:
+			case SecuritymodelsPackage.PROTECTED_RESOURCE__RESOURCES:
+				return resources != null;
+			case SecuritymodelsPackage.PROTECTED_RESOURCE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
@@ -160,4 +223,4 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 		return result.toString();
 	}
 
-} //RoleImpl
+} //ProtectedResourceImpl

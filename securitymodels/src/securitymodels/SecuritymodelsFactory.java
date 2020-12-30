@@ -58,6 +58,15 @@ public interface SecuritymodelsFactory extends EFactory {
 	Role createRole();
 
 	/**
+	 * Returns a new object of class '<em>Protected Resource</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Protected Resource</em>'.
+	 * @generated
+	 */
+	ProtectedResource createProtectedResource();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
