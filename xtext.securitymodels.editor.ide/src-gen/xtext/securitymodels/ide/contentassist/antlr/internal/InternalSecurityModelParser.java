@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSecurityModelParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'READ'", "'CREATE'", "'UPDATE'", "'DELETE'", "'name:'", "'roles:'", "'rules:'", "':'", "'('", "')'", "'conditions'", "','", "'{'", "'}'", "',or'", "'<-'", "'roles'", "'context:'", "'ocl:'", "'sql:'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'READ'", "'CREATE'", "'UPDATE'", "'DELETE'", "'name:'", "'roles:'", "'rules:'", "':'", "'protected'", "'conditions'", "','", "'{'", "'}'", "'or'", "'roles'", "'('", "')'", "'context:'", "'ocl:'", "'sql:'", "'as'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -37,6 +37,7 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
     public static final int T__14=14;
     public static final int EOF=-1;
     public static final int T__30=30;
+    public static final int T__31=31;
     public static final int RULE_ID=5;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
@@ -350,31 +351,31 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "ruleRole"
-    // InternalSecurityModel.g:137:1: ruleRole : ( ( rule__Role__Group__0 ) ) ;
+    // InternalSecurityModel.g:137:1: ruleRole : ( ( rule__Role__NameAssignment ) ) ;
     public final void ruleRole() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:141:2: ( ( ( rule__Role__Group__0 ) ) )
-            // InternalSecurityModel.g:142:2: ( ( rule__Role__Group__0 ) )
+            // InternalSecurityModel.g:141:2: ( ( ( rule__Role__NameAssignment ) ) )
+            // InternalSecurityModel.g:142:2: ( ( rule__Role__NameAssignment ) )
             {
-            // InternalSecurityModel.g:142:2: ( ( rule__Role__Group__0 ) )
-            // InternalSecurityModel.g:143:3: ( rule__Role__Group__0 )
+            // InternalSecurityModel.g:142:2: ( ( rule__Role__NameAssignment ) )
+            // InternalSecurityModel.g:143:3: ( rule__Role__NameAssignment )
             {
-             before(grammarAccess.getRoleAccess().getGroup()); 
-            // InternalSecurityModel.g:144:3: ( rule__Role__Group__0 )
-            // InternalSecurityModel.g:144:4: rule__Role__Group__0
+             before(grammarAccess.getRoleAccess().getNameAssignment()); 
+            // InternalSecurityModel.g:144:3: ( rule__Role__NameAssignment )
+            // InternalSecurityModel.g:144:4: rule__Role__NameAssignment
             {
             pushFollow(FOLLOW_2);
-            rule__Role__Group__0();
+            rule__Role__NameAssignment();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getRoleAccess().getGroup()); 
+             after(grammarAccess.getRoleAccess().getNameAssignment()); 
 
             }
 
@@ -473,22 +474,99 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
     // $ANTLR end "ruleAuth"
 
 
+    // $ANTLR start "entryRuleProtectedResource"
+    // InternalSecurityModel.g:178:1: entryRuleProtectedResource : ruleProtectedResource EOF ;
+    public final void entryRuleProtectedResource() throws RecognitionException {
+        try {
+            // InternalSecurityModel.g:179:1: ( ruleProtectedResource EOF )
+            // InternalSecurityModel.g:180:1: ruleProtectedResource EOF
+            {
+             before(grammarAccess.getProtectedResourceRule()); 
+            pushFollow(FOLLOW_1);
+            ruleProtectedResource();
+
+            state._fsp--;
+
+             after(grammarAccess.getProtectedResourceRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleProtectedResource"
+
+
+    // $ANTLR start "ruleProtectedResource"
+    // InternalSecurityModel.g:187:1: ruleProtectedResource : ( ( rule__ProtectedResource__Group__0 ) ) ;
+    public final void ruleProtectedResource() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSecurityModel.g:191:2: ( ( ( rule__ProtectedResource__Group__0 ) ) )
+            // InternalSecurityModel.g:192:2: ( ( rule__ProtectedResource__Group__0 ) )
+            {
+            // InternalSecurityModel.g:192:2: ( ( rule__ProtectedResource__Group__0 ) )
+            // InternalSecurityModel.g:193:3: ( rule__ProtectedResource__Group__0 )
+            {
+             before(grammarAccess.getProtectedResourceAccess().getGroup()); 
+            // InternalSecurityModel.g:194:3: ( rule__ProtectedResource__Group__0 )
+            // InternalSecurityModel.g:194:4: rule__ProtectedResource__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__ProtectedResource__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getProtectedResourceAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleProtectedResource"
+
+
     // $ANTLR start "ruleAction"
-    // InternalSecurityModel.g:178:1: ruleAction : ( ( rule__Action__Alternatives ) ) ;
+    // InternalSecurityModel.g:203:1: ruleAction : ( ( rule__Action__Alternatives ) ) ;
     public final void ruleAction() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:182:1: ( ( ( rule__Action__Alternatives ) ) )
-            // InternalSecurityModel.g:183:2: ( ( rule__Action__Alternatives ) )
+            // InternalSecurityModel.g:207:1: ( ( ( rule__Action__Alternatives ) ) )
+            // InternalSecurityModel.g:208:2: ( ( rule__Action__Alternatives ) )
             {
-            // InternalSecurityModel.g:183:2: ( ( rule__Action__Alternatives ) )
-            // InternalSecurityModel.g:184:3: ( rule__Action__Alternatives )
+            // InternalSecurityModel.g:208:2: ( ( rule__Action__Alternatives ) )
+            // InternalSecurityModel.g:209:3: ( rule__Action__Alternatives )
             {
              before(grammarAccess.getActionAccess().getAlternatives()); 
-            // InternalSecurityModel.g:185:3: ( rule__Action__Alternatives )
-            // InternalSecurityModel.g:185:4: rule__Action__Alternatives
+            // InternalSecurityModel.g:210:3: ( rule__Action__Alternatives )
+            // InternalSecurityModel.g:210:4: rule__Action__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__Action__Alternatives();
@@ -521,13 +599,13 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EString__Alternatives"
-    // InternalSecurityModel.g:193:1: rule__EString__Alternatives : ( ( RULE_STRING ) | ( RULE_ID ) );
+    // InternalSecurityModel.g:218:1: rule__EString__Alternatives : ( ( RULE_STRING ) | ( RULE_ID ) );
     public final void rule__EString__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:197:1: ( ( RULE_STRING ) | ( RULE_ID ) )
+            // InternalSecurityModel.g:222:1: ( ( RULE_STRING ) | ( RULE_ID ) )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -545,10 +623,10 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
             }
             switch (alt1) {
                 case 1 :
-                    // InternalSecurityModel.g:198:2: ( RULE_STRING )
+                    // InternalSecurityModel.g:223:2: ( RULE_STRING )
                     {
-                    // InternalSecurityModel.g:198:2: ( RULE_STRING )
-                    // InternalSecurityModel.g:199:3: RULE_STRING
+                    // InternalSecurityModel.g:223:2: ( RULE_STRING )
+                    // InternalSecurityModel.g:224:3: RULE_STRING
                     {
                      before(grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0()); 
                     match(input,RULE_STRING,FOLLOW_2); 
@@ -560,10 +638,10 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
                     }
                     break;
                 case 2 :
-                    // InternalSecurityModel.g:204:2: ( RULE_ID )
+                    // InternalSecurityModel.g:229:2: ( RULE_ID )
                     {
-                    // InternalSecurityModel.g:204:2: ( RULE_ID )
-                    // InternalSecurityModel.g:205:3: RULE_ID
+                    // InternalSecurityModel.g:229:2: ( RULE_ID )
+                    // InternalSecurityModel.g:230:3: RULE_ID
                     {
                      before(grammarAccess.getEStringAccess().getIDTerminalRuleCall_1()); 
                     match(input,RULE_ID,FOLLOW_2); 
@@ -592,13 +670,13 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Action__Alternatives"
-    // InternalSecurityModel.g:214:1: rule__Action__Alternatives : ( ( ( 'READ' ) ) | ( ( 'CREATE' ) ) | ( ( 'UPDATE' ) ) | ( ( 'DELETE' ) ) );
+    // InternalSecurityModel.g:239:1: rule__Action__Alternatives : ( ( ( 'READ' ) ) | ( ( 'CREATE' ) ) | ( ( 'UPDATE' ) ) | ( ( 'DELETE' ) ) );
     public final void rule__Action__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:218:1: ( ( ( 'READ' ) ) | ( ( 'CREATE' ) ) | ( ( 'UPDATE' ) ) | ( ( 'DELETE' ) ) )
+            // InternalSecurityModel.g:243:1: ( ( ( 'READ' ) ) | ( ( 'CREATE' ) ) | ( ( 'UPDATE' ) ) | ( ( 'DELETE' ) ) )
             int alt2=4;
             switch ( input.LA(1) ) {
             case 11:
@@ -630,14 +708,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
             switch (alt2) {
                 case 1 :
-                    // InternalSecurityModel.g:219:2: ( ( 'READ' ) )
+                    // InternalSecurityModel.g:244:2: ( ( 'READ' ) )
                     {
-                    // InternalSecurityModel.g:219:2: ( ( 'READ' ) )
-                    // InternalSecurityModel.g:220:3: ( 'READ' )
+                    // InternalSecurityModel.g:244:2: ( ( 'READ' ) )
+                    // InternalSecurityModel.g:245:3: ( 'READ' )
                     {
                      before(grammarAccess.getActionAccess().getREADEnumLiteralDeclaration_0()); 
-                    // InternalSecurityModel.g:221:3: ( 'READ' )
-                    // InternalSecurityModel.g:221:4: 'READ'
+                    // InternalSecurityModel.g:246:3: ( 'READ' )
+                    // InternalSecurityModel.g:246:4: 'READ'
                     {
                     match(input,11,FOLLOW_2); 
 
@@ -651,14 +729,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
                     }
                     break;
                 case 2 :
-                    // InternalSecurityModel.g:225:2: ( ( 'CREATE' ) )
+                    // InternalSecurityModel.g:250:2: ( ( 'CREATE' ) )
                     {
-                    // InternalSecurityModel.g:225:2: ( ( 'CREATE' ) )
-                    // InternalSecurityModel.g:226:3: ( 'CREATE' )
+                    // InternalSecurityModel.g:250:2: ( ( 'CREATE' ) )
+                    // InternalSecurityModel.g:251:3: ( 'CREATE' )
                     {
                      before(grammarAccess.getActionAccess().getCREATEEnumLiteralDeclaration_1()); 
-                    // InternalSecurityModel.g:227:3: ( 'CREATE' )
-                    // InternalSecurityModel.g:227:4: 'CREATE'
+                    // InternalSecurityModel.g:252:3: ( 'CREATE' )
+                    // InternalSecurityModel.g:252:4: 'CREATE'
                     {
                     match(input,12,FOLLOW_2); 
 
@@ -672,14 +750,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
                     }
                     break;
                 case 3 :
-                    // InternalSecurityModel.g:231:2: ( ( 'UPDATE' ) )
+                    // InternalSecurityModel.g:256:2: ( ( 'UPDATE' ) )
                     {
-                    // InternalSecurityModel.g:231:2: ( ( 'UPDATE' ) )
-                    // InternalSecurityModel.g:232:3: ( 'UPDATE' )
+                    // InternalSecurityModel.g:256:2: ( ( 'UPDATE' ) )
+                    // InternalSecurityModel.g:257:3: ( 'UPDATE' )
                     {
                      before(grammarAccess.getActionAccess().getUPDATEEnumLiteralDeclaration_2()); 
-                    // InternalSecurityModel.g:233:3: ( 'UPDATE' )
-                    // InternalSecurityModel.g:233:4: 'UPDATE'
+                    // InternalSecurityModel.g:258:3: ( 'UPDATE' )
+                    // InternalSecurityModel.g:258:4: 'UPDATE'
                     {
                     match(input,13,FOLLOW_2); 
 
@@ -693,14 +771,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
                     }
                     break;
                 case 4 :
-                    // InternalSecurityModel.g:237:2: ( ( 'DELETE' ) )
+                    // InternalSecurityModel.g:262:2: ( ( 'DELETE' ) )
                     {
-                    // InternalSecurityModel.g:237:2: ( ( 'DELETE' ) )
-                    // InternalSecurityModel.g:238:3: ( 'DELETE' )
+                    // InternalSecurityModel.g:262:2: ( ( 'DELETE' ) )
+                    // InternalSecurityModel.g:263:3: ( 'DELETE' )
                     {
                      before(grammarAccess.getActionAccess().getDELETEEnumLiteralDeclaration_3()); 
-                    // InternalSecurityModel.g:239:3: ( 'DELETE' )
-                    // InternalSecurityModel.g:239:4: 'DELETE'
+                    // InternalSecurityModel.g:264:3: ( 'DELETE' )
+                    // InternalSecurityModel.g:264:4: 'DELETE'
                     {
                     match(input,14,FOLLOW_2); 
 
@@ -731,14 +809,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__SecurityModel__Group__0"
-    // InternalSecurityModel.g:247:1: rule__SecurityModel__Group__0 : rule__SecurityModel__Group__0__Impl rule__SecurityModel__Group__1 ;
+    // InternalSecurityModel.g:272:1: rule__SecurityModel__Group__0 : rule__SecurityModel__Group__0__Impl rule__SecurityModel__Group__1 ;
     public final void rule__SecurityModel__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:251:1: ( rule__SecurityModel__Group__0__Impl rule__SecurityModel__Group__1 )
-            // InternalSecurityModel.g:252:2: rule__SecurityModel__Group__0__Impl rule__SecurityModel__Group__1
+            // InternalSecurityModel.g:276:1: ( rule__SecurityModel__Group__0__Impl rule__SecurityModel__Group__1 )
+            // InternalSecurityModel.g:277:2: rule__SecurityModel__Group__0__Impl rule__SecurityModel__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__SecurityModel__Group__0__Impl();
@@ -769,21 +847,21 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__SecurityModel__Group__0__Impl"
-    // InternalSecurityModel.g:259:1: rule__SecurityModel__Group__0__Impl : ( () ) ;
+    // InternalSecurityModel.g:284:1: rule__SecurityModel__Group__0__Impl : ( () ) ;
     public final void rule__SecurityModel__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:263:1: ( ( () ) )
-            // InternalSecurityModel.g:264:1: ( () )
+            // InternalSecurityModel.g:288:1: ( ( () ) )
+            // InternalSecurityModel.g:289:1: ( () )
             {
-            // InternalSecurityModel.g:264:1: ( () )
-            // InternalSecurityModel.g:265:2: ()
+            // InternalSecurityModel.g:289:1: ( () )
+            // InternalSecurityModel.g:290:2: ()
             {
              before(grammarAccess.getSecurityModelAccess().getSecurityModelAction_0()); 
-            // InternalSecurityModel.g:266:2: ()
-            // InternalSecurityModel.g:266:3: 
+            // InternalSecurityModel.g:291:2: ()
+            // InternalSecurityModel.g:291:3: 
             {
             }
 
@@ -806,14 +884,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__SecurityModel__Group__1"
-    // InternalSecurityModel.g:274:1: rule__SecurityModel__Group__1 : rule__SecurityModel__Group__1__Impl rule__SecurityModel__Group__2 ;
+    // InternalSecurityModel.g:299:1: rule__SecurityModel__Group__1 : rule__SecurityModel__Group__1__Impl rule__SecurityModel__Group__2 ;
     public final void rule__SecurityModel__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:278:1: ( rule__SecurityModel__Group__1__Impl rule__SecurityModel__Group__2 )
-            // InternalSecurityModel.g:279:2: rule__SecurityModel__Group__1__Impl rule__SecurityModel__Group__2
+            // InternalSecurityModel.g:303:1: ( rule__SecurityModel__Group__1__Impl rule__SecurityModel__Group__2 )
+            // InternalSecurityModel.g:304:2: rule__SecurityModel__Group__1__Impl rule__SecurityModel__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__SecurityModel__Group__1__Impl();
@@ -844,17 +922,17 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__SecurityModel__Group__1__Impl"
-    // InternalSecurityModel.g:286:1: rule__SecurityModel__Group__1__Impl : ( 'name:' ) ;
+    // InternalSecurityModel.g:311:1: rule__SecurityModel__Group__1__Impl : ( 'name:' ) ;
     public final void rule__SecurityModel__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:290:1: ( ( 'name:' ) )
-            // InternalSecurityModel.g:291:1: ( 'name:' )
+            // InternalSecurityModel.g:315:1: ( ( 'name:' ) )
+            // InternalSecurityModel.g:316:1: ( 'name:' )
             {
-            // InternalSecurityModel.g:291:1: ( 'name:' )
-            // InternalSecurityModel.g:292:2: 'name:'
+            // InternalSecurityModel.g:316:1: ( 'name:' )
+            // InternalSecurityModel.g:317:2: 'name:'
             {
              before(grammarAccess.getSecurityModelAccess().getNameKeyword_1()); 
             match(input,15,FOLLOW_2); 
@@ -881,14 +959,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__SecurityModel__Group__2"
-    // InternalSecurityModel.g:301:1: rule__SecurityModel__Group__2 : rule__SecurityModel__Group__2__Impl rule__SecurityModel__Group__3 ;
+    // InternalSecurityModel.g:326:1: rule__SecurityModel__Group__2 : rule__SecurityModel__Group__2__Impl rule__SecurityModel__Group__3 ;
     public final void rule__SecurityModel__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:305:1: ( rule__SecurityModel__Group__2__Impl rule__SecurityModel__Group__3 )
-            // InternalSecurityModel.g:306:2: rule__SecurityModel__Group__2__Impl rule__SecurityModel__Group__3
+            // InternalSecurityModel.g:330:1: ( rule__SecurityModel__Group__2__Impl rule__SecurityModel__Group__3 )
+            // InternalSecurityModel.g:331:2: rule__SecurityModel__Group__2__Impl rule__SecurityModel__Group__3
             {
             pushFollow(FOLLOW_5);
             rule__SecurityModel__Group__2__Impl();
@@ -919,21 +997,21 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__SecurityModel__Group__2__Impl"
-    // InternalSecurityModel.g:313:1: rule__SecurityModel__Group__2__Impl : ( ( rule__SecurityModel__NameAssignment_2 ) ) ;
+    // InternalSecurityModel.g:338:1: rule__SecurityModel__Group__2__Impl : ( ( rule__SecurityModel__NameAssignment_2 ) ) ;
     public final void rule__SecurityModel__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:317:1: ( ( ( rule__SecurityModel__NameAssignment_2 ) ) )
-            // InternalSecurityModel.g:318:1: ( ( rule__SecurityModel__NameAssignment_2 ) )
+            // InternalSecurityModel.g:342:1: ( ( ( rule__SecurityModel__NameAssignment_2 ) ) )
+            // InternalSecurityModel.g:343:1: ( ( rule__SecurityModel__NameAssignment_2 ) )
             {
-            // InternalSecurityModel.g:318:1: ( ( rule__SecurityModel__NameAssignment_2 ) )
-            // InternalSecurityModel.g:319:2: ( rule__SecurityModel__NameAssignment_2 )
+            // InternalSecurityModel.g:343:1: ( ( rule__SecurityModel__NameAssignment_2 ) )
+            // InternalSecurityModel.g:344:2: ( rule__SecurityModel__NameAssignment_2 )
             {
              before(grammarAccess.getSecurityModelAccess().getNameAssignment_2()); 
-            // InternalSecurityModel.g:320:2: ( rule__SecurityModel__NameAssignment_2 )
-            // InternalSecurityModel.g:320:3: rule__SecurityModel__NameAssignment_2
+            // InternalSecurityModel.g:345:2: ( rule__SecurityModel__NameAssignment_2 )
+            // InternalSecurityModel.g:345:3: rule__SecurityModel__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__SecurityModel__NameAssignment_2();
@@ -966,14 +1044,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__SecurityModel__Group__3"
-    // InternalSecurityModel.g:328:1: rule__SecurityModel__Group__3 : rule__SecurityModel__Group__3__Impl rule__SecurityModel__Group__4 ;
+    // InternalSecurityModel.g:353:1: rule__SecurityModel__Group__3 : rule__SecurityModel__Group__3__Impl rule__SecurityModel__Group__4 ;
     public final void rule__SecurityModel__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:332:1: ( rule__SecurityModel__Group__3__Impl rule__SecurityModel__Group__4 )
-            // InternalSecurityModel.g:333:2: rule__SecurityModel__Group__3__Impl rule__SecurityModel__Group__4
+            // InternalSecurityModel.g:357:1: ( rule__SecurityModel__Group__3__Impl rule__SecurityModel__Group__4 )
+            // InternalSecurityModel.g:358:2: rule__SecurityModel__Group__3__Impl rule__SecurityModel__Group__4
             {
             pushFollow(FOLLOW_4);
             rule__SecurityModel__Group__3__Impl();
@@ -1004,17 +1082,17 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__SecurityModel__Group__3__Impl"
-    // InternalSecurityModel.g:340:1: rule__SecurityModel__Group__3__Impl : ( 'roles:' ) ;
+    // InternalSecurityModel.g:365:1: rule__SecurityModel__Group__3__Impl : ( 'roles:' ) ;
     public final void rule__SecurityModel__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:344:1: ( ( 'roles:' ) )
-            // InternalSecurityModel.g:345:1: ( 'roles:' )
+            // InternalSecurityModel.g:369:1: ( ( 'roles:' ) )
+            // InternalSecurityModel.g:370:1: ( 'roles:' )
             {
-            // InternalSecurityModel.g:345:1: ( 'roles:' )
-            // InternalSecurityModel.g:346:2: 'roles:'
+            // InternalSecurityModel.g:370:1: ( 'roles:' )
+            // InternalSecurityModel.g:371:2: 'roles:'
             {
              before(grammarAccess.getSecurityModelAccess().getRolesKeyword_3()); 
             match(input,16,FOLLOW_2); 
@@ -1041,14 +1119,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__SecurityModel__Group__4"
-    // InternalSecurityModel.g:355:1: rule__SecurityModel__Group__4 : rule__SecurityModel__Group__4__Impl rule__SecurityModel__Group__5 ;
+    // InternalSecurityModel.g:380:1: rule__SecurityModel__Group__4 : rule__SecurityModel__Group__4__Impl rule__SecurityModel__Group__5 ;
     public final void rule__SecurityModel__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:359:1: ( rule__SecurityModel__Group__4__Impl rule__SecurityModel__Group__5 )
-            // InternalSecurityModel.g:360:2: rule__SecurityModel__Group__4__Impl rule__SecurityModel__Group__5
+            // InternalSecurityModel.g:384:1: ( rule__SecurityModel__Group__4__Impl rule__SecurityModel__Group__5 )
+            // InternalSecurityModel.g:385:2: rule__SecurityModel__Group__4__Impl rule__SecurityModel__Group__5
             {
             pushFollow(FOLLOW_6);
             rule__SecurityModel__Group__4__Impl();
@@ -1079,24 +1157,24 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__SecurityModel__Group__4__Impl"
-    // InternalSecurityModel.g:367:1: rule__SecurityModel__Group__4__Impl : ( ( ( rule__SecurityModel__RolesAssignment_4 ) ) ( ( rule__SecurityModel__RolesAssignment_4 )* ) ) ;
+    // InternalSecurityModel.g:392:1: rule__SecurityModel__Group__4__Impl : ( ( ( rule__SecurityModel__RolesAssignment_4 ) ) ( ( rule__SecurityModel__RolesAssignment_4 )* ) ) ;
     public final void rule__SecurityModel__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:371:1: ( ( ( ( rule__SecurityModel__RolesAssignment_4 ) ) ( ( rule__SecurityModel__RolesAssignment_4 )* ) ) )
-            // InternalSecurityModel.g:372:1: ( ( ( rule__SecurityModel__RolesAssignment_4 ) ) ( ( rule__SecurityModel__RolesAssignment_4 )* ) )
+            // InternalSecurityModel.g:396:1: ( ( ( ( rule__SecurityModel__RolesAssignment_4 ) ) ( ( rule__SecurityModel__RolesAssignment_4 )* ) ) )
+            // InternalSecurityModel.g:397:1: ( ( ( rule__SecurityModel__RolesAssignment_4 ) ) ( ( rule__SecurityModel__RolesAssignment_4 )* ) )
             {
-            // InternalSecurityModel.g:372:1: ( ( ( rule__SecurityModel__RolesAssignment_4 ) ) ( ( rule__SecurityModel__RolesAssignment_4 )* ) )
-            // InternalSecurityModel.g:373:2: ( ( rule__SecurityModel__RolesAssignment_4 ) ) ( ( rule__SecurityModel__RolesAssignment_4 )* )
+            // InternalSecurityModel.g:397:1: ( ( ( rule__SecurityModel__RolesAssignment_4 ) ) ( ( rule__SecurityModel__RolesAssignment_4 )* ) )
+            // InternalSecurityModel.g:398:2: ( ( rule__SecurityModel__RolesAssignment_4 ) ) ( ( rule__SecurityModel__RolesAssignment_4 )* )
             {
-            // InternalSecurityModel.g:373:2: ( ( rule__SecurityModel__RolesAssignment_4 ) )
-            // InternalSecurityModel.g:374:3: ( rule__SecurityModel__RolesAssignment_4 )
+            // InternalSecurityModel.g:398:2: ( ( rule__SecurityModel__RolesAssignment_4 ) )
+            // InternalSecurityModel.g:399:3: ( rule__SecurityModel__RolesAssignment_4 )
             {
              before(grammarAccess.getSecurityModelAccess().getRolesAssignment_4()); 
-            // InternalSecurityModel.g:375:3: ( rule__SecurityModel__RolesAssignment_4 )
-            // InternalSecurityModel.g:375:4: rule__SecurityModel__RolesAssignment_4
+            // InternalSecurityModel.g:400:3: ( rule__SecurityModel__RolesAssignment_4 )
+            // InternalSecurityModel.g:400:4: rule__SecurityModel__RolesAssignment_4
             {
             pushFollow(FOLLOW_7);
             rule__SecurityModel__RolesAssignment_4();
@@ -1110,11 +1188,11 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
             }
 
-            // InternalSecurityModel.g:378:2: ( ( rule__SecurityModel__RolesAssignment_4 )* )
-            // InternalSecurityModel.g:379:3: ( rule__SecurityModel__RolesAssignment_4 )*
+            // InternalSecurityModel.g:403:2: ( ( rule__SecurityModel__RolesAssignment_4 )* )
+            // InternalSecurityModel.g:404:3: ( rule__SecurityModel__RolesAssignment_4 )*
             {
              before(grammarAccess.getSecurityModelAccess().getRolesAssignment_4()); 
-            // InternalSecurityModel.g:380:3: ( rule__SecurityModel__RolesAssignment_4 )*
+            // InternalSecurityModel.g:405:3: ( rule__SecurityModel__RolesAssignment_4 )*
             loop3:
             do {
                 int alt3=2;
@@ -1127,7 +1205,7 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalSecurityModel.g:380:4: rule__SecurityModel__RolesAssignment_4
+            	    // InternalSecurityModel.g:405:4: rule__SecurityModel__RolesAssignment_4
             	    {
             	    pushFollow(FOLLOW_7);
             	    rule__SecurityModel__RolesAssignment_4();
@@ -1169,14 +1247,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__SecurityModel__Group__5"
-    // InternalSecurityModel.g:389:1: rule__SecurityModel__Group__5 : rule__SecurityModel__Group__5__Impl ;
+    // InternalSecurityModel.g:414:1: rule__SecurityModel__Group__5 : rule__SecurityModel__Group__5__Impl ;
     public final void rule__SecurityModel__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:393:1: ( rule__SecurityModel__Group__5__Impl )
-            // InternalSecurityModel.g:394:2: rule__SecurityModel__Group__5__Impl
+            // InternalSecurityModel.g:418:1: ( rule__SecurityModel__Group__5__Impl )
+            // InternalSecurityModel.g:419:2: rule__SecurityModel__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SecurityModel__Group__5__Impl();
@@ -1202,20 +1280,20 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__SecurityModel__Group__5__Impl"
-    // InternalSecurityModel.g:400:1: rule__SecurityModel__Group__5__Impl : ( ( rule__SecurityModel__Group_5__0 )? ) ;
+    // InternalSecurityModel.g:425:1: rule__SecurityModel__Group__5__Impl : ( ( rule__SecurityModel__Group_5__0 )? ) ;
     public final void rule__SecurityModel__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:404:1: ( ( ( rule__SecurityModel__Group_5__0 )? ) )
-            // InternalSecurityModel.g:405:1: ( ( rule__SecurityModel__Group_5__0 )? )
+            // InternalSecurityModel.g:429:1: ( ( ( rule__SecurityModel__Group_5__0 )? ) )
+            // InternalSecurityModel.g:430:1: ( ( rule__SecurityModel__Group_5__0 )? )
             {
-            // InternalSecurityModel.g:405:1: ( ( rule__SecurityModel__Group_5__0 )? )
-            // InternalSecurityModel.g:406:2: ( rule__SecurityModel__Group_5__0 )?
+            // InternalSecurityModel.g:430:1: ( ( rule__SecurityModel__Group_5__0 )? )
+            // InternalSecurityModel.g:431:2: ( rule__SecurityModel__Group_5__0 )?
             {
              before(grammarAccess.getSecurityModelAccess().getGroup_5()); 
-            // InternalSecurityModel.g:407:2: ( rule__SecurityModel__Group_5__0 )?
+            // InternalSecurityModel.g:432:2: ( rule__SecurityModel__Group_5__0 )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1224,7 +1302,7 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
             }
             switch (alt4) {
                 case 1 :
-                    // InternalSecurityModel.g:407:3: rule__SecurityModel__Group_5__0
+                    // InternalSecurityModel.g:432:3: rule__SecurityModel__Group_5__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__SecurityModel__Group_5__0();
@@ -1260,14 +1338,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__SecurityModel__Group_5__0"
-    // InternalSecurityModel.g:416:1: rule__SecurityModel__Group_5__0 : rule__SecurityModel__Group_5__0__Impl rule__SecurityModel__Group_5__1 ;
+    // InternalSecurityModel.g:441:1: rule__SecurityModel__Group_5__0 : rule__SecurityModel__Group_5__0__Impl rule__SecurityModel__Group_5__1 ;
     public final void rule__SecurityModel__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:420:1: ( rule__SecurityModel__Group_5__0__Impl rule__SecurityModel__Group_5__1 )
-            // InternalSecurityModel.g:421:2: rule__SecurityModel__Group_5__0__Impl rule__SecurityModel__Group_5__1
+            // InternalSecurityModel.g:445:1: ( rule__SecurityModel__Group_5__0__Impl rule__SecurityModel__Group_5__1 )
+            // InternalSecurityModel.g:446:2: rule__SecurityModel__Group_5__0__Impl rule__SecurityModel__Group_5__1
             {
             pushFollow(FOLLOW_4);
             rule__SecurityModel__Group_5__0__Impl();
@@ -1298,17 +1376,17 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__SecurityModel__Group_5__0__Impl"
-    // InternalSecurityModel.g:428:1: rule__SecurityModel__Group_5__0__Impl : ( 'rules:' ) ;
+    // InternalSecurityModel.g:453:1: rule__SecurityModel__Group_5__0__Impl : ( 'rules:' ) ;
     public final void rule__SecurityModel__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:432:1: ( ( 'rules:' ) )
-            // InternalSecurityModel.g:433:1: ( 'rules:' )
+            // InternalSecurityModel.g:457:1: ( ( 'rules:' ) )
+            // InternalSecurityModel.g:458:1: ( 'rules:' )
             {
-            // InternalSecurityModel.g:433:1: ( 'rules:' )
-            // InternalSecurityModel.g:434:2: 'rules:'
+            // InternalSecurityModel.g:458:1: ( 'rules:' )
+            // InternalSecurityModel.g:459:2: 'rules:'
             {
              before(grammarAccess.getSecurityModelAccess().getRulesKeyword_5_0()); 
             match(input,17,FOLLOW_2); 
@@ -1335,14 +1413,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__SecurityModel__Group_5__1"
-    // InternalSecurityModel.g:443:1: rule__SecurityModel__Group_5__1 : rule__SecurityModel__Group_5__1__Impl ;
+    // InternalSecurityModel.g:468:1: rule__SecurityModel__Group_5__1 : rule__SecurityModel__Group_5__1__Impl ;
     public final void rule__SecurityModel__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:447:1: ( rule__SecurityModel__Group_5__1__Impl )
-            // InternalSecurityModel.g:448:2: rule__SecurityModel__Group_5__1__Impl
+            // InternalSecurityModel.g:472:1: ( rule__SecurityModel__Group_5__1__Impl )
+            // InternalSecurityModel.g:473:2: rule__SecurityModel__Group_5__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SecurityModel__Group_5__1__Impl();
@@ -1368,24 +1446,24 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__SecurityModel__Group_5__1__Impl"
-    // InternalSecurityModel.g:454:1: rule__SecurityModel__Group_5__1__Impl : ( ( ( rule__SecurityModel__RulesAssignment_5_1 ) ) ( ( rule__SecurityModel__RulesAssignment_5_1 )* ) ) ;
+    // InternalSecurityModel.g:479:1: rule__SecurityModel__Group_5__1__Impl : ( ( ( rule__SecurityModel__RulesAssignment_5_1 ) ) ( ( rule__SecurityModel__RulesAssignment_5_1 )* ) ) ;
     public final void rule__SecurityModel__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:458:1: ( ( ( ( rule__SecurityModel__RulesAssignment_5_1 ) ) ( ( rule__SecurityModel__RulesAssignment_5_1 )* ) ) )
-            // InternalSecurityModel.g:459:1: ( ( ( rule__SecurityModel__RulesAssignment_5_1 ) ) ( ( rule__SecurityModel__RulesAssignment_5_1 )* ) )
+            // InternalSecurityModel.g:483:1: ( ( ( ( rule__SecurityModel__RulesAssignment_5_1 ) ) ( ( rule__SecurityModel__RulesAssignment_5_1 )* ) ) )
+            // InternalSecurityModel.g:484:1: ( ( ( rule__SecurityModel__RulesAssignment_5_1 ) ) ( ( rule__SecurityModel__RulesAssignment_5_1 )* ) )
             {
-            // InternalSecurityModel.g:459:1: ( ( ( rule__SecurityModel__RulesAssignment_5_1 ) ) ( ( rule__SecurityModel__RulesAssignment_5_1 )* ) )
-            // InternalSecurityModel.g:460:2: ( ( rule__SecurityModel__RulesAssignment_5_1 ) ) ( ( rule__SecurityModel__RulesAssignment_5_1 )* )
+            // InternalSecurityModel.g:484:1: ( ( ( rule__SecurityModel__RulesAssignment_5_1 ) ) ( ( rule__SecurityModel__RulesAssignment_5_1 )* ) )
+            // InternalSecurityModel.g:485:2: ( ( rule__SecurityModel__RulesAssignment_5_1 ) ) ( ( rule__SecurityModel__RulesAssignment_5_1 )* )
             {
-            // InternalSecurityModel.g:460:2: ( ( rule__SecurityModel__RulesAssignment_5_1 ) )
-            // InternalSecurityModel.g:461:3: ( rule__SecurityModel__RulesAssignment_5_1 )
+            // InternalSecurityModel.g:485:2: ( ( rule__SecurityModel__RulesAssignment_5_1 ) )
+            // InternalSecurityModel.g:486:3: ( rule__SecurityModel__RulesAssignment_5_1 )
             {
              before(grammarAccess.getSecurityModelAccess().getRulesAssignment_5_1()); 
-            // InternalSecurityModel.g:462:3: ( rule__SecurityModel__RulesAssignment_5_1 )
-            // InternalSecurityModel.g:462:4: rule__SecurityModel__RulesAssignment_5_1
+            // InternalSecurityModel.g:487:3: ( rule__SecurityModel__RulesAssignment_5_1 )
+            // InternalSecurityModel.g:487:4: rule__SecurityModel__RulesAssignment_5_1
             {
             pushFollow(FOLLOW_7);
             rule__SecurityModel__RulesAssignment_5_1();
@@ -1399,11 +1477,11 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
             }
 
-            // InternalSecurityModel.g:465:2: ( ( rule__SecurityModel__RulesAssignment_5_1 )* )
-            // InternalSecurityModel.g:466:3: ( rule__SecurityModel__RulesAssignment_5_1 )*
+            // InternalSecurityModel.g:490:2: ( ( rule__SecurityModel__RulesAssignment_5_1 )* )
+            // InternalSecurityModel.g:491:3: ( rule__SecurityModel__RulesAssignment_5_1 )*
             {
              before(grammarAccess.getSecurityModelAccess().getRulesAssignment_5_1()); 
-            // InternalSecurityModel.g:467:3: ( rule__SecurityModel__RulesAssignment_5_1 )*
+            // InternalSecurityModel.g:492:3: ( rule__SecurityModel__RulesAssignment_5_1 )*
             loop5:
             do {
                 int alt5=2;
@@ -1416,7 +1494,7 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalSecurityModel.g:467:4: rule__SecurityModel__RulesAssignment_5_1
+            	    // InternalSecurityModel.g:492:4: rule__SecurityModel__RulesAssignment_5_1
             	    {
             	    pushFollow(FOLLOW_7);
             	    rule__SecurityModel__RulesAssignment_5_1();
@@ -1458,14 +1536,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group__0"
-    // InternalSecurityModel.g:477:1: rule__Rule__Group__0 : rule__Rule__Group__0__Impl rule__Rule__Group__1 ;
+    // InternalSecurityModel.g:502:1: rule__Rule__Group__0 : rule__Rule__Group__0__Impl rule__Rule__Group__1 ;
     public final void rule__Rule__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:481:1: ( rule__Rule__Group__0__Impl rule__Rule__Group__1 )
-            // InternalSecurityModel.g:482:2: rule__Rule__Group__0__Impl rule__Rule__Group__1
+            // InternalSecurityModel.g:506:1: ( rule__Rule__Group__0__Impl rule__Rule__Group__1 )
+            // InternalSecurityModel.g:507:2: rule__Rule__Group__0__Impl rule__Rule__Group__1
             {
             pushFollow(FOLLOW_8);
             rule__Rule__Group__0__Impl();
@@ -1496,21 +1574,21 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group__0__Impl"
-    // InternalSecurityModel.g:489:1: rule__Rule__Group__0__Impl : ( ( rule__Rule__NameAssignment_0 ) ) ;
+    // InternalSecurityModel.g:514:1: rule__Rule__Group__0__Impl : ( ( rule__Rule__NameAssignment_0 ) ) ;
     public final void rule__Rule__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:493:1: ( ( ( rule__Rule__NameAssignment_0 ) ) )
-            // InternalSecurityModel.g:494:1: ( ( rule__Rule__NameAssignment_0 ) )
+            // InternalSecurityModel.g:518:1: ( ( ( rule__Rule__NameAssignment_0 ) ) )
+            // InternalSecurityModel.g:519:1: ( ( rule__Rule__NameAssignment_0 ) )
             {
-            // InternalSecurityModel.g:494:1: ( ( rule__Rule__NameAssignment_0 ) )
-            // InternalSecurityModel.g:495:2: ( rule__Rule__NameAssignment_0 )
+            // InternalSecurityModel.g:519:1: ( ( rule__Rule__NameAssignment_0 ) )
+            // InternalSecurityModel.g:520:2: ( rule__Rule__NameAssignment_0 )
             {
              before(grammarAccess.getRuleAccess().getNameAssignment_0()); 
-            // InternalSecurityModel.g:496:2: ( rule__Rule__NameAssignment_0 )
-            // InternalSecurityModel.g:496:3: rule__Rule__NameAssignment_0
+            // InternalSecurityModel.g:521:2: ( rule__Rule__NameAssignment_0 )
+            // InternalSecurityModel.g:521:3: rule__Rule__NameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Rule__NameAssignment_0();
@@ -1543,14 +1621,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group__1"
-    // InternalSecurityModel.g:504:1: rule__Rule__Group__1 : rule__Rule__Group__1__Impl rule__Rule__Group__2 ;
+    // InternalSecurityModel.g:529:1: rule__Rule__Group__1 : rule__Rule__Group__1__Impl rule__Rule__Group__2 ;
     public final void rule__Rule__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:508:1: ( rule__Rule__Group__1__Impl rule__Rule__Group__2 )
-            // InternalSecurityModel.g:509:2: rule__Rule__Group__1__Impl rule__Rule__Group__2
+            // InternalSecurityModel.g:533:1: ( rule__Rule__Group__1__Impl rule__Rule__Group__2 )
+            // InternalSecurityModel.g:534:2: rule__Rule__Group__1__Impl rule__Rule__Group__2
             {
             pushFollow(FOLLOW_9);
             rule__Rule__Group__1__Impl();
@@ -1581,17 +1659,17 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group__1__Impl"
-    // InternalSecurityModel.g:516:1: rule__Rule__Group__1__Impl : ( ':' ) ;
+    // InternalSecurityModel.g:541:1: rule__Rule__Group__1__Impl : ( ':' ) ;
     public final void rule__Rule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:520:1: ( ( ':' ) )
-            // InternalSecurityModel.g:521:1: ( ':' )
+            // InternalSecurityModel.g:545:1: ( ( ':' ) )
+            // InternalSecurityModel.g:546:1: ( ':' )
             {
-            // InternalSecurityModel.g:521:1: ( ':' )
-            // InternalSecurityModel.g:522:2: ':'
+            // InternalSecurityModel.g:546:1: ( ':' )
+            // InternalSecurityModel.g:547:2: ':'
             {
              before(grammarAccess.getRuleAccess().getColonKeyword_1()); 
             match(input,18,FOLLOW_2); 
@@ -1618,14 +1696,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group__2"
-    // InternalSecurityModel.g:531:1: rule__Rule__Group__2 : rule__Rule__Group__2__Impl rule__Rule__Group__3 ;
+    // InternalSecurityModel.g:556:1: rule__Rule__Group__2 : rule__Rule__Group__2__Impl rule__Rule__Group__3 ;
     public final void rule__Rule__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:535:1: ( rule__Rule__Group__2__Impl rule__Rule__Group__3 )
-            // InternalSecurityModel.g:536:2: rule__Rule__Group__2__Impl rule__Rule__Group__3
+            // InternalSecurityModel.g:560:1: ( rule__Rule__Group__2__Impl rule__Rule__Group__3 )
+            // InternalSecurityModel.g:561:2: rule__Rule__Group__2__Impl rule__Rule__Group__3
             {
             pushFollow(FOLLOW_10);
             rule__Rule__Group__2__Impl();
@@ -1656,21 +1734,21 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group__2__Impl"
-    // InternalSecurityModel.g:543:1: rule__Rule__Group__2__Impl : ( ( rule__Rule__ActionAssignment_2 ) ) ;
+    // InternalSecurityModel.g:568:1: rule__Rule__Group__2__Impl : ( ( rule__Rule__ActionAssignment_2 ) ) ;
     public final void rule__Rule__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:547:1: ( ( ( rule__Rule__ActionAssignment_2 ) ) )
-            // InternalSecurityModel.g:548:1: ( ( rule__Rule__ActionAssignment_2 ) )
+            // InternalSecurityModel.g:572:1: ( ( ( rule__Rule__ActionAssignment_2 ) ) )
+            // InternalSecurityModel.g:573:1: ( ( rule__Rule__ActionAssignment_2 ) )
             {
-            // InternalSecurityModel.g:548:1: ( ( rule__Rule__ActionAssignment_2 ) )
-            // InternalSecurityModel.g:549:2: ( rule__Rule__ActionAssignment_2 )
+            // InternalSecurityModel.g:573:1: ( ( rule__Rule__ActionAssignment_2 ) )
+            // InternalSecurityModel.g:574:2: ( rule__Rule__ActionAssignment_2 )
             {
              before(grammarAccess.getRuleAccess().getActionAssignment_2()); 
-            // InternalSecurityModel.g:550:2: ( rule__Rule__ActionAssignment_2 )
-            // InternalSecurityModel.g:550:3: rule__Rule__ActionAssignment_2
+            // InternalSecurityModel.g:575:2: ( rule__Rule__ActionAssignment_2 )
+            // InternalSecurityModel.g:575:3: rule__Rule__ActionAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Rule__ActionAssignment_2();
@@ -1703,16 +1781,16 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group__3"
-    // InternalSecurityModel.g:558:1: rule__Rule__Group__3 : rule__Rule__Group__3__Impl rule__Rule__Group__4 ;
+    // InternalSecurityModel.g:583:1: rule__Rule__Group__3 : rule__Rule__Group__3__Impl rule__Rule__Group__4 ;
     public final void rule__Rule__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:562:1: ( rule__Rule__Group__3__Impl rule__Rule__Group__4 )
-            // InternalSecurityModel.g:563:2: rule__Rule__Group__3__Impl rule__Rule__Group__4
+            // InternalSecurityModel.g:587:1: ( rule__Rule__Group__3__Impl rule__Rule__Group__4 )
+            // InternalSecurityModel.g:588:2: rule__Rule__Group__3__Impl rule__Rule__Group__4
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_11);
             rule__Rule__Group__3__Impl();
 
             state._fsp--;
@@ -1741,21 +1819,21 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group__3__Impl"
-    // InternalSecurityModel.g:570:1: rule__Rule__Group__3__Impl : ( '(' ) ;
+    // InternalSecurityModel.g:595:1: rule__Rule__Group__3__Impl : ( 'protected' ) ;
     public final void rule__Rule__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:574:1: ( ( '(' ) )
-            // InternalSecurityModel.g:575:1: ( '(' )
+            // InternalSecurityModel.g:599:1: ( ( 'protected' ) )
+            // InternalSecurityModel.g:600:1: ( 'protected' )
             {
-            // InternalSecurityModel.g:575:1: ( '(' )
-            // InternalSecurityModel.g:576:2: '('
+            // InternalSecurityModel.g:600:1: ( 'protected' )
+            // InternalSecurityModel.g:601:2: 'protected'
             {
-             before(grammarAccess.getRuleAccess().getLeftParenthesisKeyword_3()); 
+             before(grammarAccess.getRuleAccess().getProtectedKeyword_3()); 
             match(input,19,FOLLOW_2); 
-             after(grammarAccess.getRuleAccess().getLeftParenthesisKeyword_3()); 
+             after(grammarAccess.getRuleAccess().getProtectedKeyword_3()); 
 
             }
 
@@ -1778,16 +1856,16 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group__4"
-    // InternalSecurityModel.g:585:1: rule__Rule__Group__4 : rule__Rule__Group__4__Impl rule__Rule__Group__5 ;
+    // InternalSecurityModel.g:610:1: rule__Rule__Group__4 : rule__Rule__Group__4__Impl rule__Rule__Group__5 ;
     public final void rule__Rule__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:589:1: ( rule__Rule__Group__4__Impl rule__Rule__Group__5 )
-            // InternalSecurityModel.g:590:2: rule__Rule__Group__4__Impl rule__Rule__Group__5
+            // InternalSecurityModel.g:614:1: ( rule__Rule__Group__4__Impl rule__Rule__Group__5 )
+            // InternalSecurityModel.g:615:2: rule__Rule__Group__4__Impl rule__Rule__Group__5
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_12);
             rule__Rule__Group__4__Impl();
 
             state._fsp--;
@@ -1816,31 +1894,31 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group__4__Impl"
-    // InternalSecurityModel.g:597:1: rule__Rule__Group__4__Impl : ( ( rule__Rule__ResourcesAssignment_4 ) ) ;
+    // InternalSecurityModel.g:622:1: rule__Rule__Group__4__Impl : ( ( rule__Rule__ProtectedResourcesAssignment_4 ) ) ;
     public final void rule__Rule__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:601:1: ( ( ( rule__Rule__ResourcesAssignment_4 ) ) )
-            // InternalSecurityModel.g:602:1: ( ( rule__Rule__ResourcesAssignment_4 ) )
+            // InternalSecurityModel.g:626:1: ( ( ( rule__Rule__ProtectedResourcesAssignment_4 ) ) )
+            // InternalSecurityModel.g:627:1: ( ( rule__Rule__ProtectedResourcesAssignment_4 ) )
             {
-            // InternalSecurityModel.g:602:1: ( ( rule__Rule__ResourcesAssignment_4 ) )
-            // InternalSecurityModel.g:603:2: ( rule__Rule__ResourcesAssignment_4 )
+            // InternalSecurityModel.g:627:1: ( ( rule__Rule__ProtectedResourcesAssignment_4 ) )
+            // InternalSecurityModel.g:628:2: ( rule__Rule__ProtectedResourcesAssignment_4 )
             {
-             before(grammarAccess.getRuleAccess().getResourcesAssignment_4()); 
-            // InternalSecurityModel.g:604:2: ( rule__Rule__ResourcesAssignment_4 )
-            // InternalSecurityModel.g:604:3: rule__Rule__ResourcesAssignment_4
+             before(grammarAccess.getRuleAccess().getProtectedResourcesAssignment_4()); 
+            // InternalSecurityModel.g:629:2: ( rule__Rule__ProtectedResourcesAssignment_4 )
+            // InternalSecurityModel.g:629:3: rule__Rule__ProtectedResourcesAssignment_4
             {
             pushFollow(FOLLOW_2);
-            rule__Rule__ResourcesAssignment_4();
+            rule__Rule__ProtectedResourcesAssignment_4();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getRuleAccess().getResourcesAssignment_4()); 
+             after(grammarAccess.getRuleAccess().getProtectedResourcesAssignment_4()); 
 
             }
 
@@ -1863,16 +1941,16 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group__5"
-    // InternalSecurityModel.g:612:1: rule__Rule__Group__5 : rule__Rule__Group__5__Impl rule__Rule__Group__6 ;
+    // InternalSecurityModel.g:637:1: rule__Rule__Group__5 : rule__Rule__Group__5__Impl rule__Rule__Group__6 ;
     public final void rule__Rule__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:616:1: ( rule__Rule__Group__5__Impl rule__Rule__Group__6 )
-            // InternalSecurityModel.g:617:2: rule__Rule__Group__5__Impl rule__Rule__Group__6
+            // InternalSecurityModel.g:641:1: ( rule__Rule__Group__5__Impl rule__Rule__Group__6 )
+            // InternalSecurityModel.g:642:2: rule__Rule__Group__5__Impl rule__Rule__Group__6
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_12);
             rule__Rule__Group__5__Impl();
 
             state._fsp--;
@@ -1901,35 +1979,35 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group__5__Impl"
-    // InternalSecurityModel.g:624:1: rule__Rule__Group__5__Impl : ( ( rule__Rule__Group_5__0 )* ) ;
+    // InternalSecurityModel.g:649:1: rule__Rule__Group__5__Impl : ( ( rule__Rule__Group_5__0 )* ) ;
     public final void rule__Rule__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:628:1: ( ( ( rule__Rule__Group_5__0 )* ) )
-            // InternalSecurityModel.g:629:1: ( ( rule__Rule__Group_5__0 )* )
+            // InternalSecurityModel.g:653:1: ( ( ( rule__Rule__Group_5__0 )* ) )
+            // InternalSecurityModel.g:654:1: ( ( rule__Rule__Group_5__0 )* )
             {
-            // InternalSecurityModel.g:629:1: ( ( rule__Rule__Group_5__0 )* )
-            // InternalSecurityModel.g:630:2: ( rule__Rule__Group_5__0 )*
+            // InternalSecurityModel.g:654:1: ( ( rule__Rule__Group_5__0 )* )
+            // InternalSecurityModel.g:655:2: ( rule__Rule__Group_5__0 )*
             {
              before(grammarAccess.getRuleAccess().getGroup_5()); 
-            // InternalSecurityModel.g:631:2: ( rule__Rule__Group_5__0 )*
+            // InternalSecurityModel.g:656:2: ( rule__Rule__Group_5__0 )*
             loop6:
             do {
                 int alt6=2;
                 int LA6_0 = input.LA(1);
 
-                if ( (LA6_0==22) ) {
+                if ( (LA6_0==21) ) {
                     alt6=1;
                 }
 
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalSecurityModel.g:631:3: rule__Rule__Group_5__0
+            	    // InternalSecurityModel.g:656:3: rule__Rule__Group_5__0
             	    {
-            	    pushFollow(FOLLOW_12);
+            	    pushFollow(FOLLOW_13);
             	    rule__Rule__Group_5__0();
 
             	    state._fsp--;
@@ -1966,16 +2044,16 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group__6"
-    // InternalSecurityModel.g:639:1: rule__Rule__Group__6 : rule__Rule__Group__6__Impl rule__Rule__Group__7 ;
+    // InternalSecurityModel.g:664:1: rule__Rule__Group__6 : rule__Rule__Group__6__Impl rule__Rule__Group__7 ;
     public final void rule__Rule__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:643:1: ( rule__Rule__Group__6__Impl rule__Rule__Group__7 )
-            // InternalSecurityModel.g:644:2: rule__Rule__Group__6__Impl rule__Rule__Group__7
+            // InternalSecurityModel.g:668:1: ( rule__Rule__Group__6__Impl rule__Rule__Group__7 )
+            // InternalSecurityModel.g:669:2: rule__Rule__Group__6__Impl rule__Rule__Group__7
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_14);
             rule__Rule__Group__6__Impl();
 
             state._fsp--;
@@ -2004,21 +2082,21 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group__6__Impl"
-    // InternalSecurityModel.g:651:1: rule__Rule__Group__6__Impl : ( ')' ) ;
+    // InternalSecurityModel.g:676:1: rule__Rule__Group__6__Impl : ( 'conditions' ) ;
     public final void rule__Rule__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:655:1: ( ( ')' ) )
-            // InternalSecurityModel.g:656:1: ( ')' )
+            // InternalSecurityModel.g:680:1: ( ( 'conditions' ) )
+            // InternalSecurityModel.g:681:1: ( 'conditions' )
             {
-            // InternalSecurityModel.g:656:1: ( ')' )
-            // InternalSecurityModel.g:657:2: ')'
+            // InternalSecurityModel.g:681:1: ( 'conditions' )
+            // InternalSecurityModel.g:682:2: 'conditions'
             {
-             before(grammarAccess.getRuleAccess().getRightParenthesisKeyword_6()); 
+             before(grammarAccess.getRuleAccess().getConditionsKeyword_6()); 
             match(input,20,FOLLOW_2); 
-             after(grammarAccess.getRuleAccess().getRightParenthesisKeyword_6()); 
+             after(grammarAccess.getRuleAccess().getConditionsKeyword_6()); 
 
             }
 
@@ -2041,22 +2119,17 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group__7"
-    // InternalSecurityModel.g:666:1: rule__Rule__Group__7 : rule__Rule__Group__7__Impl rule__Rule__Group__8 ;
+    // InternalSecurityModel.g:691:1: rule__Rule__Group__7 : rule__Rule__Group__7__Impl ;
     public final void rule__Rule__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:670:1: ( rule__Rule__Group__7__Impl rule__Rule__Group__8 )
-            // InternalSecurityModel.g:671:2: rule__Rule__Group__7__Impl rule__Rule__Group__8
+            // InternalSecurityModel.g:695:1: ( rule__Rule__Group__7__Impl )
+            // InternalSecurityModel.g:696:2: rule__Rule__Group__7__Impl
             {
-            pushFollow(FOLLOW_14);
-            rule__Rule__Group__7__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__Rule__Group__8();
+            rule__Rule__Group__7__Impl();
 
             state._fsp--;
 
@@ -2079,21 +2152,42 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group__7__Impl"
-    // InternalSecurityModel.g:678:1: rule__Rule__Group__7__Impl : ( 'conditions' ) ;
+    // InternalSecurityModel.g:702:1: rule__Rule__Group__7__Impl : ( ( rule__Rule__Group_7__0 )? ) ;
     public final void rule__Rule__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:682:1: ( ( 'conditions' ) )
-            // InternalSecurityModel.g:683:1: ( 'conditions' )
+            // InternalSecurityModel.g:706:1: ( ( ( rule__Rule__Group_7__0 )? ) )
+            // InternalSecurityModel.g:707:1: ( ( rule__Rule__Group_7__0 )? )
             {
-            // InternalSecurityModel.g:683:1: ( 'conditions' )
-            // InternalSecurityModel.g:684:2: 'conditions'
+            // InternalSecurityModel.g:707:1: ( ( rule__Rule__Group_7__0 )? )
+            // InternalSecurityModel.g:708:2: ( rule__Rule__Group_7__0 )?
             {
-             before(grammarAccess.getRuleAccess().getConditionsKeyword_7()); 
-            match(input,21,FOLLOW_2); 
-             after(grammarAccess.getRuleAccess().getConditionsKeyword_7()); 
+             before(grammarAccess.getRuleAccess().getGroup_7()); 
+            // InternalSecurityModel.g:709:2: ( rule__Rule__Group_7__0 )?
+            int alt7=2;
+            int LA7_0 = input.LA(1);
+
+            if ( (LA7_0==22) ) {
+                alt7=1;
+            }
+            switch (alt7) {
+                case 1 :
+                    // InternalSecurityModel.g:709:3: rule__Rule__Group_7__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Rule__Group_7__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getRuleAccess().getGroup_7()); 
 
             }
 
@@ -2115,108 +2209,17 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
     // $ANTLR end "rule__Rule__Group__7__Impl"
 
 
-    // $ANTLR start "rule__Rule__Group__8"
-    // InternalSecurityModel.g:693:1: rule__Rule__Group__8 : rule__Rule__Group__8__Impl ;
-    public final void rule__Rule__Group__8() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSecurityModel.g:697:1: ( rule__Rule__Group__8__Impl )
-            // InternalSecurityModel.g:698:2: rule__Rule__Group__8__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Rule__Group__8__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Rule__Group__8"
-
-
-    // $ANTLR start "rule__Rule__Group__8__Impl"
-    // InternalSecurityModel.g:704:1: rule__Rule__Group__8__Impl : ( ( rule__Rule__Group_8__0 )? ) ;
-    public final void rule__Rule__Group__8__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSecurityModel.g:708:1: ( ( ( rule__Rule__Group_8__0 )? ) )
-            // InternalSecurityModel.g:709:1: ( ( rule__Rule__Group_8__0 )? )
-            {
-            // InternalSecurityModel.g:709:1: ( ( rule__Rule__Group_8__0 )? )
-            // InternalSecurityModel.g:710:2: ( rule__Rule__Group_8__0 )?
-            {
-             before(grammarAccess.getRuleAccess().getGroup_8()); 
-            // InternalSecurityModel.g:711:2: ( rule__Rule__Group_8__0 )?
-            int alt7=2;
-            int LA7_0 = input.LA(1);
-
-            if ( (LA7_0==23) ) {
-                alt7=1;
-            }
-            switch (alt7) {
-                case 1 :
-                    // InternalSecurityModel.g:711:3: rule__Rule__Group_8__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Rule__Group_8__0();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getRuleAccess().getGroup_8()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Rule__Group__8__Impl"
-
-
     // $ANTLR start "rule__Rule__Group_5__0"
-    // InternalSecurityModel.g:720:1: rule__Rule__Group_5__0 : rule__Rule__Group_5__0__Impl rule__Rule__Group_5__1 ;
+    // InternalSecurityModel.g:718:1: rule__Rule__Group_5__0 : rule__Rule__Group_5__0__Impl rule__Rule__Group_5__1 ;
     public final void rule__Rule__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:724:1: ( rule__Rule__Group_5__0__Impl rule__Rule__Group_5__1 )
-            // InternalSecurityModel.g:725:2: rule__Rule__Group_5__0__Impl rule__Rule__Group_5__1
+            // InternalSecurityModel.g:722:1: ( rule__Rule__Group_5__0__Impl rule__Rule__Group_5__1 )
+            // InternalSecurityModel.g:723:2: rule__Rule__Group_5__0__Impl rule__Rule__Group_5__1
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_11);
             rule__Rule__Group_5__0__Impl();
 
             state._fsp--;
@@ -2245,20 +2248,20 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group_5__0__Impl"
-    // InternalSecurityModel.g:732:1: rule__Rule__Group_5__0__Impl : ( ',' ) ;
+    // InternalSecurityModel.g:730:1: rule__Rule__Group_5__0__Impl : ( ',' ) ;
     public final void rule__Rule__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:736:1: ( ( ',' ) )
-            // InternalSecurityModel.g:737:1: ( ',' )
+            // InternalSecurityModel.g:734:1: ( ( ',' ) )
+            // InternalSecurityModel.g:735:1: ( ',' )
             {
-            // InternalSecurityModel.g:737:1: ( ',' )
-            // InternalSecurityModel.g:738:2: ','
+            // InternalSecurityModel.g:735:1: ( ',' )
+            // InternalSecurityModel.g:736:2: ','
             {
              before(grammarAccess.getRuleAccess().getCommaKeyword_5_0()); 
-            match(input,22,FOLLOW_2); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getRuleAccess().getCommaKeyword_5_0()); 
 
             }
@@ -2282,14 +2285,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group_5__1"
-    // InternalSecurityModel.g:747:1: rule__Rule__Group_5__1 : rule__Rule__Group_5__1__Impl ;
+    // InternalSecurityModel.g:745:1: rule__Rule__Group_5__1 : rule__Rule__Group_5__1__Impl ;
     public final void rule__Rule__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:751:1: ( rule__Rule__Group_5__1__Impl )
-            // InternalSecurityModel.g:752:2: rule__Rule__Group_5__1__Impl
+            // InternalSecurityModel.g:749:1: ( rule__Rule__Group_5__1__Impl )
+            // InternalSecurityModel.g:750:2: rule__Rule__Group_5__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Rule__Group_5__1__Impl();
@@ -2315,31 +2318,31 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group_5__1__Impl"
-    // InternalSecurityModel.g:758:1: rule__Rule__Group_5__1__Impl : ( ( rule__Rule__ResourcesAssignment_5_1 ) ) ;
+    // InternalSecurityModel.g:756:1: rule__Rule__Group_5__1__Impl : ( ( rule__Rule__ProtectedResourcesAssignment_5_1 ) ) ;
     public final void rule__Rule__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:762:1: ( ( ( rule__Rule__ResourcesAssignment_5_1 ) ) )
-            // InternalSecurityModel.g:763:1: ( ( rule__Rule__ResourcesAssignment_5_1 ) )
+            // InternalSecurityModel.g:760:1: ( ( ( rule__Rule__ProtectedResourcesAssignment_5_1 ) ) )
+            // InternalSecurityModel.g:761:1: ( ( rule__Rule__ProtectedResourcesAssignment_5_1 ) )
             {
-            // InternalSecurityModel.g:763:1: ( ( rule__Rule__ResourcesAssignment_5_1 ) )
-            // InternalSecurityModel.g:764:2: ( rule__Rule__ResourcesAssignment_5_1 )
+            // InternalSecurityModel.g:761:1: ( ( rule__Rule__ProtectedResourcesAssignment_5_1 ) )
+            // InternalSecurityModel.g:762:2: ( rule__Rule__ProtectedResourcesAssignment_5_1 )
             {
-             before(grammarAccess.getRuleAccess().getResourcesAssignment_5_1()); 
-            // InternalSecurityModel.g:765:2: ( rule__Rule__ResourcesAssignment_5_1 )
-            // InternalSecurityModel.g:765:3: rule__Rule__ResourcesAssignment_5_1
+             before(grammarAccess.getRuleAccess().getProtectedResourcesAssignment_5_1()); 
+            // InternalSecurityModel.g:763:2: ( rule__Rule__ProtectedResourcesAssignment_5_1 )
+            // InternalSecurityModel.g:763:3: rule__Rule__ProtectedResourcesAssignment_5_1
             {
             pushFollow(FOLLOW_2);
-            rule__Rule__ResourcesAssignment_5_1();
+            rule__Rule__ProtectedResourcesAssignment_5_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getRuleAccess().getResourcesAssignment_5_1()); 
+             after(grammarAccess.getRuleAccess().getProtectedResourcesAssignment_5_1()); 
 
             }
 
@@ -2361,23 +2364,23 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
     // $ANTLR end "rule__Rule__Group_5__1__Impl"
 
 
-    // $ANTLR start "rule__Rule__Group_8__0"
-    // InternalSecurityModel.g:774:1: rule__Rule__Group_8__0 : rule__Rule__Group_8__0__Impl rule__Rule__Group_8__1 ;
-    public final void rule__Rule__Group_8__0() throws RecognitionException {
+    // $ANTLR start "rule__Rule__Group_7__0"
+    // InternalSecurityModel.g:772:1: rule__Rule__Group_7__0 : rule__Rule__Group_7__0__Impl rule__Rule__Group_7__1 ;
+    public final void rule__Rule__Group_7__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:778:1: ( rule__Rule__Group_8__0__Impl rule__Rule__Group_8__1 )
-            // InternalSecurityModel.g:779:2: rule__Rule__Group_8__0__Impl rule__Rule__Group_8__1
+            // InternalSecurityModel.g:776:1: ( rule__Rule__Group_7__0__Impl rule__Rule__Group_7__1 )
+            // InternalSecurityModel.g:777:2: rule__Rule__Group_7__0__Impl rule__Rule__Group_7__1
             {
             pushFollow(FOLLOW_14);
-            rule__Rule__Group_8__0__Impl();
+            rule__Rule__Group_7__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Rule__Group_8__1();
+            rule__Rule__Group_7__1();
 
             state._fsp--;
 
@@ -2396,25 +2399,25 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Rule__Group_8__0"
+    // $ANTLR end "rule__Rule__Group_7__0"
 
 
-    // $ANTLR start "rule__Rule__Group_8__0__Impl"
-    // InternalSecurityModel.g:786:1: rule__Rule__Group_8__0__Impl : ( '{' ) ;
-    public final void rule__Rule__Group_8__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Rule__Group_7__0__Impl"
+    // InternalSecurityModel.g:784:1: rule__Rule__Group_7__0__Impl : ( '{' ) ;
+    public final void rule__Rule__Group_7__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:790:1: ( ( '{' ) )
-            // InternalSecurityModel.g:791:1: ( '{' )
+            // InternalSecurityModel.g:788:1: ( ( '{' ) )
+            // InternalSecurityModel.g:789:1: ( '{' )
             {
-            // InternalSecurityModel.g:791:1: ( '{' )
-            // InternalSecurityModel.g:792:2: '{'
+            // InternalSecurityModel.g:789:1: ( '{' )
+            // InternalSecurityModel.g:790:2: '{'
             {
-             before(grammarAccess.getRuleAccess().getLeftCurlyBracketKeyword_8_0()); 
-            match(input,23,FOLLOW_2); 
-             after(grammarAccess.getRuleAccess().getLeftCurlyBracketKeyword_8_0()); 
+             before(grammarAccess.getRuleAccess().getLeftCurlyBracketKeyword_7_0()); 
+            match(input,22,FOLLOW_2); 
+             after(grammarAccess.getRuleAccess().getLeftCurlyBracketKeyword_7_0()); 
 
             }
 
@@ -2433,26 +2436,26 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Rule__Group_8__0__Impl"
+    // $ANTLR end "rule__Rule__Group_7__0__Impl"
 
 
-    // $ANTLR start "rule__Rule__Group_8__1"
-    // InternalSecurityModel.g:801:1: rule__Rule__Group_8__1 : rule__Rule__Group_8__1__Impl rule__Rule__Group_8__2 ;
-    public final void rule__Rule__Group_8__1() throws RecognitionException {
+    // $ANTLR start "rule__Rule__Group_7__1"
+    // InternalSecurityModel.g:799:1: rule__Rule__Group_7__1 : rule__Rule__Group_7__1__Impl rule__Rule__Group_7__2 ;
+    public final void rule__Rule__Group_7__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:805:1: ( rule__Rule__Group_8__1__Impl rule__Rule__Group_8__2 )
-            // InternalSecurityModel.g:806:2: rule__Rule__Group_8__1__Impl rule__Rule__Group_8__2
+            // InternalSecurityModel.g:803:1: ( rule__Rule__Group_7__1__Impl rule__Rule__Group_7__2 )
+            // InternalSecurityModel.g:804:2: rule__Rule__Group_7__1__Impl rule__Rule__Group_7__2
             {
             pushFollow(FOLLOW_15);
-            rule__Rule__Group_8__1__Impl();
+            rule__Rule__Group_7__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Rule__Group_8__2();
+            rule__Rule__Group_7__2();
 
             state._fsp--;
 
@@ -2471,35 +2474,35 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Rule__Group_8__1"
+    // $ANTLR end "rule__Rule__Group_7__1"
 
 
-    // $ANTLR start "rule__Rule__Group_8__1__Impl"
-    // InternalSecurityModel.g:813:1: rule__Rule__Group_8__1__Impl : ( ( rule__Rule__AuthsAssignment_8_1 ) ) ;
-    public final void rule__Rule__Group_8__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Rule__Group_7__1__Impl"
+    // InternalSecurityModel.g:811:1: rule__Rule__Group_7__1__Impl : ( ( rule__Rule__AuthsAssignment_7_1 ) ) ;
+    public final void rule__Rule__Group_7__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:817:1: ( ( ( rule__Rule__AuthsAssignment_8_1 ) ) )
-            // InternalSecurityModel.g:818:1: ( ( rule__Rule__AuthsAssignment_8_1 ) )
+            // InternalSecurityModel.g:815:1: ( ( ( rule__Rule__AuthsAssignment_7_1 ) ) )
+            // InternalSecurityModel.g:816:1: ( ( rule__Rule__AuthsAssignment_7_1 ) )
             {
-            // InternalSecurityModel.g:818:1: ( ( rule__Rule__AuthsAssignment_8_1 ) )
-            // InternalSecurityModel.g:819:2: ( rule__Rule__AuthsAssignment_8_1 )
+            // InternalSecurityModel.g:816:1: ( ( rule__Rule__AuthsAssignment_7_1 ) )
+            // InternalSecurityModel.g:817:2: ( rule__Rule__AuthsAssignment_7_1 )
             {
-             before(grammarAccess.getRuleAccess().getAuthsAssignment_8_1()); 
-            // InternalSecurityModel.g:820:2: ( rule__Rule__AuthsAssignment_8_1 )
-            // InternalSecurityModel.g:820:3: rule__Rule__AuthsAssignment_8_1
+             before(grammarAccess.getRuleAccess().getAuthsAssignment_7_1()); 
+            // InternalSecurityModel.g:818:2: ( rule__Rule__AuthsAssignment_7_1 )
+            // InternalSecurityModel.g:818:3: rule__Rule__AuthsAssignment_7_1
             {
             pushFollow(FOLLOW_2);
-            rule__Rule__AuthsAssignment_8_1();
+            rule__Rule__AuthsAssignment_7_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getRuleAccess().getAuthsAssignment_8_1()); 
+             after(grammarAccess.getRuleAccess().getAuthsAssignment_7_1()); 
 
             }
 
@@ -2518,26 +2521,26 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Rule__Group_8__1__Impl"
+    // $ANTLR end "rule__Rule__Group_7__1__Impl"
 
 
-    // $ANTLR start "rule__Rule__Group_8__2"
-    // InternalSecurityModel.g:828:1: rule__Rule__Group_8__2 : rule__Rule__Group_8__2__Impl rule__Rule__Group_8__3 ;
-    public final void rule__Rule__Group_8__2() throws RecognitionException {
+    // $ANTLR start "rule__Rule__Group_7__2"
+    // InternalSecurityModel.g:826:1: rule__Rule__Group_7__2 : rule__Rule__Group_7__2__Impl rule__Rule__Group_7__3 ;
+    public final void rule__Rule__Group_7__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:832:1: ( rule__Rule__Group_8__2__Impl rule__Rule__Group_8__3 )
-            // InternalSecurityModel.g:833:2: rule__Rule__Group_8__2__Impl rule__Rule__Group_8__3
+            // InternalSecurityModel.g:830:1: ( rule__Rule__Group_7__2__Impl rule__Rule__Group_7__3 )
+            // InternalSecurityModel.g:831:2: rule__Rule__Group_7__2__Impl rule__Rule__Group_7__3
             {
             pushFollow(FOLLOW_15);
-            rule__Rule__Group_8__2__Impl();
+            rule__Rule__Group_7__2__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Rule__Group_8__3();
+            rule__Rule__Group_7__3();
 
             state._fsp--;
 
@@ -2556,40 +2559,40 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Rule__Group_8__2"
+    // $ANTLR end "rule__Rule__Group_7__2"
 
 
-    // $ANTLR start "rule__Rule__Group_8__2__Impl"
-    // InternalSecurityModel.g:840:1: rule__Rule__Group_8__2__Impl : ( ( rule__Rule__Group_8_2__0 )* ) ;
-    public final void rule__Rule__Group_8__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Rule__Group_7__2__Impl"
+    // InternalSecurityModel.g:838:1: rule__Rule__Group_7__2__Impl : ( ( rule__Rule__Group_7_2__0 )* ) ;
+    public final void rule__Rule__Group_7__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:844:1: ( ( ( rule__Rule__Group_8_2__0 )* ) )
-            // InternalSecurityModel.g:845:1: ( ( rule__Rule__Group_8_2__0 )* )
+            // InternalSecurityModel.g:842:1: ( ( ( rule__Rule__Group_7_2__0 )* ) )
+            // InternalSecurityModel.g:843:1: ( ( rule__Rule__Group_7_2__0 )* )
             {
-            // InternalSecurityModel.g:845:1: ( ( rule__Rule__Group_8_2__0 )* )
-            // InternalSecurityModel.g:846:2: ( rule__Rule__Group_8_2__0 )*
+            // InternalSecurityModel.g:843:1: ( ( rule__Rule__Group_7_2__0 )* )
+            // InternalSecurityModel.g:844:2: ( rule__Rule__Group_7_2__0 )*
             {
-             before(grammarAccess.getRuleAccess().getGroup_8_2()); 
-            // InternalSecurityModel.g:847:2: ( rule__Rule__Group_8_2__0 )*
+             before(grammarAccess.getRuleAccess().getGroup_7_2()); 
+            // InternalSecurityModel.g:845:2: ( rule__Rule__Group_7_2__0 )*
             loop8:
             do {
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( (LA8_0==25) ) {
+                if ( (LA8_0==24) ) {
                     alt8=1;
                 }
 
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalSecurityModel.g:847:3: rule__Rule__Group_8_2__0
+            	    // InternalSecurityModel.g:845:3: rule__Rule__Group_7_2__0
             	    {
             	    pushFollow(FOLLOW_16);
-            	    rule__Rule__Group_8_2__0();
+            	    rule__Rule__Group_7_2__0();
 
             	    state._fsp--;
 
@@ -2602,7 +2605,7 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
                 }
             } while (true);
 
-             after(grammarAccess.getRuleAccess().getGroup_8_2()); 
+             after(grammarAccess.getRuleAccess().getGroup_7_2()); 
 
             }
 
@@ -2621,21 +2624,21 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Rule__Group_8__2__Impl"
+    // $ANTLR end "rule__Rule__Group_7__2__Impl"
 
 
-    // $ANTLR start "rule__Rule__Group_8__3"
-    // InternalSecurityModel.g:855:1: rule__Rule__Group_8__3 : rule__Rule__Group_8__3__Impl ;
-    public final void rule__Rule__Group_8__3() throws RecognitionException {
+    // $ANTLR start "rule__Rule__Group_7__3"
+    // InternalSecurityModel.g:853:1: rule__Rule__Group_7__3 : rule__Rule__Group_7__3__Impl ;
+    public final void rule__Rule__Group_7__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:859:1: ( rule__Rule__Group_8__3__Impl )
-            // InternalSecurityModel.g:860:2: rule__Rule__Group_8__3__Impl
+            // InternalSecurityModel.g:857:1: ( rule__Rule__Group_7__3__Impl )
+            // InternalSecurityModel.g:858:2: rule__Rule__Group_7__3__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Rule__Group_8__3__Impl();
+            rule__Rule__Group_7__3__Impl();
 
             state._fsp--;
 
@@ -2654,25 +2657,25 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Rule__Group_8__3"
+    // $ANTLR end "rule__Rule__Group_7__3"
 
 
-    // $ANTLR start "rule__Rule__Group_8__3__Impl"
-    // InternalSecurityModel.g:866:1: rule__Rule__Group_8__3__Impl : ( '}' ) ;
-    public final void rule__Rule__Group_8__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Rule__Group_7__3__Impl"
+    // InternalSecurityModel.g:864:1: rule__Rule__Group_7__3__Impl : ( '}' ) ;
+    public final void rule__Rule__Group_7__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:870:1: ( ( '}' ) )
-            // InternalSecurityModel.g:871:1: ( '}' )
+            // InternalSecurityModel.g:868:1: ( ( '}' ) )
+            // InternalSecurityModel.g:869:1: ( '}' )
             {
-            // InternalSecurityModel.g:871:1: ( '}' )
-            // InternalSecurityModel.g:872:2: '}'
+            // InternalSecurityModel.g:869:1: ( '}' )
+            // InternalSecurityModel.g:870:2: '}'
             {
-             before(grammarAccess.getRuleAccess().getRightCurlyBracketKeyword_8_3()); 
-            match(input,24,FOLLOW_2); 
-             after(grammarAccess.getRuleAccess().getRightCurlyBracketKeyword_8_3()); 
+             before(grammarAccess.getRuleAccess().getRightCurlyBracketKeyword_7_3()); 
+            match(input,23,FOLLOW_2); 
+             after(grammarAccess.getRuleAccess().getRightCurlyBracketKeyword_7_3()); 
 
             }
 
@@ -2691,26 +2694,26 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Rule__Group_8__3__Impl"
+    // $ANTLR end "rule__Rule__Group_7__3__Impl"
 
 
-    // $ANTLR start "rule__Rule__Group_8_2__0"
-    // InternalSecurityModel.g:882:1: rule__Rule__Group_8_2__0 : rule__Rule__Group_8_2__0__Impl rule__Rule__Group_8_2__1 ;
-    public final void rule__Rule__Group_8_2__0() throws RecognitionException {
+    // $ANTLR start "rule__Rule__Group_7_2__0"
+    // InternalSecurityModel.g:880:1: rule__Rule__Group_7_2__0 : rule__Rule__Group_7_2__0__Impl rule__Rule__Group_7_2__1 ;
+    public final void rule__Rule__Group_7_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:886:1: ( rule__Rule__Group_8_2__0__Impl rule__Rule__Group_8_2__1 )
-            // InternalSecurityModel.g:887:2: rule__Rule__Group_8_2__0__Impl rule__Rule__Group_8_2__1
+            // InternalSecurityModel.g:884:1: ( rule__Rule__Group_7_2__0__Impl rule__Rule__Group_7_2__1 )
+            // InternalSecurityModel.g:885:2: rule__Rule__Group_7_2__0__Impl rule__Rule__Group_7_2__1
             {
             pushFollow(FOLLOW_14);
-            rule__Rule__Group_8_2__0__Impl();
+            rule__Rule__Group_7_2__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Rule__Group_8_2__1();
+            rule__Rule__Group_7_2__1();
 
             state._fsp--;
 
@@ -2729,25 +2732,25 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Rule__Group_8_2__0"
+    // $ANTLR end "rule__Rule__Group_7_2__0"
 
 
-    // $ANTLR start "rule__Rule__Group_8_2__0__Impl"
-    // InternalSecurityModel.g:894:1: rule__Rule__Group_8_2__0__Impl : ( ',or' ) ;
-    public final void rule__Rule__Group_8_2__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Rule__Group_7_2__0__Impl"
+    // InternalSecurityModel.g:892:1: rule__Rule__Group_7_2__0__Impl : ( 'or' ) ;
+    public final void rule__Rule__Group_7_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:898:1: ( ( ',or' ) )
-            // InternalSecurityModel.g:899:1: ( ',or' )
+            // InternalSecurityModel.g:896:1: ( ( 'or' ) )
+            // InternalSecurityModel.g:897:1: ( 'or' )
             {
-            // InternalSecurityModel.g:899:1: ( ',or' )
-            // InternalSecurityModel.g:900:2: ',or'
+            // InternalSecurityModel.g:897:1: ( 'or' )
+            // InternalSecurityModel.g:898:2: 'or'
             {
-             before(grammarAccess.getRuleAccess().getOrKeyword_8_2_0()); 
-            match(input,25,FOLLOW_2); 
-             after(grammarAccess.getRuleAccess().getOrKeyword_8_2_0()); 
+             before(grammarAccess.getRuleAccess().getOrKeyword_7_2_0()); 
+            match(input,24,FOLLOW_2); 
+             after(grammarAccess.getRuleAccess().getOrKeyword_7_2_0()); 
 
             }
 
@@ -2766,21 +2769,21 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Rule__Group_8_2__0__Impl"
+    // $ANTLR end "rule__Rule__Group_7_2__0__Impl"
 
 
-    // $ANTLR start "rule__Rule__Group_8_2__1"
-    // InternalSecurityModel.g:909:1: rule__Rule__Group_8_2__1 : rule__Rule__Group_8_2__1__Impl ;
-    public final void rule__Rule__Group_8_2__1() throws RecognitionException {
+    // $ANTLR start "rule__Rule__Group_7_2__1"
+    // InternalSecurityModel.g:907:1: rule__Rule__Group_7_2__1 : rule__Rule__Group_7_2__1__Impl ;
+    public final void rule__Rule__Group_7_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:913:1: ( rule__Rule__Group_8_2__1__Impl )
-            // InternalSecurityModel.g:914:2: rule__Rule__Group_8_2__1__Impl
+            // InternalSecurityModel.g:911:1: ( rule__Rule__Group_7_2__1__Impl )
+            // InternalSecurityModel.g:912:2: rule__Rule__Group_7_2__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Rule__Group_8_2__1__Impl();
+            rule__Rule__Group_7_2__1__Impl();
 
             state._fsp--;
 
@@ -2799,35 +2802,35 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Rule__Group_8_2__1"
+    // $ANTLR end "rule__Rule__Group_7_2__1"
 
 
-    // $ANTLR start "rule__Rule__Group_8_2__1__Impl"
-    // InternalSecurityModel.g:920:1: rule__Rule__Group_8_2__1__Impl : ( ( rule__Rule__AuthsAssignment_8_2_1 ) ) ;
-    public final void rule__Rule__Group_8_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Rule__Group_7_2__1__Impl"
+    // InternalSecurityModel.g:918:1: rule__Rule__Group_7_2__1__Impl : ( ( rule__Rule__AuthsAssignment_7_2_1 ) ) ;
+    public final void rule__Rule__Group_7_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:924:1: ( ( ( rule__Rule__AuthsAssignment_8_2_1 ) ) )
-            // InternalSecurityModel.g:925:1: ( ( rule__Rule__AuthsAssignment_8_2_1 ) )
+            // InternalSecurityModel.g:922:1: ( ( ( rule__Rule__AuthsAssignment_7_2_1 ) ) )
+            // InternalSecurityModel.g:923:1: ( ( rule__Rule__AuthsAssignment_7_2_1 ) )
             {
-            // InternalSecurityModel.g:925:1: ( ( rule__Rule__AuthsAssignment_8_2_1 ) )
-            // InternalSecurityModel.g:926:2: ( rule__Rule__AuthsAssignment_8_2_1 )
+            // InternalSecurityModel.g:923:1: ( ( rule__Rule__AuthsAssignment_7_2_1 ) )
+            // InternalSecurityModel.g:924:2: ( rule__Rule__AuthsAssignment_7_2_1 )
             {
-             before(grammarAccess.getRuleAccess().getAuthsAssignment_8_2_1()); 
-            // InternalSecurityModel.g:927:2: ( rule__Rule__AuthsAssignment_8_2_1 )
-            // InternalSecurityModel.g:927:3: rule__Rule__AuthsAssignment_8_2_1
+             before(grammarAccess.getRuleAccess().getAuthsAssignment_7_2_1()); 
+            // InternalSecurityModel.g:925:2: ( rule__Rule__AuthsAssignment_7_2_1 )
+            // InternalSecurityModel.g:925:3: rule__Rule__AuthsAssignment_7_2_1
             {
             pushFollow(FOLLOW_2);
-            rule__Rule__AuthsAssignment_8_2_1();
+            rule__Rule__AuthsAssignment_7_2_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getRuleAccess().getAuthsAssignment_8_2_1()); 
+             after(grammarAccess.getRuleAccess().getAuthsAssignment_7_2_1()); 
 
             }
 
@@ -2846,260 +2849,20 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Rule__Group_8_2__1__Impl"
-
-
-    // $ANTLR start "rule__Role__Group__0"
-    // InternalSecurityModel.g:936:1: rule__Role__Group__0 : rule__Role__Group__0__Impl rule__Role__Group__1 ;
-    public final void rule__Role__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSecurityModel.g:940:1: ( rule__Role__Group__0__Impl rule__Role__Group__1 )
-            // InternalSecurityModel.g:941:2: rule__Role__Group__0__Impl rule__Role__Group__1
-            {
-            pushFollow(FOLLOW_17);
-            rule__Role__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Role__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Role__Group__0"
-
-
-    // $ANTLR start "rule__Role__Group__0__Impl"
-    // InternalSecurityModel.g:948:1: rule__Role__Group__0__Impl : ( ( rule__Role__NameAssignment_0 ) ) ;
-    public final void rule__Role__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSecurityModel.g:952:1: ( ( ( rule__Role__NameAssignment_0 ) ) )
-            // InternalSecurityModel.g:953:1: ( ( rule__Role__NameAssignment_0 ) )
-            {
-            // InternalSecurityModel.g:953:1: ( ( rule__Role__NameAssignment_0 ) )
-            // InternalSecurityModel.g:954:2: ( rule__Role__NameAssignment_0 )
-            {
-             before(grammarAccess.getRoleAccess().getNameAssignment_0()); 
-            // InternalSecurityModel.g:955:2: ( rule__Role__NameAssignment_0 )
-            // InternalSecurityModel.g:955:3: rule__Role__NameAssignment_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__Role__NameAssignment_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getRoleAccess().getNameAssignment_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Role__Group__0__Impl"
-
-
-    // $ANTLR start "rule__Role__Group__1"
-    // InternalSecurityModel.g:963:1: rule__Role__Group__1 : rule__Role__Group__1__Impl rule__Role__Group__2 ;
-    public final void rule__Role__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSecurityModel.g:967:1: ( rule__Role__Group__1__Impl rule__Role__Group__2 )
-            // InternalSecurityModel.g:968:2: rule__Role__Group__1__Impl rule__Role__Group__2
-            {
-            pushFollow(FOLLOW_4);
-            rule__Role__Group__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Role__Group__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Role__Group__1"
-
-
-    // $ANTLR start "rule__Role__Group__1__Impl"
-    // InternalSecurityModel.g:975:1: rule__Role__Group__1__Impl : ( '<-' ) ;
-    public final void rule__Role__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSecurityModel.g:979:1: ( ( '<-' ) )
-            // InternalSecurityModel.g:980:1: ( '<-' )
-            {
-            // InternalSecurityModel.g:980:1: ( '<-' )
-            // InternalSecurityModel.g:981:2: '<-'
-            {
-             before(grammarAccess.getRoleAccess().getLessThanSignHyphenMinusKeyword_1()); 
-            match(input,26,FOLLOW_2); 
-             after(grammarAccess.getRoleAccess().getLessThanSignHyphenMinusKeyword_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Role__Group__1__Impl"
-
-
-    // $ANTLR start "rule__Role__Group__2"
-    // InternalSecurityModel.g:990:1: rule__Role__Group__2 : rule__Role__Group__2__Impl ;
-    public final void rule__Role__Group__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSecurityModel.g:994:1: ( rule__Role__Group__2__Impl )
-            // InternalSecurityModel.g:995:2: rule__Role__Group__2__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Role__Group__2__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Role__Group__2"
-
-
-    // $ANTLR start "rule__Role__Group__2__Impl"
-    // InternalSecurityModel.g:1001:1: rule__Role__Group__2__Impl : ( ( rule__Role__EntityAssignment_2 ) ) ;
-    public final void rule__Role__Group__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSecurityModel.g:1005:1: ( ( ( rule__Role__EntityAssignment_2 ) ) )
-            // InternalSecurityModel.g:1006:1: ( ( rule__Role__EntityAssignment_2 ) )
-            {
-            // InternalSecurityModel.g:1006:1: ( ( rule__Role__EntityAssignment_2 ) )
-            // InternalSecurityModel.g:1007:2: ( rule__Role__EntityAssignment_2 )
-            {
-             before(grammarAccess.getRoleAccess().getEntityAssignment_2()); 
-            // InternalSecurityModel.g:1008:2: ( rule__Role__EntityAssignment_2 )
-            // InternalSecurityModel.g:1008:3: rule__Role__EntityAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__Role__EntityAssignment_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getRoleAccess().getEntityAssignment_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Role__Group__2__Impl"
+    // $ANTLR end "rule__Rule__Group_7_2__1__Impl"
 
 
     // $ANTLR start "rule__Auth__Group__0"
-    // InternalSecurityModel.g:1017:1: rule__Auth__Group__0 : rule__Auth__Group__0__Impl rule__Auth__Group__1 ;
+    // InternalSecurityModel.g:934:1: rule__Auth__Group__0 : rule__Auth__Group__0__Impl rule__Auth__Group__1 ;
     public final void rule__Auth__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1021:1: ( rule__Auth__Group__0__Impl rule__Auth__Group__1 )
-            // InternalSecurityModel.g:1022:2: rule__Auth__Group__0__Impl rule__Auth__Group__1
+            // InternalSecurityModel.g:938:1: ( rule__Auth__Group__0__Impl rule__Auth__Group__1 )
+            // InternalSecurityModel.g:939:2: rule__Auth__Group__0__Impl rule__Auth__Group__1
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_17);
             rule__Auth__Group__0__Impl();
 
             state._fsp--;
@@ -3128,20 +2891,20 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group__0__Impl"
-    // InternalSecurityModel.g:1029:1: rule__Auth__Group__0__Impl : ( '{' ) ;
+    // InternalSecurityModel.g:946:1: rule__Auth__Group__0__Impl : ( '{' ) ;
     public final void rule__Auth__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1033:1: ( ( '{' ) )
-            // InternalSecurityModel.g:1034:1: ( '{' )
+            // InternalSecurityModel.g:950:1: ( ( '{' ) )
+            // InternalSecurityModel.g:951:1: ( '{' )
             {
-            // InternalSecurityModel.g:1034:1: ( '{' )
-            // InternalSecurityModel.g:1035:2: '{'
+            // InternalSecurityModel.g:951:1: ( '{' )
+            // InternalSecurityModel.g:952:2: '{'
             {
              before(grammarAccess.getAuthAccess().getLeftCurlyBracketKeyword_0()); 
-            match(input,23,FOLLOW_2); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getAuthAccess().getLeftCurlyBracketKeyword_0()); 
 
             }
@@ -3165,16 +2928,16 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group__1"
-    // InternalSecurityModel.g:1044:1: rule__Auth__Group__1 : rule__Auth__Group__1__Impl rule__Auth__Group__2 ;
+    // InternalSecurityModel.g:961:1: rule__Auth__Group__1 : rule__Auth__Group__1__Impl rule__Auth__Group__2 ;
     public final void rule__Auth__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1048:1: ( rule__Auth__Group__1__Impl rule__Auth__Group__2 )
-            // InternalSecurityModel.g:1049:2: rule__Auth__Group__1__Impl rule__Auth__Group__2
+            // InternalSecurityModel.g:965:1: ( rule__Auth__Group__1__Impl rule__Auth__Group__2 )
+            // InternalSecurityModel.g:966:2: rule__Auth__Group__1__Impl rule__Auth__Group__2
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_11);
             rule__Auth__Group__1__Impl();
 
             state._fsp--;
@@ -3203,20 +2966,20 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group__1__Impl"
-    // InternalSecurityModel.g:1056:1: rule__Auth__Group__1__Impl : ( 'roles' ) ;
+    // InternalSecurityModel.g:973:1: rule__Auth__Group__1__Impl : ( 'roles' ) ;
     public final void rule__Auth__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1060:1: ( ( 'roles' ) )
-            // InternalSecurityModel.g:1061:1: ( 'roles' )
+            // InternalSecurityModel.g:977:1: ( ( 'roles' ) )
+            // InternalSecurityModel.g:978:1: ( 'roles' )
             {
-            // InternalSecurityModel.g:1061:1: ( 'roles' )
-            // InternalSecurityModel.g:1062:2: 'roles'
+            // InternalSecurityModel.g:978:1: ( 'roles' )
+            // InternalSecurityModel.g:979:2: 'roles'
             {
              before(grammarAccess.getAuthAccess().getRolesKeyword_1()); 
-            match(input,27,FOLLOW_2); 
+            match(input,25,FOLLOW_2); 
              after(grammarAccess.getAuthAccess().getRolesKeyword_1()); 
 
             }
@@ -3240,14 +3003,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group__2"
-    // InternalSecurityModel.g:1071:1: rule__Auth__Group__2 : rule__Auth__Group__2__Impl rule__Auth__Group__3 ;
+    // InternalSecurityModel.g:988:1: rule__Auth__Group__2 : rule__Auth__Group__2__Impl rule__Auth__Group__3 ;
     public final void rule__Auth__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1075:1: ( rule__Auth__Group__2__Impl rule__Auth__Group__3 )
-            // InternalSecurityModel.g:1076:2: rule__Auth__Group__2__Impl rule__Auth__Group__3
+            // InternalSecurityModel.g:992:1: ( rule__Auth__Group__2__Impl rule__Auth__Group__3 )
+            // InternalSecurityModel.g:993:2: rule__Auth__Group__2__Impl rule__Auth__Group__3
             {
             pushFollow(FOLLOW_4);
             rule__Auth__Group__2__Impl();
@@ -3278,20 +3041,20 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group__2__Impl"
-    // InternalSecurityModel.g:1083:1: rule__Auth__Group__2__Impl : ( '(' ) ;
+    // InternalSecurityModel.g:1000:1: rule__Auth__Group__2__Impl : ( '(' ) ;
     public final void rule__Auth__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1087:1: ( ( '(' ) )
-            // InternalSecurityModel.g:1088:1: ( '(' )
+            // InternalSecurityModel.g:1004:1: ( ( '(' ) )
+            // InternalSecurityModel.g:1005:1: ( '(' )
             {
-            // InternalSecurityModel.g:1088:1: ( '(' )
-            // InternalSecurityModel.g:1089:2: '('
+            // InternalSecurityModel.g:1005:1: ( '(' )
+            // InternalSecurityModel.g:1006:2: '('
             {
              before(grammarAccess.getAuthAccess().getLeftParenthesisKeyword_2()); 
-            match(input,19,FOLLOW_2); 
+            match(input,26,FOLLOW_2); 
              after(grammarAccess.getAuthAccess().getLeftParenthesisKeyword_2()); 
 
             }
@@ -3315,16 +3078,16 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group__3"
-    // InternalSecurityModel.g:1098:1: rule__Auth__Group__3 : rule__Auth__Group__3__Impl rule__Auth__Group__4 ;
+    // InternalSecurityModel.g:1015:1: rule__Auth__Group__3 : rule__Auth__Group__3__Impl rule__Auth__Group__4 ;
     public final void rule__Auth__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1102:1: ( rule__Auth__Group__3__Impl rule__Auth__Group__4 )
-            // InternalSecurityModel.g:1103:2: rule__Auth__Group__3__Impl rule__Auth__Group__4
+            // InternalSecurityModel.g:1019:1: ( rule__Auth__Group__3__Impl rule__Auth__Group__4 )
+            // InternalSecurityModel.g:1020:2: rule__Auth__Group__3__Impl rule__Auth__Group__4
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_18);
             rule__Auth__Group__3__Impl();
 
             state._fsp--;
@@ -3353,21 +3116,21 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group__3__Impl"
-    // InternalSecurityModel.g:1110:1: rule__Auth__Group__3__Impl : ( ( rule__Auth__RolesAssignment_3 ) ) ;
+    // InternalSecurityModel.g:1027:1: rule__Auth__Group__3__Impl : ( ( rule__Auth__RolesAssignment_3 ) ) ;
     public final void rule__Auth__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1114:1: ( ( ( rule__Auth__RolesAssignment_3 ) ) )
-            // InternalSecurityModel.g:1115:1: ( ( rule__Auth__RolesAssignment_3 ) )
+            // InternalSecurityModel.g:1031:1: ( ( ( rule__Auth__RolesAssignment_3 ) ) )
+            // InternalSecurityModel.g:1032:1: ( ( rule__Auth__RolesAssignment_3 ) )
             {
-            // InternalSecurityModel.g:1115:1: ( ( rule__Auth__RolesAssignment_3 ) )
-            // InternalSecurityModel.g:1116:2: ( rule__Auth__RolesAssignment_3 )
+            // InternalSecurityModel.g:1032:1: ( ( rule__Auth__RolesAssignment_3 ) )
+            // InternalSecurityModel.g:1033:2: ( rule__Auth__RolesAssignment_3 )
             {
              before(grammarAccess.getAuthAccess().getRolesAssignment_3()); 
-            // InternalSecurityModel.g:1117:2: ( rule__Auth__RolesAssignment_3 )
-            // InternalSecurityModel.g:1117:3: rule__Auth__RolesAssignment_3
+            // InternalSecurityModel.g:1034:2: ( rule__Auth__RolesAssignment_3 )
+            // InternalSecurityModel.g:1034:3: rule__Auth__RolesAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__Auth__RolesAssignment_3();
@@ -3400,16 +3163,16 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group__4"
-    // InternalSecurityModel.g:1125:1: rule__Auth__Group__4 : rule__Auth__Group__4__Impl rule__Auth__Group__5 ;
+    // InternalSecurityModel.g:1042:1: rule__Auth__Group__4 : rule__Auth__Group__4__Impl rule__Auth__Group__5 ;
     public final void rule__Auth__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1129:1: ( rule__Auth__Group__4__Impl rule__Auth__Group__5 )
-            // InternalSecurityModel.g:1130:2: rule__Auth__Group__4__Impl rule__Auth__Group__5
+            // InternalSecurityModel.g:1046:1: ( rule__Auth__Group__4__Impl rule__Auth__Group__5 )
+            // InternalSecurityModel.g:1047:2: rule__Auth__Group__4__Impl rule__Auth__Group__5
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_18);
             rule__Auth__Group__4__Impl();
 
             state._fsp--;
@@ -3438,35 +3201,35 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group__4__Impl"
-    // InternalSecurityModel.g:1137:1: rule__Auth__Group__4__Impl : ( ( rule__Auth__Group_4__0 )* ) ;
+    // InternalSecurityModel.g:1054:1: rule__Auth__Group__4__Impl : ( ( rule__Auth__Group_4__0 )* ) ;
     public final void rule__Auth__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1141:1: ( ( ( rule__Auth__Group_4__0 )* ) )
-            // InternalSecurityModel.g:1142:1: ( ( rule__Auth__Group_4__0 )* )
+            // InternalSecurityModel.g:1058:1: ( ( ( rule__Auth__Group_4__0 )* ) )
+            // InternalSecurityModel.g:1059:1: ( ( rule__Auth__Group_4__0 )* )
             {
-            // InternalSecurityModel.g:1142:1: ( ( rule__Auth__Group_4__0 )* )
-            // InternalSecurityModel.g:1143:2: ( rule__Auth__Group_4__0 )*
+            // InternalSecurityModel.g:1059:1: ( ( rule__Auth__Group_4__0 )* )
+            // InternalSecurityModel.g:1060:2: ( rule__Auth__Group_4__0 )*
             {
              before(grammarAccess.getAuthAccess().getGroup_4()); 
-            // InternalSecurityModel.g:1144:2: ( rule__Auth__Group_4__0 )*
+            // InternalSecurityModel.g:1061:2: ( rule__Auth__Group_4__0 )*
             loop9:
             do {
                 int alt9=2;
                 int LA9_0 = input.LA(1);
 
-                if ( (LA9_0==22) ) {
+                if ( (LA9_0==21) ) {
                     alt9=1;
                 }
 
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalSecurityModel.g:1144:3: rule__Auth__Group_4__0
+            	    // InternalSecurityModel.g:1061:3: rule__Auth__Group_4__0
             	    {
-            	    pushFollow(FOLLOW_12);
+            	    pushFollow(FOLLOW_13);
             	    rule__Auth__Group_4__0();
 
             	    state._fsp--;
@@ -3503,14 +3266,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group__5"
-    // InternalSecurityModel.g:1152:1: rule__Auth__Group__5 : rule__Auth__Group__5__Impl rule__Auth__Group__6 ;
+    // InternalSecurityModel.g:1069:1: rule__Auth__Group__5 : rule__Auth__Group__5__Impl rule__Auth__Group__6 ;
     public final void rule__Auth__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1156:1: ( rule__Auth__Group__5__Impl rule__Auth__Group__6 )
-            // InternalSecurityModel.g:1157:2: rule__Auth__Group__5__Impl rule__Auth__Group__6
+            // InternalSecurityModel.g:1073:1: ( rule__Auth__Group__5__Impl rule__Auth__Group__6 )
+            // InternalSecurityModel.g:1074:2: rule__Auth__Group__5__Impl rule__Auth__Group__6
             {
             pushFollow(FOLLOW_19);
             rule__Auth__Group__5__Impl();
@@ -3541,20 +3304,20 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group__5__Impl"
-    // InternalSecurityModel.g:1164:1: rule__Auth__Group__5__Impl : ( ')' ) ;
+    // InternalSecurityModel.g:1081:1: rule__Auth__Group__5__Impl : ( ')' ) ;
     public final void rule__Auth__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1168:1: ( ( ')' ) )
-            // InternalSecurityModel.g:1169:1: ( ')' )
+            // InternalSecurityModel.g:1085:1: ( ( ')' ) )
+            // InternalSecurityModel.g:1086:1: ( ')' )
             {
-            // InternalSecurityModel.g:1169:1: ( ')' )
-            // InternalSecurityModel.g:1170:2: ')'
+            // InternalSecurityModel.g:1086:1: ( ')' )
+            // InternalSecurityModel.g:1087:2: ')'
             {
              before(grammarAccess.getAuthAccess().getRightParenthesisKeyword_5()); 
-            match(input,20,FOLLOW_2); 
+            match(input,27,FOLLOW_2); 
              after(grammarAccess.getAuthAccess().getRightParenthesisKeyword_5()); 
 
             }
@@ -3578,14 +3341,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group__6"
-    // InternalSecurityModel.g:1179:1: rule__Auth__Group__6 : rule__Auth__Group__6__Impl rule__Auth__Group__7 ;
+    // InternalSecurityModel.g:1096:1: rule__Auth__Group__6 : rule__Auth__Group__6__Impl rule__Auth__Group__7 ;
     public final void rule__Auth__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1183:1: ( rule__Auth__Group__6__Impl rule__Auth__Group__7 )
-            // InternalSecurityModel.g:1184:2: rule__Auth__Group__6__Impl rule__Auth__Group__7
+            // InternalSecurityModel.g:1100:1: ( rule__Auth__Group__6__Impl rule__Auth__Group__7 )
+            // InternalSecurityModel.g:1101:2: rule__Auth__Group__6__Impl rule__Auth__Group__7
             {
             pushFollow(FOLLOW_4);
             rule__Auth__Group__6__Impl();
@@ -3616,17 +3379,17 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group__6__Impl"
-    // InternalSecurityModel.g:1191:1: rule__Auth__Group__6__Impl : ( 'context:' ) ;
+    // InternalSecurityModel.g:1108:1: rule__Auth__Group__6__Impl : ( 'context:' ) ;
     public final void rule__Auth__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1195:1: ( ( 'context:' ) )
-            // InternalSecurityModel.g:1196:1: ( 'context:' )
+            // InternalSecurityModel.g:1112:1: ( ( 'context:' ) )
+            // InternalSecurityModel.g:1113:1: ( 'context:' )
             {
-            // InternalSecurityModel.g:1196:1: ( 'context:' )
-            // InternalSecurityModel.g:1197:2: 'context:'
+            // InternalSecurityModel.g:1113:1: ( 'context:' )
+            // InternalSecurityModel.g:1114:2: 'context:'
             {
              before(grammarAccess.getAuthAccess().getContextKeyword_6()); 
             match(input,28,FOLLOW_2); 
@@ -3653,14 +3416,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group__7"
-    // InternalSecurityModel.g:1206:1: rule__Auth__Group__7 : rule__Auth__Group__7__Impl rule__Auth__Group__8 ;
+    // InternalSecurityModel.g:1123:1: rule__Auth__Group__7 : rule__Auth__Group__7__Impl rule__Auth__Group__8 ;
     public final void rule__Auth__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1210:1: ( rule__Auth__Group__7__Impl rule__Auth__Group__8 )
-            // InternalSecurityModel.g:1211:2: rule__Auth__Group__7__Impl rule__Auth__Group__8
+            // InternalSecurityModel.g:1127:1: ( rule__Auth__Group__7__Impl rule__Auth__Group__8 )
+            // InternalSecurityModel.g:1128:2: rule__Auth__Group__7__Impl rule__Auth__Group__8
             {
             pushFollow(FOLLOW_20);
             rule__Auth__Group__7__Impl();
@@ -3691,21 +3454,21 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group__7__Impl"
-    // InternalSecurityModel.g:1218:1: rule__Auth__Group__7__Impl : ( ( rule__Auth__TextualAssignment_7 ) ) ;
+    // InternalSecurityModel.g:1135:1: rule__Auth__Group__7__Impl : ( ( rule__Auth__TextualAssignment_7 ) ) ;
     public final void rule__Auth__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1222:1: ( ( ( rule__Auth__TextualAssignment_7 ) ) )
-            // InternalSecurityModel.g:1223:1: ( ( rule__Auth__TextualAssignment_7 ) )
+            // InternalSecurityModel.g:1139:1: ( ( ( rule__Auth__TextualAssignment_7 ) ) )
+            // InternalSecurityModel.g:1140:1: ( ( rule__Auth__TextualAssignment_7 ) )
             {
-            // InternalSecurityModel.g:1223:1: ( ( rule__Auth__TextualAssignment_7 ) )
-            // InternalSecurityModel.g:1224:2: ( rule__Auth__TextualAssignment_7 )
+            // InternalSecurityModel.g:1140:1: ( ( rule__Auth__TextualAssignment_7 ) )
+            // InternalSecurityModel.g:1141:2: ( rule__Auth__TextualAssignment_7 )
             {
              before(grammarAccess.getAuthAccess().getTextualAssignment_7()); 
-            // InternalSecurityModel.g:1225:2: ( rule__Auth__TextualAssignment_7 )
-            // InternalSecurityModel.g:1225:3: rule__Auth__TextualAssignment_7
+            // InternalSecurityModel.g:1142:2: ( rule__Auth__TextualAssignment_7 )
+            // InternalSecurityModel.g:1142:3: rule__Auth__TextualAssignment_7
             {
             pushFollow(FOLLOW_2);
             rule__Auth__TextualAssignment_7();
@@ -3738,14 +3501,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group__8"
-    // InternalSecurityModel.g:1233:1: rule__Auth__Group__8 : rule__Auth__Group__8__Impl rule__Auth__Group__9 ;
+    // InternalSecurityModel.g:1150:1: rule__Auth__Group__8 : rule__Auth__Group__8__Impl rule__Auth__Group__9 ;
     public final void rule__Auth__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1237:1: ( rule__Auth__Group__8__Impl rule__Auth__Group__9 )
-            // InternalSecurityModel.g:1238:2: rule__Auth__Group__8__Impl rule__Auth__Group__9
+            // InternalSecurityModel.g:1154:1: ( rule__Auth__Group__8__Impl rule__Auth__Group__9 )
+            // InternalSecurityModel.g:1155:2: rule__Auth__Group__8__Impl rule__Auth__Group__9
             {
             pushFollow(FOLLOW_4);
             rule__Auth__Group__8__Impl();
@@ -3776,17 +3539,17 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group__8__Impl"
-    // InternalSecurityModel.g:1245:1: rule__Auth__Group__8__Impl : ( 'ocl:' ) ;
+    // InternalSecurityModel.g:1162:1: rule__Auth__Group__8__Impl : ( 'ocl:' ) ;
     public final void rule__Auth__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1249:1: ( ( 'ocl:' ) )
-            // InternalSecurityModel.g:1250:1: ( 'ocl:' )
+            // InternalSecurityModel.g:1166:1: ( ( 'ocl:' ) )
+            // InternalSecurityModel.g:1167:1: ( 'ocl:' )
             {
-            // InternalSecurityModel.g:1250:1: ( 'ocl:' )
-            // InternalSecurityModel.g:1251:2: 'ocl:'
+            // InternalSecurityModel.g:1167:1: ( 'ocl:' )
+            // InternalSecurityModel.g:1168:2: 'ocl:'
             {
              before(grammarAccess.getAuthAccess().getOclKeyword_8()); 
             match(input,29,FOLLOW_2); 
@@ -3813,14 +3576,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group__9"
-    // InternalSecurityModel.g:1260:1: rule__Auth__Group__9 : rule__Auth__Group__9__Impl rule__Auth__Group__10 ;
+    // InternalSecurityModel.g:1177:1: rule__Auth__Group__9 : rule__Auth__Group__9__Impl rule__Auth__Group__10 ;
     public final void rule__Auth__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1264:1: ( rule__Auth__Group__9__Impl rule__Auth__Group__10 )
-            // InternalSecurityModel.g:1265:2: rule__Auth__Group__9__Impl rule__Auth__Group__10
+            // InternalSecurityModel.g:1181:1: ( rule__Auth__Group__9__Impl rule__Auth__Group__10 )
+            // InternalSecurityModel.g:1182:2: rule__Auth__Group__9__Impl rule__Auth__Group__10
             {
             pushFollow(FOLLOW_21);
             rule__Auth__Group__9__Impl();
@@ -3851,21 +3614,21 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group__9__Impl"
-    // InternalSecurityModel.g:1272:1: rule__Auth__Group__9__Impl : ( ( rule__Auth__OclExpAssignment_9 ) ) ;
+    // InternalSecurityModel.g:1189:1: rule__Auth__Group__9__Impl : ( ( rule__Auth__OclExpAssignment_9 ) ) ;
     public final void rule__Auth__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1276:1: ( ( ( rule__Auth__OclExpAssignment_9 ) ) )
-            // InternalSecurityModel.g:1277:1: ( ( rule__Auth__OclExpAssignment_9 ) )
+            // InternalSecurityModel.g:1193:1: ( ( ( rule__Auth__OclExpAssignment_9 ) ) )
+            // InternalSecurityModel.g:1194:1: ( ( rule__Auth__OclExpAssignment_9 ) )
             {
-            // InternalSecurityModel.g:1277:1: ( ( rule__Auth__OclExpAssignment_9 ) )
-            // InternalSecurityModel.g:1278:2: ( rule__Auth__OclExpAssignment_9 )
+            // InternalSecurityModel.g:1194:1: ( ( rule__Auth__OclExpAssignment_9 ) )
+            // InternalSecurityModel.g:1195:2: ( rule__Auth__OclExpAssignment_9 )
             {
              before(grammarAccess.getAuthAccess().getOclExpAssignment_9()); 
-            // InternalSecurityModel.g:1279:2: ( rule__Auth__OclExpAssignment_9 )
-            // InternalSecurityModel.g:1279:3: rule__Auth__OclExpAssignment_9
+            // InternalSecurityModel.g:1196:2: ( rule__Auth__OclExpAssignment_9 )
+            // InternalSecurityModel.g:1196:3: rule__Auth__OclExpAssignment_9
             {
             pushFollow(FOLLOW_2);
             rule__Auth__OclExpAssignment_9();
@@ -3898,14 +3661,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group__10"
-    // InternalSecurityModel.g:1287:1: rule__Auth__Group__10 : rule__Auth__Group__10__Impl rule__Auth__Group__11 ;
+    // InternalSecurityModel.g:1204:1: rule__Auth__Group__10 : rule__Auth__Group__10__Impl rule__Auth__Group__11 ;
     public final void rule__Auth__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1291:1: ( rule__Auth__Group__10__Impl rule__Auth__Group__11 )
-            // InternalSecurityModel.g:1292:2: rule__Auth__Group__10__Impl rule__Auth__Group__11
+            // InternalSecurityModel.g:1208:1: ( rule__Auth__Group__10__Impl rule__Auth__Group__11 )
+            // InternalSecurityModel.g:1209:2: rule__Auth__Group__10__Impl rule__Auth__Group__11
             {
             pushFollow(FOLLOW_4);
             rule__Auth__Group__10__Impl();
@@ -3936,17 +3699,17 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group__10__Impl"
-    // InternalSecurityModel.g:1299:1: rule__Auth__Group__10__Impl : ( 'sql:' ) ;
+    // InternalSecurityModel.g:1216:1: rule__Auth__Group__10__Impl : ( 'sql:' ) ;
     public final void rule__Auth__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1303:1: ( ( 'sql:' ) )
-            // InternalSecurityModel.g:1304:1: ( 'sql:' )
+            // InternalSecurityModel.g:1220:1: ( ( 'sql:' ) )
+            // InternalSecurityModel.g:1221:1: ( 'sql:' )
             {
-            // InternalSecurityModel.g:1304:1: ( 'sql:' )
-            // InternalSecurityModel.g:1305:2: 'sql:'
+            // InternalSecurityModel.g:1221:1: ( 'sql:' )
+            // InternalSecurityModel.g:1222:2: 'sql:'
             {
              before(grammarAccess.getAuthAccess().getSqlKeyword_10()); 
             match(input,30,FOLLOW_2); 
@@ -3973,14 +3736,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group__11"
-    // InternalSecurityModel.g:1314:1: rule__Auth__Group__11 : rule__Auth__Group__11__Impl rule__Auth__Group__12 ;
+    // InternalSecurityModel.g:1231:1: rule__Auth__Group__11 : rule__Auth__Group__11__Impl rule__Auth__Group__12 ;
     public final void rule__Auth__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1318:1: ( rule__Auth__Group__11__Impl rule__Auth__Group__12 )
-            // InternalSecurityModel.g:1319:2: rule__Auth__Group__11__Impl rule__Auth__Group__12
+            // InternalSecurityModel.g:1235:1: ( rule__Auth__Group__11__Impl rule__Auth__Group__12 )
+            // InternalSecurityModel.g:1236:2: rule__Auth__Group__11__Impl rule__Auth__Group__12
             {
             pushFollow(FOLLOW_22);
             rule__Auth__Group__11__Impl();
@@ -4011,21 +3774,21 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group__11__Impl"
-    // InternalSecurityModel.g:1326:1: rule__Auth__Group__11__Impl : ( ( rule__Auth__SqlStmAssignment_11 ) ) ;
+    // InternalSecurityModel.g:1243:1: rule__Auth__Group__11__Impl : ( ( rule__Auth__SqlStmAssignment_11 ) ) ;
     public final void rule__Auth__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1330:1: ( ( ( rule__Auth__SqlStmAssignment_11 ) ) )
-            // InternalSecurityModel.g:1331:1: ( ( rule__Auth__SqlStmAssignment_11 ) )
+            // InternalSecurityModel.g:1247:1: ( ( ( rule__Auth__SqlStmAssignment_11 ) ) )
+            // InternalSecurityModel.g:1248:1: ( ( rule__Auth__SqlStmAssignment_11 ) )
             {
-            // InternalSecurityModel.g:1331:1: ( ( rule__Auth__SqlStmAssignment_11 ) )
-            // InternalSecurityModel.g:1332:2: ( rule__Auth__SqlStmAssignment_11 )
+            // InternalSecurityModel.g:1248:1: ( ( rule__Auth__SqlStmAssignment_11 ) )
+            // InternalSecurityModel.g:1249:2: ( rule__Auth__SqlStmAssignment_11 )
             {
              before(grammarAccess.getAuthAccess().getSqlStmAssignment_11()); 
-            // InternalSecurityModel.g:1333:2: ( rule__Auth__SqlStmAssignment_11 )
-            // InternalSecurityModel.g:1333:3: rule__Auth__SqlStmAssignment_11
+            // InternalSecurityModel.g:1250:2: ( rule__Auth__SqlStmAssignment_11 )
+            // InternalSecurityModel.g:1250:3: rule__Auth__SqlStmAssignment_11
             {
             pushFollow(FOLLOW_2);
             rule__Auth__SqlStmAssignment_11();
@@ -4058,14 +3821,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group__12"
-    // InternalSecurityModel.g:1341:1: rule__Auth__Group__12 : rule__Auth__Group__12__Impl ;
+    // InternalSecurityModel.g:1258:1: rule__Auth__Group__12 : rule__Auth__Group__12__Impl ;
     public final void rule__Auth__Group__12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1345:1: ( rule__Auth__Group__12__Impl )
-            // InternalSecurityModel.g:1346:2: rule__Auth__Group__12__Impl
+            // InternalSecurityModel.g:1262:1: ( rule__Auth__Group__12__Impl )
+            // InternalSecurityModel.g:1263:2: rule__Auth__Group__12__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Auth__Group__12__Impl();
@@ -4091,20 +3854,20 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group__12__Impl"
-    // InternalSecurityModel.g:1352:1: rule__Auth__Group__12__Impl : ( '}' ) ;
+    // InternalSecurityModel.g:1269:1: rule__Auth__Group__12__Impl : ( '}' ) ;
     public final void rule__Auth__Group__12__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1356:1: ( ( '}' ) )
-            // InternalSecurityModel.g:1357:1: ( '}' )
+            // InternalSecurityModel.g:1273:1: ( ( '}' ) )
+            // InternalSecurityModel.g:1274:1: ( '}' )
             {
-            // InternalSecurityModel.g:1357:1: ( '}' )
-            // InternalSecurityModel.g:1358:2: '}'
+            // InternalSecurityModel.g:1274:1: ( '}' )
+            // InternalSecurityModel.g:1275:2: '}'
             {
              before(grammarAccess.getAuthAccess().getRightCurlyBracketKeyword_12()); 
-            match(input,24,FOLLOW_2); 
+            match(input,23,FOLLOW_2); 
              after(grammarAccess.getAuthAccess().getRightCurlyBracketKeyword_12()); 
 
             }
@@ -4128,14 +3891,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group_4__0"
-    // InternalSecurityModel.g:1368:1: rule__Auth__Group_4__0 : rule__Auth__Group_4__0__Impl rule__Auth__Group_4__1 ;
+    // InternalSecurityModel.g:1285:1: rule__Auth__Group_4__0 : rule__Auth__Group_4__0__Impl rule__Auth__Group_4__1 ;
     public final void rule__Auth__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1372:1: ( rule__Auth__Group_4__0__Impl rule__Auth__Group_4__1 )
-            // InternalSecurityModel.g:1373:2: rule__Auth__Group_4__0__Impl rule__Auth__Group_4__1
+            // InternalSecurityModel.g:1289:1: ( rule__Auth__Group_4__0__Impl rule__Auth__Group_4__1 )
+            // InternalSecurityModel.g:1290:2: rule__Auth__Group_4__0__Impl rule__Auth__Group_4__1
             {
             pushFollow(FOLLOW_4);
             rule__Auth__Group_4__0__Impl();
@@ -4166,20 +3929,20 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group_4__0__Impl"
-    // InternalSecurityModel.g:1380:1: rule__Auth__Group_4__0__Impl : ( ',' ) ;
+    // InternalSecurityModel.g:1297:1: rule__Auth__Group_4__0__Impl : ( ',' ) ;
     public final void rule__Auth__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1384:1: ( ( ',' ) )
-            // InternalSecurityModel.g:1385:1: ( ',' )
+            // InternalSecurityModel.g:1301:1: ( ( ',' ) )
+            // InternalSecurityModel.g:1302:1: ( ',' )
             {
-            // InternalSecurityModel.g:1385:1: ( ',' )
-            // InternalSecurityModel.g:1386:2: ','
+            // InternalSecurityModel.g:1302:1: ( ',' )
+            // InternalSecurityModel.g:1303:2: ','
             {
              before(grammarAccess.getAuthAccess().getCommaKeyword_4_0()); 
-            match(input,22,FOLLOW_2); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getAuthAccess().getCommaKeyword_4_0()); 
 
             }
@@ -4203,14 +3966,14 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group_4__1"
-    // InternalSecurityModel.g:1395:1: rule__Auth__Group_4__1 : rule__Auth__Group_4__1__Impl ;
+    // InternalSecurityModel.g:1312:1: rule__Auth__Group_4__1 : rule__Auth__Group_4__1__Impl ;
     public final void rule__Auth__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1399:1: ( rule__Auth__Group_4__1__Impl )
-            // InternalSecurityModel.g:1400:2: rule__Auth__Group_4__1__Impl
+            // InternalSecurityModel.g:1316:1: ( rule__Auth__Group_4__1__Impl )
+            // InternalSecurityModel.g:1317:2: rule__Auth__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Auth__Group_4__1__Impl();
@@ -4236,21 +3999,21 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__Group_4__1__Impl"
-    // InternalSecurityModel.g:1406:1: rule__Auth__Group_4__1__Impl : ( ( rule__Auth__RolesAssignment_4_1 ) ) ;
+    // InternalSecurityModel.g:1323:1: rule__Auth__Group_4__1__Impl : ( ( rule__Auth__RolesAssignment_4_1 ) ) ;
     public final void rule__Auth__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1410:1: ( ( ( rule__Auth__RolesAssignment_4_1 ) ) )
-            // InternalSecurityModel.g:1411:1: ( ( rule__Auth__RolesAssignment_4_1 ) )
+            // InternalSecurityModel.g:1327:1: ( ( ( rule__Auth__RolesAssignment_4_1 ) ) )
+            // InternalSecurityModel.g:1328:1: ( ( rule__Auth__RolesAssignment_4_1 ) )
             {
-            // InternalSecurityModel.g:1411:1: ( ( rule__Auth__RolesAssignment_4_1 ) )
-            // InternalSecurityModel.g:1412:2: ( rule__Auth__RolesAssignment_4_1 )
+            // InternalSecurityModel.g:1328:1: ( ( rule__Auth__RolesAssignment_4_1 ) )
+            // InternalSecurityModel.g:1329:2: ( rule__Auth__RolesAssignment_4_1 )
             {
              before(grammarAccess.getAuthAccess().getRolesAssignment_4_1()); 
-            // InternalSecurityModel.g:1413:2: ( rule__Auth__RolesAssignment_4_1 )
-            // InternalSecurityModel.g:1413:3: rule__Auth__RolesAssignment_4_1
+            // InternalSecurityModel.g:1330:2: ( rule__Auth__RolesAssignment_4_1 )
+            // InternalSecurityModel.g:1330:3: rule__Auth__RolesAssignment_4_1
             {
             pushFollow(FOLLOW_2);
             rule__Auth__RolesAssignment_4_1();
@@ -4282,18 +4045,408 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
     // $ANTLR end "rule__Auth__Group_4__1__Impl"
 
 
+    // $ANTLR start "rule__ProtectedResource__Group__0"
+    // InternalSecurityModel.g:1339:1: rule__ProtectedResource__Group__0 : rule__ProtectedResource__Group__0__Impl rule__ProtectedResource__Group__1 ;
+    public final void rule__ProtectedResource__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSecurityModel.g:1343:1: ( rule__ProtectedResource__Group__0__Impl rule__ProtectedResource__Group__1 )
+            // InternalSecurityModel.g:1344:2: rule__ProtectedResource__Group__0__Impl rule__ProtectedResource__Group__1
+            {
+            pushFollow(FOLLOW_23);
+            rule__ProtectedResource__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ProtectedResource__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ProtectedResource__Group__0"
+
+
+    // $ANTLR start "rule__ProtectedResource__Group__0__Impl"
+    // InternalSecurityModel.g:1351:1: rule__ProtectedResource__Group__0__Impl : ( '(' ) ;
+    public final void rule__ProtectedResource__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSecurityModel.g:1355:1: ( ( '(' ) )
+            // InternalSecurityModel.g:1356:1: ( '(' )
+            {
+            // InternalSecurityModel.g:1356:1: ( '(' )
+            // InternalSecurityModel.g:1357:2: '('
+            {
+             before(grammarAccess.getProtectedResourceAccess().getLeftParenthesisKeyword_0()); 
+            match(input,26,FOLLOW_2); 
+             after(grammarAccess.getProtectedResourceAccess().getLeftParenthesisKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ProtectedResource__Group__0__Impl"
+
+
+    // $ANTLR start "rule__ProtectedResource__Group__1"
+    // InternalSecurityModel.g:1366:1: rule__ProtectedResource__Group__1 : rule__ProtectedResource__Group__1__Impl rule__ProtectedResource__Group__2 ;
+    public final void rule__ProtectedResource__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSecurityModel.g:1370:1: ( rule__ProtectedResource__Group__1__Impl rule__ProtectedResource__Group__2 )
+            // InternalSecurityModel.g:1371:2: rule__ProtectedResource__Group__1__Impl rule__ProtectedResource__Group__2
+            {
+            pushFollow(FOLLOW_24);
+            rule__ProtectedResource__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ProtectedResource__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ProtectedResource__Group__1"
+
+
+    // $ANTLR start "rule__ProtectedResource__Group__1__Impl"
+    // InternalSecurityModel.g:1378:1: rule__ProtectedResource__Group__1__Impl : ( ( rule__ProtectedResource__ResourcesAssignment_1 ) ) ;
+    public final void rule__ProtectedResource__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSecurityModel.g:1382:1: ( ( ( rule__ProtectedResource__ResourcesAssignment_1 ) ) )
+            // InternalSecurityModel.g:1383:1: ( ( rule__ProtectedResource__ResourcesAssignment_1 ) )
+            {
+            // InternalSecurityModel.g:1383:1: ( ( rule__ProtectedResource__ResourcesAssignment_1 ) )
+            // InternalSecurityModel.g:1384:2: ( rule__ProtectedResource__ResourcesAssignment_1 )
+            {
+             before(grammarAccess.getProtectedResourceAccess().getResourcesAssignment_1()); 
+            // InternalSecurityModel.g:1385:2: ( rule__ProtectedResource__ResourcesAssignment_1 )
+            // InternalSecurityModel.g:1385:3: rule__ProtectedResource__ResourcesAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__ProtectedResource__ResourcesAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getProtectedResourceAccess().getResourcesAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ProtectedResource__Group__1__Impl"
+
+
+    // $ANTLR start "rule__ProtectedResource__Group__2"
+    // InternalSecurityModel.g:1393:1: rule__ProtectedResource__Group__2 : rule__ProtectedResource__Group__2__Impl rule__ProtectedResource__Group__3 ;
+    public final void rule__ProtectedResource__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSecurityModel.g:1397:1: ( rule__ProtectedResource__Group__2__Impl rule__ProtectedResource__Group__3 )
+            // InternalSecurityModel.g:1398:2: rule__ProtectedResource__Group__2__Impl rule__ProtectedResource__Group__3
+            {
+            pushFollow(FOLLOW_4);
+            rule__ProtectedResource__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ProtectedResource__Group__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ProtectedResource__Group__2"
+
+
+    // $ANTLR start "rule__ProtectedResource__Group__2__Impl"
+    // InternalSecurityModel.g:1405:1: rule__ProtectedResource__Group__2__Impl : ( 'as' ) ;
+    public final void rule__ProtectedResource__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSecurityModel.g:1409:1: ( ( 'as' ) )
+            // InternalSecurityModel.g:1410:1: ( 'as' )
+            {
+            // InternalSecurityModel.g:1410:1: ( 'as' )
+            // InternalSecurityModel.g:1411:2: 'as'
+            {
+             before(grammarAccess.getProtectedResourceAccess().getAsKeyword_2()); 
+            match(input,31,FOLLOW_2); 
+             after(grammarAccess.getProtectedResourceAccess().getAsKeyword_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ProtectedResource__Group__2__Impl"
+
+
+    // $ANTLR start "rule__ProtectedResource__Group__3"
+    // InternalSecurityModel.g:1420:1: rule__ProtectedResource__Group__3 : rule__ProtectedResource__Group__3__Impl rule__ProtectedResource__Group__4 ;
+    public final void rule__ProtectedResource__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSecurityModel.g:1424:1: ( rule__ProtectedResource__Group__3__Impl rule__ProtectedResource__Group__4 )
+            // InternalSecurityModel.g:1425:2: rule__ProtectedResource__Group__3__Impl rule__ProtectedResource__Group__4
+            {
+            pushFollow(FOLLOW_25);
+            rule__ProtectedResource__Group__3__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ProtectedResource__Group__4();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ProtectedResource__Group__3"
+
+
+    // $ANTLR start "rule__ProtectedResource__Group__3__Impl"
+    // InternalSecurityModel.g:1432:1: rule__ProtectedResource__Group__3__Impl : ( ( rule__ProtectedResource__NameAssignment_3 ) ) ;
+    public final void rule__ProtectedResource__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSecurityModel.g:1436:1: ( ( ( rule__ProtectedResource__NameAssignment_3 ) ) )
+            // InternalSecurityModel.g:1437:1: ( ( rule__ProtectedResource__NameAssignment_3 ) )
+            {
+            // InternalSecurityModel.g:1437:1: ( ( rule__ProtectedResource__NameAssignment_3 ) )
+            // InternalSecurityModel.g:1438:2: ( rule__ProtectedResource__NameAssignment_3 )
+            {
+             before(grammarAccess.getProtectedResourceAccess().getNameAssignment_3()); 
+            // InternalSecurityModel.g:1439:2: ( rule__ProtectedResource__NameAssignment_3 )
+            // InternalSecurityModel.g:1439:3: rule__ProtectedResource__NameAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__ProtectedResource__NameAssignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getProtectedResourceAccess().getNameAssignment_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ProtectedResource__Group__3__Impl"
+
+
+    // $ANTLR start "rule__ProtectedResource__Group__4"
+    // InternalSecurityModel.g:1447:1: rule__ProtectedResource__Group__4 : rule__ProtectedResource__Group__4__Impl ;
+    public final void rule__ProtectedResource__Group__4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSecurityModel.g:1451:1: ( rule__ProtectedResource__Group__4__Impl )
+            // InternalSecurityModel.g:1452:2: rule__ProtectedResource__Group__4__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__ProtectedResource__Group__4__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ProtectedResource__Group__4"
+
+
+    // $ANTLR start "rule__ProtectedResource__Group__4__Impl"
+    // InternalSecurityModel.g:1458:1: rule__ProtectedResource__Group__4__Impl : ( ')' ) ;
+    public final void rule__ProtectedResource__Group__4__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSecurityModel.g:1462:1: ( ( ')' ) )
+            // InternalSecurityModel.g:1463:1: ( ')' )
+            {
+            // InternalSecurityModel.g:1463:1: ( ')' )
+            // InternalSecurityModel.g:1464:2: ')'
+            {
+             before(grammarAccess.getProtectedResourceAccess().getRightParenthesisKeyword_4()); 
+            match(input,27,FOLLOW_2); 
+             after(grammarAccess.getProtectedResourceAccess().getRightParenthesisKeyword_4()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ProtectedResource__Group__4__Impl"
+
+
     // $ANTLR start "rule__SecurityModel__NameAssignment_2"
-    // InternalSecurityModel.g:1422:1: rule__SecurityModel__NameAssignment_2 : ( ruleEString ) ;
+    // InternalSecurityModel.g:1474:1: rule__SecurityModel__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__SecurityModel__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1426:1: ( ( ruleEString ) )
-            // InternalSecurityModel.g:1427:2: ( ruleEString )
+            // InternalSecurityModel.g:1478:1: ( ( ruleEString ) )
+            // InternalSecurityModel.g:1479:2: ( ruleEString )
             {
-            // InternalSecurityModel.g:1427:2: ( ruleEString )
-            // InternalSecurityModel.g:1428:3: ruleEString
+            // InternalSecurityModel.g:1479:2: ( ruleEString )
+            // InternalSecurityModel.g:1480:3: ruleEString
             {
              before(grammarAccess.getSecurityModelAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -4324,17 +4477,17 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__SecurityModel__RolesAssignment_4"
-    // InternalSecurityModel.g:1437:1: rule__SecurityModel__RolesAssignment_4 : ( ruleRole ) ;
+    // InternalSecurityModel.g:1489:1: rule__SecurityModel__RolesAssignment_4 : ( ruleRole ) ;
     public final void rule__SecurityModel__RolesAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1441:1: ( ( ruleRole ) )
-            // InternalSecurityModel.g:1442:2: ( ruleRole )
+            // InternalSecurityModel.g:1493:1: ( ( ruleRole ) )
+            // InternalSecurityModel.g:1494:2: ( ruleRole )
             {
-            // InternalSecurityModel.g:1442:2: ( ruleRole )
-            // InternalSecurityModel.g:1443:3: ruleRole
+            // InternalSecurityModel.g:1494:2: ( ruleRole )
+            // InternalSecurityModel.g:1495:3: ruleRole
             {
              before(grammarAccess.getSecurityModelAccess().getRolesRoleParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -4365,17 +4518,17 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__SecurityModel__RulesAssignment_5_1"
-    // InternalSecurityModel.g:1452:1: rule__SecurityModel__RulesAssignment_5_1 : ( ruleRule ) ;
+    // InternalSecurityModel.g:1504:1: rule__SecurityModel__RulesAssignment_5_1 : ( ruleRule ) ;
     public final void rule__SecurityModel__RulesAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1456:1: ( ( ruleRule ) )
-            // InternalSecurityModel.g:1457:2: ( ruleRule )
+            // InternalSecurityModel.g:1508:1: ( ( ruleRule ) )
+            // InternalSecurityModel.g:1509:2: ( ruleRule )
             {
-            // InternalSecurityModel.g:1457:2: ( ruleRule )
-            // InternalSecurityModel.g:1458:3: ruleRule
+            // InternalSecurityModel.g:1509:2: ( ruleRule )
+            // InternalSecurityModel.g:1510:3: ruleRule
             {
              before(grammarAccess.getSecurityModelAccess().getRulesRuleParserRuleCall_5_1_0()); 
             pushFollow(FOLLOW_2);
@@ -4406,17 +4559,17 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__NameAssignment_0"
-    // InternalSecurityModel.g:1467:1: rule__Rule__NameAssignment_0 : ( ruleEString ) ;
+    // InternalSecurityModel.g:1519:1: rule__Rule__NameAssignment_0 : ( ruleEString ) ;
     public final void rule__Rule__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1471:1: ( ( ruleEString ) )
-            // InternalSecurityModel.g:1472:2: ( ruleEString )
+            // InternalSecurityModel.g:1523:1: ( ( ruleEString ) )
+            // InternalSecurityModel.g:1524:2: ( ruleEString )
             {
-            // InternalSecurityModel.g:1472:2: ( ruleEString )
-            // InternalSecurityModel.g:1473:3: ruleEString
+            // InternalSecurityModel.g:1524:2: ( ruleEString )
+            // InternalSecurityModel.g:1525:3: ruleEString
             {
              before(grammarAccess.getRuleAccess().getNameEStringParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -4447,17 +4600,17 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__ActionAssignment_2"
-    // InternalSecurityModel.g:1482:1: rule__Rule__ActionAssignment_2 : ( ruleAction ) ;
+    // InternalSecurityModel.g:1534:1: rule__Rule__ActionAssignment_2 : ( ruleAction ) ;
     public final void rule__Rule__ActionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1486:1: ( ( ruleAction ) )
-            // InternalSecurityModel.g:1487:2: ( ruleAction )
+            // InternalSecurityModel.g:1538:1: ( ( ruleAction ) )
+            // InternalSecurityModel.g:1539:2: ( ruleAction )
             {
-            // InternalSecurityModel.g:1487:2: ( ruleAction )
-            // InternalSecurityModel.g:1488:3: ruleAction
+            // InternalSecurityModel.g:1539:2: ( ruleAction )
+            // InternalSecurityModel.g:1540:3: ruleAction
             {
              before(grammarAccess.getRuleAccess().getActionActionEnumRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -4487,34 +4640,26 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
     // $ANTLR end "rule__Rule__ActionAssignment_2"
 
 
-    // $ANTLR start "rule__Rule__ResourcesAssignment_4"
-    // InternalSecurityModel.g:1497:1: rule__Rule__ResourcesAssignment_4 : ( ( ruleEString ) ) ;
-    public final void rule__Rule__ResourcesAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__Rule__ProtectedResourcesAssignment_4"
+    // InternalSecurityModel.g:1549:1: rule__Rule__ProtectedResourcesAssignment_4 : ( ruleProtectedResource ) ;
+    public final void rule__Rule__ProtectedResourcesAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1501:1: ( ( ( ruleEString ) ) )
-            // InternalSecurityModel.g:1502:2: ( ( ruleEString ) )
+            // InternalSecurityModel.g:1553:1: ( ( ruleProtectedResource ) )
+            // InternalSecurityModel.g:1554:2: ( ruleProtectedResource )
             {
-            // InternalSecurityModel.g:1502:2: ( ( ruleEString ) )
-            // InternalSecurityModel.g:1503:3: ( ruleEString )
+            // InternalSecurityModel.g:1554:2: ( ruleProtectedResource )
+            // InternalSecurityModel.g:1555:3: ruleProtectedResource
             {
-             before(grammarAccess.getRuleAccess().getResourcesPropertyCrossReference_4_0()); 
-            // InternalSecurityModel.g:1504:3: ( ruleEString )
-            // InternalSecurityModel.g:1505:4: ruleEString
-            {
-             before(grammarAccess.getRuleAccess().getResourcesPropertyEStringParserRuleCall_4_0_1()); 
+             before(grammarAccess.getRuleAccess().getProtectedResourcesProtectedResourceParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
-            ruleEString();
+            ruleProtectedResource();
 
             state._fsp--;
 
-             after(grammarAccess.getRuleAccess().getResourcesPropertyEStringParserRuleCall_4_0_1()); 
-
-            }
-
-             after(grammarAccess.getRuleAccess().getResourcesPropertyCrossReference_4_0()); 
+             after(grammarAccess.getRuleAccess().getProtectedResourcesProtectedResourceParserRuleCall_4_0()); 
 
             }
 
@@ -4533,37 +4678,29 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Rule__ResourcesAssignment_4"
+    // $ANTLR end "rule__Rule__ProtectedResourcesAssignment_4"
 
 
-    // $ANTLR start "rule__Rule__ResourcesAssignment_5_1"
-    // InternalSecurityModel.g:1516:1: rule__Rule__ResourcesAssignment_5_1 : ( ( ruleEString ) ) ;
-    public final void rule__Rule__ResourcesAssignment_5_1() throws RecognitionException {
+    // $ANTLR start "rule__Rule__ProtectedResourcesAssignment_5_1"
+    // InternalSecurityModel.g:1564:1: rule__Rule__ProtectedResourcesAssignment_5_1 : ( ruleProtectedResource ) ;
+    public final void rule__Rule__ProtectedResourcesAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1520:1: ( ( ( ruleEString ) ) )
-            // InternalSecurityModel.g:1521:2: ( ( ruleEString ) )
+            // InternalSecurityModel.g:1568:1: ( ( ruleProtectedResource ) )
+            // InternalSecurityModel.g:1569:2: ( ruleProtectedResource )
             {
-            // InternalSecurityModel.g:1521:2: ( ( ruleEString ) )
-            // InternalSecurityModel.g:1522:3: ( ruleEString )
+            // InternalSecurityModel.g:1569:2: ( ruleProtectedResource )
+            // InternalSecurityModel.g:1570:3: ruleProtectedResource
             {
-             before(grammarAccess.getRuleAccess().getResourcesPropertyCrossReference_5_1_0()); 
-            // InternalSecurityModel.g:1523:3: ( ruleEString )
-            // InternalSecurityModel.g:1524:4: ruleEString
-            {
-             before(grammarAccess.getRuleAccess().getResourcesPropertyEStringParserRuleCall_5_1_0_1()); 
+             before(grammarAccess.getRuleAccess().getProtectedResourcesProtectedResourceParserRuleCall_5_1_0()); 
             pushFollow(FOLLOW_2);
-            ruleEString();
+            ruleProtectedResource();
 
             state._fsp--;
 
-             after(grammarAccess.getRuleAccess().getResourcesPropertyEStringParserRuleCall_5_1_0_1()); 
-
-            }
-
-             after(grammarAccess.getRuleAccess().getResourcesPropertyCrossReference_5_1_0()); 
+             after(grammarAccess.getRuleAccess().getProtectedResourcesProtectedResourceParserRuleCall_5_1_0()); 
 
             }
 
@@ -4582,29 +4719,29 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Rule__ResourcesAssignment_5_1"
+    // $ANTLR end "rule__Rule__ProtectedResourcesAssignment_5_1"
 
 
-    // $ANTLR start "rule__Rule__AuthsAssignment_8_1"
-    // InternalSecurityModel.g:1535:1: rule__Rule__AuthsAssignment_8_1 : ( ruleAuth ) ;
-    public final void rule__Rule__AuthsAssignment_8_1() throws RecognitionException {
+    // $ANTLR start "rule__Rule__AuthsAssignment_7_1"
+    // InternalSecurityModel.g:1579:1: rule__Rule__AuthsAssignment_7_1 : ( ruleAuth ) ;
+    public final void rule__Rule__AuthsAssignment_7_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1539:1: ( ( ruleAuth ) )
-            // InternalSecurityModel.g:1540:2: ( ruleAuth )
+            // InternalSecurityModel.g:1583:1: ( ( ruleAuth ) )
+            // InternalSecurityModel.g:1584:2: ( ruleAuth )
             {
-            // InternalSecurityModel.g:1540:2: ( ruleAuth )
-            // InternalSecurityModel.g:1541:3: ruleAuth
+            // InternalSecurityModel.g:1584:2: ( ruleAuth )
+            // InternalSecurityModel.g:1585:3: ruleAuth
             {
-             before(grammarAccess.getRuleAccess().getAuthsAuthParserRuleCall_8_1_0()); 
+             before(grammarAccess.getRuleAccess().getAuthsAuthParserRuleCall_7_1_0()); 
             pushFollow(FOLLOW_2);
             ruleAuth();
 
             state._fsp--;
 
-             after(grammarAccess.getRuleAccess().getAuthsAuthParserRuleCall_8_1_0()); 
+             after(grammarAccess.getRuleAccess().getAuthsAuthParserRuleCall_7_1_0()); 
 
             }
 
@@ -4623,29 +4760,29 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Rule__AuthsAssignment_8_1"
+    // $ANTLR end "rule__Rule__AuthsAssignment_7_1"
 
 
-    // $ANTLR start "rule__Rule__AuthsAssignment_8_2_1"
-    // InternalSecurityModel.g:1550:1: rule__Rule__AuthsAssignment_8_2_1 : ( ruleAuth ) ;
-    public final void rule__Rule__AuthsAssignment_8_2_1() throws RecognitionException {
+    // $ANTLR start "rule__Rule__AuthsAssignment_7_2_1"
+    // InternalSecurityModel.g:1594:1: rule__Rule__AuthsAssignment_7_2_1 : ( ruleAuth ) ;
+    public final void rule__Rule__AuthsAssignment_7_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1554:1: ( ( ruleAuth ) )
-            // InternalSecurityModel.g:1555:2: ( ruleAuth )
+            // InternalSecurityModel.g:1598:1: ( ( ruleAuth ) )
+            // InternalSecurityModel.g:1599:2: ( ruleAuth )
             {
-            // InternalSecurityModel.g:1555:2: ( ruleAuth )
-            // InternalSecurityModel.g:1556:3: ruleAuth
+            // InternalSecurityModel.g:1599:2: ( ruleAuth )
+            // InternalSecurityModel.g:1600:3: ruleAuth
             {
-             before(grammarAccess.getRuleAccess().getAuthsAuthParserRuleCall_8_2_1_0()); 
+             before(grammarAccess.getRuleAccess().getAuthsAuthParserRuleCall_7_2_1_0()); 
             pushFollow(FOLLOW_2);
             ruleAuth();
 
             state._fsp--;
 
-             after(grammarAccess.getRuleAccess().getAuthsAuthParserRuleCall_8_2_1_0()); 
+             after(grammarAccess.getRuleAccess().getAuthsAuthParserRuleCall_7_2_1_0()); 
 
             }
 
@@ -4664,29 +4801,29 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Rule__AuthsAssignment_8_2_1"
+    // $ANTLR end "rule__Rule__AuthsAssignment_7_2_1"
 
 
-    // $ANTLR start "rule__Role__NameAssignment_0"
-    // InternalSecurityModel.g:1565:1: rule__Role__NameAssignment_0 : ( ruleEString ) ;
-    public final void rule__Role__NameAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__Role__NameAssignment"
+    // InternalSecurityModel.g:1609:1: rule__Role__NameAssignment : ( ruleEString ) ;
+    public final void rule__Role__NameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1569:1: ( ( ruleEString ) )
-            // InternalSecurityModel.g:1570:2: ( ruleEString )
+            // InternalSecurityModel.g:1613:1: ( ( ruleEString ) )
+            // InternalSecurityModel.g:1614:2: ( ruleEString )
             {
-            // InternalSecurityModel.g:1570:2: ( ruleEString )
-            // InternalSecurityModel.g:1571:3: ruleEString
+            // InternalSecurityModel.g:1614:2: ( ruleEString )
+            // InternalSecurityModel.g:1615:3: ruleEString
             {
-             before(grammarAccess.getRoleAccess().getNameEStringParserRuleCall_0_0()); 
+             before(grammarAccess.getRoleAccess().getNameEStringParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getRoleAccess().getNameEStringParserRuleCall_0_0()); 
+             after(grammarAccess.getRoleAccess().getNameEStringParserRuleCall_0()); 
 
             }
 
@@ -4705,74 +4842,25 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Role__NameAssignment_0"
-
-
-    // $ANTLR start "rule__Role__EntityAssignment_2"
-    // InternalSecurityModel.g:1580:1: rule__Role__EntityAssignment_2 : ( ( ruleEString ) ) ;
-    public final void rule__Role__EntityAssignment_2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSecurityModel.g:1584:1: ( ( ( ruleEString ) ) )
-            // InternalSecurityModel.g:1585:2: ( ( ruleEString ) )
-            {
-            // InternalSecurityModel.g:1585:2: ( ( ruleEString ) )
-            // InternalSecurityModel.g:1586:3: ( ruleEString )
-            {
-             before(grammarAccess.getRoleAccess().getEntityEntityCrossReference_2_0()); 
-            // InternalSecurityModel.g:1587:3: ( ruleEString )
-            // InternalSecurityModel.g:1588:4: ruleEString
-            {
-             before(grammarAccess.getRoleAccess().getEntityEntityEStringParserRuleCall_2_0_1()); 
-            pushFollow(FOLLOW_2);
-            ruleEString();
-
-            state._fsp--;
-
-             after(grammarAccess.getRoleAccess().getEntityEntityEStringParserRuleCall_2_0_1()); 
-
-            }
-
-             after(grammarAccess.getRoleAccess().getEntityEntityCrossReference_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Role__EntityAssignment_2"
+    // $ANTLR end "rule__Role__NameAssignment"
 
 
     // $ANTLR start "rule__Auth__RolesAssignment_3"
-    // InternalSecurityModel.g:1599:1: rule__Auth__RolesAssignment_3 : ( ( ruleEString ) ) ;
+    // InternalSecurityModel.g:1624:1: rule__Auth__RolesAssignment_3 : ( ( ruleEString ) ) ;
     public final void rule__Auth__RolesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1603:1: ( ( ( ruleEString ) ) )
-            // InternalSecurityModel.g:1604:2: ( ( ruleEString ) )
+            // InternalSecurityModel.g:1628:1: ( ( ( ruleEString ) ) )
+            // InternalSecurityModel.g:1629:2: ( ( ruleEString ) )
             {
-            // InternalSecurityModel.g:1604:2: ( ( ruleEString ) )
-            // InternalSecurityModel.g:1605:3: ( ruleEString )
+            // InternalSecurityModel.g:1629:2: ( ( ruleEString ) )
+            // InternalSecurityModel.g:1630:3: ( ruleEString )
             {
              before(grammarAccess.getAuthAccess().getRolesRoleCrossReference_3_0()); 
-            // InternalSecurityModel.g:1606:3: ( ruleEString )
-            // InternalSecurityModel.g:1607:4: ruleEString
+            // InternalSecurityModel.g:1631:3: ( ruleEString )
+            // InternalSecurityModel.g:1632:4: ruleEString
             {
              before(grammarAccess.getAuthAccess().getRolesRoleEStringParserRuleCall_3_0_1()); 
             pushFollow(FOLLOW_2);
@@ -4807,21 +4895,21 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__RolesAssignment_4_1"
-    // InternalSecurityModel.g:1618:1: rule__Auth__RolesAssignment_4_1 : ( ( ruleEString ) ) ;
+    // InternalSecurityModel.g:1643:1: rule__Auth__RolesAssignment_4_1 : ( ( ruleEString ) ) ;
     public final void rule__Auth__RolesAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1622:1: ( ( ( ruleEString ) ) )
-            // InternalSecurityModel.g:1623:2: ( ( ruleEString ) )
+            // InternalSecurityModel.g:1647:1: ( ( ( ruleEString ) ) )
+            // InternalSecurityModel.g:1648:2: ( ( ruleEString ) )
             {
-            // InternalSecurityModel.g:1623:2: ( ( ruleEString ) )
-            // InternalSecurityModel.g:1624:3: ( ruleEString )
+            // InternalSecurityModel.g:1648:2: ( ( ruleEString ) )
+            // InternalSecurityModel.g:1649:3: ( ruleEString )
             {
              before(grammarAccess.getAuthAccess().getRolesRoleCrossReference_4_1_0()); 
-            // InternalSecurityModel.g:1625:3: ( ruleEString )
-            // InternalSecurityModel.g:1626:4: ruleEString
+            // InternalSecurityModel.g:1650:3: ( ruleEString )
+            // InternalSecurityModel.g:1651:4: ruleEString
             {
              before(grammarAccess.getAuthAccess().getRolesRoleEStringParserRuleCall_4_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -4856,17 +4944,17 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__TextualAssignment_7"
-    // InternalSecurityModel.g:1637:1: rule__Auth__TextualAssignment_7 : ( ruleEString ) ;
+    // InternalSecurityModel.g:1662:1: rule__Auth__TextualAssignment_7 : ( ruleEString ) ;
     public final void rule__Auth__TextualAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1641:1: ( ( ruleEString ) )
-            // InternalSecurityModel.g:1642:2: ( ruleEString )
+            // InternalSecurityModel.g:1666:1: ( ( ruleEString ) )
+            // InternalSecurityModel.g:1667:2: ( ruleEString )
             {
-            // InternalSecurityModel.g:1642:2: ( ruleEString )
-            // InternalSecurityModel.g:1643:3: ruleEString
+            // InternalSecurityModel.g:1667:2: ( ruleEString )
+            // InternalSecurityModel.g:1668:3: ruleEString
             {
              before(grammarAccess.getAuthAccess().getTextualEStringParserRuleCall_7_0()); 
             pushFollow(FOLLOW_2);
@@ -4897,17 +4985,17 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__OclExpAssignment_9"
-    // InternalSecurityModel.g:1652:1: rule__Auth__OclExpAssignment_9 : ( ruleEString ) ;
+    // InternalSecurityModel.g:1677:1: rule__Auth__OclExpAssignment_9 : ( ruleEString ) ;
     public final void rule__Auth__OclExpAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1656:1: ( ( ruleEString ) )
-            // InternalSecurityModel.g:1657:2: ( ruleEString )
+            // InternalSecurityModel.g:1681:1: ( ( ruleEString ) )
+            // InternalSecurityModel.g:1682:2: ( ruleEString )
             {
-            // InternalSecurityModel.g:1657:2: ( ruleEString )
-            // InternalSecurityModel.g:1658:3: ruleEString
+            // InternalSecurityModel.g:1682:2: ( ruleEString )
+            // InternalSecurityModel.g:1683:3: ruleEString
             {
              before(grammarAccess.getAuthAccess().getOclExpEStringParserRuleCall_9_0()); 
             pushFollow(FOLLOW_2);
@@ -4938,17 +5026,17 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Auth__SqlStmAssignment_11"
-    // InternalSecurityModel.g:1667:1: rule__Auth__SqlStmAssignment_11 : ( ruleEString ) ;
+    // InternalSecurityModel.g:1692:1: rule__Auth__SqlStmAssignment_11 : ( ruleEString ) ;
     public final void rule__Auth__SqlStmAssignment_11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecurityModel.g:1671:1: ( ( ruleEString ) )
-            // InternalSecurityModel.g:1672:2: ( ruleEString )
+            // InternalSecurityModel.g:1696:1: ( ( ruleEString ) )
+            // InternalSecurityModel.g:1697:2: ( ruleEString )
             {
-            // InternalSecurityModel.g:1672:2: ( ruleEString )
-            // InternalSecurityModel.g:1673:3: ruleEString
+            // InternalSecurityModel.g:1697:2: ( ruleEString )
+            // InternalSecurityModel.g:1698:3: ruleEString
             {
              before(grammarAccess.getAuthAccess().getSqlStmEStringParserRuleCall_11_0()); 
             pushFollow(FOLLOW_2);
@@ -4977,6 +5065,92 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
     }
     // $ANTLR end "rule__Auth__SqlStmAssignment_11"
 
+
+    // $ANTLR start "rule__ProtectedResource__ResourcesAssignment_1"
+    // InternalSecurityModel.g:1707:1: rule__ProtectedResource__ResourcesAssignment_1 : ( ( RULE_ID ) ) ;
+    public final void rule__ProtectedResource__ResourcesAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSecurityModel.g:1711:1: ( ( ( RULE_ID ) ) )
+            // InternalSecurityModel.g:1712:2: ( ( RULE_ID ) )
+            {
+            // InternalSecurityModel.g:1712:2: ( ( RULE_ID ) )
+            // InternalSecurityModel.g:1713:3: ( RULE_ID )
+            {
+             before(grammarAccess.getProtectedResourceAccess().getResourcesPropertyCrossReference_1_0()); 
+            // InternalSecurityModel.g:1714:3: ( RULE_ID )
+            // InternalSecurityModel.g:1715:4: RULE_ID
+            {
+             before(grammarAccess.getProtectedResourceAccess().getResourcesPropertyIDTerminalRuleCall_1_0_1()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getProtectedResourceAccess().getResourcesPropertyIDTerminalRuleCall_1_0_1()); 
+
+            }
+
+             after(grammarAccess.getProtectedResourceAccess().getResourcesPropertyCrossReference_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ProtectedResource__ResourcesAssignment_1"
+
+
+    // $ANTLR start "rule__ProtectedResource__NameAssignment_3"
+    // InternalSecurityModel.g:1726:1: rule__ProtectedResource__NameAssignment_3 : ( ruleEString ) ;
+    public final void rule__ProtectedResource__NameAssignment_3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSecurityModel.g:1730:1: ( ( ruleEString ) )
+            // InternalSecurityModel.g:1731:2: ( ruleEString )
+            {
+            // InternalSecurityModel.g:1731:2: ( ruleEString )
+            // InternalSecurityModel.g:1732:3: ruleEString
+            {
+             before(grammarAccess.getProtectedResourceAccess().getNameEStringParserRuleCall_3_0()); 
+            pushFollow(FOLLOW_2);
+            ruleEString();
+
+            state._fsp--;
+
+             after(grammarAccess.getProtectedResourceAccess().getNameEStringParserRuleCall_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ProtectedResource__NameAssignment_3"
+
     // Delegated rules
 
 
@@ -4992,17 +5166,20 @@ public class InternalSecurityModelParser extends AbstractInternalContentAssistPa
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000040000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000007800L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000500000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000400002L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000003000000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000002000002L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000300000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000200002L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000001800000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000001000002L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000008200000L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000020000000L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000008000000L});
 
 }

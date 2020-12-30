@@ -15,6 +15,7 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import securitymodels.Auth;
+import securitymodels.ProtectedResource;
 import securitymodels.Role;
 import securitymodels.Rule;
 import securitymodels.SecurityModel;
@@ -37,6 +38,9 @@ public class SecurityModelSemanticSequencer extends AbstractDelegatingSemanticSe
 			switch (semanticObject.eClass().getClassifierID()) {
 			case SecuritymodelsPackage.AUTH:
 				sequence_Auth(context, (Auth) semanticObject); 
+				return; 
+			case SecuritymodelsPackage.PROTECTED_RESOURCE:
+				sequence_ProtectedResource(context, (ProtectedResource) semanticObject); 
 				return; 
 			case SecuritymodelsPackage.ROLE:
 				sequence_Role(context, (Role) semanticObject); 
@@ -66,21 +70,39 @@ public class SecurityModelSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Contexts:
+	 *     ProtectedResource returns ProtectedResource
+	 *
+	 * Constraint:
+	 *     (resources=[Property|ID] name=EString)
+	 */
+	protected void sequence_ProtectedResource(ISerializationContext context, ProtectedResource semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SecuritymodelsPackage.Literals.PROTECTED_RESOURCE__RESOURCES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SecuritymodelsPackage.Literals.PROTECTED_RESOURCE__RESOURCES));
+			if (transientValues.isValueTransient(semanticObject, SecuritymodelsPackage.Literals.PROTECTED_RESOURCE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SecuritymodelsPackage.Literals.PROTECTED_RESOURCE__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getProtectedResourceAccess().getResourcesPropertyIDTerminalRuleCall_1_0_1(), semanticObject.eGet(SecuritymodelsPackage.Literals.PROTECTED_RESOURCE__RESOURCES, false));
+		feeder.accept(grammarAccess.getProtectedResourceAccess().getNameEStringParserRuleCall_3_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Role returns Role
 	 *
 	 * Constraint:
-	 *     (name=EString entity=[Entity|EString])
+	 *     name=EString
 	 */
 	protected void sequence_Role(ISerializationContext context, Role semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, SecuritymodelsPackage.Literals.ROLE__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SecuritymodelsPackage.Literals.ROLE__NAME));
-			if (transientValues.isValueTransient(semanticObject, SecuritymodelsPackage.Literals.ROLE__ENTITY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SecuritymodelsPackage.Literals.ROLE__ENTITY));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRoleAccess().getNameEStringParserRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getRoleAccess().getEntityEntityEStringParserRuleCall_2_0_1(), semanticObject.eGet(SecuritymodelsPackage.Literals.ROLE__ENTITY, false));
+		feeder.accept(grammarAccess.getRoleAccess().getNameEStringParserRuleCall_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -90,7 +112,7 @@ public class SecurityModelSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *     Rule returns Rule
 	 *
 	 * Constraint:
-	 *     (name=EString action=Action resources+=[Property|EString] resources+=[Property|EString]* (auths+=Auth auths+=Auth*)?)
+	 *     (name=EString action=Action protectedResources+=ProtectedResource protectedResources+=ProtectedResource* (auths+=Auth auths+=Auth*)?)
 	 */
 	protected void sequence_Rule(ISerializationContext context, Rule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

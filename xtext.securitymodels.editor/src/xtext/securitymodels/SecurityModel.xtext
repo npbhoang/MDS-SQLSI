@@ -17,12 +17,12 @@ Rule returns Rule:
 	name=EString
 	':'
 	action=Action
-	'(' resources+=[datamodels::Property|EString] ( "," resources+=[datamodels::Property|EString])* ')' 
+	'protected' protectedResources+=ProtectedResource ( "," protectedResources+=ProtectedResource)* 
 	'conditions'
-	('{' auths+=Auth ( ",or" auths+=Auth)* '}' )?;
+	('{' auths+=Auth ( "or" auths+=Auth)* '}' )?;
 
 Role returns Role:
-	name=EString '<-' entity=[datamodels::Entity|EString];
+	name=EString;
 
 enum Action returns Action:
 				READ = 'READ' | CREATE = 'CREATE' | UPDATE = 'UPDATE' | DELETE = 'DELETE';
@@ -34,3 +34,11 @@ Auth returns Auth:
 		'ocl:' oclExp=EString
 		'sql:' sqlStm=EString
 	'}';
+	
+ProtectedResource returns ProtectedResource:
+	'('
+		resources=[datamodels::Property]
+		'as' 
+		name=EString
+	')';
+

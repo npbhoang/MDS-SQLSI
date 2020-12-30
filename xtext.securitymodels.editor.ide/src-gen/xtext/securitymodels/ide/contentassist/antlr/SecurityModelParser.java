@@ -37,27 +37,28 @@ public class SecurityModelParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSecurityModelAccess().getGroup_5(), "rule__SecurityModel__Group_5__0");
 			builder.put(grammarAccess.getRuleAccess().getGroup(), "rule__Rule__Group__0");
 			builder.put(grammarAccess.getRuleAccess().getGroup_5(), "rule__Rule__Group_5__0");
-			builder.put(grammarAccess.getRuleAccess().getGroup_8(), "rule__Rule__Group_8__0");
-			builder.put(grammarAccess.getRuleAccess().getGroup_8_2(), "rule__Rule__Group_8_2__0");
-			builder.put(grammarAccess.getRoleAccess().getGroup(), "rule__Role__Group__0");
+			builder.put(grammarAccess.getRuleAccess().getGroup_7(), "rule__Rule__Group_7__0");
+			builder.put(grammarAccess.getRuleAccess().getGroup_7_2(), "rule__Rule__Group_7_2__0");
 			builder.put(grammarAccess.getAuthAccess().getGroup(), "rule__Auth__Group__0");
 			builder.put(grammarAccess.getAuthAccess().getGroup_4(), "rule__Auth__Group_4__0");
+			builder.put(grammarAccess.getProtectedResourceAccess().getGroup(), "rule__ProtectedResource__Group__0");
 			builder.put(grammarAccess.getSecurityModelAccess().getNameAssignment_2(), "rule__SecurityModel__NameAssignment_2");
 			builder.put(grammarAccess.getSecurityModelAccess().getRolesAssignment_4(), "rule__SecurityModel__RolesAssignment_4");
 			builder.put(grammarAccess.getSecurityModelAccess().getRulesAssignment_5_1(), "rule__SecurityModel__RulesAssignment_5_1");
 			builder.put(grammarAccess.getRuleAccess().getNameAssignment_0(), "rule__Rule__NameAssignment_0");
 			builder.put(grammarAccess.getRuleAccess().getActionAssignment_2(), "rule__Rule__ActionAssignment_2");
-			builder.put(grammarAccess.getRuleAccess().getResourcesAssignment_4(), "rule__Rule__ResourcesAssignment_4");
-			builder.put(grammarAccess.getRuleAccess().getResourcesAssignment_5_1(), "rule__Rule__ResourcesAssignment_5_1");
-			builder.put(grammarAccess.getRuleAccess().getAuthsAssignment_8_1(), "rule__Rule__AuthsAssignment_8_1");
-			builder.put(grammarAccess.getRuleAccess().getAuthsAssignment_8_2_1(), "rule__Rule__AuthsAssignment_8_2_1");
-			builder.put(grammarAccess.getRoleAccess().getNameAssignment_0(), "rule__Role__NameAssignment_0");
-			builder.put(grammarAccess.getRoleAccess().getEntityAssignment_2(), "rule__Role__EntityAssignment_2");
+			builder.put(grammarAccess.getRuleAccess().getProtectedResourcesAssignment_4(), "rule__Rule__ProtectedResourcesAssignment_4");
+			builder.put(grammarAccess.getRuleAccess().getProtectedResourcesAssignment_5_1(), "rule__Rule__ProtectedResourcesAssignment_5_1");
+			builder.put(grammarAccess.getRuleAccess().getAuthsAssignment_7_1(), "rule__Rule__AuthsAssignment_7_1");
+			builder.put(grammarAccess.getRuleAccess().getAuthsAssignment_7_2_1(), "rule__Rule__AuthsAssignment_7_2_1");
+			builder.put(grammarAccess.getRoleAccess().getNameAssignment(), "rule__Role__NameAssignment");
 			builder.put(grammarAccess.getAuthAccess().getRolesAssignment_3(), "rule__Auth__RolesAssignment_3");
 			builder.put(grammarAccess.getAuthAccess().getRolesAssignment_4_1(), "rule__Auth__RolesAssignment_4_1");
 			builder.put(grammarAccess.getAuthAccess().getTextualAssignment_7(), "rule__Auth__TextualAssignment_7");
 			builder.put(grammarAccess.getAuthAccess().getOclExpAssignment_9(), "rule__Auth__OclExpAssignment_9");
 			builder.put(grammarAccess.getAuthAccess().getSqlStmAssignment_11(), "rule__Auth__SqlStmAssignment_11");
+			builder.put(grammarAccess.getProtectedResourceAccess().getResourcesAssignment_1(), "rule__ProtectedResource__ResourcesAssignment_1");
+			builder.put(grammarAccess.getProtectedResourceAccess().getNameAssignment_3(), "rule__ProtectedResource__NameAssignment_3");
 		}
 	}
 	
