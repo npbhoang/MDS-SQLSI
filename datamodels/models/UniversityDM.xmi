@@ -6,8 +6,7 @@
     xmlns:datamodels="/final/metamodel/datamodels.ecore"
     name="University">
   <entities
-      name="RegisterUser"
-      isUserClass="true">
+      name="RegisterUser">
     <properties
         xsi:type="datamodels:Attribute"
         name="firstname"/>
