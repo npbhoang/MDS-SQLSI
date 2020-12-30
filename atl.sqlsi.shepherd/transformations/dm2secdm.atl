@@ -1,76 +1,26 @@
 -- @path MM=/datamodels/metamodels/datamodels.ecore
 -- @path MM1=/securitymodels/metamodels/securitymodels.ecore
--- @path MM2=/datamodels/metamodels/datamodels.ecore
 
 module dm2secdm;
-create OUT : MM2 from IN : MM, IN1 : MM1;
+create OUT : MM refining IN : MM, IN1 : MM1;
 
-rule generate {
+rule refineDatamodel {
 	from
 		oldDM : MM!DataModel,
-		sm : MM1!SecurityModel
+		curSM : MM1!SecurityModel (curSM.roles->notEmpty())
 	to 
-		newDM : MM2!DataModel (
-			name <- oldDM.name,
-			entities <- oldDM.entities->including(newRoleEntity)
-		),
-		newRoleEntity : MM2!Entity (
-			name <- 'Role',
-			superEntity <- OclUndefined,
-			properties <- Set{roleNameAttribute}
-				->union(oldDM.entities->select(e|sm.roles->collect(r|r.entity.name)->includes(e.name))
-					->collect(e|thisModule.generateRoleReference(e)))
-		),
-		roleNameAttribute : MM2!Attribute (
-			name <- 'name',
-			type <- #"String",
-			isUnique <- true
+		newDM : MM!DataModel (
+			isSecured <- true
 		)
 }
 
-lazy rule generateRoleReference {
-	from
-		oldE : MM!Entity
-	to 
-		newP : MM2!AssociationEnd (
-			associationName <- 'Role_'+oldE.name,
-			multiplicity <- #"MANY",
-			name <- oldE.name+'s',
-			targetEntity <- oldE
-		)
-}
-
-rule generateEntity {
-	from
-		oldE : MM!Entity
-	to 
-		newE : MM2!Entity (
-			name <- oldE.name,
-			superEntity <- oldE.superEntity,
-			properties <- oldE.properties
-		)
-}
-
-rule generateAttribute {
-	from
-		oldP : MM!Attribute
+rule refineUserEntity {
+	from 
+		oldE : MM!Entity,
+		curSM : MM1!SecurityModel (curSM.roles->collect(r|r.userEntity.name)->includes(oldE.name))
 	to
-		newP : MM2!Attribute (
-			name <- oldP.name,
-			type <- oldP.type,
-			isUnique <- oldP.isUnique
+		newE : MM!Entity (
+			isUserClass <- true	
 		)
-}
-
-rule generateAssociation {
-	from
-		oldP : MM!AssociationEnd
-	to
-		newP : MM2!AssociationEnd (
-			associationName <- oldP.associationName,
-			multiplicity <- oldP.multiplicity,
-			name <- oldP.name,
-			otherEnd <- oldP.otherEnd,
-			targetEntity <- oldP.targetEntity
-		)
+	
 }
