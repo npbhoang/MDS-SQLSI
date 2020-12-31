@@ -8,6 +8,8 @@
         eType="#//Rule" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="roles" lowerBound="1" upperBound="-1"
         eType="#//Role" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
+        eType="#//ProtectedResource" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Action">
     <eLiterals name="READ" value="1"/>
@@ -32,7 +34,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="auths" lowerBound="1" upperBound="-1"
         eType="#//Auth" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="protectedResources" lowerBound="1"
-        upperBound="-1" eType="#//ProtectedResource" containment="true"/>
+        upperBound="-1" eType="#//ProtectedResource"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Role">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -40,8 +42,8 @@
         eType="ecore:EClass ../../datamodels/metamodels/datamodels.ecore#//Entity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProtectedResource">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="resources" lowerBound="1"
-        eType="ecore:EClass ../../datamodels/metamodels/datamodels.ecore#//Property"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="property" lowerBound="1"
+        eType="ecore:EClass ../../datamodels/metamodels/datamodels.ecore#//Property"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -60,32 +60,10 @@ public class ProtectedResourceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addResourcesPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
+			addPropertyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Resources feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addResourcesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ProtectedResource_resources_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ProtectedResource_resources_feature", "_UI_ProtectedResource_type"),
-				 SecuritymodelsPackage.Literals.PROTECTED_RESOURCE__RESOURCES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -106,6 +84,28 @@ public class ProtectedResourceItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Property feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPropertyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ProtectedResource_property_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ProtectedResource_property_feature", "_UI_ProtectedResource_type"),
+				 SecuritymodelsPackage.Literals.PROTECTED_RESOURCE__PROPERTY,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

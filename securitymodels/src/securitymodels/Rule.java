@@ -98,7 +98,7 @@ public interface Rule extends EObject {
 	EList<Auth> getAuths();
 
 	/**
-	 * Returns the value of the '<em><b>Protected Resources</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Protected Resources</b></em>' reference list.
 	 * The list contents are of type {@link securitymodels.ProtectedResource}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -106,9 +106,9 @@ public interface Rule extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Protected Resources</em>' containment reference list.
+	 * @return the value of the '<em>Protected Resources</em>' reference list.
 	 * @see securitymodels.SecuritymodelsPackage#getRule_ProtectedResources()
-	 * @model containment="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	EList<ProtectedResource> getProtectedResources();

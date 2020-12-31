@@ -104,6 +104,7 @@ public class SecurityModelItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SecuritymodelsPackage.Literals.SECURITY_MODEL__RULES);
 			childrenFeatures.add(SecuritymodelsPackage.Literals.SECURITY_MODEL__ROLES);
+			childrenFeatures.add(SecuritymodelsPackage.Literals.SECURITY_MODEL__RESOURCES);
 		}
 		return childrenFeatures;
 	}
@@ -164,6 +165,7 @@ public class SecurityModelItemProvider
 				return;
 			case SecuritymodelsPackage.SECURITY_MODEL__RULES:
 			case SecuritymodelsPackage.SECURITY_MODEL__ROLES:
+			case SecuritymodelsPackage.SECURITY_MODEL__RESOURCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -190,6 +192,11 @@ public class SecurityModelItemProvider
 			(createChildParameter
 				(SecuritymodelsPackage.Literals.SECURITY_MODEL__ROLES,
 				 SecuritymodelsFactory.eINSTANCE.createRole()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SecuritymodelsPackage.Literals.SECURITY_MODEL__RESOURCES,
+				 SecuritymodelsFactory.eINSTANCE.createProtectedResource()));
 	}
 
 	/**

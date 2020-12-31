@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
+import securitymodels.ProtectedResource;
 import securitymodels.Role;
 import securitymodels.Rule;
 import securitymodels.SecurityModel;
@@ -34,6 +34,7 @@ import securitymodels.SecuritymodelsPackage;
  *   <li>{@link securitymodels.impl.SecurityModelImpl#getName <em>Name</em>}</li>
  *   <li>{@link securitymodels.impl.SecurityModelImpl#getRules <em>Rules</em>}</li>
  *   <li>{@link securitymodels.impl.SecurityModelImpl#getRoles <em>Roles</em>}</li>
+ *   <li>{@link securitymodels.impl.SecurityModelImpl#getResources <em>Resources</em>}</li>
  * </ul>
  *
  * @generated
@@ -78,6 +79,16 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 	 * @ordered
 	 */
 	protected EList<Role> roles;
+
+	/**
+	 * The cached value of the '{@link #getResources() <em>Resources</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResources()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ProtectedResource> resources;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -148,6 +159,18 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<ProtectedResource> getResources() {
+		if (resources == null) {
+			resources = new EObjectContainmentEList<ProtectedResource>(ProtectedResource.class, this, SecuritymodelsPackage.SECURITY_MODEL__RESOURCES);
+		}
+		return resources;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -155,6 +178,8 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 				return ((InternalEList<?>)getRules()).basicRemove(otherEnd, msgs);
 			case SecuritymodelsPackage.SECURITY_MODEL__ROLES:
 				return ((InternalEList<?>)getRoles()).basicRemove(otherEnd, msgs);
+			case SecuritymodelsPackage.SECURITY_MODEL__RESOURCES:
+				return ((InternalEList<?>)getResources()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -173,6 +198,8 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 				return getRules();
 			case SecuritymodelsPackage.SECURITY_MODEL__ROLES:
 				return getRoles();
+			case SecuritymodelsPackage.SECURITY_MODEL__RESOURCES:
+				return getResources();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -197,6 +224,10 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 				getRoles().clear();
 				getRoles().addAll((Collection<? extends Role>)newValue);
 				return;
+			case SecuritymodelsPackage.SECURITY_MODEL__RESOURCES:
+				getResources().clear();
+				getResources().addAll((Collection<? extends ProtectedResource>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -218,6 +249,9 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 			case SecuritymodelsPackage.SECURITY_MODEL__ROLES:
 				getRoles().clear();
 				return;
+			case SecuritymodelsPackage.SECURITY_MODEL__RESOURCES:
+				getResources().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -236,6 +270,8 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 				return rules != null && !rules.isEmpty();
 			case SecuritymodelsPackage.SECURITY_MODEL__ROLES:
 				return roles != null && !roles.isEmpty();
+			case SecuritymodelsPackage.SECURITY_MODEL__RESOURCES:
+				return resources != null && !resources.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

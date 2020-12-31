@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link securitymodels.SecurityModel#getName <em>Name</em>}</li>
  *   <li>{@link securitymodels.SecurityModel#getRules <em>Rules</em>}</li>
  *   <li>{@link securitymodels.SecurityModel#getRoles <em>Roles</em>}</li>
+ *   <li>{@link securitymodels.SecurityModel#getResources <em>Resources</em>}</li>
  * </ul>
  *
  * @see securitymodels.SecuritymodelsPackage#getSecurityModel()
@@ -82,5 +83,21 @@ public interface SecurityModel extends EObject {
 	 * @generated
 	 */
 	EList<Role> getRoles();
+
+	/**
+	 * Returns the value of the '<em><b>Resources</b></em>' containment reference list.
+	 * The list contents are of type {@link securitymodels.ProtectedResource}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Resources</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Resources</em>' containment reference list.
+	 * @see securitymodels.SecuritymodelsPackage#getSecurityModel_Resources()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ProtectedResource> getResources();
 
 } // SecurityModel

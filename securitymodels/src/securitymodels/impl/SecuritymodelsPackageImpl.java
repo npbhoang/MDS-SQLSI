@@ -175,6 +175,15 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSecurityModel_Resources() {
+		return (EReference)securityModelEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAuth() {
 		return authEClass;
 	}
@@ -301,8 +310,8 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProtectedResource_Resources() {
-		return (EReference)protectedResourceEClass.getEStructuralFeatures().get(0);
+	public EAttribute getProtectedResource_Name() {
+		return (EAttribute)protectedResourceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -310,8 +319,8 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getProtectedResource_Name() {
-		return (EAttribute)protectedResourceEClass.getEStructuralFeatures().get(1);
+	public EReference getProtectedResource_Property() {
+		return (EReference)protectedResourceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -355,6 +364,7 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 		createEAttribute(securityModelEClass, SECURITY_MODEL__NAME);
 		createEReference(securityModelEClass, SECURITY_MODEL__RULES);
 		createEReference(securityModelEClass, SECURITY_MODEL__ROLES);
+		createEReference(securityModelEClass, SECURITY_MODEL__RESOURCES);
 
 		authEClass = createEClass(AUTH);
 		createEAttribute(authEClass, AUTH__TEXTUAL);
@@ -373,8 +383,8 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 		createEReference(roleEClass, ROLE__USER_ENTITY);
 
 		protectedResourceEClass = createEClass(PROTECTED_RESOURCE);
-		createEReference(protectedResourceEClass, PROTECTED_RESOURCE__RESOURCES);
 		createEAttribute(protectedResourceEClass, PROTECTED_RESOURCE__NAME);
+		createEReference(protectedResourceEClass, PROTECTED_RESOURCE__PROPERTY);
 
 		// Create enums
 		actionEEnum = createEEnum(ACTION);
@@ -417,6 +427,7 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 		initEAttribute(getSecurityModel_Name(), ecorePackage.getEString(), "name", null, 1, 1, SecurityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSecurityModel_Rules(), this.getRule(), null, "rules", null, 0, -1, SecurityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSecurityModel_Roles(), this.getRole(), null, "roles", null, 1, -1, SecurityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSecurityModel_Resources(), this.getProtectedResource(), null, "resources", null, 0, -1, SecurityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(authEClass, Auth.class, "Auth", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAuth_Textual(), ecorePackage.getEString(), "textual", null, 1, 1, Auth.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -428,15 +439,15 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 		initEAttribute(getRule_Name(), ecorePackage.getEString(), "name", null, 1, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRule_Action(), this.getAction(), "action", null, 1, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRule_Auths(), this.getAuth(), null, "auths", null, 1, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRule_ProtectedResources(), this.getProtectedResource(), null, "protectedResources", null, 1, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRule_ProtectedResources(), this.getProtectedResource(), null, "protectedResources", null, 1, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRole_Name(), ecorePackage.getEString(), "name", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_UserEntity(), theDatamodelsPackage.getEntity(), null, "userEntity", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(protectedResourceEClass, ProtectedResource.class, "ProtectedResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getProtectedResource_Resources(), theDatamodelsPackage.getProperty(), null, "resources", null, 1, 1, ProtectedResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProtectedResource_Name(), ecorePackage.getEString(), "name", null, 1, 1, ProtectedResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProtectedResource_Property(), theDatamodelsPackage.getProperty(), null, "property", null, 1, 1, ProtectedResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(actionEEnum, Action.class, "Action");
