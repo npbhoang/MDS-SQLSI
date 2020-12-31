@@ -130,17 +130,65 @@ ruleSecurityModel returns [EObject current=null]
 				}
 			)
 		)+
+		otherlv_5='protected:'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getSecurityModelAccess().getProtectedKeyword_5());
+		}
 		(
-			otherlv_5='rules:'
+			(
+				{
+					newCompositeNode(grammarAccess.getSecurityModelAccess().getResourcesProtectedResourceParserRuleCall_6_0());
+				}
+				lv_resources_6_0=ruleProtectedResource
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSecurityModelRule());
+					}
+					add(
+						$current,
+						"resources",
+						lv_resources_6_0,
+						"xtext.securitymodels.SecurityModel.ProtectedResource");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_7=','
 			{
-				newLeafNode(otherlv_5, grammarAccess.getSecurityModelAccess().getRulesKeyword_5_0());
+				newLeafNode(otherlv_7, grammarAccess.getSecurityModelAccess().getCommaKeyword_7_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getSecurityModelAccess().getRulesRuleParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getSecurityModelAccess().getResourcesProtectedResourceParserRuleCall_7_1_0());
 					}
-					lv_rules_6_0=ruleRule
+					lv_resources_8_0=ruleProtectedResource
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getSecurityModelRule());
+						}
+						add(
+							$current,
+							"resources",
+							lv_resources_8_0,
+							"xtext.securitymodels.SecurityModel.ProtectedResource");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+		(
+			otherlv_9='rules:'
+			{
+				newLeafNode(otherlv_9, grammarAccess.getSecurityModelAccess().getRulesKeyword_8_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getSecurityModelAccess().getRulesRuleParserRuleCall_8_1_0());
+					}
+					lv_rules_10_0=ruleRule
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getSecurityModelRule());
@@ -148,7 +196,7 @@ ruleSecurityModel returns [EObject current=null]
 						add(
 							$current,
 							"rules",
-							lv_rules_6_0,
+							lv_rules_10_0,
 							"xtext.securitymodels.SecurityModel.Rule");
 						afterParserOrEnumRuleCall();
 					}
@@ -250,69 +298,21 @@ ruleRule returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_3='protected'
+		otherlv_3='conditions'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getRuleAccess().getProtectedKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getRuleAccess().getConditionsKeyword_3());
 		}
 		(
-			(
-				{
-					newCompositeNode(grammarAccess.getRuleAccess().getProtectedResourcesProtectedResourceParserRuleCall_4_0());
-				}
-				lv_protectedResources_4_0=ruleProtectedResource
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getRuleRule());
-					}
-					add(
-						$current,
-						"protectedResources",
-						lv_protectedResources_4_0,
-						"xtext.securitymodels.SecurityModel.ProtectedResource");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			otherlv_5=','
+			otherlv_4='{'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getRuleAccess().getCommaKeyword_5_0());
+				newLeafNode(otherlv_4, grammarAccess.getRuleAccess().getLeftCurlyBracketKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getRuleAccess().getProtectedResourcesProtectedResourceParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getRuleAccess().getAuthsAuthParserRuleCall_4_1_0());
 					}
-					lv_protectedResources_6_0=ruleProtectedResource
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getRuleRule());
-						}
-						add(
-							$current,
-							"protectedResources",
-							lv_protectedResources_6_0,
-							"xtext.securitymodels.SecurityModel.ProtectedResource");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)*
-		otherlv_7='conditions'
-		{
-			newLeafNode(otherlv_7, grammarAccess.getRuleAccess().getConditionsKeyword_6());
-		}
-		(
-			otherlv_8='{'
-			{
-				newLeafNode(otherlv_8, grammarAccess.getRuleAccess().getLeftCurlyBracketKeyword_7_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getRuleAccess().getAuthsAuthParserRuleCall_7_1_0());
-					}
-					lv_auths_9_0=ruleAuth
+					lv_auths_5_0=ruleAuth
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getRuleRule());
@@ -320,23 +320,23 @@ ruleRule returns [EObject current=null]
 						add(
 							$current,
 							"auths",
-							lv_auths_9_0,
+							lv_auths_5_0,
 							"xtext.securitymodels.SecurityModel.Auth");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_10='or'
+				otherlv_6='or'
 				{
-					newLeafNode(otherlv_10, grammarAccess.getRuleAccess().getOrKeyword_7_2_0());
+					newLeafNode(otherlv_6, grammarAccess.getRuleAccess().getOrKeyword_4_2_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getRuleAccess().getAuthsAuthParserRuleCall_7_2_1_0());
+							newCompositeNode(grammarAccess.getRuleAccess().getAuthsAuthParserRuleCall_4_2_1_0());
 						}
-						lv_auths_11_0=ruleAuth
+						lv_auths_7_0=ruleAuth
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getRuleRule());
@@ -344,16 +344,16 @@ ruleRule returns [EObject current=null]
 							add(
 								$current,
 								"auths",
-								lv_auths_11_0,
+								lv_auths_7_0,
 								"xtext.securitymodels.SecurityModel.Auth");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			otherlv_12='}'
+			otherlv_8='}'
 			{
-				newLeafNode(otherlv_12, grammarAccess.getRuleAccess().getRightCurlyBracketKeyword_7_3());
+				newLeafNode(otherlv_8, grammarAccess.getRuleAccess().getRightCurlyBracketKeyword_4_3());
 			}
 		)?
 	)
@@ -570,7 +570,7 @@ ruleProtectedResource returns [EObject current=null]
 				}
 				otherlv_1=RULE_ID
 				{
-					newLeafNode(otherlv_1, grammarAccess.getProtectedResourceAccess().getResourcesPropertyCrossReference_1_0());
+					newLeafNode(otherlv_1, grammarAccess.getProtectedResourceAccess().getPropertyPropertyCrossReference_1_0());
 				}
 			)
 		)

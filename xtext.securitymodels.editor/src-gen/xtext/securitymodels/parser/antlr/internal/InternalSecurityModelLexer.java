@@ -102,10 +102,10 @@ public class InternalSecurityModelLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSecurityModel.g:13:7: ( 'rules:' )
-            // InternalSecurityModel.g:13:9: 'rules:'
+            // InternalSecurityModel.g:13:7: ( 'protected:' )
+            // InternalSecurityModel.g:13:9: 'protected:'
             {
-            match("rules:"); 
+            match("protected:"); 
 
 
             }
@@ -123,10 +123,10 @@ public class InternalSecurityModelLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSecurityModel.g:14:7: ( ':' )
-            // InternalSecurityModel.g:14:9: ':'
+            // InternalSecurityModel.g:14:7: ( ',' )
+            // InternalSecurityModel.g:14:9: ','
             {
-            match(':'); 
+            match(','); 
 
             }
 
@@ -143,10 +143,10 @@ public class InternalSecurityModelLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSecurityModel.g:15:7: ( 'protected' )
-            // InternalSecurityModel.g:15:9: 'protected'
+            // InternalSecurityModel.g:15:7: ( 'rules:' )
+            // InternalSecurityModel.g:15:9: 'rules:'
             {
-            match("protected"); 
+            match("rules:"); 
 
 
             }
@@ -164,10 +164,10 @@ public class InternalSecurityModelLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSecurityModel.g:16:7: ( ',' )
-            // InternalSecurityModel.g:16:9: ','
+            // InternalSecurityModel.g:16:7: ( ':' )
+            // InternalSecurityModel.g:16:9: ':'
             {
-            match(','); 
+            match(':'); 
 
             }
 
@@ -1197,23 +1197,23 @@ public class InternalSecurityModelLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\2\33\1\uffff\1\33\1\uffff\1\33\1\uffff\1\33\3\uffff\6\33\1\31\2\uffff\3\31\2\uffff\1\33\1\uffff\2\33\1\uffff\1\33\1\uffff\1\33\1\uffff\1\70\1\33\3\uffff\1\33\1\73\4\33\5\uffff\5\33\1\uffff\2\33\1\uffff\12\33\2\uffff\1\122\3\33\1\uffff\1\127\4\33\1\uffff\3\33\3\uffff\3\33\1\142\1\143\1\144\3\33\3\uffff\2\33\1\uffff\1\152\1\33\1\uffff\1\154\1\uffff";
+        "\1\uffff\3\33\2\uffff\1\33\1\uffff\1\33\3\uffff\6\33\1\31\2\uffff\3\31\2\uffff\1\33\1\uffff\3\33\2\uffff\1\33\1\uffff\1\70\1\33\3\uffff\1\33\1\73\4\33\5\uffff\5\33\1\uffff\2\33\1\uffff\12\33\2\uffff\1\122\3\33\1\uffff\1\127\4\33\1\uffff\3\33\3\uffff\3\33\1\142\1\143\1\144\3\33\3\uffff\2\33\1\uffff\2\33\1\uffff\1\154\1\uffff";
     static final String DFA12_eofS =
         "\155\uffff";
     static final String DFA12_minS =
-        "\1\0\1\141\1\157\1\uffff\1\162\1\uffff\1\157\1\uffff\1\143\3\uffff\1\161\1\163\1\105\1\122\1\120\1\105\1\101\2\uffff\2\0\1\52\2\uffff\1\155\1\uffff\2\154\1\uffff\1\157\1\uffff\1\156\1\uffff\1\60\1\154\3\uffff\1\154\1\60\1\101\1\105\1\104\1\114\5\uffff\3\145\1\164\1\144\1\uffff\2\72\1\uffff\1\104\2\101\1\105\1\72\2\163\1\145\1\151\1\145\2\uffff\1\60\3\124\1\uffff\1\60\1\72\1\143\1\164\1\170\1\uffff\3\105\3\uffff\1\164\1\151\1\164\3\60\1\145\1\157\1\72\3\uffff\1\144\1\156\1\uffff\1\60\1\163\1\uffff\1\60\1\uffff";
+        "\1\0\1\141\1\157\1\162\2\uffff\1\157\1\uffff\1\143\3\uffff\1\161\1\163\1\105\1\122\1\120\1\105\1\101\2\uffff\2\0\1\52\2\uffff\1\155\1\uffff\2\154\1\157\2\uffff\1\156\1\uffff\1\60\1\154\3\uffff\1\154\1\60\1\101\1\105\1\104\1\114\5\uffff\3\145\1\164\1\144\1\uffff\2\72\1\uffff\1\104\2\101\1\105\1\72\2\163\1\145\1\151\1\145\2\uffff\1\60\3\124\1\uffff\1\60\1\72\1\143\1\164\1\170\1\uffff\3\105\3\uffff\1\164\1\151\1\164\3\60\1\145\1\157\1\72\3\uffff\1\144\1\156\1\uffff\1\72\1\163\1\uffff\1\60\1\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\141\1\165\1\uffff\1\162\1\uffff\1\157\1\uffff\1\162\3\uffff\1\161\1\163\1\105\1\122\1\120\1\105\1\172\2\uffff\2\uffff\1\57\2\uffff\1\155\1\uffff\2\154\1\uffff\1\157\1\uffff\1\156\1\uffff\1\172\1\154\3\uffff\1\154\1\172\1\101\1\105\1\104\1\114\5\uffff\3\145\2\164\1\uffff\2\72\1\uffff\1\104\2\101\1\105\1\72\2\163\1\145\1\151\1\145\2\uffff\1\172\3\124\1\uffff\1\172\1\72\1\143\1\164\1\170\1\uffff\3\105\3\uffff\1\164\1\151\1\164\3\172\1\145\1\157\1\72\3\uffff\1\144\1\156\1\uffff\1\172\1\163\1\uffff\1\172\1\uffff";
+        "\1\uffff\1\141\1\165\1\162\2\uffff\1\157\1\uffff\1\162\3\uffff\1\161\1\163\1\105\1\122\1\120\1\105\1\172\2\uffff\2\uffff\1\57\2\uffff\1\155\1\uffff\2\154\1\157\2\uffff\1\156\1\uffff\1\172\1\154\3\uffff\1\154\1\172\1\101\1\105\1\104\1\114\5\uffff\3\145\2\164\1\uffff\2\72\1\uffff\1\104\2\101\1\105\1\72\2\163\1\145\1\151\1\145\2\uffff\1\172\3\124\1\uffff\1\172\1\72\1\143\1\164\1\170\1\uffff\3\105\3\uffff\1\164\1\151\1\164\3\172\1\145\1\157\1\72\3\uffff\1\144\1\156\1\uffff\1\72\1\163\1\uffff\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\3\uffff\1\4\1\uffff\1\6\1\uffff\1\10\1\uffff\1\12\1\14\1\15\7\uffff\1\26\1\27\3\uffff\1\33\1\34\1\uffff\1\26\2\uffff\1\4\1\uffff\1\6\1\uffff\1\10\2\uffff\1\12\1\14\1\15\6\uffff\1\27\1\30\1\31\1\32\1\33\5\uffff\1\11\2\uffff\1\21\12\uffff\1\17\1\20\4\uffff\1\1\5\uffff\1\22\3\uffff\1\2\1\13\1\3\11\uffff\1\23\1\24\1\25\2\uffff\1\16\2\uffff\1\5\1\uffff\1\7";
+        "\4\uffff\1\4\1\6\1\uffff\1\10\1\uffff\1\12\1\14\1\15\7\uffff\1\26\1\27\3\uffff\1\33\1\34\1\uffff\1\26\3\uffff\1\4\1\6\1\uffff\1\10\2\uffff\1\12\1\14\1\15\6\uffff\1\27\1\30\1\31\1\32\1\33\5\uffff\1\11\2\uffff\1\21\12\uffff\1\17\1\20\4\uffff\1\1\5\uffff\1\22\3\uffff\1\2\1\13\1\5\11\uffff\1\23\1\24\1\25\2\uffff\1\16\2\uffff\1\3\1\uffff\1\7";
     static final String DFA12_specialS =
-        "\1\2\24\uffff\1\1\1\0\126\uffff}>";
+        "\1\0\24\uffff\1\2\1\1\126\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\31\2\30\2\31\1\30\22\31\1\30\1\31\1\25\4\31\1\26\1\12\1\13\2\31\1\5\2\31\1\27\12\24\1\3\6\31\2\23\1\17\1\21\15\23\1\16\2\23\1\20\5\23\3\31\1\22\1\23\1\31\1\15\1\23\1\6\12\23\1\1\1\10\1\4\1\23\1\2\1\14\7\23\1\7\1\31\1\11\uff82\31",
+            "\11\31\2\30\2\31\1\30\22\31\1\30\1\31\1\25\4\31\1\26\1\12\1\13\2\31\1\4\2\31\1\27\12\24\1\5\6\31\2\23\1\17\1\21\15\23\1\16\2\23\1\20\5\23\3\31\1\22\1\23\1\31\1\15\1\23\1\6\12\23\1\1\1\10\1\3\1\23\1\2\1\14\7\23\1\7\1\31\1\11\uff82\31",
             "\1\32",
             "\1\34\5\uffff\1\35",
+            "\1\36",
             "",
-            "\1\37",
             "",
             "\1\41",
             "",
@@ -1239,8 +1239,8 @@ public class InternalSecurityModelLexer extends Lexer {
             "",
             "\1\64",
             "\1\65",
-            "",
             "\1\66",
+            "",
             "",
             "\1\67",
             "",
@@ -1313,7 +1313,7 @@ public class InternalSecurityModelLexer extends Lexer {
             "\1\150",
             "\1\151",
             "",
-            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "\1\152",
             "\1\153",
             "",
             "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
@@ -1357,26 +1357,6 @@ public class InternalSecurityModelLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_22 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_22>='\u0000' && LA12_22<='\uFFFF')) ) {s = 47;}
-
-                        else s = 25;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA12_21 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_21>='\u0000' && LA12_21<='\uFFFF')) ) {s = 47;}
-
-                        else s = 25;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
                         int LA12_0 = input.LA(1);
 
                         s = -1;
@@ -1384,11 +1364,11 @@ public class InternalSecurityModelLexer extends Lexer {
 
                         else if ( (LA12_0=='r') ) {s = 2;}
 
-                        else if ( (LA12_0==':') ) {s = 3;}
+                        else if ( (LA12_0=='p') ) {s = 3;}
 
-                        else if ( (LA12_0=='p') ) {s = 4;}
+                        else if ( (LA12_0==',') ) {s = 4;}
 
-                        else if ( (LA12_0==',') ) {s = 5;}
+                        else if ( (LA12_0==':') ) {s = 5;}
 
                         else if ( (LA12_0=='c') ) {s = 6;}
 
@@ -1429,6 +1409,26 @@ public class InternalSecurityModelLexer extends Lexer {
                         else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 24;}
 
                         else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='*' && LA12_0<='+')||(LA12_0>='-' && LA12_0<='.')||(LA12_0>=';' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 25;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA12_22 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_22>='\u0000' && LA12_22<='\uFFFF')) ) {s = 47;}
+
+                        else s = 25;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA12_21 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_21>='\u0000' && LA12_21<='\uFFFF')) ) {s = 47;}
+
+                        else s = 25;
 
                         if ( s>=0 ) return s;
                         break;

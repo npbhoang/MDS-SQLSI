@@ -73,17 +73,17 @@ public class SecurityModelSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *     ProtectedResource returns ProtectedResource
 	 *
 	 * Constraint:
-	 *     (resources=[Property|ID] name=EString)
+	 *     (property=[Property|ID] name=EString)
 	 */
 	protected void sequence_ProtectedResource(ISerializationContext context, ProtectedResource semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SecuritymodelsPackage.Literals.PROTECTED_RESOURCE__RESOURCES) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SecuritymodelsPackage.Literals.PROTECTED_RESOURCE__RESOURCES));
+			if (transientValues.isValueTransient(semanticObject, SecuritymodelsPackage.Literals.PROTECTED_RESOURCE__PROPERTY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SecuritymodelsPackage.Literals.PROTECTED_RESOURCE__PROPERTY));
 			if (transientValues.isValueTransient(semanticObject, SecuritymodelsPackage.Literals.PROTECTED_RESOURCE__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SecuritymodelsPackage.Literals.PROTECTED_RESOURCE__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getProtectedResourceAccess().getResourcesPropertyIDTerminalRuleCall_1_0_1(), semanticObject.eGet(SecuritymodelsPackage.Literals.PROTECTED_RESOURCE__RESOURCES, false));
+		feeder.accept(grammarAccess.getProtectedResourceAccess().getPropertyPropertyIDTerminalRuleCall_1_0_1(), semanticObject.eGet(SecuritymodelsPackage.Literals.PROTECTED_RESOURCE__PROPERTY, false));
 		feeder.accept(grammarAccess.getProtectedResourceAccess().getNameEStringParserRuleCall_3_0(), semanticObject.getName());
 		feeder.finish();
 	}
@@ -112,7 +112,7 @@ public class SecurityModelSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *     Rule returns Rule
 	 *
 	 * Constraint:
-	 *     (name=EString action=Action protectedResources+=ProtectedResource protectedResources+=ProtectedResource* (auths+=Auth auths+=Auth*)?)
+	 *     (name=EString action=Action (auths+=Auth auths+=Auth*)?)
 	 */
 	protected void sequence_Rule(ISerializationContext context, Rule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -124,7 +124,7 @@ public class SecurityModelSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *     SecurityModel returns SecurityModel
 	 *
 	 * Constraint:
-	 *     (name=EString roles+=Role+ rules+=Rule*)
+	 *     (name=EString roles+=Role+ resources+=ProtectedResource resources+=ProtectedResource* rules+=Rule*)
 	 */
 	protected void sequence_SecurityModel(ISerializationContext context, SecurityModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
