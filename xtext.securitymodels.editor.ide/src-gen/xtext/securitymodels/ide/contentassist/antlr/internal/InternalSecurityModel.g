@@ -140,9 +140,9 @@ ruleRole
 	}
 	:
 	(
-		{ before(grammarAccess.getRoleAccess().getNameAssignment()); }
-		(rule__Role__NameAssignment)
-		{ after(grammarAccess.getRoleAccess().getNameAssignment()); }
+		{ before(grammarAccess.getRoleAccess().getGroup()); }
+		(rule__Role__Group__0)
+		{ after(grammarAccess.getRoleAccess().getGroup()); }
 	)
 ;
 finally {
@@ -931,6 +931,87 @@ finally {
 }
 
 
+rule__Role__Group__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Role__Group__0__Impl
+	rule__Role__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Role__Group__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getRoleAccess().getNameAssignment_0()); }
+	(rule__Role__NameAssignment_0)
+	{ after(grammarAccess.getRoleAccess().getNameAssignment_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Role__Group__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Role__Group__1__Impl
+	rule__Role__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Role__Group__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getRoleAccess().getLessThanSignHyphenMinusKeyword_1()); }
+	'<-'
+	{ after(grammarAccess.getRoleAccess().getLessThanSignHyphenMinusKeyword_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Role__Group__2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Role__Group__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Role__Group__2__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getRoleAccess().getUserEntityAssignment_2()); }
+	(rule__Role__UserEntityAssignment_2)
+	{ after(grammarAccess.getRoleAccess().getUserEntityAssignment_2()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 rule__Auth__Group__0
 	@init {
 		int stackSize = keepStackSize();
@@ -1606,15 +1687,34 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Role__NameAssignment
+rule__Role__NameAssignment_0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getRoleAccess().getNameEStringParserRuleCall_0()); }
+		{ before(grammarAccess.getRoleAccess().getNameEStringParserRuleCall_0_0()); }
 		ruleEString
-		{ after(grammarAccess.getRoleAccess().getNameEStringParserRuleCall_0()); }
+		{ after(grammarAccess.getRoleAccess().getNameEStringParserRuleCall_0_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Role__UserEntityAssignment_2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getRoleAccess().getUserEntityEntityCrossReference_2_0()); }
+		(
+			{ before(grammarAccess.getRoleAccess().getUserEntityEntityIDTerminalRuleCall_2_0_1()); }
+			RULE_ID
+			{ after(grammarAccess.getRoleAccess().getUserEntityEntityIDTerminalRuleCall_2_0_1()); }
+		)
+		{ after(grammarAccess.getRoleAccess().getUserEntityEntityCrossReference_2_0()); }
 	)
 ;
 finally {

@@ -39,6 +39,7 @@ public class SecurityModelParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getRuleAccess().getGroup(), "rule__Rule__Group__0");
 			builder.put(grammarAccess.getRuleAccess().getGroup_4(), "rule__Rule__Group_4__0");
 			builder.put(grammarAccess.getRuleAccess().getGroup_4_2(), "rule__Rule__Group_4_2__0");
+			builder.put(grammarAccess.getRoleAccess().getGroup(), "rule__Role__Group__0");
 			builder.put(grammarAccess.getAuthAccess().getGroup(), "rule__Auth__Group__0");
 			builder.put(grammarAccess.getAuthAccess().getGroup_4(), "rule__Auth__Group_4__0");
 			builder.put(grammarAccess.getProtectedResourceAccess().getGroup(), "rule__ProtectedResource__Group__0");
@@ -51,7 +52,8 @@ public class SecurityModelParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getRuleAccess().getActionAssignment_2(), "rule__Rule__ActionAssignment_2");
 			builder.put(grammarAccess.getRuleAccess().getAuthsAssignment_4_1(), "rule__Rule__AuthsAssignment_4_1");
 			builder.put(grammarAccess.getRuleAccess().getAuthsAssignment_4_2_1(), "rule__Rule__AuthsAssignment_4_2_1");
-			builder.put(grammarAccess.getRoleAccess().getNameAssignment(), "rule__Role__NameAssignment");
+			builder.put(grammarAccess.getRoleAccess().getNameAssignment_0(), "rule__Role__NameAssignment_0");
+			builder.put(grammarAccess.getRoleAccess().getUserEntityAssignment_2(), "rule__Role__UserEntityAssignment_2");
 			builder.put(grammarAccess.getAuthAccess().getRolesAssignment_3(), "rule__Auth__RolesAssignment_3");
 			builder.put(grammarAccess.getAuthAccess().getRolesAssignment_4_1(), "rule__Auth__RolesAssignment_4_1");
 			builder.put(grammarAccess.getAuthAccess().getTextualAssignment_7(), "rule__Auth__TextualAssignment_7");

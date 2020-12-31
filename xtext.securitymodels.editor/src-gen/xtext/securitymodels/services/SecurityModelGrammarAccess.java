@@ -209,18 +209,40 @@ public class SecurityModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class RoleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.securitymodels.SecurityModel.Role");
-		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cNameEStringParserRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameEStringParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Keyword cLessThanSignHyphenMinusKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cUserEntityAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cUserEntityEntityCrossReference_2_0 = (CrossReference)cUserEntityAssignment_2.eContents().get(0);
+		private final RuleCall cUserEntityEntityIDTerminalRuleCall_2_0_1 = (RuleCall)cUserEntityEntityCrossReference_2_0.eContents().get(1);
 		
 		//Role:
-		//	name=EString;
+		//	name=EString
+		//	'<-'
+		//	userEntity=[datamodels::Entity];
 		@Override public ParserRule getRule() { return rule; }
 		
+		//name=EString '<-' userEntity=[datamodels::Entity]
+		public Group getGroup() { return cGroup; }
+		
 		//name=EString
-		public Assignment getNameAssignment() { return cNameAssignment; }
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
 		//EString
-		public RuleCall getNameEStringParserRuleCall_0() { return cNameEStringParserRuleCall_0; }
+		public RuleCall getNameEStringParserRuleCall_0_0() { return cNameEStringParserRuleCall_0_0; }
+		
+		//'<-'
+		public Keyword getLessThanSignHyphenMinusKeyword_1() { return cLessThanSignHyphenMinusKeyword_1; }
+		
+		//userEntity=[datamodels::Entity]
+		public Assignment getUserEntityAssignment_2() { return cUserEntityAssignment_2; }
+		
+		//[datamodels::Entity]
+		public CrossReference getUserEntityEntityCrossReference_2_0() { return cUserEntityEntityCrossReference_2_0; }
+		
+		//ID
+		public RuleCall getUserEntityEntityIDTerminalRuleCall_2_0_1() { return cUserEntityEntityIDTerminalRuleCall_2_0_1; }
 	}
 	public class AuthElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.securitymodels.SecurityModel.Auth");
@@ -509,7 +531,9 @@ public class SecurityModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Role:
-	//	name=EString;
+	//	name=EString
+	//	'<-'
+	//	userEntity=[datamodels::Entity];
 	public RoleElements getRoleAccess() {
 		return pRole;
 	}

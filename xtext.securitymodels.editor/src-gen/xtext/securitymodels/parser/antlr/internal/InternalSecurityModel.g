@@ -376,21 +376,40 @@ ruleRole returns [EObject current=null]
 }:
 	(
 		(
-			{
-				newCompositeNode(grammarAccess.getRoleAccess().getNameEStringParserRuleCall_0());
-			}
-			lv_name_0_0=ruleEString
-			{
-				if ($current==null) {
-					$current = createModelElementForParent(grammarAccess.getRoleRule());
+			(
+				{
+					newCompositeNode(grammarAccess.getRoleAccess().getNameEStringParserRuleCall_0_0());
 				}
-				set(
-					$current,
-					"name",
-					lv_name_0_0,
-					"xtext.securitymodels.SecurityModel.EString");
-				afterParserOrEnumRuleCall();
-			}
+				lv_name_0_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getRoleRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_0_0,
+						"xtext.securitymodels.SecurityModel.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_1='<-'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getRoleAccess().getLessThanSignHyphenMinusKeyword_1());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRoleRule());
+					}
+				}
+				otherlv_2=RULE_ID
+				{
+					newLeafNode(otherlv_2, grammarAccess.getRoleAccess().getUserEntityEntityCrossReference_2_0());
+				}
+			)
 		)
 	)
 ;

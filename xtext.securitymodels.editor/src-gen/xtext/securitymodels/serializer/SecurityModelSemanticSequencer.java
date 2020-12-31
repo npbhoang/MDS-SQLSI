@@ -94,15 +94,18 @@ public class SecurityModelSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *     Role returns Role
 	 *
 	 * Constraint:
-	 *     name=EString
+	 *     (name=EString userEntity=[Entity|ID])
 	 */
 	protected void sequence_Role(ISerializationContext context, Role semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, SecuritymodelsPackage.Literals.ROLE__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SecuritymodelsPackage.Literals.ROLE__NAME));
+			if (transientValues.isValueTransient(semanticObject, SecuritymodelsPackage.Literals.ROLE__USER_ENTITY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SecuritymodelsPackage.Literals.ROLE__USER_ENTITY));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRoleAccess().getNameEStringParserRuleCall_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getRoleAccess().getNameEStringParserRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getRoleAccess().getUserEntityEntityIDTerminalRuleCall_2_0_1(), semanticObject.eGet(SecuritymodelsPackage.Literals.ROLE__USER_ENTITY, false));
 		feeder.finish();
 	}
 	

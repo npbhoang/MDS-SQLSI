@@ -22,7 +22,9 @@ Rule returns Rule:
 	('{' auths+=Auth ( "or" auths+=Auth)* '}' )?;
 
 Role returns Role:
-	name=EString;
+	name=EString
+	'<-'
+	userEntity=[datamodels::Entity];
 
 enum Action returns Action:
 				READ = 'READ' | CREATE = 'CREATE' | UPDATE = 'UPDATE' | DELETE = 'DELETE';
