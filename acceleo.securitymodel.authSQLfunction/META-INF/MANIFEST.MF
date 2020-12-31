@@ -21,4 +21,5 @@ Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
 Export-Package: acceleo.securitymodel.authSQLfunction.main
 Import-Package: securitymodels
+Automatic-Module-Name: acceleo.securitymodel.authSQLfunction
 

@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: xtext.securitymodels
+Bundle-ManifestVersion: 2
+Bundle-Name: xtext.securitymodels
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: xtext.securitymodels; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: securitymodels,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib;bundle-version="2.14.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ xtext.datamodels;bundle-version="1.0.0",
+ xtext.datamodels.ui;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: xtext.services,
+ xtext.serializer,
+ xtext.parser.antlr,
+ xtext,
+ xtext.parser.antlr.internal,
+ xtext.validation,
+ xtext.generator,
+ xtext.formatting2,
+ xtext.scoping
+Import-Package: org.apache.log4j

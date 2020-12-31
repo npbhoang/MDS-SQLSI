@@ -1,7 +1,6 @@
 name: UniversitySecurity
 roles: 
-	Lecturer <- "University.Lecturer"
-	Student <- "University.Student"
+	Lecturer <- 
 rules:
 	readStudentInfo: 
 		READ("University.RegUser.firstname", 
