@@ -1,0 +1,9 @@
+[comment encoding = UTF-8 /]
+[module queriesAuths('/final/metamodel/securitymodels.ecore')]
+
+[query public getAllRelatedAuths (aRole : Role, aProtectedResource : ProtectedResource, aSecurityModel : SecurityModel) : Sequence(Auth) 
+	= aSecurityModel.rules
+	->select(r|r.protectedResources->includes(aProtectedResource))
+	->collect(r|r.auths)
+	->select(au|au.roles->includes(aRole))
+/]

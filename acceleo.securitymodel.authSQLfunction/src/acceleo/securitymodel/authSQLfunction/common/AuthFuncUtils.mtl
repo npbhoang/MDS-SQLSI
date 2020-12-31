@@ -1,0 +1,21 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of AuthFuncUtils.
+*/]
+[module AuthFuncUtils('/final/metamodel/securitymodels.ecore')]
+
+[**
+ * The documentation of function trimAndCapitalize, 
+ * whose intended meaning is to turn a string into a variable-qualified one.
+ * @param string The string that needs to be trim and turn into uppercase.
+ * Note that this function works under the assumption that the input contains 
+ * only the characters and numbers, otherwise it may contain special characters
+ * which may not be accepted as valid variable name in Java.
+*/]
+[query public AuthFunc(property : ProtectedResource) : String =
+	'auth_READ_'.concat(property.name)
+/]
+
+[query public AuthFuncRole(property : ProtectedResource, role : Role) : String =
+	'auth_READ_'.concat(property.name).concat('_').concat(role.name)
+/]
