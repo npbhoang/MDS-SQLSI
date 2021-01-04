@@ -31,70 +31,62 @@ public class DatamodelsGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.Datamodels.DataModel");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cDataModelAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cIsSecuredAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Keyword cIsSecuredSecuredKeyword_1_0 = (Keyword)cIsSecuredAssignment_1.eContents().get(0);
-		private final Keyword cDataModelKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
-		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Assignment cEntitiesAssignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
-		private final RuleCall cEntitiesEntityParserRuleCall_5_0_0 = (RuleCall)cEntitiesAssignment_5_0.eContents().get(0);
-		private final Group cGroup_5_1 = (Group)cGroup_5.eContents().get(1);
-		private final Keyword cCommaKeyword_5_1_0 = (Keyword)cGroup_5_1.eContents().get(0);
-		private final Assignment cEntitiesAssignment_5_1_1 = (Assignment)cGroup_5_1.eContents().get(1);
-		private final RuleCall cEntitiesEntityParserRuleCall_5_1_1_0 = (RuleCall)cEntitiesAssignment_5_1_1.eContents().get(0);
+		private final Keyword cDataModelKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Assignment cEntitiesAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
+		private final RuleCall cEntitiesEntityParserRuleCall_4_0_0 = (RuleCall)cEntitiesAssignment_4_0.eContents().get(0);
+		private final Group cGroup_4_1 = (Group)cGroup_4.eContents().get(1);
+		private final Keyword cCommaKeyword_4_1_0 = (Keyword)cGroup_4_1.eContents().get(0);
+		private final Assignment cEntitiesAssignment_4_1_1 = (Assignment)cGroup_4_1.eContents().get(1);
+		private final RuleCall cEntitiesEntityParserRuleCall_4_1_1_0 = (RuleCall)cEntitiesAssignment_4_1_1.eContents().get(0);
 		
 		//DataModel:
-		//	{DataModel} isSecured?='Secured'?
+		//	{DataModel}
 		//	'DataModel' name=EString
 		//	':' (entities+=Entity ("," entities+=Entity)*)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{DataModel} isSecured?='Secured'? 'DataModel' name=EString ':' (entities+=Entity ("," entities+=Entity)*)?
+		//{DataModel} 'DataModel' name=EString ':' (entities+=Entity ("," entities+=Entity)*)?
 		public Group getGroup() { return cGroup; }
 		
 		//{DataModel}
 		public Action getDataModelAction_0() { return cDataModelAction_0; }
 		
-		//isSecured?='Secured'?
-		public Assignment getIsSecuredAssignment_1() { return cIsSecuredAssignment_1; }
-		
-		//'Secured'
-		public Keyword getIsSecuredSecuredKeyword_1_0() { return cIsSecuredSecuredKeyword_1_0; }
-		
 		//'DataModel'
-		public Keyword getDataModelKeyword_2() { return cDataModelKeyword_2; }
+		public Keyword getDataModelKeyword_1() { return cDataModelKeyword_1; }
 		
 		//name=EString
-		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
 		//EString
-		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
+		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
 		
 		//':'
-		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
 		
 		//(entities+=Entity ("," entities+=Entity)*)?
-		public Group getGroup_5() { return cGroup_5; }
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//entities+=Entity
-		public Assignment getEntitiesAssignment_5_0() { return cEntitiesAssignment_5_0; }
+		public Assignment getEntitiesAssignment_4_0() { return cEntitiesAssignment_4_0; }
 		
 		//Entity
-		public RuleCall getEntitiesEntityParserRuleCall_5_0_0() { return cEntitiesEntityParserRuleCall_5_0_0; }
+		public RuleCall getEntitiesEntityParserRuleCall_4_0_0() { return cEntitiesEntityParserRuleCall_4_0_0; }
 		
 		//("," entities+=Entity)*
-		public Group getGroup_5_1() { return cGroup_5_1; }
+		public Group getGroup_4_1() { return cGroup_4_1; }
 		
 		//","
-		public Keyword getCommaKeyword_5_1_0() { return cCommaKeyword_5_1_0; }
+		public Keyword getCommaKeyword_4_1_0() { return cCommaKeyword_4_1_0; }
 		
 		//entities+=Entity
-		public Assignment getEntitiesAssignment_5_1_1() { return cEntitiesAssignment_5_1_1; }
+		public Assignment getEntitiesAssignment_4_1_1() { return cEntitiesAssignment_4_1_1; }
 		
 		//Entity
-		public RuleCall getEntitiesEntityParserRuleCall_5_1_1_0() { return cEntitiesEntityParserRuleCall_5_1_1_0; }
+		public RuleCall getEntitiesEntityParserRuleCall_4_1_1_0() { return cEntitiesEntityParserRuleCall_4_1_1_0; }
 	}
 	public class PropertyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.Datamodels.Property");
@@ -462,7 +454,7 @@ public class DatamodelsGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//DataModel:
-	//	{DataModel} isSecured?='Secured'?
+	//	{DataModel}
 	//	'DataModel' name=EString
 	//	':' (entities+=Entity ("," entities+=Entity)*)?;
 	public DataModelElements getDataModelAccess() {

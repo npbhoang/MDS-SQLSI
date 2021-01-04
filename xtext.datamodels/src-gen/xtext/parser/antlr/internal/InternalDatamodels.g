@@ -84,30 +84,16 @@ ruleDataModel returns [EObject current=null]
 					$current);
 			}
 		)
-		(
-			(
-				lv_isSecured_1_0='Secured'
-				{
-					newLeafNode(lv_isSecured_1_0, grammarAccess.getDataModelAccess().getIsSecuredSecuredKeyword_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDataModelRule());
-					}
-					setWithLastConsumed($current, "isSecured", true, "Secured");
-				}
-			)
-		)?
-		otherlv_2='DataModel'
+		otherlv_1='DataModel'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getDataModelAccess().getDataModelKeyword_2());
+			newLeafNode(otherlv_1, grammarAccess.getDataModelAccess().getDataModelKeyword_1());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getDataModelAccess().getNameEStringParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getDataModelAccess().getNameEStringParserRuleCall_2_0());
 				}
-				lv_name_3_0=ruleEString
+				lv_name_2_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getDataModelRule());
@@ -115,23 +101,23 @@ ruleDataModel returns [EObject current=null]
 					set(
 						$current,
 						"name",
-						lv_name_3_0,
+						lv_name_2_0,
 						"xtext.Datamodels.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_4=':'
+		otherlv_3=':'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getDataModelAccess().getColonKeyword_4());
+			newLeafNode(otherlv_3, grammarAccess.getDataModelAccess().getColonKeyword_3());
 		}
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDataModelAccess().getEntitiesEntityParserRuleCall_5_0_0());
+						newCompositeNode(grammarAccess.getDataModelAccess().getEntitiesEntityParserRuleCall_4_0_0());
 					}
-					lv_entities_5_0=ruleEntity
+					lv_entities_4_0=ruleEntity
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDataModelRule());
@@ -139,23 +125,23 @@ ruleDataModel returns [EObject current=null]
 						add(
 							$current,
 							"entities",
-							lv_entities_5_0,
+							lv_entities_4_0,
 							"xtext.Datamodels.Entity");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_6=','
+				otherlv_5=','
 				{
-					newLeafNode(otherlv_6, grammarAccess.getDataModelAccess().getCommaKeyword_5_1_0());
+					newLeafNode(otherlv_5, grammarAccess.getDataModelAccess().getCommaKeyword_4_1_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getDataModelAccess().getEntitiesEntityParserRuleCall_5_1_1_0());
+							newCompositeNode(grammarAccess.getDataModelAccess().getEntitiesEntityParserRuleCall_4_1_1_0());
 						}
-						lv_entities_7_0=ruleEntity
+						lv_entities_6_0=ruleEntity
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getDataModelRule());
@@ -163,7 +149,7 @@ ruleDataModel returns [EObject current=null]
 							add(
 								$current,
 								"entities",
-								lv_entities_7_0,
+								lv_entities_6_0,
 								"xtext.Datamodels.Entity");
 							afterParserOrEnumRuleCall();
 						}
