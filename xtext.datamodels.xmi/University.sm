@@ -39,7 +39,7 @@ rules {
 			condition: {
 				textual "Lecturer can read its students' intake year"
 				oclExp "caller.taught->exists(c|c.students->includes(self))"
-				sqlStm ""
+				sqlStm "EXISTS (SELECT 1 FROM (SELECT * FROM teaching WHERE lecturer = caller) as TEMP1 JOIN (SELECT * FROM enrollment WHERE students = self) as TEMP2 ON TEMP1.taught = TEMP2.enrolled)"
 			}
 		}
 	},

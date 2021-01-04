@@ -10,7 +10,7 @@
     <auths textual="Lecturer can read its own salary" oclExp="true" sqlStm="TRUE" roles="//@roles.1"/>
   </rules>
   <rules name="readStudentSpecificInfo" protectedResources="//@resources.3">
-    <auths textual="Lecturer can read its students' intake year" oclExp="caller.taught->exists(c|c.students->includes(self))" sqlStm="" roles="//@roles.1"/>
+    <auths textual="Lecturer can read its students' intake year" oclExp="caller.taught->exists(c|c.students->includes(self))" sqlStm="EXISTS (SELECT 1 FROM (SELECT * FROM teaching WHERE lecturer = caller) as TEMP1 JOIN (SELECT * FROM enrollment WHERE students = self) as TEMP2 ON TEMP1.taught = TEMP2.enrolled)" roles="//@roles.1"/>
   </rules>
   <rules name="readBasicInfo" protectedResources="//@resources.0">
     <auths textual="Any one with a role can read any registered user basic information" oclExp="true" sqlStm="TRUE" roles="//@roles.1"/>

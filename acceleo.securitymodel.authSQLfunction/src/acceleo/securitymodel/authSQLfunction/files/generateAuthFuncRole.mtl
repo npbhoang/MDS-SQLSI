@@ -6,7 +6,7 @@
 
 [template public generateConditionalAuthRoleClause(aRole : Role, aProtectedResource : ProtectedResource)  post (trim())]
 IF ([getProperty('role')/] = '[aRole.name/]')
-	THEN RETURN [AuthFuncRole(aProtectedResource,aRole)/]([getProperty('self')/], [getProperty('caller')/])
+	THEN RETURN [AuthFuncRole(aProtectedResource,aRole)/]([getProperty('self')/], [getProperty('caller')/]);
 END IF;
 [/template]
 
@@ -24,6 +24,6 @@ DELIMITER ;
 [/template]
 
 [template public generateCondition(aRole : Role, aProtectedResource : ProtectedResource, aSecurityModel : SecurityModel) post (trim())]
-SELECT 0 OR[for (au : Auth | getAllRelatedAuths(aRole, aProtectedResource, aSecurityModel))] ([ au.sqlStm /])[/for]
+SELECT 0 [for (au : Auth | getAllRelatedAuths(aRole, aProtectedResource, aSecurityModel))] OR ([ au.sqlStm /])[/for]
 [/template]
 
