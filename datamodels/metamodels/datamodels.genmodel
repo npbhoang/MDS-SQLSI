@@ -16,7 +16,6 @@
     <genClasses ecoreClass="datamodels.ecore#//DataModel">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodels.ecore#//DataModel/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datamodels.ecore#//DataModel/entities"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodels.ecore#//DataModel/isSecured"/>
     </genClasses>
     <genClasses ecoreClass="datamodels.ecore#//Entity">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodels.ecore#//Entity/name"/>

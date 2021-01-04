@@ -32,7 +32,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link datamodels.impl.DataModelImpl#getName <em>Name</em>}</li>
  *   <li>{@link datamodels.impl.DataModelImpl#getEntities <em>Entities</em>}</li>
- *   <li>{@link datamodels.impl.DataModelImpl#isIsSecured <em>Is Secured</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,26 +66,6 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
 	 * @ordered
 	 */
 	protected EList<Entity> entities;
-
-	/**
-	 * The default value of the '{@link #isIsSecured() <em>Is Secured</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIsSecured()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean IS_SECURED_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isIsSecured() <em>Is Secured</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIsSecured()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean isSecured = IS_SECURED_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -145,27 +124,6 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isIsSecured() {
-		return isSecured;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setIsSecured(boolean newIsSecured) {
-		boolean oldIsSecured = isSecured;
-		isSecured = newIsSecured;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelsPackage.DATA_MODEL__IS_SECURED, oldIsSecured, isSecured));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -187,8 +145,6 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
 				return getName();
 			case DatamodelsPackage.DATA_MODEL__ENTITIES:
 				return getEntities();
-			case DatamodelsPackage.DATA_MODEL__IS_SECURED:
-				return isIsSecured();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -209,9 +165,6 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
 				getEntities().clear();
 				getEntities().addAll((Collection<? extends Entity>)newValue);
 				return;
-			case DatamodelsPackage.DATA_MODEL__IS_SECURED:
-				setIsSecured((Boolean)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -230,9 +183,6 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
 			case DatamodelsPackage.DATA_MODEL__ENTITIES:
 				getEntities().clear();
 				return;
-			case DatamodelsPackage.DATA_MODEL__IS_SECURED:
-				setIsSecured(IS_SECURED_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -249,8 +199,6 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case DatamodelsPackage.DATA_MODEL__ENTITIES:
 				return entities != null && !entities.isEmpty();
-			case DatamodelsPackage.DATA_MODEL__IS_SECURED:
-				return isSecured != IS_SECURED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -267,8 +215,6 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", isSecured: ");
-		result.append(isSecured);
 		result.append(')');
 		return result.toString();
 	}

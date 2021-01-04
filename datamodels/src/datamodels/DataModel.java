@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link datamodels.DataModel#getName <em>Name</em>}</li>
  *   <li>{@link datamodels.DataModel#getEntities <em>Entities</em>}</li>
- *   <li>{@link datamodels.DataModel#isIsSecured <em>Is Secured</em>}</li>
  * </ul>
  *
  * @see datamodels.DatamodelsPackage#getDataModel()
@@ -66,32 +65,5 @@ public interface DataModel extends EObject {
 	 * @generated
 	 */
 	EList<Entity> getEntities();
-
-	/**
-	 * Returns the value of the '<em><b>Is Secured</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Is Secured</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Secured</em>' attribute.
-	 * @see #setIsSecured(boolean)
-	 * @see datamodels.DatamodelsPackage#getDataModel_IsSecured()
-	 * @model default="false"
-	 * @generated
-	 */
-	boolean isIsSecured();
-
-	/**
-	 * Sets the value of the '{@link datamodels.DataModel#isIsSecured <em>Is Secured</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Secured</em>' attribute.
-	 * @see #isIsSecured()
-	 * @generated
-	 */
-	void setIsSecured(boolean value);
 
 } // DataModel

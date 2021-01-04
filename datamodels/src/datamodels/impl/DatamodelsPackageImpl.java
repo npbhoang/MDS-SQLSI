@@ -169,15 +169,6 @@ public class DatamodelsPackageImpl extends EPackageImpl implements DatamodelsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDataModel_IsSecured() {
-		return (EAttribute)dataModelEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getEntity() {
 		return entityEClass;
 	}
@@ -357,7 +348,6 @@ public class DatamodelsPackageImpl extends EPackageImpl implements DatamodelsPac
 		dataModelEClass = createEClass(DATA_MODEL);
 		createEAttribute(dataModelEClass, DATA_MODEL__NAME);
 		createEReference(dataModelEClass, DATA_MODEL__ENTITIES);
-		createEAttribute(dataModelEClass, DATA_MODEL__IS_SECURED);
 
 		entityEClass = createEClass(ENTITY);
 		createEAttribute(entityEClass, ENTITY__NAME);
@@ -418,7 +408,6 @@ public class DatamodelsPackageImpl extends EPackageImpl implements DatamodelsPac
 		initEClass(dataModelEClass, DataModel.class, "DataModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataModel_Name(), ecorePackage.getEString(), "name", null, 1, 1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataModel_Entities(), this.getEntity(), null, "entities", null, 0, -1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDataModel_IsSecured(), ecorePackage.getEBoolean(), "isSecured", "false", 0, 1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntity_Name(), ecorePackage.getEString(), "name", null, 1, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

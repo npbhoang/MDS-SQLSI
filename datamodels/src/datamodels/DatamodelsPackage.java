@@ -86,22 +86,13 @@ public interface DatamodelsPackage extends EPackage {
 	int DATA_MODEL__ENTITIES = 1;
 
 	/**
-	 * The feature id for the '<em><b>Is Secured</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_MODEL__IS_SECURED = 2;
-
-	/**
 	 * The number of structural features of the '<em>Data Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_MODEL_FEATURE_COUNT = 3;
+	int DATA_MODEL_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Data Model</em>' class.
@@ -395,17 +386,6 @@ public interface DatamodelsPackage extends EPackage {
 	EReference getDataModel_Entities();
 
 	/**
-	 * Returns the meta object for the attribute '{@link datamodels.DataModel#isIsSecured <em>Is Secured</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Secured</em>'.
-	 * @see datamodels.DataModel#isIsSecured()
-	 * @see #getDataModel()
-	 * @generated
-	 */
-	EAttribute getDataModel_IsSecured();
-
-	/**
 	 * Returns the meta object for class '{@link datamodels.Entity <em>Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -634,14 +614,6 @@ public interface DatamodelsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DATA_MODEL__ENTITIES = eINSTANCE.getDataModel_Entities();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Secured</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DATA_MODEL__IS_SECURED = eINSTANCE.getDataModel_IsSecured();
 
 		/**
 		 * The meta object literal for the '{@link datamodels.impl.EntityImpl <em>Entity</em>}' class.
