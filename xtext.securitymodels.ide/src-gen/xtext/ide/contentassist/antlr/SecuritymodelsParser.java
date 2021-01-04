@@ -46,7 +46,7 @@ public class SecuritymodelsParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getProtectedResourceAccess().getGroup(), "rule__ProtectedResource__Group__0");
 			builder.put(grammarAccess.getAuthAccess().getGroup(), "rule__Auth__Group__0");
 			builder.put(grammarAccess.getAuthAccess().getGroup_3(), "rule__Auth__Group_3__0");
-			builder.put(grammarAccess.getSecurityModelAccess().getSourceAssignment_1(), "rule__SecurityModel__SourceAssignment_1");
+			builder.put(grammarAccess.getSecurityModelAccess().getNameAssignment_1(), "rule__SecurityModel__NameAssignment_1");
 			builder.put(grammarAccess.getSecurityModelAccess().getResourcesAssignment_2_1(), "rule__SecurityModel__ResourcesAssignment_2_1");
 			builder.put(grammarAccess.getSecurityModelAccess().getResourcesAssignment_2_2_1(), "rule__SecurityModel__ResourcesAssignment_2_2_1");
 			builder.put(grammarAccess.getSecurityModelAccess().getRolesAssignment_5(), "rule__SecurityModel__RolesAssignment_5");

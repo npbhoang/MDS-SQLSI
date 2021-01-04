@@ -30,9 +30,8 @@ public class SecuritymodelsGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.Securitymodels.SecurityModel");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cSecurityModelKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cSourceAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cSourceDataModelCrossReference_1_0 = (CrossReference)cSourceAssignment_1.eContents().get(0);
-		private final RuleCall cSourceDataModelEStringParserRuleCall_1_0_1 = (RuleCall)cSourceDataModelCrossReference_1_0.eContents().get(1);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cProtectKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cResourcesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
@@ -63,27 +62,22 @@ public class SecuritymodelsGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//SecurityModel:
 		//	'SecurityModel'
-		//	source=[datamodels::DataModel|EString] ('protect' resources+=ProtectedResource ("protect"
-		//	resources+=ProtectedResource)*)?
+		//	name=EString ('protect' resources+=ProtectedResource ("protect" resources+=ProtectedResource)*)?
 		//	'roles' '{' roles+=Role ("," roles+=Role)* '}' ('rules' '{' rules+=Rule ("," rules+=Rule)* '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'SecurityModel' source=[datamodels::DataModel|EString] ('protect' resources+=ProtectedResource ("protect"
-		//resources+=ProtectedResource)*)? 'roles' '{' roles+=Role ("," roles+=Role)* '}' ('rules' '{' rules+=Rule (","
-		//rules+=Rule)* '}')?
+		//'SecurityModel' name=EString ('protect' resources+=ProtectedResource ("protect" resources+=ProtectedResource)*)? 'roles'
+		//'{' roles+=Role ("," roles+=Role)* '}' ('rules' '{' rules+=Rule ("," rules+=Rule)* '}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'SecurityModel'
 		public Keyword getSecurityModelKeyword_0() { return cSecurityModelKeyword_0; }
 		
-		//source=[datamodels::DataModel|EString]
-		public Assignment getSourceAssignment_1() { return cSourceAssignment_1; }
-		
-		//[datamodels::DataModel|EString]
-		public CrossReference getSourceDataModelCrossReference_1_0() { return cSourceDataModelCrossReference_1_0; }
+		//name=EString
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//EString
-		public RuleCall getSourceDataModelEStringParserRuleCall_1_0_1() { return cSourceDataModelEStringParserRuleCall_1_0_1; }
+		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
 		
 		//('protect' resources+=ProtectedResource ("protect" resources+=ProtectedResource)*)?
 		public Group getGroup_2() { return cGroup_2; }
@@ -593,8 +587,7 @@ public class SecuritymodelsGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//SecurityModel:
 	//	'SecurityModel'
-	//	source=[datamodels::DataModel|EString] ('protect' resources+=ProtectedResource ("protect"
-	//	resources+=ProtectedResource)*)?
+	//	name=EString ('protect' resources+=ProtectedResource ("protect" resources+=ProtectedResource)*)?
 	//	'roles' '{' roles+=Role ("," roles+=Role)* '}' ('rules' '{' rules+=Rule ("," rules+=Rule)* '}')?;
 	public SecurityModelElements getSecurityModelAccess() {
 		return pSecurityModel;

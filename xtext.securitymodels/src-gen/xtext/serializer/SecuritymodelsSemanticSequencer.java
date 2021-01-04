@@ -134,7 +134,7 @@ public class SecuritymodelsSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     SecurityModel returns SecurityModel
 	 *
 	 * Constraint:
-	 *     (source=[DataModel|EString] (resources+=ProtectedResource resources+=ProtectedResource*)? roles+=Role roles+=Role* (rules+=Rule rules+=Rule*)?)
+	 *     (name=EString (resources+=ProtectedResource resources+=ProtectedResource*)? roles+=Role roles+=Role* (rules+=Rule rules+=Rule*)?)
 	 */
 	protected void sequence_SecurityModel(ISerializationContext context, SecurityModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

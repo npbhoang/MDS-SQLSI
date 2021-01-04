@@ -314,9 +314,9 @@ rule__SecurityModel__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getSecurityModelAccess().getSourceAssignment_1()); }
-	(rule__SecurityModel__SourceAssignment_1)
-	{ after(grammarAccess.getSecurityModelAccess().getSourceAssignment_1()); }
+	{ before(grammarAccess.getSecurityModelAccess().getNameAssignment_1()); }
+	(rule__SecurityModel__NameAssignment_1)
+	{ after(grammarAccess.getSecurityModelAccess().getNameAssignment_1()); }
 )
 ;
 finally {
@@ -1997,19 +1997,15 @@ finally {
 }
 
 
-rule__SecurityModel__SourceAssignment_1
+rule__SecurityModel__NameAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getSecurityModelAccess().getSourceDataModelCrossReference_1_0()); }
-		(
-			{ before(grammarAccess.getSecurityModelAccess().getSourceDataModelEStringParserRuleCall_1_0_1()); }
-			ruleEString
-			{ after(grammarAccess.getSecurityModelAccess().getSourceDataModelEStringParserRuleCall_1_0_1()); }
-		)
-		{ after(grammarAccess.getSecurityModelAccess().getSourceDataModelCrossReference_1_0()); }
+		{ before(grammarAccess.getSecurityModelAccess().getNameEStringParserRuleCall_1_0()); }
+		ruleEString
+		{ after(grammarAccess.getSecurityModelAccess().getNameEStringParserRuleCall_1_0()); }
 	)
 ;
 finally {

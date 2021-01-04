@@ -84,15 +84,18 @@ ruleSecurityModel returns [EObject current=null]
 		(
 			(
 				{
+					newCompositeNode(grammarAccess.getSecurityModelAccess().getNameEStringParserRuleCall_1_0());
+				}
+				lv_name_1_0=ruleEString
+				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getSecurityModelRule());
+						$current = createModelElementForParent(grammarAccess.getSecurityModelRule());
 					}
-				}
-				{
-					newCompositeNode(grammarAccess.getSecurityModelAccess().getSourceDataModelCrossReference_1_0());
-				}
-				ruleEString
-				{
+					set(
+						$current,
+						"name",
+						lv_name_1_0,
+						"xtext.Securitymodels.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
