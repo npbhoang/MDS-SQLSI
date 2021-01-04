@@ -12,7 +12,7 @@ rule datamodel2database {
 		name <- dm.name,
 		-- and every entity is a relation
 		-- as well as every association is a relation (for the moment, including the one-to-one association)
-		tables <- Sequence{roleTable, roleAssociationTable, dm.entities, dm.getAllAssociations()}
+		tables <- Sequence{roleTable, dm.entities, roleAssociationTable, dm.getAllAssociations()}
 	),
 	roleTable : relationaldb!Table (
 		name <- 'Role',
