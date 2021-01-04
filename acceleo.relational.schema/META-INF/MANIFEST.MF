@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Acceleo Relational2schema Module Runtime Plug-in
-Bundle-SymbolicName: acceleo.relational.schema
+Bundle-SymbolicName: uam.mde20.sqlsi.acceleo.relational.schema
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: acceleo.relational.schema.Activator
 Bundle-Vendor: Eclipse Modeling Project

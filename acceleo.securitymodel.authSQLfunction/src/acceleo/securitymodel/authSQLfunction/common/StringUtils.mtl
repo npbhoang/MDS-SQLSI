@@ -2,7 +2,7 @@
 [**
  * The documentation of StringUtils.
 */]
-[module StringUtils('/securitymodels/metamodels/securitymodels.ecore')]
+[module StringUtils('/uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore')]
 
 [**
  * The documentation of function trimAndCapitalize, 

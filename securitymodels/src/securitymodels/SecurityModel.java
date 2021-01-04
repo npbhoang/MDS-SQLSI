@@ -37,7 +37,7 @@ public interface SecurityModel extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Rules</em>' containment reference list.
 	 * @see securitymodels.SecuritymodelsPackage#getSecurityModel_Rules()
-	 * @model containment="true" resolveProxies="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Rule> getRules();
@@ -53,7 +53,7 @@ public interface SecurityModel extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Roles</em>' containment reference list.
 	 * @see securitymodels.SecuritymodelsPackage#getSecurityModel_Roles()
-	 * @model containment="true" resolveProxies="true" required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	EList<Role> getRoles();
@@ -69,7 +69,7 @@ public interface SecurityModel extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Resources</em>' containment reference list.
 	 * @see securitymodels.SecuritymodelsPackage#getSecurityModel_Resources()
-	 * @model containment="true" resolveProxies="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<ProtectedResource> getResources();

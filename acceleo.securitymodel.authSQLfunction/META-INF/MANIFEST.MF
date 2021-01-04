@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Acceleo AuthSQLfunction Module Runtime Plug-in
-Bundle-SymbolicName: acceleo.securitymodel.authSQLfunction
+Bundle-SymbolicName: uam.mde20.sqlsi.acceleo.securitymodel.sqlfunc
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: acceleo.securitymodel.authSQLfunction.Activator
 Bundle-Vendor: Eclipse Modeling Project

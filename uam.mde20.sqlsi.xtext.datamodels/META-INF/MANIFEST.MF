@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: uam.mde20.sqlsi.xtext.datamodels
+Bundle-ManifestVersion: 2
+Bundle-Name: uam.mde20.sqlsi.xtext.datamodels
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: uam.mde20.sqlsi.xtext.datamodels; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: uam.mde20.sqlsi.datamodels,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib;bundle-version="2.14.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: uam.mde20.sqlsi.xtext.parser.antlr.internal,
+ uam.mde20.sqlsi.xtext.parser.antlr,
+ uam.mde20.sqlsi.xtext,
+ uam.mde20.sqlsi.xtext.scoping,
+ uam.mde20.sqlsi.xtext.generator,
+ uam.mde20.sqlsi.xtext.validation,
+ uam.mde20.sqlsi.xtext.serializer,
+ uam.mde20.sqlsi.xtext.formatting2,
+ uam.mde20.sqlsi.xtext.services
+Import-Package: org.apache.log4j

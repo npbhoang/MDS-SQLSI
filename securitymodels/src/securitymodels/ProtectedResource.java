@@ -3,6 +3,7 @@
 package securitymodels;
 
 import datamodels.Property;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**

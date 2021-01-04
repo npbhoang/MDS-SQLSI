@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: uam.mde20.sqlsi.xtext.securitymodels.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: uam.mde20.sqlsi.xtext.securitymodels.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: uam.mde20.sqlsi.xtext.securitymodels.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: uam.mde20.sqlsi.xtext.securitymodels,
+ uam.mde20.sqlsi.securitymodels,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ uam.mde20.sqlsi.xtext.datamodels;bundle-version="1.0.0",
+ uam.mde20.sqlsi.xtext.datamodels.ui;bundle-version="1.0.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: uam.mde20.sqlsi.xtext.ide.contentassist.antlr,
+ uam.mde20.sqlsi.xtext.ide.contentassist.antlr.internal
+

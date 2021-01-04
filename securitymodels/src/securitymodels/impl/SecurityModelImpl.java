@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import securitymodels.ProtectedResource;
 import securitymodels.Role;
 import securitymodels.Rule;
@@ -116,7 +117,7 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 	 */
 	public EList<Rule> getRules() {
 		if (rules == null) {
-			rules = new EObjectContainmentEList.Resolving<Rule>(Rule.class, this, SecuritymodelsPackage.SECURITY_MODEL__RULES);
+			rules = new EObjectContainmentEList<Rule>(Rule.class, this, SecuritymodelsPackage.SECURITY_MODEL__RULES);
 		}
 		return rules;
 	}
@@ -128,7 +129,7 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 	 */
 	public EList<Role> getRoles() {
 		if (roles == null) {
-			roles = new EObjectContainmentEList.Resolving<Role>(Role.class, this, SecuritymodelsPackage.SECURITY_MODEL__ROLES);
+			roles = new EObjectContainmentEList<Role>(Role.class, this, SecuritymodelsPackage.SECURITY_MODEL__ROLES);
 		}
 		return roles;
 	}
@@ -140,7 +141,7 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 	 */
 	public EList<ProtectedResource> getResources() {
 		if (resources == null) {
-			resources = new EObjectContainmentEList.Resolving<ProtectedResource>(ProtectedResource.class, this, SecuritymodelsPackage.SECURITY_MODEL__RESOURCES);
+			resources = new EObjectContainmentEList<ProtectedResource>(ProtectedResource.class, this, SecuritymodelsPackage.SECURITY_MODEL__RESOURCES);
 		}
 		return resources;
 	}

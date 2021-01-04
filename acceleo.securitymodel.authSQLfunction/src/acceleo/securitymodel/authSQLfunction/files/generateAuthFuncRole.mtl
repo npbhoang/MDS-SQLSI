@@ -1,5 +1,5 @@
 [comment encoding = UTF-8 /]
-[module generateAuthFuncRole('/securitymodels/metamodels/securitymodels.ecore')]
+[module generateAuthFuncRole('/uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore')]
 
 [import acceleo::securitymodel::authSQLfunction::common::AuthFuncUtils /]
 [import acceleo::securitymodel::authSQLfunction::queries::queriesAuths /]

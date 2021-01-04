@@ -14,9 +14,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import securitymodels.Action;
 import securitymodels.Auth;
 import securitymodels.ProtectedResource;
@@ -168,7 +170,7 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	 */
 	public EList<Auth> getAuths() {
 		if (auths == null) {
-			auths = new EObjectContainmentEList.Resolving<Auth>(Auth.class, this, SecuritymodelsPackage.RULE__AUTHS);
+			auths = new EObjectContainmentEList<Auth>(Auth.class, this, SecuritymodelsPackage.RULE__AUTHS);
 		}
 		return auths;
 	}

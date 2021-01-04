@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/datamodels/src" modelPluginID="datamodels" modelName="Datamodels"
-    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/uam.mde20.sqlsi.datamodels/src" modelPluginID="uam.mde20.sqlsi.datamodels"
+    modelName="Datamodels" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
   <foreignModel>datamodels.ecore</foreignModel>
   <genPackages prefix="Datamodels" disposableProviderFactory="true" ecorePackage="datamodels.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="datamodels.ecore#//DataType">
