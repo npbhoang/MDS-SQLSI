@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'name:'", "'protected:'", "','", "'roles:'", "'rules:'", "':'", "'conditions'", "'{'", "'or'", "'}'", "'<-'", "'roles'", "'('", "')'", "'context:'", "'ocl:'", "'sql:'", "'as'", "'READ'", "'CREATE'", "'UPDATE'", "'DELETE'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'SecurityModel'", "'protect'", "'roles'", "'{'", "','", "'}'", "'rules'", "'Rule'", "'action'", "'('", "')'", "'auths'", "'<-'", "'as'", "'condition:'", "'textual'", "'oclExp'", "'sqlStm'", "'READ'", "'CREATE'", "'UPDATE'", "'DELETE'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -131,74 +131,68 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSecurityModel"
-    // InternalSecuritymodels.g:72:1: ruleSecurityModel returns [EObject current=null] : ( () otherlv_1= 'name:' ( (lv_name_2_0= ruleEString ) ) otherlv_3= 'protected:' ( (lv_resources_4_0= ruleProtectedResource ) ) (otherlv_5= ',' ( (lv_resources_6_0= ruleProtectedResource ) ) )* otherlv_7= 'roles:' ( (lv_roles_8_0= ruleRole ) )+ (otherlv_9= 'rules:' ( (lv_rules_10_0= ruleRule ) )+ )? ) ;
+    // InternalSecuritymodels.g:72:1: ruleSecurityModel returns [EObject current=null] : (otherlv_0= 'SecurityModel' ( ( ruleEString ) ) (otherlv_2= 'protect' ( (lv_resources_3_0= ruleProtectedResource ) ) (otherlv_4= 'protect' ( (lv_resources_5_0= ruleProtectedResource ) ) )* )? otherlv_6= 'roles' otherlv_7= '{' ( (lv_roles_8_0= ruleRole ) ) (otherlv_9= ',' ( (lv_roles_10_0= ruleRole ) ) )* otherlv_11= '}' (otherlv_12= 'rules' otherlv_13= '{' ( (lv_rules_14_0= ruleRule ) ) (otherlv_15= ',' ( (lv_rules_16_0= ruleRule ) ) )* otherlv_17= '}' )? ) ;
     public final EObject ruleSecurityModel() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_1=null;
-        Token otherlv_3=null;
-        Token otherlv_5=null;
+        Token otherlv_0=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        Token otherlv_6=null;
         Token otherlv_7=null;
         Token otherlv_9=null;
-        AntlrDatatypeRuleToken lv_name_2_0 = null;
+        Token otherlv_11=null;
+        Token otherlv_12=null;
+        Token otherlv_13=null;
+        Token otherlv_15=null;
+        Token otherlv_17=null;
+        EObject lv_resources_3_0 = null;
 
-        EObject lv_resources_4_0 = null;
-
-        EObject lv_resources_6_0 = null;
+        EObject lv_resources_5_0 = null;
 
         EObject lv_roles_8_0 = null;
 
-        EObject lv_rules_10_0 = null;
+        EObject lv_roles_10_0 = null;
+
+        EObject lv_rules_14_0 = null;
+
+        EObject lv_rules_16_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSecuritymodels.g:78:2: ( ( () otherlv_1= 'name:' ( (lv_name_2_0= ruleEString ) ) otherlv_3= 'protected:' ( (lv_resources_4_0= ruleProtectedResource ) ) (otherlv_5= ',' ( (lv_resources_6_0= ruleProtectedResource ) ) )* otherlv_7= 'roles:' ( (lv_roles_8_0= ruleRole ) )+ (otherlv_9= 'rules:' ( (lv_rules_10_0= ruleRule ) )+ )? ) )
-            // InternalSecuritymodels.g:79:2: ( () otherlv_1= 'name:' ( (lv_name_2_0= ruleEString ) ) otherlv_3= 'protected:' ( (lv_resources_4_0= ruleProtectedResource ) ) (otherlv_5= ',' ( (lv_resources_6_0= ruleProtectedResource ) ) )* otherlv_7= 'roles:' ( (lv_roles_8_0= ruleRole ) )+ (otherlv_9= 'rules:' ( (lv_rules_10_0= ruleRule ) )+ )? )
+            // InternalSecuritymodels.g:78:2: ( (otherlv_0= 'SecurityModel' ( ( ruleEString ) ) (otherlv_2= 'protect' ( (lv_resources_3_0= ruleProtectedResource ) ) (otherlv_4= 'protect' ( (lv_resources_5_0= ruleProtectedResource ) ) )* )? otherlv_6= 'roles' otherlv_7= '{' ( (lv_roles_8_0= ruleRole ) ) (otherlv_9= ',' ( (lv_roles_10_0= ruleRole ) ) )* otherlv_11= '}' (otherlv_12= 'rules' otherlv_13= '{' ( (lv_rules_14_0= ruleRule ) ) (otherlv_15= ',' ( (lv_rules_16_0= ruleRule ) ) )* otherlv_17= '}' )? ) )
+            // InternalSecuritymodels.g:79:2: (otherlv_0= 'SecurityModel' ( ( ruleEString ) ) (otherlv_2= 'protect' ( (lv_resources_3_0= ruleProtectedResource ) ) (otherlv_4= 'protect' ( (lv_resources_5_0= ruleProtectedResource ) ) )* )? otherlv_6= 'roles' otherlv_7= '{' ( (lv_roles_8_0= ruleRole ) ) (otherlv_9= ',' ( (lv_roles_10_0= ruleRole ) ) )* otherlv_11= '}' (otherlv_12= 'rules' otherlv_13= '{' ( (lv_rules_14_0= ruleRule ) ) (otherlv_15= ',' ( (lv_rules_16_0= ruleRule ) ) )* otherlv_17= '}' )? )
             {
-            // InternalSecuritymodels.g:79:2: ( () otherlv_1= 'name:' ( (lv_name_2_0= ruleEString ) ) otherlv_3= 'protected:' ( (lv_resources_4_0= ruleProtectedResource ) ) (otherlv_5= ',' ( (lv_resources_6_0= ruleProtectedResource ) ) )* otherlv_7= 'roles:' ( (lv_roles_8_0= ruleRole ) )+ (otherlv_9= 'rules:' ( (lv_rules_10_0= ruleRule ) )+ )? )
-            // InternalSecuritymodels.g:80:3: () otherlv_1= 'name:' ( (lv_name_2_0= ruleEString ) ) otherlv_3= 'protected:' ( (lv_resources_4_0= ruleProtectedResource ) ) (otherlv_5= ',' ( (lv_resources_6_0= ruleProtectedResource ) ) )* otherlv_7= 'roles:' ( (lv_roles_8_0= ruleRole ) )+ (otherlv_9= 'rules:' ( (lv_rules_10_0= ruleRule ) )+ )?
+            // InternalSecuritymodels.g:79:2: (otherlv_0= 'SecurityModel' ( ( ruleEString ) ) (otherlv_2= 'protect' ( (lv_resources_3_0= ruleProtectedResource ) ) (otherlv_4= 'protect' ( (lv_resources_5_0= ruleProtectedResource ) ) )* )? otherlv_6= 'roles' otherlv_7= '{' ( (lv_roles_8_0= ruleRole ) ) (otherlv_9= ',' ( (lv_roles_10_0= ruleRole ) ) )* otherlv_11= '}' (otherlv_12= 'rules' otherlv_13= '{' ( (lv_rules_14_0= ruleRule ) ) (otherlv_15= ',' ( (lv_rules_16_0= ruleRule ) ) )* otherlv_17= '}' )? )
+            // InternalSecuritymodels.g:80:3: otherlv_0= 'SecurityModel' ( ( ruleEString ) ) (otherlv_2= 'protect' ( (lv_resources_3_0= ruleProtectedResource ) ) (otherlv_4= 'protect' ( (lv_resources_5_0= ruleProtectedResource ) ) )* )? otherlv_6= 'roles' otherlv_7= '{' ( (lv_roles_8_0= ruleRole ) ) (otherlv_9= ',' ( (lv_roles_10_0= ruleRole ) ) )* otherlv_11= '}' (otherlv_12= 'rules' otherlv_13= '{' ( (lv_rules_14_0= ruleRule ) ) (otherlv_15= ',' ( (lv_rules_16_0= ruleRule ) ) )* otherlv_17= '}' )?
             {
-            // InternalSecuritymodels.g:80:3: ()
-            // InternalSecuritymodels.g:81:4: 
-            {
+            otherlv_0=(Token)match(input,11,FOLLOW_3); 
 
-            				current = forceCreateModelElement(
-            					grammarAccess.getSecurityModelAccess().getSecurityModelAction_0(),
-            					current);
-            			
-
-            }
-
-            otherlv_1=(Token)match(input,11,FOLLOW_3); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getSecurityModelAccess().getNameKeyword_1());
+            			newLeafNode(otherlv_0, grammarAccess.getSecurityModelAccess().getSecurityModelKeyword_0());
             		
-            // InternalSecuritymodels.g:91:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalSecuritymodels.g:92:4: (lv_name_2_0= ruleEString )
+            // InternalSecuritymodels.g:84:3: ( ( ruleEString ) )
+            // InternalSecuritymodels.g:85:4: ( ruleEString )
             {
-            // InternalSecuritymodels.g:92:4: (lv_name_2_0= ruleEString )
-            // InternalSecuritymodels.g:93:5: lv_name_2_0= ruleEString
+            // InternalSecuritymodels.g:85:4: ( ruleEString )
+            // InternalSecuritymodels.g:86:5: ruleEString
             {
 
-            					newCompositeNode(grammarAccess.getSecurityModelAccess().getNameEStringParserRuleCall_2_0());
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getSecurityModelRule());
+            					}
+            				
+
+            					newCompositeNode(grammarAccess.getSecurityModelAccess().getSourceDataModelCrossReference_1_0());
             				
             pushFollow(FOLLOW_4);
-            lv_name_2_0=ruleEString();
+            ruleEString();
 
             state._fsp--;
 
 
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getSecurityModelRule());
-            					}
-            					set(
-            						current,
-            						"name",
-            						lv_name_2_0,
-            						"xtext.Securitymodels.EString");
             					afterParserOrEnumRuleCall();
             				
 
@@ -207,21 +201,136 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,12,FOLLOW_5); 
+            // InternalSecuritymodels.g:100:3: (otherlv_2= 'protect' ( (lv_resources_3_0= ruleProtectedResource ) ) (otherlv_4= 'protect' ( (lv_resources_5_0= ruleProtectedResource ) ) )* )?
+            int alt2=2;
+            int LA2_0 = input.LA(1);
 
-            			newLeafNode(otherlv_3, grammarAccess.getSecurityModelAccess().getProtectedKeyword_3());
+            if ( (LA2_0==12) ) {
+                alt2=1;
+            }
+            switch (alt2) {
+                case 1 :
+                    // InternalSecuritymodels.g:101:4: otherlv_2= 'protect' ( (lv_resources_3_0= ruleProtectedResource ) ) (otherlv_4= 'protect' ( (lv_resources_5_0= ruleProtectedResource ) ) )*
+                    {
+                    otherlv_2=(Token)match(input,12,FOLLOW_3); 
+
+                    				newLeafNode(otherlv_2, grammarAccess.getSecurityModelAccess().getProtectKeyword_2_0());
+                    			
+                    // InternalSecuritymodels.g:105:4: ( (lv_resources_3_0= ruleProtectedResource ) )
+                    // InternalSecuritymodels.g:106:5: (lv_resources_3_0= ruleProtectedResource )
+                    {
+                    // InternalSecuritymodels.g:106:5: (lv_resources_3_0= ruleProtectedResource )
+                    // InternalSecuritymodels.g:107:6: lv_resources_3_0= ruleProtectedResource
+                    {
+
+                    						newCompositeNode(grammarAccess.getSecurityModelAccess().getResourcesProtectedResourceParserRuleCall_2_1_0());
+                    					
+                    pushFollow(FOLLOW_4);
+                    lv_resources_3_0=ruleProtectedResource();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getSecurityModelRule());
+                    						}
+                    						add(
+                    							current,
+                    							"resources",
+                    							lv_resources_3_0,
+                    							"xtext.Securitymodels.ProtectedResource");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+                    // InternalSecuritymodels.g:124:4: (otherlv_4= 'protect' ( (lv_resources_5_0= ruleProtectedResource ) ) )*
+                    loop1:
+                    do {
+                        int alt1=2;
+                        int LA1_0 = input.LA(1);
+
+                        if ( (LA1_0==12) ) {
+                            alt1=1;
+                        }
+
+
+                        switch (alt1) {
+                    	case 1 :
+                    	    // InternalSecuritymodels.g:125:5: otherlv_4= 'protect' ( (lv_resources_5_0= ruleProtectedResource ) )
+                    	    {
+                    	    otherlv_4=(Token)match(input,12,FOLLOW_3); 
+
+                    	    					newLeafNode(otherlv_4, grammarAccess.getSecurityModelAccess().getProtectKeyword_2_2_0());
+                    	    				
+                    	    // InternalSecuritymodels.g:129:5: ( (lv_resources_5_0= ruleProtectedResource ) )
+                    	    // InternalSecuritymodels.g:130:6: (lv_resources_5_0= ruleProtectedResource )
+                    	    {
+                    	    // InternalSecuritymodels.g:130:6: (lv_resources_5_0= ruleProtectedResource )
+                    	    // InternalSecuritymodels.g:131:7: lv_resources_5_0= ruleProtectedResource
+                    	    {
+
+                    	    							newCompositeNode(grammarAccess.getSecurityModelAccess().getResourcesProtectedResourceParserRuleCall_2_2_1_0());
+                    	    						
+                    	    pushFollow(FOLLOW_4);
+                    	    lv_resources_5_0=ruleProtectedResource();
+
+                    	    state._fsp--;
+
+
+                    	    							if (current==null) {
+                    	    								current = createModelElementForParent(grammarAccess.getSecurityModelRule());
+                    	    							}
+                    	    							add(
+                    	    								current,
+                    	    								"resources",
+                    	    								lv_resources_5_0,
+                    	    								"xtext.Securitymodels.ProtectedResource");
+                    	    							afterParserOrEnumRuleCall();
+                    	    						
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop1;
+                        }
+                    } while (true);
+
+
+                    }
+                    break;
+
+            }
+
+            otherlv_6=(Token)match(input,13,FOLLOW_5); 
+
+            			newLeafNode(otherlv_6, grammarAccess.getSecurityModelAccess().getRolesKeyword_3());
             		
-            // InternalSecuritymodels.g:114:3: ( (lv_resources_4_0= ruleProtectedResource ) )
-            // InternalSecuritymodels.g:115:4: (lv_resources_4_0= ruleProtectedResource )
+            otherlv_7=(Token)match(input,14,FOLLOW_3); 
+
+            			newLeafNode(otherlv_7, grammarAccess.getSecurityModelAccess().getLeftCurlyBracketKeyword_4());
+            		
+            // InternalSecuritymodels.g:158:3: ( (lv_roles_8_0= ruleRole ) )
+            // InternalSecuritymodels.g:159:4: (lv_roles_8_0= ruleRole )
             {
-            // InternalSecuritymodels.g:115:4: (lv_resources_4_0= ruleProtectedResource )
-            // InternalSecuritymodels.g:116:5: lv_resources_4_0= ruleProtectedResource
+            // InternalSecuritymodels.g:159:4: (lv_roles_8_0= ruleRole )
+            // InternalSecuritymodels.g:160:5: lv_roles_8_0= ruleRole
             {
 
-            					newCompositeNode(grammarAccess.getSecurityModelAccess().getResourcesProtectedResourceParserRuleCall_4_0());
+            					newCompositeNode(grammarAccess.getSecurityModelAccess().getRolesRoleParserRuleCall_5_0());
             				
             pushFollow(FOLLOW_6);
-            lv_resources_4_0=ruleProtectedResource();
+            lv_roles_8_0=ruleRole();
 
             state._fsp--;
 
@@ -231,9 +340,9 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
             					}
             					add(
             						current,
-            						"resources",
-            						lv_resources_4_0,
-            						"xtext.Securitymodels.ProtectedResource");
+            						"roles",
+            						lv_roles_8_0,
+            						"xtext.Securitymodels.Role");
             					afterParserOrEnumRuleCall();
             				
 
@@ -242,36 +351,36 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSecuritymodels.g:133:3: (otherlv_5= ',' ( (lv_resources_6_0= ruleProtectedResource ) ) )*
-            loop1:
+            // InternalSecuritymodels.g:177:3: (otherlv_9= ',' ( (lv_roles_10_0= ruleRole ) ) )*
+            loop3:
             do {
-                int alt1=2;
-                int LA1_0 = input.LA(1);
+                int alt3=2;
+                int LA3_0 = input.LA(1);
 
-                if ( (LA1_0==13) ) {
-                    alt1=1;
+                if ( (LA3_0==15) ) {
+                    alt3=1;
                 }
 
 
-                switch (alt1) {
+                switch (alt3) {
             	case 1 :
-            	    // InternalSecuritymodels.g:134:4: otherlv_5= ',' ( (lv_resources_6_0= ruleProtectedResource ) )
+            	    // InternalSecuritymodels.g:178:4: otherlv_9= ',' ( (lv_roles_10_0= ruleRole ) )
             	    {
-            	    otherlv_5=(Token)match(input,13,FOLLOW_5); 
+            	    otherlv_9=(Token)match(input,15,FOLLOW_3); 
 
-            	    				newLeafNode(otherlv_5, grammarAccess.getSecurityModelAccess().getCommaKeyword_5_0());
+            	    				newLeafNode(otherlv_9, grammarAccess.getSecurityModelAccess().getCommaKeyword_6_0());
             	    			
-            	    // InternalSecuritymodels.g:138:4: ( (lv_resources_6_0= ruleProtectedResource ) )
-            	    // InternalSecuritymodels.g:139:5: (lv_resources_6_0= ruleProtectedResource )
+            	    // InternalSecuritymodels.g:182:4: ( (lv_roles_10_0= ruleRole ) )
+            	    // InternalSecuritymodels.g:183:5: (lv_roles_10_0= ruleRole )
             	    {
-            	    // InternalSecuritymodels.g:139:5: (lv_resources_6_0= ruleProtectedResource )
-            	    // InternalSecuritymodels.g:140:6: lv_resources_6_0= ruleProtectedResource
+            	    // InternalSecuritymodels.g:183:5: (lv_roles_10_0= ruleRole )
+            	    // InternalSecuritymodels.g:184:6: lv_roles_10_0= ruleRole
             	    {
 
-            	    						newCompositeNode(grammarAccess.getSecurityModelAccess().getResourcesProtectedResourceParserRuleCall_5_1_0());
+            	    						newCompositeNode(grammarAccess.getSecurityModelAccess().getRolesRoleParserRuleCall_6_1_0());
             	    					
             	    pushFollow(FOLLOW_6);
-            	    lv_resources_6_0=ruleProtectedResource();
+            	    lv_roles_10_0=ruleRole();
 
             	    state._fsp--;
 
@@ -281,9 +390,9 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
             	    						}
             	    						add(
             	    							current,
-            	    							"resources",
-            	    							lv_resources_6_0,
-            	    							"xtext.Securitymodels.ProtectedResource");
+            	    							"roles",
+            	    							lv_roles_10_0,
+            	    							"xtext.Securitymodels.Role");
             	    						afterParserOrEnumRuleCall();
             	    					
 
@@ -297,121 +406,111 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop1;
+            	    break loop3;
                 }
             } while (true);
 
-            otherlv_7=(Token)match(input,14,FOLLOW_3); 
+            otherlv_11=(Token)match(input,16,FOLLOW_7); 
 
-            			newLeafNode(otherlv_7, grammarAccess.getSecurityModelAccess().getRolesKeyword_6());
+            			newLeafNode(otherlv_11, grammarAccess.getSecurityModelAccess().getRightCurlyBracketKeyword_7());
             		
-            // InternalSecuritymodels.g:162:3: ( (lv_roles_8_0= ruleRole ) )+
-            int cnt2=0;
-            loop2:
-            do {
-                int alt2=2;
-                int LA2_0 = input.LA(1);
+            // InternalSecuritymodels.g:206:3: (otherlv_12= 'rules' otherlv_13= '{' ( (lv_rules_14_0= ruleRule ) ) (otherlv_15= ',' ( (lv_rules_16_0= ruleRule ) ) )* otherlv_17= '}' )?
+            int alt5=2;
+            int LA5_0 = input.LA(1);
 
-                if ( ((LA2_0>=RULE_STRING && LA2_0<=RULE_ID)) ) {
-                    alt2=1;
-                }
-
-
-                switch (alt2) {
-            	case 1 :
-            	    // InternalSecuritymodels.g:163:4: (lv_roles_8_0= ruleRole )
-            	    {
-            	    // InternalSecuritymodels.g:163:4: (lv_roles_8_0= ruleRole )
-            	    // InternalSecuritymodels.g:164:5: lv_roles_8_0= ruleRole
-            	    {
-
-            	    					newCompositeNode(grammarAccess.getSecurityModelAccess().getRolesRoleParserRuleCall_7_0());
-            	    				
-            	    pushFollow(FOLLOW_7);
-            	    lv_roles_8_0=ruleRole();
-
-            	    state._fsp--;
-
-
-            	    					if (current==null) {
-            	    						current = createModelElementForParent(grammarAccess.getSecurityModelRule());
-            	    					}
-            	    					add(
-            	    						current,
-            	    						"roles",
-            	    						lv_roles_8_0,
-            	    						"xtext.Securitymodels.Role");
-            	    					afterParserOrEnumRuleCall();
-            	    				
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    if ( cnt2 >= 1 ) break loop2;
-                        EarlyExitException eee =
-                            new EarlyExitException(2, input);
-                        throw eee;
-                }
-                cnt2++;
-            } while (true);
-
-            // InternalSecuritymodels.g:181:3: (otherlv_9= 'rules:' ( (lv_rules_10_0= ruleRule ) )+ )?
-            int alt4=2;
-            int LA4_0 = input.LA(1);
-
-            if ( (LA4_0==15) ) {
-                alt4=1;
+            if ( (LA5_0==17) ) {
+                alt5=1;
             }
-            switch (alt4) {
+            switch (alt5) {
                 case 1 :
-                    // InternalSecuritymodels.g:182:4: otherlv_9= 'rules:' ( (lv_rules_10_0= ruleRule ) )+
+                    // InternalSecuritymodels.g:207:4: otherlv_12= 'rules' otherlv_13= '{' ( (lv_rules_14_0= ruleRule ) ) (otherlv_15= ',' ( (lv_rules_16_0= ruleRule ) ) )* otherlv_17= '}'
                     {
-                    otherlv_9=(Token)match(input,15,FOLLOW_3); 
+                    otherlv_12=(Token)match(input,17,FOLLOW_5); 
 
-                    				newLeafNode(otherlv_9, grammarAccess.getSecurityModelAccess().getRulesKeyword_8_0());
+                    				newLeafNode(otherlv_12, grammarAccess.getSecurityModelAccess().getRulesKeyword_8_0());
                     			
-                    // InternalSecuritymodels.g:186:4: ( (lv_rules_10_0= ruleRule ) )+
-                    int cnt3=0;
-                    loop3:
-                    do {
-                        int alt3=2;
-                        int LA3_0 = input.LA(1);
+                    otherlv_13=(Token)match(input,14,FOLLOW_8); 
 
-                        if ( ((LA3_0>=RULE_STRING && LA3_0<=RULE_ID)) ) {
-                            alt3=1;
+                    				newLeafNode(otherlv_13, grammarAccess.getSecurityModelAccess().getLeftCurlyBracketKeyword_8_1());
+                    			
+                    // InternalSecuritymodels.g:215:4: ( (lv_rules_14_0= ruleRule ) )
+                    // InternalSecuritymodels.g:216:5: (lv_rules_14_0= ruleRule )
+                    {
+                    // InternalSecuritymodels.g:216:5: (lv_rules_14_0= ruleRule )
+                    // InternalSecuritymodels.g:217:6: lv_rules_14_0= ruleRule
+                    {
+
+                    						newCompositeNode(grammarAccess.getSecurityModelAccess().getRulesRuleParserRuleCall_8_2_0());
+                    					
+                    pushFollow(FOLLOW_6);
+                    lv_rules_14_0=ruleRule();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getSecurityModelRule());
+                    						}
+                    						add(
+                    							current,
+                    							"rules",
+                    							lv_rules_14_0,
+                    							"xtext.Securitymodels.Rule");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+                    // InternalSecuritymodels.g:234:4: (otherlv_15= ',' ( (lv_rules_16_0= ruleRule ) ) )*
+                    loop4:
+                    do {
+                        int alt4=2;
+                        int LA4_0 = input.LA(1);
+
+                        if ( (LA4_0==15) ) {
+                            alt4=1;
                         }
 
 
-                        switch (alt3) {
+                        switch (alt4) {
                     	case 1 :
-                    	    // InternalSecuritymodels.g:187:5: (lv_rules_10_0= ruleRule )
+                    	    // InternalSecuritymodels.g:235:5: otherlv_15= ',' ( (lv_rules_16_0= ruleRule ) )
                     	    {
-                    	    // InternalSecuritymodels.g:187:5: (lv_rules_10_0= ruleRule )
-                    	    // InternalSecuritymodels.g:188:6: lv_rules_10_0= ruleRule
+                    	    otherlv_15=(Token)match(input,15,FOLLOW_8); 
+
+                    	    					newLeafNode(otherlv_15, grammarAccess.getSecurityModelAccess().getCommaKeyword_8_3_0());
+                    	    				
+                    	    // InternalSecuritymodels.g:239:5: ( (lv_rules_16_0= ruleRule ) )
+                    	    // InternalSecuritymodels.g:240:6: (lv_rules_16_0= ruleRule )
+                    	    {
+                    	    // InternalSecuritymodels.g:240:6: (lv_rules_16_0= ruleRule )
+                    	    // InternalSecuritymodels.g:241:7: lv_rules_16_0= ruleRule
                     	    {
 
-                    	    						newCompositeNode(grammarAccess.getSecurityModelAccess().getRulesRuleParserRuleCall_8_1_0());
-                    	    					
-                    	    pushFollow(FOLLOW_8);
-                    	    lv_rules_10_0=ruleRule();
+                    	    							newCompositeNode(grammarAccess.getSecurityModelAccess().getRulesRuleParserRuleCall_8_3_1_0());
+                    	    						
+                    	    pushFollow(FOLLOW_6);
+                    	    lv_rules_16_0=ruleRule();
 
                     	    state._fsp--;
 
 
-                    	    						if (current==null) {
-                    	    							current = createModelElementForParent(grammarAccess.getSecurityModelRule());
-                    	    						}
-                    	    						add(
-                    	    							current,
-                    	    							"rules",
-                    	    							lv_rules_10_0,
-                    	    							"xtext.Securitymodels.Rule");
-                    	    						afterParserOrEnumRuleCall();
-                    	    					
+                    	    							if (current==null) {
+                    	    								current = createModelElementForParent(grammarAccess.getSecurityModelRule());
+                    	    							}
+                    	    							add(
+                    	    								current,
+                    	    								"rules",
+                    	    								lv_rules_16_0,
+                    	    								"xtext.Securitymodels.Rule");
+                    	    							afterParserOrEnumRuleCall();
+                    	    						
+
+                    	    }
+
 
                     	    }
 
@@ -420,14 +519,14 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    if ( cnt3 >= 1 ) break loop3;
-                                EarlyExitException eee =
-                                    new EarlyExitException(3, input);
-                                throw eee;
+                    	    break loop4;
                         }
-                        cnt3++;
                     } while (true);
 
+                    otherlv_17=(Token)match(input,16,FOLLOW_2); 
+
+                    				newLeafNode(otherlv_17, grammarAccess.getSecurityModelAccess().getRightCurlyBracketKeyword_8_4());
+                    			
 
                     }
                     break;
@@ -457,7 +556,7 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEString"
-    // InternalSecuritymodels.g:210:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    // InternalSecuritymodels.g:268:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
     public final String entryRuleEString() throws RecognitionException {
         String current = null;
 
@@ -465,8 +564,8 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSecuritymodels.g:210:47: (iv_ruleEString= ruleEString EOF )
-            // InternalSecuritymodels.g:211:2: iv_ruleEString= ruleEString EOF
+            // InternalSecuritymodels.g:268:47: (iv_ruleEString= ruleEString EOF )
+            // InternalSecuritymodels.g:269:2: iv_ruleEString= ruleEString EOF
             {
              newCompositeNode(grammarAccess.getEStringRule()); 
             pushFollow(FOLLOW_1);
@@ -493,7 +592,7 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEString"
-    // InternalSecuritymodels.g:217:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
+    // InternalSecuritymodels.g:275:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -504,28 +603,28 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSecuritymodels.g:223:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
-            // InternalSecuritymodels.g:224:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // InternalSecuritymodels.g:281:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
+            // InternalSecuritymodels.g:282:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             {
-            // InternalSecuritymodels.g:224:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
-            int alt5=2;
-            int LA5_0 = input.LA(1);
+            // InternalSecuritymodels.g:282:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            int alt6=2;
+            int LA6_0 = input.LA(1);
 
-            if ( (LA5_0==RULE_STRING) ) {
-                alt5=1;
+            if ( (LA6_0==RULE_STRING) ) {
+                alt6=1;
             }
-            else if ( (LA5_0==RULE_ID) ) {
-                alt5=2;
+            else if ( (LA6_0==RULE_ID) ) {
+                alt6=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 5, 0, input);
+                    new NoViableAltException("", 6, 0, input);
 
                 throw nvae;
             }
-            switch (alt5) {
+            switch (alt6) {
                 case 1 :
-                    // InternalSecuritymodels.g:225:3: this_STRING_0= RULE_STRING
+                    // InternalSecuritymodels.g:283:3: this_STRING_0= RULE_STRING
                     {
                     this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -538,7 +637,7 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSecuritymodels.g:233:3: this_ID_1= RULE_ID
+                    // InternalSecuritymodels.g:291:3: this_ID_1= RULE_ID
                     {
                     this_ID_1=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -573,7 +672,7 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRule"
-    // InternalSecuritymodels.g:244:1: entryRuleRule returns [EObject current=null] : iv_ruleRule= ruleRule EOF ;
+    // InternalSecuritymodels.g:302:1: entryRuleRule returns [EObject current=null] : iv_ruleRule= ruleRule EOF ;
     public final EObject entryRuleRule() throws RecognitionException {
         EObject current = null;
 
@@ -581,8 +680,8 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSecuritymodels.g:244:45: (iv_ruleRule= ruleRule EOF )
-            // InternalSecuritymodels.g:245:2: iv_ruleRule= ruleRule EOF
+            // InternalSecuritymodels.g:302:45: (iv_ruleRule= ruleRule EOF )
+            // InternalSecuritymodels.g:303:2: iv_ruleRule= ruleRule EOF
             {
              newCompositeNode(grammarAccess.getRuleRule()); 
             pushFollow(FOLLOW_1);
@@ -609,45 +708,55 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRule"
-    // InternalSecuritymodels.g:251:1: ruleRule returns [EObject current=null] : ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= ':' ( (lv_action_2_0= ruleAction ) ) otherlv_3= 'conditions' (otherlv_4= '{' ( (lv_auths_5_0= ruleAuth ) ) (otherlv_6= 'or' ( (lv_auths_7_0= ruleAuth ) ) )* otherlv_8= '}' )? ) ;
+    // InternalSecuritymodels.g:309:1: ruleRule returns [EObject current=null] : (otherlv_0= 'Rule' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'action' ( (lv_action_4_0= ruleAction ) ) otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' otherlv_10= 'auths' otherlv_11= '{' ( (lv_auths_12_0= ruleAuth ) ) (otherlv_13= ',' ( (lv_auths_14_0= ruleAuth ) ) )* otherlv_15= '}' otherlv_16= '}' ) ;
     public final EObject ruleRule() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_1=null;
+        Token otherlv_0=null;
+        Token otherlv_2=null;
         Token otherlv_3=null;
-        Token otherlv_4=null;
-        Token otherlv_6=null;
-        Token otherlv_8=null;
-        AntlrDatatypeRuleToken lv_name_0_0 = null;
+        Token otherlv_5=null;
+        Token otherlv_7=null;
+        Token otherlv_9=null;
+        Token otherlv_10=null;
+        Token otherlv_11=null;
+        Token otherlv_13=null;
+        Token otherlv_15=null;
+        Token otherlv_16=null;
+        AntlrDatatypeRuleToken lv_name_1_0 = null;
 
-        Enumerator lv_action_2_0 = null;
+        Enumerator lv_action_4_0 = null;
 
-        EObject lv_auths_5_0 = null;
+        EObject lv_auths_12_0 = null;
 
-        EObject lv_auths_7_0 = null;
+        EObject lv_auths_14_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSecuritymodels.g:257:2: ( ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= ':' ( (lv_action_2_0= ruleAction ) ) otherlv_3= 'conditions' (otherlv_4= '{' ( (lv_auths_5_0= ruleAuth ) ) (otherlv_6= 'or' ( (lv_auths_7_0= ruleAuth ) ) )* otherlv_8= '}' )? ) )
-            // InternalSecuritymodels.g:258:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= ':' ( (lv_action_2_0= ruleAction ) ) otherlv_3= 'conditions' (otherlv_4= '{' ( (lv_auths_5_0= ruleAuth ) ) (otherlv_6= 'or' ( (lv_auths_7_0= ruleAuth ) ) )* otherlv_8= '}' )? )
+            // InternalSecuritymodels.g:315:2: ( (otherlv_0= 'Rule' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'action' ( (lv_action_4_0= ruleAction ) ) otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' otherlv_10= 'auths' otherlv_11= '{' ( (lv_auths_12_0= ruleAuth ) ) (otherlv_13= ',' ( (lv_auths_14_0= ruleAuth ) ) )* otherlv_15= '}' otherlv_16= '}' ) )
+            // InternalSecuritymodels.g:316:2: (otherlv_0= 'Rule' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'action' ( (lv_action_4_0= ruleAction ) ) otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' otherlv_10= 'auths' otherlv_11= '{' ( (lv_auths_12_0= ruleAuth ) ) (otherlv_13= ',' ( (lv_auths_14_0= ruleAuth ) ) )* otherlv_15= '}' otherlv_16= '}' )
             {
-            // InternalSecuritymodels.g:258:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= ':' ( (lv_action_2_0= ruleAction ) ) otherlv_3= 'conditions' (otherlv_4= '{' ( (lv_auths_5_0= ruleAuth ) ) (otherlv_6= 'or' ( (lv_auths_7_0= ruleAuth ) ) )* otherlv_8= '}' )? )
-            // InternalSecuritymodels.g:259:3: ( (lv_name_0_0= ruleEString ) ) otherlv_1= ':' ( (lv_action_2_0= ruleAction ) ) otherlv_3= 'conditions' (otherlv_4= '{' ( (lv_auths_5_0= ruleAuth ) ) (otherlv_6= 'or' ( (lv_auths_7_0= ruleAuth ) ) )* otherlv_8= '}' )?
+            // InternalSecuritymodels.g:316:2: (otherlv_0= 'Rule' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'action' ( (lv_action_4_0= ruleAction ) ) otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' otherlv_10= 'auths' otherlv_11= '{' ( (lv_auths_12_0= ruleAuth ) ) (otherlv_13= ',' ( (lv_auths_14_0= ruleAuth ) ) )* otherlv_15= '}' otherlv_16= '}' )
+            // InternalSecuritymodels.g:317:3: otherlv_0= 'Rule' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'action' ( (lv_action_4_0= ruleAction ) ) otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' otherlv_10= 'auths' otherlv_11= '{' ( (lv_auths_12_0= ruleAuth ) ) (otherlv_13= ',' ( (lv_auths_14_0= ruleAuth ) ) )* otherlv_15= '}' otherlv_16= '}'
             {
-            // InternalSecuritymodels.g:259:3: ( (lv_name_0_0= ruleEString ) )
-            // InternalSecuritymodels.g:260:4: (lv_name_0_0= ruleEString )
+            otherlv_0=(Token)match(input,18,FOLLOW_3); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getRuleAccess().getRuleKeyword_0());
+            		
+            // InternalSecuritymodels.g:321:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalSecuritymodels.g:322:4: (lv_name_1_0= ruleEString )
             {
-            // InternalSecuritymodels.g:260:4: (lv_name_0_0= ruleEString )
-            // InternalSecuritymodels.g:261:5: lv_name_0_0= ruleEString
+            // InternalSecuritymodels.g:322:4: (lv_name_1_0= ruleEString )
+            // InternalSecuritymodels.g:323:5: lv_name_1_0= ruleEString
             {
 
-            					newCompositeNode(grammarAccess.getRuleAccess().getNameEStringParserRuleCall_0_0());
+            					newCompositeNode(grammarAccess.getRuleAccess().getNameEStringParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_9);
-            lv_name_0_0=ruleEString();
+            pushFollow(FOLLOW_5);
+            lv_name_1_0=ruleEString();
 
             state._fsp--;
 
@@ -658,7 +767,7 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"name",
-            						lv_name_0_0,
+            						lv_name_1_0,
             						"xtext.Securitymodels.EString");
             					afterParserOrEnumRuleCall();
             				
@@ -668,21 +777,25 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,16,FOLLOW_10); 
+            otherlv_2=(Token)match(input,14,FOLLOW_9); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getRuleAccess().getColonKeyword_1());
+            			newLeafNode(otherlv_2, grammarAccess.getRuleAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalSecuritymodels.g:282:3: ( (lv_action_2_0= ruleAction ) )
-            // InternalSecuritymodels.g:283:4: (lv_action_2_0= ruleAction )
+            otherlv_3=(Token)match(input,19,FOLLOW_10); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getRuleAccess().getActionKeyword_3());
+            		
+            // InternalSecuritymodels.g:348:3: ( (lv_action_4_0= ruleAction ) )
+            // InternalSecuritymodels.g:349:4: (lv_action_4_0= ruleAction )
             {
-            // InternalSecuritymodels.g:283:4: (lv_action_2_0= ruleAction )
-            // InternalSecuritymodels.g:284:5: lv_action_2_0= ruleAction
+            // InternalSecuritymodels.g:349:4: (lv_action_4_0= ruleAction )
+            // InternalSecuritymodels.g:350:5: lv_action_4_0= ruleAction
             {
 
-            					newCompositeNode(grammarAccess.getRuleAccess().getActionActionEnumRuleCall_2_0());
+            					newCompositeNode(grammarAccess.getRuleAccess().getActionActionEnumRuleCall_4_0());
             				
             pushFollow(FOLLOW_11);
-            lv_action_2_0=ruleAction();
+            lv_action_4_0=ruleAction();
 
             state._fsp--;
 
@@ -693,7 +806,7 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"action",
-            						lv_action_2_0,
+            						lv_action_4_0,
             						"xtext.Securitymodels.Action");
             					afterParserOrEnumRuleCall();
             				
@@ -703,125 +816,204 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,17,FOLLOW_12); 
+            otherlv_5=(Token)match(input,20,FOLLOW_3); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getRuleAccess().getConditionsKeyword_3());
+            			newLeafNode(otherlv_5, grammarAccess.getRuleAccess().getLeftParenthesisKeyword_5());
             		
-            // InternalSecuritymodels.g:305:3: (otherlv_4= '{' ( (lv_auths_5_0= ruleAuth ) ) (otherlv_6= 'or' ( (lv_auths_7_0= ruleAuth ) ) )* otherlv_8= '}' )?
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+            // InternalSecuritymodels.g:371:3: ( ( ruleEString ) )
+            // InternalSecuritymodels.g:372:4: ( ruleEString )
+            {
+            // InternalSecuritymodels.g:372:4: ( ruleEString )
+            // InternalSecuritymodels.g:373:5: ruleEString
+            {
 
-            if ( (LA7_0==18) ) {
-                alt7=1;
-            }
-            switch (alt7) {
-                case 1 :
-                    // InternalSecuritymodels.g:306:4: otherlv_4= '{' ( (lv_auths_5_0= ruleAuth ) ) (otherlv_6= 'or' ( (lv_auths_7_0= ruleAuth ) ) )* otherlv_8= '}'
-                    {
-                    otherlv_4=(Token)match(input,18,FOLLOW_13); 
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getRuleRule());
+            					}
+            				
 
-                    				newLeafNode(otherlv_4, grammarAccess.getRuleAccess().getLeftCurlyBracketKeyword_4_0());
-                    			
-                    // InternalSecuritymodels.g:310:4: ( (lv_auths_5_0= ruleAuth ) )
-                    // InternalSecuritymodels.g:311:5: (lv_auths_5_0= ruleAuth )
-                    {
-                    // InternalSecuritymodels.g:311:5: (lv_auths_5_0= ruleAuth )
-                    // InternalSecuritymodels.g:312:6: lv_auths_5_0= ruleAuth
-                    {
+            					newCompositeNode(grammarAccess.getRuleAccess().getProtectedResourcesProtectedResourceCrossReference_6_0());
+            				
+            pushFollow(FOLLOW_12);
+            ruleEString();
 
-                    						newCompositeNode(grammarAccess.getRuleAccess().getAuthsAuthParserRuleCall_4_1_0());
-                    					
-                    pushFollow(FOLLOW_14);
-                    lv_auths_5_0=ruleAuth();
-
-                    state._fsp--;
+            state._fsp--;
 
 
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getRuleRule());
-                    						}
-                    						add(
-                    							current,
-                    							"auths",
-                    							lv_auths_5_0,
-                    							"xtext.Securitymodels.Auth");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-                    // InternalSecuritymodels.g:329:4: (otherlv_6= 'or' ( (lv_auths_7_0= ruleAuth ) ) )*
-                    loop6:
-                    do {
-                        int alt6=2;
-                        int LA6_0 = input.LA(1);
-
-                        if ( (LA6_0==19) ) {
-                            alt6=1;
-                        }
-
-
-                        switch (alt6) {
-                    	case 1 :
-                    	    // InternalSecuritymodels.g:330:5: otherlv_6= 'or' ( (lv_auths_7_0= ruleAuth ) )
-                    	    {
-                    	    otherlv_6=(Token)match(input,19,FOLLOW_13); 
-
-                    	    					newLeafNode(otherlv_6, grammarAccess.getRuleAccess().getOrKeyword_4_2_0());
-                    	    				
-                    	    // InternalSecuritymodels.g:334:5: ( (lv_auths_7_0= ruleAuth ) )
-                    	    // InternalSecuritymodels.g:335:6: (lv_auths_7_0= ruleAuth )
-                    	    {
-                    	    // InternalSecuritymodels.g:335:6: (lv_auths_7_0= ruleAuth )
-                    	    // InternalSecuritymodels.g:336:7: lv_auths_7_0= ruleAuth
-                    	    {
-
-                    	    							newCompositeNode(grammarAccess.getRuleAccess().getAuthsAuthParserRuleCall_4_2_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_14);
-                    	    lv_auths_7_0=ruleAuth();
-
-                    	    state._fsp--;
-
-
-                    	    							if (current==null) {
-                    	    								current = createModelElementForParent(grammarAccess.getRuleRule());
-                    	    							}
-                    	    							add(
-                    	    								current,
-                    	    								"auths",
-                    	    								lv_auths_7_0,
-                    	    								"xtext.Securitymodels.Auth");
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop6;
-                        }
-                    } while (true);
-
-                    otherlv_8=(Token)match(input,20,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_8, grammarAccess.getRuleAccess().getRightCurlyBracketKeyword_4_3());
-                    			
-
-                    }
-                    break;
+            					afterParserOrEnumRuleCall();
+            				
 
             }
 
+
+            }
+
+            // InternalSecuritymodels.g:387:3: (otherlv_7= ',' ( ( ruleEString ) ) )*
+            loop7:
+            do {
+                int alt7=2;
+                int LA7_0 = input.LA(1);
+
+                if ( (LA7_0==15) ) {
+                    alt7=1;
+                }
+
+
+                switch (alt7) {
+            	case 1 :
+            	    // InternalSecuritymodels.g:388:4: otherlv_7= ',' ( ( ruleEString ) )
+            	    {
+            	    otherlv_7=(Token)match(input,15,FOLLOW_3); 
+
+            	    				newLeafNode(otherlv_7, grammarAccess.getRuleAccess().getCommaKeyword_7_0());
+            	    			
+            	    // InternalSecuritymodels.g:392:4: ( ( ruleEString ) )
+            	    // InternalSecuritymodels.g:393:5: ( ruleEString )
+            	    {
+            	    // InternalSecuritymodels.g:393:5: ( ruleEString )
+            	    // InternalSecuritymodels.g:394:6: ruleEString
+            	    {
+
+            	    						if (current==null) {
+            	    							current = createModelElement(grammarAccess.getRuleRule());
+            	    						}
+            	    					
+
+            	    						newCompositeNode(grammarAccess.getRuleAccess().getProtectedResourcesProtectedResourceCrossReference_7_1_0());
+            	    					
+            	    pushFollow(FOLLOW_12);
+            	    ruleEString();
+
+            	    state._fsp--;
+
+
+            	    						afterParserOrEnumRuleCall();
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop7;
+                }
+            } while (true);
+
+            otherlv_9=(Token)match(input,21,FOLLOW_13); 
+
+            			newLeafNode(otherlv_9, grammarAccess.getRuleAccess().getRightParenthesisKeyword_8());
+            		
+            otherlv_10=(Token)match(input,22,FOLLOW_5); 
+
+            			newLeafNode(otherlv_10, grammarAccess.getRuleAccess().getAuthsKeyword_9());
+            		
+            otherlv_11=(Token)match(input,14,FOLLOW_14); 
+
+            			newLeafNode(otherlv_11, grammarAccess.getRuleAccess().getLeftCurlyBracketKeyword_10());
+            		
+            // InternalSecuritymodels.g:421:3: ( (lv_auths_12_0= ruleAuth ) )
+            // InternalSecuritymodels.g:422:4: (lv_auths_12_0= ruleAuth )
+            {
+            // InternalSecuritymodels.g:422:4: (lv_auths_12_0= ruleAuth )
+            // InternalSecuritymodels.g:423:5: lv_auths_12_0= ruleAuth
+            {
+
+            					newCompositeNode(grammarAccess.getRuleAccess().getAuthsAuthParserRuleCall_11_0());
+            				
+            pushFollow(FOLLOW_6);
+            lv_auths_12_0=ruleAuth();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getRuleRule());
+            					}
+            					add(
+            						current,
+            						"auths",
+            						lv_auths_12_0,
+            						"xtext.Securitymodels.Auth");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            // InternalSecuritymodels.g:440:3: (otherlv_13= ',' ( (lv_auths_14_0= ruleAuth ) ) )*
+            loop8:
+            do {
+                int alt8=2;
+                int LA8_0 = input.LA(1);
+
+                if ( (LA8_0==15) ) {
+                    alt8=1;
+                }
+
+
+                switch (alt8) {
+            	case 1 :
+            	    // InternalSecuritymodels.g:441:4: otherlv_13= ',' ( (lv_auths_14_0= ruleAuth ) )
+            	    {
+            	    otherlv_13=(Token)match(input,15,FOLLOW_14); 
+
+            	    				newLeafNode(otherlv_13, grammarAccess.getRuleAccess().getCommaKeyword_12_0());
+            	    			
+            	    // InternalSecuritymodels.g:445:4: ( (lv_auths_14_0= ruleAuth ) )
+            	    // InternalSecuritymodels.g:446:5: (lv_auths_14_0= ruleAuth )
+            	    {
+            	    // InternalSecuritymodels.g:446:5: (lv_auths_14_0= ruleAuth )
+            	    // InternalSecuritymodels.g:447:6: lv_auths_14_0= ruleAuth
+            	    {
+
+            	    						newCompositeNode(grammarAccess.getRuleAccess().getAuthsAuthParserRuleCall_12_1_0());
+            	    					
+            	    pushFollow(FOLLOW_6);
+            	    lv_auths_14_0=ruleAuth();
+
+            	    state._fsp--;
+
+
+            	    						if (current==null) {
+            	    							current = createModelElementForParent(grammarAccess.getRuleRule());
+            	    						}
+            	    						add(
+            	    							current,
+            	    							"auths",
+            	    							lv_auths_14_0,
+            	    							"xtext.Securitymodels.Auth");
+            	    						afterParserOrEnumRuleCall();
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop8;
+                }
+            } while (true);
+
+            otherlv_15=(Token)match(input,16,FOLLOW_15); 
+
+            			newLeafNode(otherlv_15, grammarAccess.getRuleAccess().getRightCurlyBracketKeyword_13());
+            		
+            otherlv_16=(Token)match(input,16,FOLLOW_2); 
+
+            			newLeafNode(otherlv_16, grammarAccess.getRuleAccess().getRightCurlyBracketKeyword_14());
+            		
 
             }
 
@@ -845,7 +1037,7 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRole"
-    // InternalSecuritymodels.g:363:1: entryRuleRole returns [EObject current=null] : iv_ruleRole= ruleRole EOF ;
+    // InternalSecuritymodels.g:477:1: entryRuleRole returns [EObject current=null] : iv_ruleRole= ruleRole EOF ;
     public final EObject entryRuleRole() throws RecognitionException {
         EObject current = null;
 
@@ -853,8 +1045,8 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSecuritymodels.g:363:45: (iv_ruleRole= ruleRole EOF )
-            // InternalSecuritymodels.g:364:2: iv_ruleRole= ruleRole EOF
+            // InternalSecuritymodels.g:477:45: (iv_ruleRole= ruleRole EOF )
+            // InternalSecuritymodels.g:478:2: iv_ruleRole= ruleRole EOF
             {
              newCompositeNode(grammarAccess.getRoleRule()); 
             pushFollow(FOLLOW_1);
@@ -881,7 +1073,7 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRole"
-    // InternalSecuritymodels.g:370:1: ruleRole returns [EObject current=null] : ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '<-' ( ( ruleEString ) ) ) ;
+    // InternalSecuritymodels.g:484:1: ruleRole returns [EObject current=null] : ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '<-' ( ( ruleEString ) ) ) ;
     public final EObject ruleRole() throws RecognitionException {
         EObject current = null;
 
@@ -893,22 +1085,22 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSecuritymodels.g:376:2: ( ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '<-' ( ( ruleEString ) ) ) )
-            // InternalSecuritymodels.g:377:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '<-' ( ( ruleEString ) ) )
+            // InternalSecuritymodels.g:490:2: ( ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '<-' ( ( ruleEString ) ) ) )
+            // InternalSecuritymodels.g:491:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '<-' ( ( ruleEString ) ) )
             {
-            // InternalSecuritymodels.g:377:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '<-' ( ( ruleEString ) ) )
-            // InternalSecuritymodels.g:378:3: ( (lv_name_0_0= ruleEString ) ) otherlv_1= '<-' ( ( ruleEString ) )
+            // InternalSecuritymodels.g:491:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '<-' ( ( ruleEString ) ) )
+            // InternalSecuritymodels.g:492:3: ( (lv_name_0_0= ruleEString ) ) otherlv_1= '<-' ( ( ruleEString ) )
             {
-            // InternalSecuritymodels.g:378:3: ( (lv_name_0_0= ruleEString ) )
-            // InternalSecuritymodels.g:379:4: (lv_name_0_0= ruleEString )
+            // InternalSecuritymodels.g:492:3: ( (lv_name_0_0= ruleEString ) )
+            // InternalSecuritymodels.g:493:4: (lv_name_0_0= ruleEString )
             {
-            // InternalSecuritymodels.g:379:4: (lv_name_0_0= ruleEString )
-            // InternalSecuritymodels.g:380:5: lv_name_0_0= ruleEString
+            // InternalSecuritymodels.g:493:4: (lv_name_0_0= ruleEString )
+            // InternalSecuritymodels.g:494:5: lv_name_0_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getRoleAccess().getNameEStringParserRuleCall_0_0());
             				
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_16);
             lv_name_0_0=ruleEString();
 
             state._fsp--;
@@ -930,15 +1122,15 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,21,FOLLOW_3); 
+            otherlv_1=(Token)match(input,23,FOLLOW_3); 
 
             			newLeafNode(otherlv_1, grammarAccess.getRoleAccess().getLessThanSignHyphenMinusKeyword_1());
             		
-            // InternalSecuritymodels.g:401:3: ( ( ruleEString ) )
-            // InternalSecuritymodels.g:402:4: ( ruleEString )
+            // InternalSecuritymodels.g:515:3: ( ( ruleEString ) )
+            // InternalSecuritymodels.g:516:4: ( ruleEString )
             {
-            // InternalSecuritymodels.g:402:4: ( ruleEString )
-            // InternalSecuritymodels.g:403:5: ruleEString
+            // InternalSecuritymodels.g:516:4: ( ruleEString )
+            // InternalSecuritymodels.g:517:5: ruleEString
             {
 
             					if (current==null) {
@@ -984,306 +1176,8 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleRole"
 
 
-    // $ANTLR start "entryRuleAuth"
-    // InternalSecuritymodels.g:421:1: entryRuleAuth returns [EObject current=null] : iv_ruleAuth= ruleAuth EOF ;
-    public final EObject entryRuleAuth() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleAuth = null;
-
-
-        try {
-            // InternalSecuritymodels.g:421:45: (iv_ruleAuth= ruleAuth EOF )
-            // InternalSecuritymodels.g:422:2: iv_ruleAuth= ruleAuth EOF
-            {
-             newCompositeNode(grammarAccess.getAuthRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleAuth=ruleAuth();
-
-            state._fsp--;
-
-             current =iv_ruleAuth; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleAuth"
-
-
-    // $ANTLR start "ruleAuth"
-    // InternalSecuritymodels.g:428:1: ruleAuth returns [EObject current=null] : (otherlv_0= '{' otherlv_1= 'roles' otherlv_2= '(' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* otherlv_6= ')' otherlv_7= 'context:' ( (lv_textual_8_0= ruleEString ) ) otherlv_9= 'ocl:' ( (lv_oclExp_10_0= ruleEString ) ) otherlv_11= 'sql:' ( (lv_sqlStm_12_0= ruleEString ) ) otherlv_13= '}' ) ;
-    public final EObject ruleAuth() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_0=null;
-        Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        Token otherlv_6=null;
-        Token otherlv_7=null;
-        Token otherlv_9=null;
-        Token otherlv_11=null;
-        Token otherlv_13=null;
-        AntlrDatatypeRuleToken lv_textual_8_0 = null;
-
-        AntlrDatatypeRuleToken lv_oclExp_10_0 = null;
-
-        AntlrDatatypeRuleToken lv_sqlStm_12_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalSecuritymodels.g:434:2: ( (otherlv_0= '{' otherlv_1= 'roles' otherlv_2= '(' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* otherlv_6= ')' otherlv_7= 'context:' ( (lv_textual_8_0= ruleEString ) ) otherlv_9= 'ocl:' ( (lv_oclExp_10_0= ruleEString ) ) otherlv_11= 'sql:' ( (lv_sqlStm_12_0= ruleEString ) ) otherlv_13= '}' ) )
-            // InternalSecuritymodels.g:435:2: (otherlv_0= '{' otherlv_1= 'roles' otherlv_2= '(' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* otherlv_6= ')' otherlv_7= 'context:' ( (lv_textual_8_0= ruleEString ) ) otherlv_9= 'ocl:' ( (lv_oclExp_10_0= ruleEString ) ) otherlv_11= 'sql:' ( (lv_sqlStm_12_0= ruleEString ) ) otherlv_13= '}' )
-            {
-            // InternalSecuritymodels.g:435:2: (otherlv_0= '{' otherlv_1= 'roles' otherlv_2= '(' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* otherlv_6= ')' otherlv_7= 'context:' ( (lv_textual_8_0= ruleEString ) ) otherlv_9= 'ocl:' ( (lv_oclExp_10_0= ruleEString ) ) otherlv_11= 'sql:' ( (lv_sqlStm_12_0= ruleEString ) ) otherlv_13= '}' )
-            // InternalSecuritymodels.g:436:3: otherlv_0= '{' otherlv_1= 'roles' otherlv_2= '(' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* otherlv_6= ')' otherlv_7= 'context:' ( (lv_textual_8_0= ruleEString ) ) otherlv_9= 'ocl:' ( (lv_oclExp_10_0= ruleEString ) ) otherlv_11= 'sql:' ( (lv_sqlStm_12_0= ruleEString ) ) otherlv_13= '}'
-            {
-            otherlv_0=(Token)match(input,18,FOLLOW_16); 
-
-            			newLeafNode(otherlv_0, grammarAccess.getAuthAccess().getLeftCurlyBracketKeyword_0());
-            		
-            otherlv_1=(Token)match(input,22,FOLLOW_5); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getAuthAccess().getRolesKeyword_1());
-            		
-            otherlv_2=(Token)match(input,23,FOLLOW_3); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getAuthAccess().getLeftParenthesisKeyword_2());
-            		
-            // InternalSecuritymodels.g:448:3: ( ( ruleEString ) )
-            // InternalSecuritymodels.g:449:4: ( ruleEString )
-            {
-            // InternalSecuritymodels.g:449:4: ( ruleEString )
-            // InternalSecuritymodels.g:450:5: ruleEString
-            {
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getAuthRule());
-            					}
-            				
-
-            					newCompositeNode(grammarAccess.getAuthAccess().getRolesRoleCrossReference_3_0());
-            				
-            pushFollow(FOLLOW_17);
-            ruleEString();
-
-            state._fsp--;
-
-
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            // InternalSecuritymodels.g:464:3: (otherlv_4= ',' ( ( ruleEString ) ) )*
-            loop8:
-            do {
-                int alt8=2;
-                int LA8_0 = input.LA(1);
-
-                if ( (LA8_0==13) ) {
-                    alt8=1;
-                }
-
-
-                switch (alt8) {
-            	case 1 :
-            	    // InternalSecuritymodels.g:465:4: otherlv_4= ',' ( ( ruleEString ) )
-            	    {
-            	    otherlv_4=(Token)match(input,13,FOLLOW_3); 
-
-            	    				newLeafNode(otherlv_4, grammarAccess.getAuthAccess().getCommaKeyword_4_0());
-            	    			
-            	    // InternalSecuritymodels.g:469:4: ( ( ruleEString ) )
-            	    // InternalSecuritymodels.g:470:5: ( ruleEString )
-            	    {
-            	    // InternalSecuritymodels.g:470:5: ( ruleEString )
-            	    // InternalSecuritymodels.g:471:6: ruleEString
-            	    {
-
-            	    						if (current==null) {
-            	    							current = createModelElement(grammarAccess.getAuthRule());
-            	    						}
-            	    					
-
-            	    						newCompositeNode(grammarAccess.getAuthAccess().getRolesRoleCrossReference_4_1_0());
-            	    					
-            	    pushFollow(FOLLOW_17);
-            	    ruleEString();
-
-            	    state._fsp--;
-
-
-            	    						afterParserOrEnumRuleCall();
-            	    					
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop8;
-                }
-            } while (true);
-
-            otherlv_6=(Token)match(input,24,FOLLOW_18); 
-
-            			newLeafNode(otherlv_6, grammarAccess.getAuthAccess().getRightParenthesisKeyword_5());
-            		
-            otherlv_7=(Token)match(input,25,FOLLOW_3); 
-
-            			newLeafNode(otherlv_7, grammarAccess.getAuthAccess().getContextKeyword_6());
-            		
-            // InternalSecuritymodels.g:494:3: ( (lv_textual_8_0= ruleEString ) )
-            // InternalSecuritymodels.g:495:4: (lv_textual_8_0= ruleEString )
-            {
-            // InternalSecuritymodels.g:495:4: (lv_textual_8_0= ruleEString )
-            // InternalSecuritymodels.g:496:5: lv_textual_8_0= ruleEString
-            {
-
-            					newCompositeNode(grammarAccess.getAuthAccess().getTextualEStringParserRuleCall_7_0());
-            				
-            pushFollow(FOLLOW_19);
-            lv_textual_8_0=ruleEString();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getAuthRule());
-            					}
-            					set(
-            						current,
-            						"textual",
-            						lv_textual_8_0,
-            						"xtext.Securitymodels.EString");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            otherlv_9=(Token)match(input,26,FOLLOW_3); 
-
-            			newLeafNode(otherlv_9, grammarAccess.getAuthAccess().getOclKeyword_8());
-            		
-            // InternalSecuritymodels.g:517:3: ( (lv_oclExp_10_0= ruleEString ) )
-            // InternalSecuritymodels.g:518:4: (lv_oclExp_10_0= ruleEString )
-            {
-            // InternalSecuritymodels.g:518:4: (lv_oclExp_10_0= ruleEString )
-            // InternalSecuritymodels.g:519:5: lv_oclExp_10_0= ruleEString
-            {
-
-            					newCompositeNode(grammarAccess.getAuthAccess().getOclExpEStringParserRuleCall_9_0());
-            				
-            pushFollow(FOLLOW_20);
-            lv_oclExp_10_0=ruleEString();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getAuthRule());
-            					}
-            					set(
-            						current,
-            						"oclExp",
-            						lv_oclExp_10_0,
-            						"xtext.Securitymodels.EString");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            otherlv_11=(Token)match(input,27,FOLLOW_3); 
-
-            			newLeafNode(otherlv_11, grammarAccess.getAuthAccess().getSqlKeyword_10());
-            		
-            // InternalSecuritymodels.g:540:3: ( (lv_sqlStm_12_0= ruleEString ) )
-            // InternalSecuritymodels.g:541:4: (lv_sqlStm_12_0= ruleEString )
-            {
-            // InternalSecuritymodels.g:541:4: (lv_sqlStm_12_0= ruleEString )
-            // InternalSecuritymodels.g:542:5: lv_sqlStm_12_0= ruleEString
-            {
-
-            					newCompositeNode(grammarAccess.getAuthAccess().getSqlStmEStringParserRuleCall_11_0());
-            				
-            pushFollow(FOLLOW_21);
-            lv_sqlStm_12_0=ruleEString();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getAuthRule());
-            					}
-            					set(
-            						current,
-            						"sqlStm",
-            						lv_sqlStm_12_0,
-            						"xtext.Securitymodels.EString");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            otherlv_13=(Token)match(input,20,FOLLOW_2); 
-
-            			newLeafNode(otherlv_13, grammarAccess.getAuthAccess().getRightCurlyBracketKeyword_12());
-            		
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleAuth"
-
-
     // $ANTLR start "entryRuleProtectedResource"
-    // InternalSecuritymodels.g:567:1: entryRuleProtectedResource returns [EObject current=null] : iv_ruleProtectedResource= ruleProtectedResource EOF ;
+    // InternalSecuritymodels.g:535:1: entryRuleProtectedResource returns [EObject current=null] : iv_ruleProtectedResource= ruleProtectedResource EOF ;
     public final EObject entryRuleProtectedResource() throws RecognitionException {
         EObject current = null;
 
@@ -1291,8 +1185,8 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSecuritymodels.g:567:58: (iv_ruleProtectedResource= ruleProtectedResource EOF )
-            // InternalSecuritymodels.g:568:2: iv_ruleProtectedResource= ruleProtectedResource EOF
+            // InternalSecuritymodels.g:535:58: (iv_ruleProtectedResource= ruleProtectedResource EOF )
+            // InternalSecuritymodels.g:536:2: iv_ruleProtectedResource= ruleProtectedResource EOF
             {
              newCompositeNode(grammarAccess.getProtectedResourceRule()); 
             pushFollow(FOLLOW_1);
@@ -1319,35 +1213,29 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProtectedResource"
-    // InternalSecuritymodels.g:574:1: ruleProtectedResource returns [EObject current=null] : (otherlv_0= '(' ( ( ruleEString ) ) otherlv_2= 'as' ( (lv_name_3_0= ruleEString ) ) otherlv_4= ')' ) ;
+    // InternalSecuritymodels.g:542:1: ruleProtectedResource returns [EObject current=null] : ( ( ( ruleEString ) ) otherlv_1= 'as' ( (lv_name_2_0= ruleEString ) ) ) ;
     public final EObject ruleProtectedResource() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        AntlrDatatypeRuleToken lv_name_3_0 = null;
+        Token otherlv_1=null;
+        AntlrDatatypeRuleToken lv_name_2_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSecuritymodels.g:580:2: ( (otherlv_0= '(' ( ( ruleEString ) ) otherlv_2= 'as' ( (lv_name_3_0= ruleEString ) ) otherlv_4= ')' ) )
-            // InternalSecuritymodels.g:581:2: (otherlv_0= '(' ( ( ruleEString ) ) otherlv_2= 'as' ( (lv_name_3_0= ruleEString ) ) otherlv_4= ')' )
+            // InternalSecuritymodels.g:548:2: ( ( ( ( ruleEString ) ) otherlv_1= 'as' ( (lv_name_2_0= ruleEString ) ) ) )
+            // InternalSecuritymodels.g:549:2: ( ( ( ruleEString ) ) otherlv_1= 'as' ( (lv_name_2_0= ruleEString ) ) )
             {
-            // InternalSecuritymodels.g:581:2: (otherlv_0= '(' ( ( ruleEString ) ) otherlv_2= 'as' ( (lv_name_3_0= ruleEString ) ) otherlv_4= ')' )
-            // InternalSecuritymodels.g:582:3: otherlv_0= '(' ( ( ruleEString ) ) otherlv_2= 'as' ( (lv_name_3_0= ruleEString ) ) otherlv_4= ')'
+            // InternalSecuritymodels.g:549:2: ( ( ( ruleEString ) ) otherlv_1= 'as' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalSecuritymodels.g:550:3: ( ( ruleEString ) ) otherlv_1= 'as' ( (lv_name_2_0= ruleEString ) )
             {
-            otherlv_0=(Token)match(input,23,FOLLOW_3); 
-
-            			newLeafNode(otherlv_0, grammarAccess.getProtectedResourceAccess().getLeftParenthesisKeyword_0());
-            		
-            // InternalSecuritymodels.g:586:3: ( ( ruleEString ) )
-            // InternalSecuritymodels.g:587:4: ( ruleEString )
+            // InternalSecuritymodels.g:550:3: ( ( ruleEString ) )
+            // InternalSecuritymodels.g:551:4: ( ruleEString )
             {
-            // InternalSecuritymodels.g:587:4: ( ruleEString )
-            // InternalSecuritymodels.g:588:5: ruleEString
+            // InternalSecuritymodels.g:551:4: ( ruleEString )
+            // InternalSecuritymodels.g:552:5: ruleEString
             {
 
             					if (current==null) {
@@ -1355,9 +1243,9 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
             					}
             				
 
-            					newCompositeNode(grammarAccess.getProtectedResourceAccess().getPropertyPropertyCrossReference_1_0());
+            					newCompositeNode(grammarAccess.getProtectedResourceAccess().getPropertyPropertyCrossReference_0_0());
             				
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_17);
             ruleEString();
 
             state._fsp--;
@@ -1371,21 +1259,21 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,28,FOLLOW_3); 
+            otherlv_1=(Token)match(input,24,FOLLOW_3); 
 
-            			newLeafNode(otherlv_2, grammarAccess.getProtectedResourceAccess().getAsKeyword_2());
+            			newLeafNode(otherlv_1, grammarAccess.getProtectedResourceAccess().getAsKeyword_1());
             		
-            // InternalSecuritymodels.g:606:3: ( (lv_name_3_0= ruleEString ) )
-            // InternalSecuritymodels.g:607:4: (lv_name_3_0= ruleEString )
+            // InternalSecuritymodels.g:570:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalSecuritymodels.g:571:4: (lv_name_2_0= ruleEString )
             {
-            // InternalSecuritymodels.g:607:4: (lv_name_3_0= ruleEString )
-            // InternalSecuritymodels.g:608:5: lv_name_3_0= ruleEString
+            // InternalSecuritymodels.g:571:4: (lv_name_2_0= ruleEString )
+            // InternalSecuritymodels.g:572:5: lv_name_2_0= ruleEString
             {
 
-            					newCompositeNode(grammarAccess.getProtectedResourceAccess().getNameEStringParserRuleCall_3_0());
+            					newCompositeNode(grammarAccess.getProtectedResourceAccess().getNameEStringParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_23);
-            lv_name_3_0=ruleEString();
+            pushFollow(FOLLOW_2);
+            lv_name_2_0=ruleEString();
 
             state._fsp--;
 
@@ -1396,7 +1284,7 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"name",
-            						lv_name_3_0,
+            						lv_name_2_0,
             						"xtext.Securitymodels.EString");
             					afterParserOrEnumRuleCall();
             				
@@ -1406,10 +1294,6 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,24,FOLLOW_2); 
-
-            			newLeafNode(otherlv_4, grammarAccess.getProtectedResourceAccess().getRightParenthesisKeyword_4());
-            		
 
             }
 
@@ -1432,8 +1316,311 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleProtectedResource"
 
 
+    // $ANTLR start "entryRuleAuth"
+    // InternalSecuritymodels.g:593:1: entryRuleAuth returns [EObject current=null] : iv_ruleAuth= ruleAuth EOF ;
+    public final EObject entryRuleAuth() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleAuth = null;
+
+
+        try {
+            // InternalSecuritymodels.g:593:45: (iv_ruleAuth= ruleAuth EOF )
+            // InternalSecuritymodels.g:594:2: iv_ruleAuth= ruleAuth EOF
+            {
+             newCompositeNode(grammarAccess.getAuthRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleAuth=ruleAuth();
+
+            state._fsp--;
+
+             current =iv_ruleAuth; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleAuth"
+
+
+    // $ANTLR start "ruleAuth"
+    // InternalSecuritymodels.g:600:1: ruleAuth returns [EObject current=null] : (otherlv_0= 'roles' otherlv_1= '(' ( ( ruleEString ) ) (otherlv_3= ',' ( ( ruleEString ) ) )* otherlv_5= ')' otherlv_6= 'condition:' otherlv_7= '{' otherlv_8= 'textual' ( (lv_textual_9_0= ruleEString ) ) otherlv_10= 'oclExp' ( (lv_oclExp_11_0= ruleEString ) ) otherlv_12= 'sqlStm' ( (lv_sqlStm_13_0= ruleEString ) ) otherlv_14= '}' ) ;
+    public final EObject ruleAuth() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token otherlv_3=null;
+        Token otherlv_5=null;
+        Token otherlv_6=null;
+        Token otherlv_7=null;
+        Token otherlv_8=null;
+        Token otherlv_10=null;
+        Token otherlv_12=null;
+        Token otherlv_14=null;
+        AntlrDatatypeRuleToken lv_textual_9_0 = null;
+
+        AntlrDatatypeRuleToken lv_oclExp_11_0 = null;
+
+        AntlrDatatypeRuleToken lv_sqlStm_13_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSecuritymodels.g:606:2: ( (otherlv_0= 'roles' otherlv_1= '(' ( ( ruleEString ) ) (otherlv_3= ',' ( ( ruleEString ) ) )* otherlv_5= ')' otherlv_6= 'condition:' otherlv_7= '{' otherlv_8= 'textual' ( (lv_textual_9_0= ruleEString ) ) otherlv_10= 'oclExp' ( (lv_oclExp_11_0= ruleEString ) ) otherlv_12= 'sqlStm' ( (lv_sqlStm_13_0= ruleEString ) ) otherlv_14= '}' ) )
+            // InternalSecuritymodels.g:607:2: (otherlv_0= 'roles' otherlv_1= '(' ( ( ruleEString ) ) (otherlv_3= ',' ( ( ruleEString ) ) )* otherlv_5= ')' otherlv_6= 'condition:' otherlv_7= '{' otherlv_8= 'textual' ( (lv_textual_9_0= ruleEString ) ) otherlv_10= 'oclExp' ( (lv_oclExp_11_0= ruleEString ) ) otherlv_12= 'sqlStm' ( (lv_sqlStm_13_0= ruleEString ) ) otherlv_14= '}' )
+            {
+            // InternalSecuritymodels.g:607:2: (otherlv_0= 'roles' otherlv_1= '(' ( ( ruleEString ) ) (otherlv_3= ',' ( ( ruleEString ) ) )* otherlv_5= ')' otherlv_6= 'condition:' otherlv_7= '{' otherlv_8= 'textual' ( (lv_textual_9_0= ruleEString ) ) otherlv_10= 'oclExp' ( (lv_oclExp_11_0= ruleEString ) ) otherlv_12= 'sqlStm' ( (lv_sqlStm_13_0= ruleEString ) ) otherlv_14= '}' )
+            // InternalSecuritymodels.g:608:3: otherlv_0= 'roles' otherlv_1= '(' ( ( ruleEString ) ) (otherlv_3= ',' ( ( ruleEString ) ) )* otherlv_5= ')' otherlv_6= 'condition:' otherlv_7= '{' otherlv_8= 'textual' ( (lv_textual_9_0= ruleEString ) ) otherlv_10= 'oclExp' ( (lv_oclExp_11_0= ruleEString ) ) otherlv_12= 'sqlStm' ( (lv_sqlStm_13_0= ruleEString ) ) otherlv_14= '}'
+            {
+            otherlv_0=(Token)match(input,13,FOLLOW_11); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getAuthAccess().getRolesKeyword_0());
+            		
+            otherlv_1=(Token)match(input,20,FOLLOW_3); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getAuthAccess().getLeftParenthesisKeyword_1());
+            		
+            // InternalSecuritymodels.g:616:3: ( ( ruleEString ) )
+            // InternalSecuritymodels.g:617:4: ( ruleEString )
+            {
+            // InternalSecuritymodels.g:617:4: ( ruleEString )
+            // InternalSecuritymodels.g:618:5: ruleEString
+            {
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getAuthRule());
+            					}
+            				
+
+            					newCompositeNode(grammarAccess.getAuthAccess().getRolesRoleCrossReference_2_0());
+            				
+            pushFollow(FOLLOW_12);
+            ruleEString();
+
+            state._fsp--;
+
+
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            // InternalSecuritymodels.g:632:3: (otherlv_3= ',' ( ( ruleEString ) ) )*
+            loop9:
+            do {
+                int alt9=2;
+                int LA9_0 = input.LA(1);
+
+                if ( (LA9_0==15) ) {
+                    alt9=1;
+                }
+
+
+                switch (alt9) {
+            	case 1 :
+            	    // InternalSecuritymodels.g:633:4: otherlv_3= ',' ( ( ruleEString ) )
+            	    {
+            	    otherlv_3=(Token)match(input,15,FOLLOW_3); 
+
+            	    				newLeafNode(otherlv_3, grammarAccess.getAuthAccess().getCommaKeyword_3_0());
+            	    			
+            	    // InternalSecuritymodels.g:637:4: ( ( ruleEString ) )
+            	    // InternalSecuritymodels.g:638:5: ( ruleEString )
+            	    {
+            	    // InternalSecuritymodels.g:638:5: ( ruleEString )
+            	    // InternalSecuritymodels.g:639:6: ruleEString
+            	    {
+
+            	    						if (current==null) {
+            	    							current = createModelElement(grammarAccess.getAuthRule());
+            	    						}
+            	    					
+
+            	    						newCompositeNode(grammarAccess.getAuthAccess().getRolesRoleCrossReference_3_1_0());
+            	    					
+            	    pushFollow(FOLLOW_12);
+            	    ruleEString();
+
+            	    state._fsp--;
+
+
+            	    						afterParserOrEnumRuleCall();
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop9;
+                }
+            } while (true);
+
+            otherlv_5=(Token)match(input,21,FOLLOW_18); 
+
+            			newLeafNode(otherlv_5, grammarAccess.getAuthAccess().getRightParenthesisKeyword_4());
+            		
+            otherlv_6=(Token)match(input,25,FOLLOW_5); 
+
+            			newLeafNode(otherlv_6, grammarAccess.getAuthAccess().getConditionKeyword_5());
+            		
+            otherlv_7=(Token)match(input,14,FOLLOW_19); 
+
+            			newLeafNode(otherlv_7, grammarAccess.getAuthAccess().getLeftCurlyBracketKeyword_6());
+            		
+            otherlv_8=(Token)match(input,26,FOLLOW_3); 
+
+            			newLeafNode(otherlv_8, grammarAccess.getAuthAccess().getTextualKeyword_7());
+            		
+            // InternalSecuritymodels.g:670:3: ( (lv_textual_9_0= ruleEString ) )
+            // InternalSecuritymodels.g:671:4: (lv_textual_9_0= ruleEString )
+            {
+            // InternalSecuritymodels.g:671:4: (lv_textual_9_0= ruleEString )
+            // InternalSecuritymodels.g:672:5: lv_textual_9_0= ruleEString
+            {
+
+            					newCompositeNode(grammarAccess.getAuthAccess().getTextualEStringParserRuleCall_8_0());
+            				
+            pushFollow(FOLLOW_20);
+            lv_textual_9_0=ruleEString();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getAuthRule());
+            					}
+            					set(
+            						current,
+            						"textual",
+            						lv_textual_9_0,
+            						"xtext.Securitymodels.EString");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_10=(Token)match(input,27,FOLLOW_3); 
+
+            			newLeafNode(otherlv_10, grammarAccess.getAuthAccess().getOclExpKeyword_9());
+            		
+            // InternalSecuritymodels.g:693:3: ( (lv_oclExp_11_0= ruleEString ) )
+            // InternalSecuritymodels.g:694:4: (lv_oclExp_11_0= ruleEString )
+            {
+            // InternalSecuritymodels.g:694:4: (lv_oclExp_11_0= ruleEString )
+            // InternalSecuritymodels.g:695:5: lv_oclExp_11_0= ruleEString
+            {
+
+            					newCompositeNode(grammarAccess.getAuthAccess().getOclExpEStringParserRuleCall_10_0());
+            				
+            pushFollow(FOLLOW_21);
+            lv_oclExp_11_0=ruleEString();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getAuthRule());
+            					}
+            					set(
+            						current,
+            						"oclExp",
+            						lv_oclExp_11_0,
+            						"xtext.Securitymodels.EString");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_12=(Token)match(input,28,FOLLOW_3); 
+
+            			newLeafNode(otherlv_12, grammarAccess.getAuthAccess().getSqlStmKeyword_11());
+            		
+            // InternalSecuritymodels.g:716:3: ( (lv_sqlStm_13_0= ruleEString ) )
+            // InternalSecuritymodels.g:717:4: (lv_sqlStm_13_0= ruleEString )
+            {
+            // InternalSecuritymodels.g:717:4: (lv_sqlStm_13_0= ruleEString )
+            // InternalSecuritymodels.g:718:5: lv_sqlStm_13_0= ruleEString
+            {
+
+            					newCompositeNode(grammarAccess.getAuthAccess().getSqlStmEStringParserRuleCall_12_0());
+            				
+            pushFollow(FOLLOW_15);
+            lv_sqlStm_13_0=ruleEString();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getAuthRule());
+            					}
+            					set(
+            						current,
+            						"sqlStm",
+            						lv_sqlStm_13_0,
+            						"xtext.Securitymodels.EString");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_14=(Token)match(input,16,FOLLOW_2); 
+
+            			newLeafNode(otherlv_14, grammarAccess.getAuthAccess().getRightCurlyBracketKeyword_13());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleAuth"
+
+
     // $ANTLR start "ruleAction"
-    // InternalSecuritymodels.g:633:1: ruleAction returns [Enumerator current=null] : ( (enumLiteral_0= 'READ' ) | (enumLiteral_1= 'CREATE' ) | (enumLiteral_2= 'UPDATE' ) | (enumLiteral_3= 'DELETE' ) ) ;
+    // InternalSecuritymodels.g:743:1: ruleAction returns [Enumerator current=null] : ( (enumLiteral_0= 'READ' ) | (enumLiteral_1= 'CREATE' ) | (enumLiteral_2= 'UPDATE' ) | (enumLiteral_3= 'DELETE' ) ) ;
     public final Enumerator ruleAction() throws RecognitionException {
         Enumerator current = null;
 
@@ -1446,45 +1633,45 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSecuritymodels.g:639:2: ( ( (enumLiteral_0= 'READ' ) | (enumLiteral_1= 'CREATE' ) | (enumLiteral_2= 'UPDATE' ) | (enumLiteral_3= 'DELETE' ) ) )
-            // InternalSecuritymodels.g:640:2: ( (enumLiteral_0= 'READ' ) | (enumLiteral_1= 'CREATE' ) | (enumLiteral_2= 'UPDATE' ) | (enumLiteral_3= 'DELETE' ) )
+            // InternalSecuritymodels.g:749:2: ( ( (enumLiteral_0= 'READ' ) | (enumLiteral_1= 'CREATE' ) | (enumLiteral_2= 'UPDATE' ) | (enumLiteral_3= 'DELETE' ) ) )
+            // InternalSecuritymodels.g:750:2: ( (enumLiteral_0= 'READ' ) | (enumLiteral_1= 'CREATE' ) | (enumLiteral_2= 'UPDATE' ) | (enumLiteral_3= 'DELETE' ) )
             {
-            // InternalSecuritymodels.g:640:2: ( (enumLiteral_0= 'READ' ) | (enumLiteral_1= 'CREATE' ) | (enumLiteral_2= 'UPDATE' ) | (enumLiteral_3= 'DELETE' ) )
-            int alt9=4;
+            // InternalSecuritymodels.g:750:2: ( (enumLiteral_0= 'READ' ) | (enumLiteral_1= 'CREATE' ) | (enumLiteral_2= 'UPDATE' ) | (enumLiteral_3= 'DELETE' ) )
+            int alt10=4;
             switch ( input.LA(1) ) {
             case 29:
                 {
-                alt9=1;
+                alt10=1;
                 }
                 break;
             case 30:
                 {
-                alt9=2;
+                alt10=2;
                 }
                 break;
             case 31:
                 {
-                alt9=3;
+                alt10=3;
                 }
                 break;
             case 32:
                 {
-                alt9=4;
+                alt10=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 9, 0, input);
+                    new NoViableAltException("", 10, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt9) {
+            switch (alt10) {
                 case 1 :
-                    // InternalSecuritymodels.g:641:3: (enumLiteral_0= 'READ' )
+                    // InternalSecuritymodels.g:751:3: (enumLiteral_0= 'READ' )
                     {
-                    // InternalSecuritymodels.g:641:3: (enumLiteral_0= 'READ' )
-                    // InternalSecuritymodels.g:642:4: enumLiteral_0= 'READ'
+                    // InternalSecuritymodels.g:751:3: (enumLiteral_0= 'READ' )
+                    // InternalSecuritymodels.g:752:4: enumLiteral_0= 'READ'
                     {
                     enumLiteral_0=(Token)match(input,29,FOLLOW_2); 
 
@@ -1498,10 +1685,10 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSecuritymodels.g:649:3: (enumLiteral_1= 'CREATE' )
+                    // InternalSecuritymodels.g:759:3: (enumLiteral_1= 'CREATE' )
                     {
-                    // InternalSecuritymodels.g:649:3: (enumLiteral_1= 'CREATE' )
-                    // InternalSecuritymodels.g:650:4: enumLiteral_1= 'CREATE'
+                    // InternalSecuritymodels.g:759:3: (enumLiteral_1= 'CREATE' )
+                    // InternalSecuritymodels.g:760:4: enumLiteral_1= 'CREATE'
                     {
                     enumLiteral_1=(Token)match(input,30,FOLLOW_2); 
 
@@ -1515,10 +1702,10 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSecuritymodels.g:657:3: (enumLiteral_2= 'UPDATE' )
+                    // InternalSecuritymodels.g:767:3: (enumLiteral_2= 'UPDATE' )
                     {
-                    // InternalSecuritymodels.g:657:3: (enumLiteral_2= 'UPDATE' )
-                    // InternalSecuritymodels.g:658:4: enumLiteral_2= 'UPDATE'
+                    // InternalSecuritymodels.g:767:3: (enumLiteral_2= 'UPDATE' )
+                    // InternalSecuritymodels.g:768:4: enumLiteral_2= 'UPDATE'
                     {
                     enumLiteral_2=(Token)match(input,31,FOLLOW_2); 
 
@@ -1532,10 +1719,10 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalSecuritymodels.g:665:3: (enumLiteral_3= 'DELETE' )
+                    // InternalSecuritymodels.g:775:3: (enumLiteral_3= 'DELETE' )
                     {
-                    // InternalSecuritymodels.g:665:3: (enumLiteral_3= 'DELETE' )
-                    // InternalSecuritymodels.g:666:4: enumLiteral_3= 'DELETE'
+                    // InternalSecuritymodels.g:775:3: (enumLiteral_3= 'DELETE' )
+                    // InternalSecuritymodels.g:776:4: enumLiteral_3= 'DELETE'
                     {
                     enumLiteral_3=(Token)match(input,32,FOLLOW_2); 
 
@@ -1577,25 +1764,23 @@ public class InternalSecuritymodelsParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000006000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000008032L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000032L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000003000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000018000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000020002L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x00000001E0000000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000040002L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000180000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000001002000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000208000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000001000000L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000010000000L});
 
 }

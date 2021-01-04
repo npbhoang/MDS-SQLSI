@@ -2,8 +2,8 @@
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/securitymodels/src" modelPluginID="securitymodels"
     modelName="Securitymodels" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
-    usedGenPackages="../../datamodels/metamodels/datamodels.genmodel#//datamodels"
+    importerID="org.eclipse.emf.importer.ecore" containmentProxies="true" complianceLevel="8.0"
+    copyrightFields="false" usedGenPackages="../../datamodels/metamodels/datamodels.genmodel#//datamodels"
     operationReflection="true" importOrganizing="true">
   <foreignModel>securitymodels.ecore</foreignModel>
   <genPackages prefix="Securitymodels" disposableProviderFactory="true" ecorePackage="securitymodels.ecore#/">
@@ -14,10 +14,10 @@
       <genEnumLiterals ecoreEnumLiteral="securitymodels.ecore#//Action/DELETE"/>
     </genEnums>
     <genClasses ecoreClass="securitymodels.ecore#//SecurityModel">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute securitymodels.ecore#//SecurityModel/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference securitymodels.ecore#//SecurityModel/rules"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference securitymodels.ecore#//SecurityModel/roles"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference securitymodels.ecore#//SecurityModel/resources"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference securitymodels.ecore#//SecurityModel/source"/>
     </genClasses>
     <genClasses ecoreClass="securitymodels.ecore#//Auth">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute securitymodels.ecore#//Auth/textual"/>

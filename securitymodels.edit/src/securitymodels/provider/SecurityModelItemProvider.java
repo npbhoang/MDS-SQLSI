@@ -20,7 +20,6 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -63,29 +62,29 @@ public class SecurityModelItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
+			addSourcePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Source feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addSourcePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_SecurityModel_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SecurityModel_name_feature", "_UI_SecurityModel_type"),
-				 SecuritymodelsPackage.Literals.SECURITY_MODEL__NAME,
+				 getString("_UI_SecurityModel_source_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SecurityModel_source_feature", "_UI_SecurityModel_type"),
+				 SecuritymodelsPackage.Literals.SECURITY_MODEL__SOURCE,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -141,10 +140,7 @@ public class SecurityModelItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((SecurityModel)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_SecurityModel_type") :
-			getString("_UI_SecurityModel_type") + " " + label;
+		return getString("_UI_SecurityModel_type");
 	}
 
 
@@ -160,9 +156,6 @@ public class SecurityModelItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SecurityModel.class)) {
-			case SecuritymodelsPackage.SECURITY_MODEL__NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
 			case SecuritymodelsPackage.SECURITY_MODEL__RULES:
 			case SecuritymodelsPackage.SECURITY_MODEL__ROLES:
 			case SecuritymodelsPackage.SECURITY_MODEL__RESOURCES:

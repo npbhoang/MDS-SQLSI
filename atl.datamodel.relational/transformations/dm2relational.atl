@@ -37,7 +37,10 @@ rule datamodel2database {
 		isUnique <- true
 	),
 	roleAssociationTable : relationaldb!Table (
-		name <- dm.entities->select(e|e.isUserClass)->first().name+'Role',
+		name <- if dm.entities->select(e|e.isUserClass)->notEmpty()
+			then dm.entities->select(e|e.isUserClass)->first().name+'Role'
+			else 'Role'
+			endif,
 		columns <- Sequence{roleReference, userReference}
 	),
 	roleReference : relationaldb!Column (
@@ -49,7 +52,10 @@ rule datamodel2database {
 		reference <- roleTable
 	),
 	userReference : relationaldb!Column (
-		name <- dm.entities->select(e|e.isUserClass)->first().name,
+		name <- if dm.entities->select(e|e.isUserClass)->notEmpty()
+			then dm.entities->select(e|e.isUserClass)->first().name+'Role'
+			else 'UserRole'
+			endif,
 		type <- #"Integer",
 		isForeign <- true,
 		isPrimary <- false,

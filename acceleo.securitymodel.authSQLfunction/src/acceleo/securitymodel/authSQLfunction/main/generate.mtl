@@ -6,8 +6,8 @@
 
 [template public generateElement(aSecurityModel : SecurityModel)]
 [comment @main/]
-[file (trimAndCapitalize(aSecurityModel.name).concat('_authfunction.').concat(getProperty('SQLFileExtension')), false, 'UTF-8')]
-USE [ trimAndCapitalize(aSecurityModel.name) /];
+[file (trimAndCapitalize('University').concat('_authfunction.').concat(getProperty('SQLFileExtension')), false, 'UTF-8')]
+USE [ trimAndCapitalize('University') /];
 
 [ aSecurityModel.generateSQLAuthFuncs() /]
 

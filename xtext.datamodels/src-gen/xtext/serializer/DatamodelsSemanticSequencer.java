@@ -101,7 +101,7 @@ public class DatamodelsSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 *     DataModel returns DataModel
 	 *
 	 * Constraint:
-	 *     (name=EString (entities+=Entity entities+=Entity*)?)
+	 *     (isSecured?='Secured'? name=EString (entities+=Entity entities+=Entity*)?)
 	 */
 	protected void sequence_DataModel(ISerializationContext context, DataModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -113,7 +113,7 @@ public class DatamodelsSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 *     Entity returns Entity
 	 *
 	 * Constraint:
-	 *     (name=EString superEntity=[Entity|EString]? (properties+=Property properties+=Property*)?)
+	 *     (isUserClass?='user'? name=EString superEntity=[Entity|EString]? (properties+=Property properties+=Property*)?)
 	 */
 	protected void sequence_Entity(ISerializationContext context, Entity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

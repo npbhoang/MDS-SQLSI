@@ -2,6 +2,7 @@
  */
 package securitymodels.impl;
 
+import datamodels.DataModel;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -31,35 +32,15 @@ import securitymodels.SecuritymodelsPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link securitymodels.impl.SecurityModelImpl#getName <em>Name</em>}</li>
  *   <li>{@link securitymodels.impl.SecurityModelImpl#getRules <em>Rules</em>}</li>
  *   <li>{@link securitymodels.impl.SecurityModelImpl#getRoles <em>Roles</em>}</li>
  *   <li>{@link securitymodels.impl.SecurityModelImpl#getResources <em>Resources</em>}</li>
+ *   <li>{@link securitymodels.impl.SecurityModelImpl#getSource <em>Source</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class SecurityModelImpl extends MinimalEObjectImpl.Container implements SecurityModel {
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getRules() <em>Rules</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -91,6 +72,16 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 	protected EList<ProtectedResource> resources;
 
 	/**
+	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSource()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataModel source;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -114,30 +105,9 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecuritymodelsPackage.SECURITY_MODEL__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Rule> getRules() {
 		if (rules == null) {
-			rules = new EObjectContainmentEList<Rule>(Rule.class, this, SecuritymodelsPackage.SECURITY_MODEL__RULES);
+			rules = new EObjectContainmentEList.Resolving<Rule>(Rule.class, this, SecuritymodelsPackage.SECURITY_MODEL__RULES);
 		}
 		return rules;
 	}
@@ -149,7 +119,7 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 	 */
 	public EList<Role> getRoles() {
 		if (roles == null) {
-			roles = new EObjectContainmentEList<Role>(Role.class, this, SecuritymodelsPackage.SECURITY_MODEL__ROLES);
+			roles = new EObjectContainmentEList.Resolving<Role>(Role.class, this, SecuritymodelsPackage.SECURITY_MODEL__ROLES);
 		}
 		return roles;
 	}
@@ -161,9 +131,47 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 	 */
 	public EList<ProtectedResource> getResources() {
 		if (resources == null) {
-			resources = new EObjectContainmentEList<ProtectedResource>(ProtectedResource.class, this, SecuritymodelsPackage.SECURITY_MODEL__RESOURCES);
+			resources = new EObjectContainmentEList.Resolving<ProtectedResource>(ProtectedResource.class, this, SecuritymodelsPackage.SECURITY_MODEL__RESOURCES);
 		}
 		return resources;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataModel getSource() {
+		if (source != null && source.eIsProxy()) {
+			InternalEObject oldSource = (InternalEObject)source;
+			source = (DataModel)eResolveProxy(oldSource);
+			if (source != oldSource) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecuritymodelsPackage.SECURITY_MODEL__SOURCE, oldSource, source));
+			}
+		}
+		return source;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataModel basicGetSource() {
+		return source;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSource(DataModel newSource) {
+		DataModel oldSource = source;
+		source = newSource;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SecuritymodelsPackage.SECURITY_MODEL__SOURCE, oldSource, source));
 	}
 
 	/**
@@ -192,14 +200,15 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SecuritymodelsPackage.SECURITY_MODEL__NAME:
-				return getName();
 			case SecuritymodelsPackage.SECURITY_MODEL__RULES:
 				return getRules();
 			case SecuritymodelsPackage.SECURITY_MODEL__ROLES:
 				return getRoles();
 			case SecuritymodelsPackage.SECURITY_MODEL__RESOURCES:
 				return getResources();
+			case SecuritymodelsPackage.SECURITY_MODEL__SOURCE:
+				if (resolve) return getSource();
+				return basicGetSource();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -213,9 +222,6 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SecuritymodelsPackage.SECURITY_MODEL__NAME:
-				setName((String)newValue);
-				return;
 			case SecuritymodelsPackage.SECURITY_MODEL__RULES:
 				getRules().clear();
 				getRules().addAll((Collection<? extends Rule>)newValue);
@@ -227,6 +233,9 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 			case SecuritymodelsPackage.SECURITY_MODEL__RESOURCES:
 				getResources().clear();
 				getResources().addAll((Collection<? extends ProtectedResource>)newValue);
+				return;
+			case SecuritymodelsPackage.SECURITY_MODEL__SOURCE:
+				setSource((DataModel)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -240,9 +249,6 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SecuritymodelsPackage.SECURITY_MODEL__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 			case SecuritymodelsPackage.SECURITY_MODEL__RULES:
 				getRules().clear();
 				return;
@@ -251,6 +257,9 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 				return;
 			case SecuritymodelsPackage.SECURITY_MODEL__RESOURCES:
 				getResources().clear();
+				return;
+			case SecuritymodelsPackage.SECURITY_MODEL__SOURCE:
+				setSource((DataModel)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -264,32 +273,16 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SecuritymodelsPackage.SECURITY_MODEL__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case SecuritymodelsPackage.SECURITY_MODEL__RULES:
 				return rules != null && !rules.isEmpty();
 			case SecuritymodelsPackage.SECURITY_MODEL__ROLES:
 				return roles != null && !roles.isEmpty();
 			case SecuritymodelsPackage.SECURITY_MODEL__RESOURCES:
 				return resources != null && !resources.isEmpty();
+			case SecuritymodelsPackage.SECURITY_MODEL__SOURCE:
+				return source != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
 	}
 
 } //SecurityModelImpl

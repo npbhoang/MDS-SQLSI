@@ -2,6 +2,7 @@
 ':'=16
 'DataModel'=15
 'Integer'=14
+'Secured'=26
 'String'=13
 '[*]'=11
 '[1]'=12
@@ -11,7 +12,8 @@
 'extends'=21
 'in'=24
 'oppositeTo'=23
-'unique'=26
+'unique'=28
+'user'=27
 '{'=19
 '}'=20
 RULE_ANY_OTHER=10
@@ -37,3 +39,5 @@ T__23=23
 T__24=24
 T__25=25
 T__26=26
+T__27=27
+T__28=28

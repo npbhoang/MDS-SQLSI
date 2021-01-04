@@ -7,34 +7,32 @@ CREATE TABLE Role(
 	RoleID INT(11) PRIMARY KEY,
 	name VARCHAR(200) UNIQUE
 );
-DROP TABLE IF EXISTS RegisterUserRole;
-CREATE TABLE RegisterUserRole(
+DROP TABLE IF EXISTS RegUserRole;
+CREATE TABLE RegUserRole(
 	role INT(11) UNIQUE,
 	FOREIGN KEY (role) REFERENCES Role(RoleID),
-	RegisterUser INT(11) UNIQUE,
-	FOREIGN KEY (RegisterUser) REFERENCES RegisterUser(RegisterUserID)
+	RegUserRole INT(11) UNIQUE,
+	FOREIGN KEY (RegUserRole) REFERENCES RegUser(RegUserID)
 );
-DROP TABLE IF EXISTS RegisterUser;
-CREATE TABLE RegisterUser(
-	RegisterUserID INT(11) PRIMARY KEY,
-	firstname VARCHAR(200),
-	middlename VARCHAR(200),
-	lastname VARCHAR(200),
+DROP TABLE IF EXISTS RegUser;
+CREATE TABLE RegUser(
+	RegUserID INT(11) PRIMARY KEY,
+	name VARCHAR(200),
 	email VARCHAR(200) UNIQUE
-);
-DROP TABLE IF EXISTS Lecturer;
-CREATE TABLE Lecturer(
-	LecturerID INT(11) PRIMARY KEY,
-	RegisterUserID INT(11) UNIQUE,
-	FOREIGN KEY (RegisterUserID) REFERENCES RegisterUser(RegisterUserID),
-	salary INT(11)
 );
 DROP TABLE IF EXISTS Student;
 CREATE TABLE Student(
 	StudentID INT(11) PRIMARY KEY,
-	RegisterUserID INT(11) UNIQUE,
-	FOREIGN KEY (RegisterUserID) REFERENCES RegisterUser(RegisterUserID),
+	RegUserID INT(11) UNIQUE,
+	FOREIGN KEY (RegUserID) REFERENCES RegUser(RegUserID),
 	intake INT(11)
+);
+DROP TABLE IF EXISTS Lecturer;
+CREATE TABLE Lecturer(
+	LecturerID INT(11) PRIMARY KEY,
+	RegUserID INT(11) UNIQUE,
+	FOREIGN KEY (RegUserID) REFERENCES RegUser(RegUserID),
+	salary INT(11)
 );
 DROP TABLE IF EXISTS Course;
 CREATE TABLE Course(

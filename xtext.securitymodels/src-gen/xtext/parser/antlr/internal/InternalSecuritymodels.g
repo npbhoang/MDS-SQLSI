@@ -77,70 +77,37 @@ ruleSecurityModel returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getSecurityModelAccess().getSecurityModelAction_0(),
-					$current);
-			}
-		)
-		otherlv_1='name:'
+		otherlv_0='SecurityModel'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getSecurityModelAccess().getNameKeyword_1());
+			newLeafNode(otherlv_0, grammarAccess.getSecurityModelAccess().getSecurityModelKeyword_0());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSecurityModelAccess().getNameEStringParserRuleCall_2_0());
-				}
-				lv_name_2_0=ruleEString
-				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSecurityModelRule());
+						$current = createModelElement(grammarAccess.getSecurityModelRule());
 					}
-					set(
-						$current,
-						"name",
-						lv_name_2_0,
-						"xtext.Securitymodels.EString");
-					afterParserOrEnumRuleCall();
 				}
-			)
-		)
-		otherlv_3='protected:'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getSecurityModelAccess().getProtectedKeyword_3());
-		}
-		(
-			(
 				{
-					newCompositeNode(grammarAccess.getSecurityModelAccess().getResourcesProtectedResourceParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getSecurityModelAccess().getSourceDataModelCrossReference_1_0());
 				}
-				lv_resources_4_0=ruleProtectedResource
+				ruleEString
 				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSecurityModelRule());
-					}
-					add(
-						$current,
-						"resources",
-						lv_resources_4_0,
-						"xtext.Securitymodels.ProtectedResource");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_5=','
+			otherlv_2='protect'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getSecurityModelAccess().getCommaKeyword_5_0());
+				newLeafNode(otherlv_2, grammarAccess.getSecurityModelAccess().getProtectKeyword_2_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getSecurityModelAccess().getResourcesProtectedResourceParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getSecurityModelAccess().getResourcesProtectedResourceParserRuleCall_2_1_0());
 					}
-					lv_resources_6_0=ruleProtectedResource
+					lv_resources_3_0=ruleProtectedResource
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getSecurityModelRule());
@@ -148,21 +115,50 @@ ruleSecurityModel returns [EObject current=null]
 						add(
 							$current,
 							"resources",
-							lv_resources_6_0,
+							lv_resources_3_0,
 							"xtext.Securitymodels.ProtectedResource");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-		)*
-		otherlv_7='roles:'
+			(
+				otherlv_4='protect'
+				{
+					newLeafNode(otherlv_4, grammarAccess.getSecurityModelAccess().getProtectKeyword_2_2_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getSecurityModelAccess().getResourcesProtectedResourceParserRuleCall_2_2_1_0());
+						}
+						lv_resources_5_0=ruleProtectedResource
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getSecurityModelRule());
+							}
+							add(
+								$current,
+								"resources",
+								lv_resources_5_0,
+								"xtext.Securitymodels.ProtectedResource");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+		)?
+		otherlv_6='roles'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getSecurityModelAccess().getRolesKeyword_6());
+			newLeafNode(otherlv_6, grammarAccess.getSecurityModelAccess().getRolesKeyword_3());
+		}
+		otherlv_7='{'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getSecurityModelAccess().getLeftCurlyBracketKeyword_4());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSecurityModelAccess().getRolesRoleParserRuleCall_7_0());
+					newCompositeNode(grammarAccess.getSecurityModelAccess().getRolesRoleParserRuleCall_5_0());
 				}
 				lv_roles_8_0=ruleRole
 				{
@@ -177,18 +173,51 @@ ruleSecurityModel returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)+
+		)
 		(
-			otherlv_9='rules:'
+			otherlv_9=','
 			{
-				newLeafNode(otherlv_9, grammarAccess.getSecurityModelAccess().getRulesKeyword_8_0());
+				newLeafNode(otherlv_9, grammarAccess.getSecurityModelAccess().getCommaKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getSecurityModelAccess().getRulesRuleParserRuleCall_8_1_0());
+						newCompositeNode(grammarAccess.getSecurityModelAccess().getRolesRoleParserRuleCall_6_1_0());
 					}
-					lv_rules_10_0=ruleRule
+					lv_roles_10_0=ruleRole
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getSecurityModelRule());
+						}
+						add(
+							$current,
+							"roles",
+							lv_roles_10_0,
+							"xtext.Securitymodels.Role");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+		otherlv_11='}'
+		{
+			newLeafNode(otherlv_11, grammarAccess.getSecurityModelAccess().getRightCurlyBracketKeyword_7());
+		}
+		(
+			otherlv_12='rules'
+			{
+				newLeafNode(otherlv_12, grammarAccess.getSecurityModelAccess().getRulesKeyword_8_0());
+			}
+			otherlv_13='{'
+			{
+				newLeafNode(otherlv_13, grammarAccess.getSecurityModelAccess().getLeftCurlyBracketKeyword_8_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getSecurityModelAccess().getRulesRuleParserRuleCall_8_2_0());
+					}
+					lv_rules_14_0=ruleRule
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getSecurityModelRule());
@@ -196,12 +225,41 @@ ruleSecurityModel returns [EObject current=null]
 						add(
 							$current,
 							"rules",
-							lv_rules_10_0,
+							lv_rules_14_0,
 							"xtext.Securitymodels.Rule");
 						afterParserOrEnumRuleCall();
 					}
 				)
-			)+
+			)
+			(
+				otherlv_15=','
+				{
+					newLeafNode(otherlv_15, grammarAccess.getSecurityModelAccess().getCommaKeyword_8_3_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getSecurityModelAccess().getRulesRuleParserRuleCall_8_3_1_0());
+						}
+						lv_rules_16_0=ruleRule
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getSecurityModelRule());
+							}
+							add(
+								$current,
+								"rules",
+								lv_rules_16_0,
+								"xtext.Securitymodels.Rule");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+			otherlv_17='}'
+			{
+				newLeafNode(otherlv_17, grammarAccess.getSecurityModelAccess().getRightCurlyBracketKeyword_8_4());
+			}
 		)?
 	)
 ;
@@ -256,12 +314,16 @@ ruleRule returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		otherlv_0='Rule'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getRuleAccess().getRuleKeyword_0());
+		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRuleAccess().getNameEStringParserRuleCall_0_0());
+					newCompositeNode(grammarAccess.getRuleAccess().getNameEStringParserRuleCall_1_0());
 				}
-				lv_name_0_0=ruleEString
+				lv_name_1_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRuleRule());
@@ -269,22 +331,26 @@ ruleRule returns [EObject current=null]
 					set(
 						$current,
 						"name",
-						lv_name_0_0,
+						lv_name_1_0,
 						"xtext.Securitymodels.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_1=':'
+		otherlv_2='{'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getRuleAccess().getColonKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getRuleAccess().getLeftCurlyBracketKeyword_2());
+		}
+		otherlv_3='action'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getRuleAccess().getActionKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRuleAccess().getActionActionEnumRuleCall_2_0());
+					newCompositeNode(grammarAccess.getRuleAccess().getActionActionEnumRuleCall_4_0());
 				}
-				lv_action_2_0=ruleAction
+				lv_action_4_0=ruleAction
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRuleRule());
@@ -292,27 +358,96 @@ ruleRule returns [EObject current=null]
 					set(
 						$current,
 						"action",
-						lv_action_2_0,
+						lv_action_4_0,
 						"xtext.Securitymodels.Action");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_3='conditions'
+		otherlv_5='('
 		{
-			newLeafNode(otherlv_3, grammarAccess.getRuleAccess().getConditionsKeyword_3());
+			newLeafNode(otherlv_5, grammarAccess.getRuleAccess().getLeftParenthesisKeyword_5());
 		}
 		(
-			otherlv_4='{'
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRuleRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getRuleAccess().getProtectedResourcesProtectedResourceCrossReference_6_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_7=','
 			{
-				newLeafNode(otherlv_4, grammarAccess.getRuleAccess().getLeftCurlyBracketKeyword_4_0());
+				newLeafNode(otherlv_7, grammarAccess.getRuleAccess().getCommaKeyword_7_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getRuleAccess().getAuthsAuthParserRuleCall_4_1_0());
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getRuleRule());
+						}
 					}
-					lv_auths_5_0=ruleAuth
+					{
+						newCompositeNode(grammarAccess.getRuleAccess().getProtectedResourcesProtectedResourceCrossReference_7_1_0());
+					}
+					ruleEString
+					{
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+		otherlv_9=')'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getRuleAccess().getRightParenthesisKeyword_8());
+		}
+		otherlv_10='auths'
+		{
+			newLeafNode(otherlv_10, grammarAccess.getRuleAccess().getAuthsKeyword_9());
+		}
+		otherlv_11='{'
+		{
+			newLeafNode(otherlv_11, grammarAccess.getRuleAccess().getLeftCurlyBracketKeyword_10());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getRuleAccess().getAuthsAuthParserRuleCall_11_0());
+				}
+				lv_auths_12_0=ruleAuth
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getRuleRule());
+					}
+					add(
+						$current,
+						"auths",
+						lv_auths_12_0,
+						"xtext.Securitymodels.Auth");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_13=','
+			{
+				newLeafNode(otherlv_13, grammarAccess.getRuleAccess().getCommaKeyword_12_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getRuleAccess().getAuthsAuthParserRuleCall_12_1_0());
+					}
+					lv_auths_14_0=ruleAuth
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getRuleRule());
@@ -320,42 +455,21 @@ ruleRule returns [EObject current=null]
 						add(
 							$current,
 							"auths",
-							lv_auths_5_0,
+							lv_auths_14_0,
 							"xtext.Securitymodels.Auth");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			(
-				otherlv_6='or'
-				{
-					newLeafNode(otherlv_6, grammarAccess.getRuleAccess().getOrKeyword_4_2_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getRuleAccess().getAuthsAuthParserRuleCall_4_2_1_0());
-						}
-						lv_auths_7_0=ruleAuth
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getRuleRule());
-							}
-							add(
-								$current,
-								"auths",
-								lv_auths_7_0,
-								"xtext.Securitymodels.Auth");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-			otherlv_8='}'
-			{
-				newLeafNode(otherlv_8, grammarAccess.getRuleAccess().getRightCurlyBracketKeyword_4_3());
-			}
-		)?
+		)*
+		otherlv_15='}'
+		{
+			newLeafNode(otherlv_15, grammarAccess.getRuleAccess().getRightCurlyBracketKeyword_13());
+		}
+		otherlv_16='}'
+		{
+			newLeafNode(otherlv_16, grammarAccess.getRuleAccess().getRightCurlyBracketKeyword_14());
+		}
 	)
 ;
 
@@ -417,152 +531,6 @@ ruleRole returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleAuth
-entryRuleAuth returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getAuthRule()); }
-	iv_ruleAuth=ruleAuth
-	{ $current=$iv_ruleAuth.current; }
-	EOF;
-
-// Rule Auth
-ruleAuth returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='{'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getAuthAccess().getLeftCurlyBracketKeyword_0());
-		}
-		otherlv_1='roles'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getAuthAccess().getRolesKeyword_1());
-		}
-		otherlv_2='('
-		{
-			newLeafNode(otherlv_2, grammarAccess.getAuthAccess().getLeftParenthesisKeyword_2());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAuthRule());
-					}
-				}
-				{
-					newCompositeNode(grammarAccess.getAuthAccess().getRolesRoleCrossReference_3_0());
-				}
-				ruleEString
-				{
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			otherlv_4=','
-			{
-				newLeafNode(otherlv_4, grammarAccess.getAuthAccess().getCommaKeyword_4_0());
-			}
-			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getAuthRule());
-						}
-					}
-					{
-						newCompositeNode(grammarAccess.getAuthAccess().getRolesRoleCrossReference_4_1_0());
-					}
-					ruleEString
-					{
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)*
-		otherlv_6=')'
-		{
-			newLeafNode(otherlv_6, grammarAccess.getAuthAccess().getRightParenthesisKeyword_5());
-		}
-		otherlv_7='context:'
-		{
-			newLeafNode(otherlv_7, grammarAccess.getAuthAccess().getContextKeyword_6());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getAuthAccess().getTextualEStringParserRuleCall_7_0());
-				}
-				lv_textual_8_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAuthRule());
-					}
-					set(
-						$current,
-						"textual",
-						lv_textual_8_0,
-						"xtext.Securitymodels.EString");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_9='ocl:'
-		{
-			newLeafNode(otherlv_9, grammarAccess.getAuthAccess().getOclKeyword_8());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getAuthAccess().getOclExpEStringParserRuleCall_9_0());
-				}
-				lv_oclExp_10_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAuthRule());
-					}
-					set(
-						$current,
-						"oclExp",
-						lv_oclExp_10_0,
-						"xtext.Securitymodels.EString");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_11='sql:'
-		{
-			newLeafNode(otherlv_11, grammarAccess.getAuthAccess().getSqlKeyword_10());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getAuthAccess().getSqlStmEStringParserRuleCall_11_0());
-				}
-				lv_sqlStm_12_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAuthRule());
-					}
-					set(
-						$current,
-						"sqlStm",
-						lv_sqlStm_12_0,
-						"xtext.Securitymodels.EString");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_13='}'
-		{
-			newLeafNode(otherlv_13, grammarAccess.getAuthAccess().getRightCurlyBracketKeyword_12());
-		}
-	)
-;
-
 // Entry rule entryRuleProtectedResource
 entryRuleProtectedResource returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getProtectedResourceRule()); }
@@ -579,10 +547,6 @@ ruleProtectedResource returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='('
-		{
-			newLeafNode(otherlv_0, grammarAccess.getProtectedResourceAccess().getLeftParenthesisKeyword_0());
-		}
 		(
 			(
 				{
@@ -591,7 +555,7 @@ ruleProtectedResource returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getProtectedResourceAccess().getPropertyPropertyCrossReference_1_0());
+					newCompositeNode(grammarAccess.getProtectedResourceAccess().getPropertyPropertyCrossReference_0_0());
 				}
 				ruleEString
 				{
@@ -599,16 +563,16 @@ ruleProtectedResource returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='as'
+		otherlv_1='as'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getProtectedResourceAccess().getAsKeyword_2());
+			newLeafNode(otherlv_1, grammarAccess.getProtectedResourceAccess().getAsKeyword_1());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getProtectedResourceAccess().getNameEStringParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getProtectedResourceAccess().getNameEStringParserRuleCall_2_0());
 				}
-				lv_name_3_0=ruleEString
+				lv_name_2_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getProtectedResourceRule());
@@ -616,15 +580,161 @@ ruleProtectedResource returns [EObject current=null]
 					set(
 						$current,
 						"name",
-						lv_name_3_0,
+						lv_name_2_0,
 						"xtext.Securitymodels.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_4=')'
+	)
+;
+
+// Entry rule entryRuleAuth
+entryRuleAuth returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getAuthRule()); }
+	iv_ruleAuth=ruleAuth
+	{ $current=$iv_ruleAuth.current; }
+	EOF;
+
+// Rule Auth
+ruleAuth returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='roles'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getProtectedResourceAccess().getRightParenthesisKeyword_4());
+			newLeafNode(otherlv_0, grammarAccess.getAuthAccess().getRolesKeyword_0());
+		}
+		otherlv_1='('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getAuthAccess().getLeftParenthesisKeyword_1());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAuthRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getAuthAccess().getRolesRoleCrossReference_2_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_3=','
+			{
+				newLeafNode(otherlv_3, grammarAccess.getAuthAccess().getCommaKeyword_3_0());
+			}
+			(
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getAuthRule());
+						}
+					}
+					{
+						newCompositeNode(grammarAccess.getAuthAccess().getRolesRoleCrossReference_3_1_0());
+					}
+					ruleEString
+					{
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+		otherlv_5=')'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getAuthAccess().getRightParenthesisKeyword_4());
+		}
+		otherlv_6='condition:'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getAuthAccess().getConditionKeyword_5());
+		}
+		otherlv_7='{'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getAuthAccess().getLeftCurlyBracketKeyword_6());
+		}
+		otherlv_8='textual'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getAuthAccess().getTextualKeyword_7());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getAuthAccess().getTextualEStringParserRuleCall_8_0());
+				}
+				lv_textual_9_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAuthRule());
+					}
+					set(
+						$current,
+						"textual",
+						lv_textual_9_0,
+						"xtext.Securitymodels.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_10='oclExp'
+		{
+			newLeafNode(otherlv_10, grammarAccess.getAuthAccess().getOclExpKeyword_9());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getAuthAccess().getOclExpEStringParserRuleCall_10_0());
+				}
+				lv_oclExp_11_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAuthRule());
+					}
+					set(
+						$current,
+						"oclExp",
+						lv_oclExp_11_0,
+						"xtext.Securitymodels.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_12='sqlStm'
+		{
+			newLeafNode(otherlv_12, grammarAccess.getAuthAccess().getSqlStmKeyword_11());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getAuthAccess().getSqlStmEStringParserRuleCall_12_0());
+				}
+				lv_sqlStm_13_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAuthRule());
+					}
+					set(
+						$current,
+						"sqlStm",
+						lv_sqlStm_13_0,
+						"xtext.Securitymodels.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_14='}'
+		{
+			newLeafNode(otherlv_14, grammarAccess.getAuthAccess().getRightCurlyBracketKeyword_13());
 		}
 	)
 ;

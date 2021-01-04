@@ -168,7 +168,7 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	 */
 	public EList<Auth> getAuths() {
 		if (auths == null) {
-			auths = new EObjectContainmentEList<Auth>(Auth.class, this, SecuritymodelsPackage.RULE__AUTHS);
+			auths = new EObjectContainmentEList.Resolving<Auth>(Auth.class, this, SecuritymodelsPackage.RULE__AUTHS);
 		}
 		return auths;
 	}

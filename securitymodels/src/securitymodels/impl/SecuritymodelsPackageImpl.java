@@ -148,17 +148,8 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSecurityModel_Name() {
-		return (EAttribute)securityModelEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getSecurityModel_Rules() {
-		return (EReference)securityModelEClass.getEStructuralFeatures().get(1);
+		return (EReference)securityModelEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -167,7 +158,7 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 	 * @generated
 	 */
 	public EReference getSecurityModel_Roles() {
-		return (EReference)securityModelEClass.getEStructuralFeatures().get(2);
+		return (EReference)securityModelEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -176,6 +167,15 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 	 * @generated
 	 */
 	public EReference getSecurityModel_Resources() {
+		return (EReference)securityModelEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSecurityModel_Source() {
 		return (EReference)securityModelEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -361,10 +361,10 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 
 		// Create classes and their features
 		securityModelEClass = createEClass(SECURITY_MODEL);
-		createEAttribute(securityModelEClass, SECURITY_MODEL__NAME);
 		createEReference(securityModelEClass, SECURITY_MODEL__RULES);
 		createEReference(securityModelEClass, SECURITY_MODEL__ROLES);
 		createEReference(securityModelEClass, SECURITY_MODEL__RESOURCES);
+		createEReference(securityModelEClass, SECURITY_MODEL__SOURCE);
 
 		authEClass = createEClass(AUTH);
 		createEAttribute(authEClass, AUTH__TEXTUAL);
@@ -424,10 +424,10 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(securityModelEClass, SecurityModel.class, "SecurityModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSecurityModel_Name(), ecorePackage.getEString(), "name", null, 1, 1, SecurityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSecurityModel_Rules(), this.getRule(), null, "rules", null, 0, -1, SecurityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSecurityModel_Roles(), this.getRole(), null, "roles", null, 1, -1, SecurityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSecurityModel_Resources(), this.getProtectedResource(), null, "resources", null, 0, -1, SecurityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSecurityModel_Rules(), this.getRule(), null, "rules", null, 0, -1, SecurityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSecurityModel_Roles(), this.getRole(), null, "roles", null, 1, -1, SecurityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSecurityModel_Resources(), this.getProtectedResource(), null, "resources", null, 0, -1, SecurityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSecurityModel_Source(), theDatamodelsPackage.getDataModel(), null, "source", null, 1, 1, SecurityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(authEClass, Auth.class, "Auth", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAuth_Textual(), ecorePackage.getEString(), "textual", null, 1, 1, Auth.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -438,7 +438,7 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 		initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRule_Name(), ecorePackage.getEString(), "name", null, 1, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRule_Action(), this.getAction(), "action", null, 1, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRule_Auths(), this.getAuth(), null, "auths", null, 1, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRule_Auths(), this.getAuth(), null, "auths", null, 1, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRule_ProtectedResources(), this.getProtectedResource(), null, "protectedResources", null, 1, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

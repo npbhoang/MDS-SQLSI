@@ -83,8 +83,8 @@ public class SecuritymodelsSemanticSequencer extends AbstractDelegatingSemanticS
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SecuritymodelsPackage.Literals.PROTECTED_RESOURCE__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getProtectedResourceAccess().getPropertyPropertyEStringParserRuleCall_1_0_1(), semanticObject.eGet(SecuritymodelsPackage.Literals.PROTECTED_RESOURCE__PROPERTY, false));
-		feeder.accept(grammarAccess.getProtectedResourceAccess().getNameEStringParserRuleCall_3_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getProtectedResourceAccess().getPropertyPropertyEStringParserRuleCall_0_0_1(), semanticObject.eGet(SecuritymodelsPackage.Literals.PROTECTED_RESOURCE__PROPERTY, false));
+		feeder.accept(grammarAccess.getProtectedResourceAccess().getNameEStringParserRuleCall_2_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -115,7 +115,14 @@ public class SecuritymodelsSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     Rule returns Rule
 	 *
 	 * Constraint:
-	 *     (name=EString action=Action (auths+=Auth auths+=Auth*)?)
+	 *     (
+	 *         name=EString 
+	 *         action=Action 
+	 *         protectedResources+=[ProtectedResource|EString] 
+	 *         protectedResources+=[ProtectedResource|EString]* 
+	 *         auths+=Auth 
+	 *         auths+=Auth*
+	 *     )
 	 */
 	protected void sequence_Rule(ISerializationContext context, Rule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -127,7 +134,7 @@ public class SecuritymodelsSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     SecurityModel returns SecurityModel
 	 *
 	 * Constraint:
-	 *     (name=EString resources+=ProtectedResource resources+=ProtectedResource* roles+=Role+ rules+=Rule*)
+	 *     (source=[DataModel|EString] (resources+=ProtectedResource resources+=ProtectedResource*)? roles+=Role roles+=Role* (rules+=Rule rules+=Rule*)?)
 	 */
 	protected void sequence_SecurityModel(ISerializationContext context, SecurityModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
