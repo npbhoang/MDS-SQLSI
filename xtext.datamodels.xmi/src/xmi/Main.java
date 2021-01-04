@@ -21,12 +21,10 @@ public class Main {
 		resourceSet.getPackageRegistry().put(DatamodelsPackage.eNS_URI, DatamodelsPackage.eINSTANCE);
 		Resource resource = resourceSet.getResource(URI.createURI("University.dm"), true);
 		resource.load(null);
-		System.out.println("University.dm: " + resource.getURI());
 		EcoreUtil.resolveAll(resourceSet);
 		Resource xmiResource = resourceSet.createResource(URI.createURI("UniversityDM.xmi"));
 		xmiResource.getContents().add(resource.getContents().get(0));
 		xmiResource.save(null);
-		System.out.println("UniversityDM.xmi: " + xmiResource.getURI());
 		return xmiResource;
 	}
 

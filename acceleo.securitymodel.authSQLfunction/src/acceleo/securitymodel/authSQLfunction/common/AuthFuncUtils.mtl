@@ -2,7 +2,7 @@
 [**
  * The documentation of AuthFuncUtils.
 */]
-[module AuthFuncUtils('/final/metamodel/securitymodels.ecore')]
+[module AuthFuncUtils('/securitymodels/metamodels/securitymodels.ecore')]
 
 [**
  * The documentation of function trimAndCapitalize, 

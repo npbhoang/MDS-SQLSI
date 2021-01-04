@@ -1,5 +1,5 @@
 [comment encoding = UTF-8 /]
-[module queriesAuths('/final/metamodel/securitymodels.ecore')]
+[module queriesAuths('/securitymodels/metamodels/securitymodels.ecore')]
 
 [query public getAllRelatedAuths (aRole : Role, aProtectedResource : ProtectedResource, aSecurityModel : SecurityModel) : Sequence(Auth) 
 	= aSecurityModel.rules

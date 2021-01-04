@@ -155,8 +155,6 @@
 			<accessrule ignoreifbetter="true" kind="nonaccessible" pattern="**/*"/>
 		</accessrules>
 	</classpathentry>
-	<classpathentry kind="src" path="/datamodels"/>
-	<classpathentry kind="src" path="/xtext.datamodels"/>
 	<classpathentry kind="lib" path="C:/Users/ngpbh/Desktop/Formal Methods in CS/Formal Model Driven Software Engineering/2020/3_MetaModelling/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.15.0.v20180706-1146.jar" sourcepath="C:/Users/ngpbh/Desktop/Formal Methods in CS/Formal Model Driven Software Engineering/2020/3_MetaModelling/eclipse/plugins/org.eclipse.emf.ecore.xmi.source_2.15.0.v20180706-1146.jar">
 		<accessrules>
 			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/xmi/*"/>
@@ -165,9 +163,6 @@
 			<accessrule ignoreifbetter="true" kind="nonaccessible" pattern="**/*"/>
 		</accessrules>
 	</classpathentry>
-	<classpathentry kind="src" path="/xtext.securitymodels"/>
-	<classpathentry kind="src" path="/securitymodels"/>
-	<classpathentry kind="src" path="/xtext.securitymodels.ui"/>
 	<classpathentry kind="lib" path="C:/Users/ngpbh/Desktop/Formal Methods in CS/Formal Model Driven Software Engineering/2020/3_MetaModelling/eclipse/plugins/org.eclipse.xtext.ui_2.15.0.v20180916-1016.jar" sourcepath="C:/Users/ngpbh/Desktop/Formal Methods in CS/Formal Model Driven Software Engineering/2020/3_MetaModelling/eclipse/plugins/org.eclipse.xtext.ui.source_2.15.0.v20180916-1016.jar">
 		<accessrules>
 			<accessrule kind="accessible" pattern="org/eclipse/xtext/common/ui/contentassist/*"/>
@@ -249,5 +244,9 @@
 			<accessrule ignoreifbetter="true" kind="nonaccessible" pattern="**/*"/>
 		</accessrules>
 	</classpathentry>
+	<classpathentry kind="src" path="/xtext.datamodels"/>
+	<classpathentry kind="src" path="/xtext.securitymodels"/>
+	<classpathentry kind="src" path="/securitymodels"/>
+	<classpathentry kind="src" path="/datamodels"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
