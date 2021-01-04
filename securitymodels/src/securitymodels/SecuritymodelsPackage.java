@@ -95,13 +95,13 @@ public interface SecuritymodelsPackage extends EPackage {
 	int SECURITY_MODEL__RESOURCES = 2;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECURITY_MODEL__SOURCE = 3;
+	int SECURITY_MODEL__NAME = 3;
 
 	/**
 	 * The number of structural features of the '<em>Security Model</em>' class.
@@ -396,15 +396,15 @@ public interface SecuritymodelsPackage extends EPackage {
 	EReference getSecurityModel_Resources();
 
 	/**
-	 * Returns the meta object for the reference '{@link securitymodels.SecurityModel#getSource <em>Source</em>}'.
+	 * Returns the meta object for the attribute '{@link securitymodels.SecurityModel#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see securitymodels.SecurityModel#getSource()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see securitymodels.SecurityModel#getName()
 	 * @see #getSecurityModel()
 	 * @generated
 	 */
-	EReference getSecurityModel_Source();
+	EAttribute getSecurityModel_Name();
 
 	/**
 	 * Returns the meta object for class '{@link securitymodels.Auth <em>Auth</em>}'.
@@ -646,12 +646,12 @@ public interface SecuritymodelsPackage extends EPackage {
 		EReference SECURITY_MODEL__RESOURCES = eINSTANCE.getSecurityModel_Resources();
 
 		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SECURITY_MODEL__SOURCE = eINSTANCE.getSecurityModel_Source();
+		EAttribute SECURITY_MODEL__NAME = eINSTANCE.getSecurityModel_Name();
 
 		/**
 		 * The meta object literal for the '{@link securitymodels.impl.AuthImpl <em>Auth</em>}' class.

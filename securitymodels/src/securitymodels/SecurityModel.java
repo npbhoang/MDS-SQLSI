@@ -2,7 +2,6 @@
  */
 package securitymodels;
 
-import datamodels.DataModel;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -19,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link securitymodels.SecurityModel#getRules <em>Rules</em>}</li>
  *   <li>{@link securitymodels.SecurityModel#getRoles <em>Roles</em>}</li>
  *   <li>{@link securitymodels.SecurityModel#getResources <em>Resources</em>}</li>
- *   <li>{@link securitymodels.SecurityModel#getSource <em>Source</em>}</li>
+ *   <li>{@link securitymodels.SecurityModel#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see securitymodels.SecuritymodelsPackage#getSecurityModel()
@@ -76,29 +75,29 @@ public interface SecurityModel extends EObject {
 	EList<ProtectedResource> getResources();
 
 	/**
-	 * Returns the value of the '<em><b>Source</b></em>' reference.
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Source</em>' reference isn't clear,
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source</em>' reference.
-	 * @see #setSource(DataModel)
-	 * @see securitymodels.SecuritymodelsPackage#getSecurityModel_Source()
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see securitymodels.SecuritymodelsPackage#getSecurityModel_Name()
 	 * @model required="true"
 	 * @generated
 	 */
-	DataModel getSource();
+	String getName();
 
 	/**
-	 * Sets the value of the '{@link securitymodels.SecurityModel#getSource <em>Source</em>}' reference.
+	 * Sets the value of the '{@link securitymodels.SecurityModel#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source</em>' reference.
-	 * @see #getSource()
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
 	 * @generated
 	 */
-	void setSource(DataModel value);
+	void setName(String value);
 
 } // SecurityModel

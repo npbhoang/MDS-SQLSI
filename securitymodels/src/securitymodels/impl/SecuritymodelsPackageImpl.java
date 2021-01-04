@@ -175,8 +175,8 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSecurityModel_Source() {
-		return (EReference)securityModelEClass.getEStructuralFeatures().get(3);
+	public EAttribute getSecurityModel_Name() {
+		return (EAttribute)securityModelEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -364,7 +364,7 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 		createEReference(securityModelEClass, SECURITY_MODEL__RULES);
 		createEReference(securityModelEClass, SECURITY_MODEL__ROLES);
 		createEReference(securityModelEClass, SECURITY_MODEL__RESOURCES);
-		createEReference(securityModelEClass, SECURITY_MODEL__SOURCE);
+		createEAttribute(securityModelEClass, SECURITY_MODEL__NAME);
 
 		authEClass = createEClass(AUTH);
 		createEAttribute(authEClass, AUTH__TEXTUAL);
@@ -427,7 +427,7 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 		initEReference(getSecurityModel_Rules(), this.getRule(), null, "rules", null, 0, -1, SecurityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSecurityModel_Roles(), this.getRole(), null, "roles", null, 1, -1, SecurityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSecurityModel_Resources(), this.getProtectedResource(), null, "resources", null, 0, -1, SecurityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSecurityModel_Source(), theDatamodelsPackage.getDataModel(), null, "source", null, 1, 1, SecurityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSecurityModel_Name(), ecorePackage.getEString(), "name", null, 1, 1, SecurityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(authEClass, Auth.class, "Auth", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAuth_Textual(), ecorePackage.getEString(), "textual", null, 1, 1, Auth.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

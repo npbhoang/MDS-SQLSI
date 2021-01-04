@@ -2,7 +2,6 @@
  */
 package securitymodels.impl;
 
-import datamodels.DataModel;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -35,7 +34,7 @@ import securitymodels.SecuritymodelsPackage;
  *   <li>{@link securitymodels.impl.SecurityModelImpl#getRules <em>Rules</em>}</li>
  *   <li>{@link securitymodels.impl.SecurityModelImpl#getRoles <em>Roles</em>}</li>
  *   <li>{@link securitymodels.impl.SecurityModelImpl#getResources <em>Resources</em>}</li>
- *   <li>{@link securitymodels.impl.SecurityModelImpl#getSource <em>Source</em>}</li>
+ *   <li>{@link securitymodels.impl.SecurityModelImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -72,14 +71,24 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 	protected EList<ProtectedResource> resources;
 
 	/**
-	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSource()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected DataModel source;
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -141,16 +150,8 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataModel getSource() {
-		if (source != null && source.eIsProxy()) {
-			InternalEObject oldSource = (InternalEObject)source;
-			source = (DataModel)eResolveProxy(oldSource);
-			if (source != oldSource) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecuritymodelsPackage.SECURITY_MODEL__SOURCE, oldSource, source));
-			}
-		}
-		return source;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -158,20 +159,11 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataModel basicGetSource() {
-		return source;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSource(DataModel newSource) {
-		DataModel oldSource = source;
-		source = newSource;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SecuritymodelsPackage.SECURITY_MODEL__SOURCE, oldSource, source));
+			eNotify(new ENotificationImpl(this, Notification.SET, SecuritymodelsPackage.SECURITY_MODEL__NAME, oldName, name));
 	}
 
 	/**
@@ -206,9 +198,8 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 				return getRoles();
 			case SecuritymodelsPackage.SECURITY_MODEL__RESOURCES:
 				return getResources();
-			case SecuritymodelsPackage.SECURITY_MODEL__SOURCE:
-				if (resolve) return getSource();
-				return basicGetSource();
+			case SecuritymodelsPackage.SECURITY_MODEL__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -234,8 +225,8 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 				getResources().clear();
 				getResources().addAll((Collection<? extends ProtectedResource>)newValue);
 				return;
-			case SecuritymodelsPackage.SECURITY_MODEL__SOURCE:
-				setSource((DataModel)newValue);
+			case SecuritymodelsPackage.SECURITY_MODEL__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -258,8 +249,8 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 			case SecuritymodelsPackage.SECURITY_MODEL__RESOURCES:
 				getResources().clear();
 				return;
-			case SecuritymodelsPackage.SECURITY_MODEL__SOURCE:
-				setSource((DataModel)null);
+			case SecuritymodelsPackage.SECURITY_MODEL__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -279,10 +270,26 @@ public class SecurityModelImpl extends MinimalEObjectImpl.Container implements S
 				return roles != null && !roles.isEmpty();
 			case SecuritymodelsPackage.SECURITY_MODEL__RESOURCES:
 				return resources != null && !resources.isEmpty();
-			case SecuritymodelsPackage.SECURITY_MODEL__SOURCE:
-				return source != null;
+			case SecuritymodelsPackage.SECURITY_MODEL__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //SecurityModelImpl
