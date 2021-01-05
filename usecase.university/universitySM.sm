@@ -14,7 +14,8 @@ rules {
 		auths {
 			roles (Administrator, Lecturer, Student)
 			condition: {
-				textual "Any one with a role can read any registered user basic information"
+				textual "Any one with a role can read 
+				any registered user basic information"
 				oclExp "true"
 				sqlStm "TRUE"
 			}
@@ -25,7 +26,8 @@ rules {
 		auths {
 			roles (Administrator)
 			condition: {
-				textual "Administrator can read any student intake year"
+				textual "Administrator can read 
+				any student intake year"
 				oclExp "true"
 				sqlStm "TRUE"
 			},
@@ -39,7 +41,10 @@ rules {
 			condition: {
 				textual "Lecturer can read its students' intake year"
 				oclExp "caller.taught->exists(c|c.students->includes(self))"
-				sqlStm "EXISTS (SELECT 1 FROM (SELECT * FROM teaching WHERE lecturer = caller) as TEMP1 JOIN (SELECT * FROM enrollment WHERE students = self) as TEMP2 ON TEMP1.taught = TEMP2.enrolled)"
+				sqlStm "EXISTS (SELECT 1 
+					FROM (SELECT * FROM teaching WHERE lecturer = caller) as TEMP1 
+					JOIN (SELECT * FROM enrollment WHERE students = self) as TEMP2 
+					ON TEMP1.taught = TEMP2.enrolled)"
 			}
 		}
 	},
