@@ -1,0 +1,18 @@
+[comment encoding = UTF-8 /]
+[module generateTable('/final/metamodel/relationaldb.ecore')]
+
+[import uam::mde20::sqlsi::acceleo::relational::script::main::generateColumn /]
+[import uam::mde20::sqlsi::acceleo::relational::script::queries::tableQueries /]
+
+[template public generateTable(aTable : Table)]
+DROP TABLE IF EXISTS [ aTable.name /];
+CREATE TABLE [ aTable.name /](
+[for (c : Column | aTable.columns )]
+[if isLastColumn(c,aTable) ]
+[ c.generateColumn() /]
+[else]
+[ c.generateColumn() /],
+[/if]
+[/for]
+);
+[/template]

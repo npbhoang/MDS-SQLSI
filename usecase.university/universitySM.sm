@@ -1,0 +1,57 @@
+SecurityModel University
+protect "University.RegUser.email" as regUserEmail
+protect "University.RegUser.name" as regUserName
+protect "University.Lecturer.salary" as lecturerSalary
+protect "University.Student.intake" as studentIntake
+roles {
+	Administrator <- "University.RegUser",
+	Lecturer <- "University.RegUser",
+	Student <- "University.RegUser"
+}
+rules {
+	Rule readBasicInfo {
+		action READ (regUserEmail, regUserName)
+		auths {
+			roles (Administrator, Lecturer, Student)
+			condition: {
+				textual "Any one with a role can read any registered user basic information"
+				oclExp "true"
+				sqlStm "TRUE"
+			}
+		}
+	},
+	Rule readStudentSpecificInfo {
+		action READ (studentIntake)
+		auths {
+			roles (Administrator)
+			condition: {
+				textual "Administrator can read any student intake year"
+				oclExp "true"
+				sqlStm "TRUE"
+			},
+			roles (Student)
+			condition: {
+				textual "Student can read its classmates' intake year"
+				oclExp "caller.enrolled->exists(c|c.students->includes(self))"
+				sqlStm "caller = self"
+			},
+			roles (Lecturer)
+			condition: {
+				textual "Lecturer can read its students' intake year"
+				oclExp "caller.taught->exists(c|c.students->includes(self))"
+				sqlStm "EXISTS (SELECT 1 FROM (SELECT * FROM teaching WHERE lecturer = caller) as TEMP1 JOIN (SELECT * FROM enrollment WHERE students = self) as TEMP2 ON TEMP1.taught = TEMP2.enrolled)"
+			}
+		}
+	},
+	Rule readLecturerSpecificInfo {
+		action READ (lecturerSalary)
+		auths {
+			roles (Lecturer)
+			condition: {
+				textual "Lecturer can read its own salary"
+				oclExp "true"
+				sqlStm "TRUE"
+			}
+		}
+	}
+}

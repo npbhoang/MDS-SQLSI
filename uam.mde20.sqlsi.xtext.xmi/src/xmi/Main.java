@@ -15,14 +15,19 @@ import uam.mde20.sqlsi.xtext.DatamodelsStandaloneSetup;
 import uam.mde20.sqlsi.xtext.SecuritymodelsStandaloneSetup;
 
 public class Main {
+	static final String datamodelURI = "C:\\Users\\ngpbh\\Desktop\\Formal Methods in CS\\Formal Model Driven Software Engineering\\2020\\FinalProject\\usecase.university\\universityDM.dm";
+	static final String securitymodelURI = "C:\\Users\\ngpbh\\Desktop\\Formal Methods in CS\\Formal Model Driven Software Engineering\\2020\\FinalProject\\usecase.university\\universitySM.sm";
+	static final String XMIFileExtension = "xmi";
+	
 	private static Resource transformDataModelXText2XMI() throws IOException {
 		Injector injector = new DatamodelsStandaloneSetup().createInjectorAndDoEMFRegistration();
 		ResourceSet resourceSet = injector.getInstance(ResourceSet.class);
 		resourceSet.getPackageRegistry().put(DatamodelsPackage.eNS_URI, DatamodelsPackage.eINSTANCE);
-		Resource resource = resourceSet.getResource(URI.createURI("University.dm"), true);
+		URI uri = URI.createFileURI(datamodelURI);
+		Resource resource = resourceSet.getResource(uri, true);
 		resource.load(null);
 		EcoreUtil.resolveAll(resourceSet);
-		Resource xmiResource = resourceSet.createResource(URI.createURI("UniversityDM.xmi"));
+		Resource xmiResource = resourceSet.createResource(uri.trimFileExtension().appendFileExtension(XMIFileExtension));
 		xmiResource.getContents().add(resource.getContents().get(0));
 		xmiResource.save(null);
 		return xmiResource;
@@ -37,11 +42,12 @@ public class Main {
 		Injector injector = new SecuritymodelsStandaloneSetup().createInjectorAndDoEMFRegistration();
 		ResourceSet resourceSet = injector.getInstance(ResourceSet.class);
 		resourceSet.getPackageRegistry().put(SecuritymodelsPackage.eNS_URI, SecuritymodelsPackage.eINSTANCE);
-		Resource resource = resourceSet.getResource(URI.createURI("University.sm"), true);
+		URI uri = URI.createFileURI(securitymodelURI);
+		Resource resource = resourceSet.getResource(uri, true);
 		resource.load(null);
 		EcoreUtil.resolveAll(resourceSet);
 		SecurityModel secModel = (SecurityModel) resource.getContents().get(0);
-		Resource xmiResource = resourceSet.createResource(URI.createURI("UniversitySM.xmi"));
+		Resource xmiResource = resourceSet.createResource(uri.trimFileExtension().appendFileExtension(XMIFileExtension));
 		xmiResource.getContents().add(secModel);
 		xmiResource.save(null);
 	}

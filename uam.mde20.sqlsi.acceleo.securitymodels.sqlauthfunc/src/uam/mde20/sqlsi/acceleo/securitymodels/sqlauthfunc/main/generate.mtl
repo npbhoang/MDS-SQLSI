@@ -1,0 +1,10 @@
+[comment encoding = UTF-8 /]
+[module generate('/final/metamodel/securitymodels.ecore')]
+
+
+[template public generateElement(aSecurityModel : SecurityModel)]
+[comment @main/]
+[file (aSecurityModel.name, false, 'UTF-8')]
+
+[/file]
+[/template]

@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_TG-vEEpXEeuD1LZDfFIT4Q">
+  <imports href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_gfQNYEp7EeuWfKxjSz8t0g" name="atomizeAuthRole">
+    <parameters xmi:id="_mfu3MEp9EeuWfKxjSz8t0g" name="x" kind="VAR">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_n_FxIEp9EeuWfKxjSz8t0g" name="y" kind="VAR">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_oIYQAEp9EeuWfKxjSz8t0g" name="z" kind="VAR">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_gfZ-YEp7EeuWfKxjSz8t0g" name="Lhs">
+      <nodes xmi:id="_jMKi6Up7EeuWfKxjSz8t0g" outgoing="_wP8e8Ep7EeuWfKxjSz8t0g _dB-YwEp8EeuWfKxjSz8t0g _G1cPsEp9EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel"/>
+      </nodes>
+      <nodes xmi:id="_vA0ZYEp7EeuWfKxjSz8t0g" incoming="_wP8e8Ep7EeuWfKxjSz8t0g" outgoing="_EsFL8Ep8EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule"/>
+      </nodes>
+      <nodes xmi:id="_EFoP8Ep8EeuWfKxjSz8t0g" incoming="_EsFL8Ep8EeuWfKxjSz8t0g" outgoing="_Ri6UcEp8EeuWfKxjSz8t0g _GmNg4Ep9EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth"/>
+        <attributes xmi:id="_ZYWKMEp9EeuWfKxjSz8t0g" value="x">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/oclExp"/>
+        </attributes>
+        <attributes xmi:id="_akf0QEp9EeuWfKxjSz8t0g" value="y">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/sqlStm"/>
+        </attributes>
+        <attributes xmi:id="_a9wo0Ep9EeuWfKxjSz8t0g" value="z">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/textual"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_PVgowEp8EeuWfKxjSz8t0g" incoming="_Ri6UcEp8EeuWfKxjSz8t0g _dB-YwEp8EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Role"/>
+      </nodes>
+      <nodes xmi:id="_GLf60Ep9EeuWfKxjSz8t0g" incoming="_GmNg4Ep9EeuWfKxjSz8t0g _G1cPsEp9EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Role"/>
+      </nodes>
+      <edges xmi:id="_wP8e8Ep7EeuWfKxjSz8t0g" source="_jMKi6Up7EeuWfKxjSz8t0g" target="_vA0ZYEp7EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/rules"/>
+      </edges>
+      <edges xmi:id="_EsFL8Ep8EeuWfKxjSz8t0g" source="_vA0ZYEp7EeuWfKxjSz8t0g" target="_EFoP8Ep8EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/auths"/>
+      </edges>
+      <edges xmi:id="_Ri6UcEp8EeuWfKxjSz8t0g" source="_EFoP8Ep8EeuWfKxjSz8t0g" target="_PVgowEp8EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/roles"/>
+      </edges>
+      <edges xmi:id="_dB-YwEp8EeuWfKxjSz8t0g" source="_jMKi6Up7EeuWfKxjSz8t0g" target="_PVgowEp8EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/roles"/>
+      </edges>
+      <edges xmi:id="_GmNg4Ep9EeuWfKxjSz8t0g" source="_EFoP8Ep8EeuWfKxjSz8t0g" target="_GLf60Ep9EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/roles"/>
+      </edges>
+      <edges xmi:id="_G1cPsEp9EeuWfKxjSz8t0g" source="_jMKi6Up7EeuWfKxjSz8t0g" target="_GLf60Ep9EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/roles"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_gfZ-YUp7EeuWfKxjSz8t0g" name="Rhs">
+      <nodes xmi:id="_jMMVA0p7EeuWfKxjSz8t0g" outgoing="_wP9GAEp7EeuWfKxjSz8t0g _dB-YwUp8EeuWfKxjSz8t0g _G1cPsUp9EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel"/>
+      </nodes>
+      <nodes xmi:id="_vA3csEp7EeuWfKxjSz8t0g" incoming="_wP9GAEp7EeuWfKxjSz8t0g" outgoing="_EsFL8Up8EeuWfKxjSz8t0g _K3S7kEp9EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule"/>
+      </nodes>
+      <nodes xmi:id="_EFpeEEp8EeuWfKxjSz8t0g" incoming="_EsFL8Up8EeuWfKxjSz8t0g" outgoing="_Ri67gEp8EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth"/>
+        <attributes xmi:id="_ZYXYUEp9EeuWfKxjSz8t0g" value="x">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/oclExp"/>
+        </attributes>
+        <attributes xmi:id="_akf0QUp9EeuWfKxjSz8t0g" value="y">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/sqlStm"/>
+        </attributes>
+        <attributes xmi:id="_a9wo0Up9EeuWfKxjSz8t0g" value="z">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/textual"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_PVlhQEp8EeuWfKxjSz8t0g" incoming="_Ri67gEp8EeuWfKxjSz8t0g _dB-YwUp8EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Role"/>
+      </nodes>
+      <nodes xmi:id="_GLgh4Ep9EeuWfKxjSz8t0g" incoming="_G1cPsUp9EeuWfKxjSz8t0g _LIup0Ep9EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Role"/>
+      </nodes>
+      <nodes xmi:id="_Jtpy8Ep9EeuWfKxjSz8t0g" incoming="_K3S7kEp9EeuWfKxjSz8t0g" outgoing="_LIup0Ep9EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth"/>
+        <attributes xmi:id="_bV4N4Ep9EeuWfKxjSz8t0g" value="x">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/oclExp"/>
+        </attributes>
+        <attributes xmi:id="_cCTPAEp9EeuWfKxjSz8t0g" value="y">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/sqlStm"/>
+        </attributes>
+        <attributes xmi:id="_dERpYEp9EeuWfKxjSz8t0g" value="z">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/textual"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_wP9GAEp7EeuWfKxjSz8t0g" source="_jMMVA0p7EeuWfKxjSz8t0g" target="_vA3csEp7EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/rules"/>
+      </edges>
+      <edges xmi:id="_EsFL8Up8EeuWfKxjSz8t0g" source="_vA3csEp7EeuWfKxjSz8t0g" target="_EFpeEEp8EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/auths"/>
+      </edges>
+      <edges xmi:id="_Ri67gEp8EeuWfKxjSz8t0g" source="_EFpeEEp8EeuWfKxjSz8t0g" target="_PVlhQEp8EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/roles"/>
+      </edges>
+      <edges xmi:id="_dB-YwUp8EeuWfKxjSz8t0g" source="_jMMVA0p7EeuWfKxjSz8t0g" target="_PVlhQEp8EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/roles"/>
+      </edges>
+      <edges xmi:id="_G1cPsUp9EeuWfKxjSz8t0g" source="_jMMVA0p7EeuWfKxjSz8t0g" target="_GLgh4Ep9EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/roles"/>
+      </edges>
+      <edges xmi:id="_K3S7kEp9EeuWfKxjSz8t0g" source="_vA3csEp7EeuWfKxjSz8t0g" target="_Jtpy8Ep9EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/auths"/>
+      </edges>
+      <edges xmi:id="_LIup0Ep9EeuWfKxjSz8t0g" source="_Jtpy8Ep9EeuWfKxjSz8t0g" target="_GLgh4Ep9EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/roles"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_jMMVVEp7EeuWfKxjSz8t0g" origin="_jMKi6Up7EeuWfKxjSz8t0g" image="_jMMVA0p7EeuWfKxjSz8t0g"/>
+    <mappings xmi:id="_vA3csUp7EeuWfKxjSz8t0g" origin="_vA0ZYEp7EeuWfKxjSz8t0g" image="_vA3csEp7EeuWfKxjSz8t0g"/>
+    <mappings xmi:id="_EFpeEUp8EeuWfKxjSz8t0g" origin="_EFoP8Ep8EeuWfKxjSz8t0g" image="_EFpeEEp8EeuWfKxjSz8t0g"/>
+    <mappings xmi:id="_PVlhQUp8EeuWfKxjSz8t0g" origin="_PVgowEp8EeuWfKxjSz8t0g" image="_PVlhQEp8EeuWfKxjSz8t0g"/>
+    <mappings xmi:id="_GLgh4Up9EeuWfKxjSz8t0g" origin="_GLf60Ep9EeuWfKxjSz8t0g" image="_GLgh4Ep9EeuWfKxjSz8t0g"/>
+    <multiRules xmi:id="_VC5QEEqBEeuWfKxjSz8t0g">
+      <parameters xmi:id="_YMXicEqBEeuWfKxjSz8t0g" name="x" kind="VAR">
+        <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </parameters>
+      <parameters xmi:id="_YMXicUqBEeuWfKxjSz8t0g" name="y" kind="VAR">
+        <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </parameters>
+      <parameters xmi:id="_YMXickqBEeuWfKxjSz8t0g" name="z" kind="VAR">
+        <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </parameters>
+      <lhs xmi:id="_VC5QEUqBEeuWfKxjSz8t0g" name="Lhs">
+        <nodes xmi:id="_VC53KUqBEeuWfKxjSz8t0g" outgoing="_VC53LUqBEeuWfKxjSz8t0g _VC53MEqBEeuWfKxjSz8t0g _VC53M0qBEeuWfKxjSz8t0g _T4st0EqBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel"/>
+        </nodes>
+        <nodes xmi:id="_VC53K0qBEeuWfKxjSz8t0g" incoming="_VC53LUqBEeuWfKxjSz8t0g" outgoing="_VC53SkqBEeuWfKxjSz8t0g _TeKt8EqBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule"/>
+        </nodes>
+        <nodes xmi:id="_VC53LkqBEeuWfKxjSz8t0g" incoming="_VC53MEqBEeuWfKxjSz8t0g _VC53TkqBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Role"/>
+        </nodes>
+        <nodes xmi:id="_VC53MUqBEeuWfKxjSz8t0g" incoming="_VC53M0qBEeuWfKxjSz8t0g _VC53T0qBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Role"/>
+        </nodes>
+        <nodes xmi:id="_Sx7TAEqBEeuWfKxjSz8t0g" incoming="_TeKt8EqBEeuWfKxjSz8t0g _T4st0EqBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//ProtectedResource"/>
+        </nodes>
+        <nodes xmi:id="_VC53RUqBEeuWfKxjSz8t0g" incoming="_VC53SkqBEeuWfKxjSz8t0g" outgoing="_VC53TkqBEeuWfKxjSz8t0g _VC53T0qBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth"/>
+          <attributes xmi:id="_VC53RkqBEeuWfKxjSz8t0g" value="x">
+            <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/oclExp"/>
+          </attributes>
+          <attributes xmi:id="_VC53R0qBEeuWfKxjSz8t0g" value="y">
+            <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/sqlStm"/>
+          </attributes>
+          <attributes xmi:id="_VC53SEqBEeuWfKxjSz8t0g" value="z">
+            <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/textual"/>
+          </attributes>
+        </nodes>
+        <edges xmi:id="_VC53LUqBEeuWfKxjSz8t0g" source="_VC53KUqBEeuWfKxjSz8t0g" target="_VC53K0qBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/rules"/>
+        </edges>
+        <edges xmi:id="_VC53MEqBEeuWfKxjSz8t0g" source="_VC53KUqBEeuWfKxjSz8t0g" target="_VC53LkqBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/roles"/>
+        </edges>
+        <edges xmi:id="_VC53M0qBEeuWfKxjSz8t0g" source="_VC53KUqBEeuWfKxjSz8t0g" target="_VC53MUqBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/roles"/>
+        </edges>
+        <edges xmi:id="_VC53SkqBEeuWfKxjSz8t0g" source="_VC53K0qBEeuWfKxjSz8t0g" target="_VC53RUqBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/auths"/>
+        </edges>
+        <edges xmi:id="_VC53TkqBEeuWfKxjSz8t0g" source="_VC53RUqBEeuWfKxjSz8t0g" target="_VC53LkqBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/roles"/>
+        </edges>
+        <edges xmi:id="_VC53T0qBEeuWfKxjSz8t0g" source="_VC53RUqBEeuWfKxjSz8t0g" target="_VC53MUqBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/roles"/>
+        </edges>
+        <edges xmi:id="_TeKt8EqBEeuWfKxjSz8t0g" source="_VC53K0qBEeuWfKxjSz8t0g" target="_Sx7TAEqBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/protectedResources"/>
+        </edges>
+        <edges xmi:id="_T4st0EqBEeuWfKxjSz8t0g" source="_VC53KUqBEeuWfKxjSz8t0g" target="_Sx7TAEqBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/resources"/>
+        </edges>
+      </lhs>
+      <rhs xmi:id="_VC5QEkqBEeuWfKxjSz8t0g" name="Rhs">
+        <nodes xmi:id="_VC5QE0qBEeuWfKxjSz8t0g" outgoing="_VC5QF0qBEeuWfKxjSz8t0g _VC53IkqBEeuWfKxjSz8t0g _VC53JUqBEeuWfKxjSz8t0g _T4st0UqBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel"/>
+        </nodes>
+        <nodes xmi:id="_VC5QFUqBEeuWfKxjSz8t0g" incoming="_VC5QF0qBEeuWfKxjSz8t0g" outgoing="_VC53PUqBEeuWfKxjSz8t0g _VC53Q0qBEeuWfKxjSz8t0g _TeKt8UqBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule"/>
+        </nodes>
+        <nodes xmi:id="_VC53IEqBEeuWfKxjSz8t0g" incoming="_VC53IkqBEeuWfKxjSz8t0g _VC53TUqBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Role"/>
+        </nodes>
+        <nodes xmi:id="_VC53I0qBEeuWfKxjSz8t0g" incoming="_VC53JUqBEeuWfKxjSz8t0g _VC53UkqBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Role"/>
+        </nodes>
+        <nodes xmi:id="_Sx-9YEqBEeuWfKxjSz8t0g" incoming="_TeKt8UqBEeuWfKxjSz8t0g _T4st0UqBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//ProtectedResource"/>
+        </nodes>
+        <nodes xmi:id="_VC53OEqBEeuWfKxjSz8t0g" incoming="_VC53PUqBEeuWfKxjSz8t0g" outgoing="_VC53TUqBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth"/>
+          <attributes xmi:id="_VC53OUqBEeuWfKxjSz8t0g" value="x">
+            <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/oclExp"/>
+          </attributes>
+          <attributes xmi:id="_VC53OkqBEeuWfKxjSz8t0g" value="y">
+            <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/sqlStm"/>
+          </attributes>
+          <attributes xmi:id="_VC53O0qBEeuWfKxjSz8t0g" value="z">
+            <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/textual"/>
+          </attributes>
+        </nodes>
+        <nodes xmi:id="_VC53PkqBEeuWfKxjSz8t0g" incoming="_VC53Q0qBEeuWfKxjSz8t0g" outgoing="_VC53UkqBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth"/>
+          <attributes xmi:id="_VC53P0qBEeuWfKxjSz8t0g" value="x">
+            <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/oclExp"/>
+          </attributes>
+          <attributes xmi:id="_VC53QEqBEeuWfKxjSz8t0g" value="y">
+            <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/sqlStm"/>
+          </attributes>
+          <attributes xmi:id="_VC53QUqBEeuWfKxjSz8t0g" value="z">
+            <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/textual"/>
+          </attributes>
+        </nodes>
+        <edges xmi:id="_VC5QF0qBEeuWfKxjSz8t0g" source="_VC5QE0qBEeuWfKxjSz8t0g" target="_VC5QFUqBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/rules"/>
+        </edges>
+        <edges xmi:id="_VC53IkqBEeuWfKxjSz8t0g" source="_VC5QE0qBEeuWfKxjSz8t0g" target="_VC53IEqBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/roles"/>
+        </edges>
+        <edges xmi:id="_VC53JUqBEeuWfKxjSz8t0g" source="_VC5QE0qBEeuWfKxjSz8t0g" target="_VC53I0qBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/roles"/>
+        </edges>
+        <edges xmi:id="_VC53PUqBEeuWfKxjSz8t0g" source="_VC5QFUqBEeuWfKxjSz8t0g" target="_VC53OEqBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/auths"/>
+        </edges>
+        <edges xmi:id="_VC53Q0qBEeuWfKxjSz8t0g" source="_VC5QFUqBEeuWfKxjSz8t0g" target="_VC53PkqBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/auths"/>
+        </edges>
+        <edges xmi:id="_VC53TUqBEeuWfKxjSz8t0g" source="_VC53OEqBEeuWfKxjSz8t0g" target="_VC53IEqBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/roles"/>
+        </edges>
+        <edges xmi:id="_VC53UkqBEeuWfKxjSz8t0g" source="_VC53PkqBEeuWfKxjSz8t0g" target="_VC53I0qBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/roles"/>
+        </edges>
+        <edges xmi:id="_TeKt8UqBEeuWfKxjSz8t0g" source="_VC5QFUqBEeuWfKxjSz8t0g" target="_Sx-9YEqBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/protectedResources"/>
+        </edges>
+        <edges xmi:id="_T4st0UqBEeuWfKxjSz8t0g" source="_VC5QE0qBEeuWfKxjSz8t0g" target="_Sx-9YEqBEeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/resources"/>
+        </edges>
+      </rhs>
+      <mappings xmi:id="_VC53N0qBEeuWfKxjSz8t0g" origin="_VC53KUqBEeuWfKxjSz8t0g" image="_VC5QE0qBEeuWfKxjSz8t0g"/>
+      <mappings xmi:id="_VC53TEqBEeuWfKxjSz8t0g" origin="_VC53K0qBEeuWfKxjSz8t0g" image="_VC5QFUqBEeuWfKxjSz8t0g"/>
+      <mappings xmi:id="_VC53UEqBEeuWfKxjSz8t0g" origin="_VC53RUqBEeuWfKxjSz8t0g" image="_VC53OEqBEeuWfKxjSz8t0g"/>
+      <mappings xmi:id="_VC53UUqBEeuWfKxjSz8t0g" origin="_VC53LkqBEeuWfKxjSz8t0g" image="_VC53IEqBEeuWfKxjSz8t0g"/>
+      <mappings xmi:id="_VC53U0qBEeuWfKxjSz8t0g" origin="_VC53MUqBEeuWfKxjSz8t0g" image="_VC53I0qBEeuWfKxjSz8t0g"/>
+      <mappings xmi:id="_Sx-9YUqBEeuWfKxjSz8t0g" origin="_Sx7TAEqBEeuWfKxjSz8t0g" image="_Sx-9YEqBEeuWfKxjSz8t0g"/>
+      <multiMappings xmi:id="_VC5QFEqBEeuWfKxjSz8t0g" origin="_jMMVA0p7EeuWfKxjSz8t0g" image="_VC5QE0qBEeuWfKxjSz8t0g"/>
+      <multiMappings xmi:id="_VC5QFkqBEeuWfKxjSz8t0g" origin="_vA3csEp7EeuWfKxjSz8t0g" image="_VC5QFUqBEeuWfKxjSz8t0g"/>
+      <multiMappings xmi:id="_VC53IUqBEeuWfKxjSz8t0g" origin="_PVlhQEp8EeuWfKxjSz8t0g" image="_VC53IEqBEeuWfKxjSz8t0g"/>
+      <multiMappings xmi:id="_VC53JEqBEeuWfKxjSz8t0g" origin="_GLgh4Ep9EeuWfKxjSz8t0g" image="_VC53I0qBEeuWfKxjSz8t0g"/>
+      <multiMappings xmi:id="_VC53KkqBEeuWfKxjSz8t0g" origin="_jMKi6Up7EeuWfKxjSz8t0g" image="_VC53KUqBEeuWfKxjSz8t0g"/>
+      <multiMappings xmi:id="_VC53LEqBEeuWfKxjSz8t0g" origin="_vA0ZYEp7EeuWfKxjSz8t0g" image="_VC53K0qBEeuWfKxjSz8t0g"/>
+      <multiMappings xmi:id="_VC53L0qBEeuWfKxjSz8t0g" origin="_PVgowEp8EeuWfKxjSz8t0g" image="_VC53LkqBEeuWfKxjSz8t0g"/>
+      <multiMappings xmi:id="_VC53MkqBEeuWfKxjSz8t0g" origin="_GLf60Ep9EeuWfKxjSz8t0g" image="_VC53MUqBEeuWfKxjSz8t0g"/>
+      <multiMappings xmi:id="_VC53PEqBEeuWfKxjSz8t0g" origin="_EFpeEEp8EeuWfKxjSz8t0g" image="_VC53OEqBEeuWfKxjSz8t0g"/>
+      <multiMappings xmi:id="_VC53QkqBEeuWfKxjSz8t0g" origin="_Jtpy8Ep9EeuWfKxjSz8t0g" image="_VC53PkqBEeuWfKxjSz8t0g"/>
+      <multiMappings xmi:id="_VC53SUqBEeuWfKxjSz8t0g" origin="_EFoP8Ep8EeuWfKxjSz8t0g" image="_VC53RUqBEeuWfKxjSz8t0g"/>
+    </multiRules>
+  </units>
+  <units xsi:type="henshin:LoopUnit" xmi:id="_xAk_wEp9EeuWfKxjSz8t0g" name="loopAtomizeAuthRole" subUnit="_gfQNYEp7EeuWfKxjSz8t0g"/>
+  <units xsi:type="henshin:Rule" xmi:id="_zPj_0Ep9EeuWfKxjSz8t0g" name="atomizeRuleAuth">
+    <parameters xmi:id="_jh0CoEp_EeuWfKxjSz8t0g" name="x" kind="VAR">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_jh0CoUp_EeuWfKxjSz8t0g" name="y" kind="VAR">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_jh0Cokp_EeuWfKxjSz8t0g" name="z" kind="VAR">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_kDWCYEp_EeuWfKxjSz8t0g" name="n" kind="VAR">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_kDWCYUp_EeuWfKxjSz8t0g" name="r" kind="VAR">
+      <type xsi:type="ecore:EEnum" href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Action"/>
+    </parameters>
+    <lhs xmi:id="_zPmcEEp9EeuWfKxjSz8t0g" name="Lhs">
+      <nodes xmi:id="_55hWYEp9EeuWfKxjSz8t0g" outgoing="_GVFfMEp-EeuWfKxjSz8t0g _sul7QEp_EeuWfKxjSz8t0g _tOWZYEp_EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel"/>
+      </nodes>
+      <nodes xmi:id="_6wmIUEp9EeuWfKxjSz8t0g" incoming="_GVFfMEp-EeuWfKxjSz8t0g" outgoing="_GfAQMEp-EeuWfKxjSz8t0g _Gpoy4Ep-EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule"/>
+        <attributes xmi:id="_epoLsEp_EeuWfKxjSz8t0g" value="r">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/action"/>
+        </attributes>
+        <attributes xmi:id="_fyyMIEp_EeuWfKxjSz8t0g" value="n">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_7USrQEp9EeuWfKxjSz8t0g" incoming="_GfAQMEp-EeuWfKxjSz8t0g" outgoing="_G1sR4Ep-EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth"/>
+      </nodes>
+      <nodes xmi:id="_8QueUEp9EeuWfKxjSz8t0g" incoming="_Gpoy4Ep-EeuWfKxjSz8t0g" outgoing="_G-_X0Ep-EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth"/>
+        <attributes xmi:id="_XPrioEp_EeuWfKxjSz8t0g" value="x">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/oclExp"/>
+        </attributes>
+        <attributes xmi:id="_YvNbsEp_EeuWfKxjSz8t0g" value="y">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/sqlStm"/>
+        </attributes>
+        <attributes xmi:id="_Zpq40Ep_EeuWfKxjSz8t0g" value="z">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/textual"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="__CHA0Ep9EeuWfKxjSz8t0g" incoming="_G1sR4Ep-EeuWfKxjSz8t0g _sul7QEp_EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Role"/>
+      </nodes>
+      <nodes xmi:id="__KLXsEp9EeuWfKxjSz8t0g" incoming="_G-_X0Ep-EeuWfKxjSz8t0g _tOWZYEp_EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Role"/>
+      </nodes>
+      <edges xmi:id="_GVFfMEp-EeuWfKxjSz8t0g" source="_55hWYEp9EeuWfKxjSz8t0g" target="_6wmIUEp9EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/rules"/>
+      </edges>
+      <edges xmi:id="_GfAQMEp-EeuWfKxjSz8t0g" source="_6wmIUEp9EeuWfKxjSz8t0g" target="_7USrQEp9EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/auths"/>
+      </edges>
+      <edges xmi:id="_Gpoy4Ep-EeuWfKxjSz8t0g" source="_6wmIUEp9EeuWfKxjSz8t0g" target="_8QueUEp9EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/auths"/>
+      </edges>
+      <edges xmi:id="_G1sR4Ep-EeuWfKxjSz8t0g" source="_7USrQEp9EeuWfKxjSz8t0g" target="__CHA0Ep9EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/roles"/>
+      </edges>
+      <edges xmi:id="_G-_X0Ep-EeuWfKxjSz8t0g" source="_8QueUEp9EeuWfKxjSz8t0g" target="__KLXsEp9EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/roles"/>
+      </edges>
+      <edges xmi:id="_sul7QEp_EeuWfKxjSz8t0g" source="_55hWYEp9EeuWfKxjSz8t0g" target="__CHA0Ep9EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/roles"/>
+      </edges>
+      <edges xmi:id="_tOWZYEp_EeuWfKxjSz8t0g" source="_55hWYEp9EeuWfKxjSz8t0g" target="__KLXsEp9EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/roles"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_zPmcEUp9EeuWfKxjSz8t0g" name="Rhs">
+      <nodes xmi:id="_55hWYUp9EeuWfKxjSz8t0g" outgoing="_GVFfMUp-EeuWfKxjSz8t0g _vKrYoEp-EeuWfKxjSz8t0g _sul7QUp_EeuWfKxjSz8t0g _tOXAcEp_EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel"/>
+      </nodes>
+      <nodes xmi:id="_6wmIUUp9EeuWfKxjSz8t0g" incoming="_GVFfMUp-EeuWfKxjSz8t0g" outgoing="_GfCscEp-EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule"/>
+        <attributes xmi:id="_epoLsUp_EeuWfKxjSz8t0g" value="r">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/action"/>
+        </attributes>
+        <attributes xmi:id="_fyyMIUp_EeuWfKxjSz8t0g" value="n">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_7USrQUp9EeuWfKxjSz8t0g" incoming="_GfCscEp-EeuWfKxjSz8t0g" outgoing="_G1sR4Up-EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth"/>
+      </nodes>
+      <nodes xmi:id="__CHA0Up9EeuWfKxjSz8t0g" incoming="_G1sR4Up-EeuWfKxjSz8t0g _sul7QUp_EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Role"/>
+      </nodes>
+      <nodes xmi:id="__KLXsUp9EeuWfKxjSz8t0g" incoming="_Pt3-EEp_EeuWfKxjSz8t0g _tOXAcEp_EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Role"/>
+      </nodes>
+      <nodes xmi:id="_oSAQoEp-EeuWfKxjSz8t0g" incoming="_vKrYoEp-EeuWfKxjSz8t0g" outgoing="_PVq5cEp_EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule"/>
+        <attributes xmi:id="_gvPNUEp_EeuWfKxjSz8t0g" value="r">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/action"/>
+        </attributes>
+        <attributes xmi:id="_hY7qkEp_EeuWfKxjSz8t0g" value="n">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_MPB4oEp_EeuWfKxjSz8t0g" incoming="_PVq5cEp_EeuWfKxjSz8t0g" outgoing="_Pt3-EEp_EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth"/>
+        <attributes xmi:id="_auS-kEp_EeuWfKxjSz8t0g" value="x">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/oclExp"/>
+        </attributes>
+        <attributes xmi:id="_bh4XoEp_EeuWfKxjSz8t0g" value="y">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/sqlStm"/>
+        </attributes>
+        <attributes xmi:id="_ciaAgEp_EeuWfKxjSz8t0g" value="z">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/textual"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_GVFfMUp-EeuWfKxjSz8t0g" source="_55hWYUp9EeuWfKxjSz8t0g" target="_6wmIUUp9EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/rules"/>
+      </edges>
+      <edges xmi:id="_GfCscEp-EeuWfKxjSz8t0g" source="_6wmIUUp9EeuWfKxjSz8t0g" target="_7USrQUp9EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/auths"/>
+      </edges>
+      <edges xmi:id="_G1sR4Up-EeuWfKxjSz8t0g" source="_7USrQUp9EeuWfKxjSz8t0g" target="__CHA0Up9EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/roles"/>
+      </edges>
+      <edges xmi:id="_vKrYoEp-EeuWfKxjSz8t0g" source="_55hWYUp9EeuWfKxjSz8t0g" target="_oSAQoEp-EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/rules"/>
+      </edges>
+      <edges xmi:id="_PVq5cEp_EeuWfKxjSz8t0g" source="_oSAQoEp-EeuWfKxjSz8t0g" target="_MPB4oEp_EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/auths"/>
+      </edges>
+      <edges xmi:id="_Pt3-EEp_EeuWfKxjSz8t0g" source="_MPB4oEp_EeuWfKxjSz8t0g" target="__KLXsUp9EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/roles"/>
+      </edges>
+      <edges xmi:id="_sul7QUp_EeuWfKxjSz8t0g" source="_55hWYUp9EeuWfKxjSz8t0g" target="__CHA0Up9EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/roles"/>
+      </edges>
+      <edges xmi:id="_tOXAcEp_EeuWfKxjSz8t0g" source="_55hWYUp9EeuWfKxjSz8t0g" target="__KLXsUp9EeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/roles"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_55h9cEp9EeuWfKxjSz8t0g" origin="_55hWYEp9EeuWfKxjSz8t0g" image="_55hWYUp9EeuWfKxjSz8t0g"/>
+    <mappings xmi:id="_6wmIUkp9EeuWfKxjSz8t0g" origin="_6wmIUEp9EeuWfKxjSz8t0g" image="_6wmIUUp9EeuWfKxjSz8t0g"/>
+    <mappings xmi:id="_7USrQkp9EeuWfKxjSz8t0g" origin="_7USrQEp9EeuWfKxjSz8t0g" image="_7USrQUp9EeuWfKxjSz8t0g"/>
+    <mappings xmi:id="__CHn4Ep9EeuWfKxjSz8t0g" origin="__CHA0Ep9EeuWfKxjSz8t0g" image="__CHA0Up9EeuWfKxjSz8t0g"/>
+    <mappings xmi:id="__KLXskp9EeuWfKxjSz8t0g" origin="__KLXsEp9EeuWfKxjSz8t0g" image="__KLXsUp9EeuWfKxjSz8t0g"/>
+    <multiRules xmi:id="_JYPuMEp-EeuWfKxjSz8t0g">
+      <parameters xmi:id="_bZxIAEqAEeuWfKxjSz8t0g" name="x" kind="VAR">
+        <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </parameters>
+      <parameters xmi:id="_bZxIAUqAEeuWfKxjSz8t0g" name="y" kind="VAR">
+        <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </parameters>
+      <parameters xmi:id="_bZxIAkqAEeuWfKxjSz8t0g" name="z" kind="VAR">
+        <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </parameters>
+      <parameters xmi:id="_bZxIA0qAEeuWfKxjSz8t0g" name="n" kind="VAR">
+        <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </parameters>
+      <parameters xmi:id="_bZxIBEqAEeuWfKxjSz8t0g" name="r" kind="VAR">
+        <type xsi:type="ecore:EEnum" href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Action"/>
+      </parameters>
+      <lhs xmi:id="_JYRjYEp-EeuWfKxjSz8t0g" name="Lhs">
+        <nodes xmi:id="_JYRjZ0p-EeuWfKxjSz8t0g" outgoing="_JYRja0p-EeuWfKxjSz8t0g _Li1WcEp-EeuWfKxjSz8t0g _sul7Q0p_EeuWfKxjSz8t0g _tOXAckp_EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel"/>
+        </nodes>
+        <nodes xmi:id="_JYRjaUp-EeuWfKxjSz8t0g" incoming="_JYRja0p-EeuWfKxjSz8t0g" outgoing="_JYUmtkp-EeuWfKxjSz8t0g _JYUmuUp-EeuWfKxjSz8t0g _IkhLMEp-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule"/>
+        </nodes>
+        <nodes xmi:id="_JYUmtEp-EeuWfKxjSz8t0g" incoming="_JYUmtkp-EeuWfKxjSz8t0g" outgoing="_JYVNx0p-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth"/>
+        </nodes>
+        <nodes xmi:id="_JYUmt0p-EeuWfKxjSz8t0g" incoming="_JYUmuUp-EeuWfKxjSz8t0g" outgoing="_JYVNzkp-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth"/>
+        </nodes>
+        <nodes xmi:id="_IAR1sEp-EeuWfKxjSz8t0g" incoming="_IkhLMEp-EeuWfKxjSz8t0g _Li1WcEp-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//ProtectedResource"/>
+        </nodes>
+        <nodes xmi:id="_JYVNxUp-EeuWfKxjSz8t0g" incoming="_JYVNx0p-EeuWfKxjSz8t0g _sul7Q0p_EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Role"/>
+        </nodes>
+        <nodes xmi:id="_JYVNzEp-EeuWfKxjSz8t0g" incoming="_JYVNzkp-EeuWfKxjSz8t0g _tOXAckp_EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Role"/>
+        </nodes>
+        <nodes xmi:id="_oSEiEkp-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule"/>
+        </nodes>
+        <nodes xmi:id="_MPGKFEp_EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth"/>
+        </nodes>
+        <edges xmi:id="_JYRja0p-EeuWfKxjSz8t0g" source="_JYRjZ0p-EeuWfKxjSz8t0g" target="_JYRjaUp-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/rules"/>
+        </edges>
+        <edges xmi:id="_JYUmtkp-EeuWfKxjSz8t0g" source="_JYRjaUp-EeuWfKxjSz8t0g" target="_JYUmtEp-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/auths"/>
+        </edges>
+        <edges xmi:id="_JYUmuUp-EeuWfKxjSz8t0g" source="_JYRjaUp-EeuWfKxjSz8t0g" target="_JYUmt0p-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/auths"/>
+        </edges>
+        <edges xmi:id="_JYVNx0p-EeuWfKxjSz8t0g" source="_JYUmtEp-EeuWfKxjSz8t0g" target="_JYVNxUp-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/roles"/>
+        </edges>
+        <edges xmi:id="_JYVNzkp-EeuWfKxjSz8t0g" source="_JYUmt0p-EeuWfKxjSz8t0g" target="_JYVNzEp-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/roles"/>
+        </edges>
+        <edges xmi:id="_IkhLMEp-EeuWfKxjSz8t0g" source="_JYRjaUp-EeuWfKxjSz8t0g" target="_IAR1sEp-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/protectedResources"/>
+        </edges>
+        <edges xmi:id="_Li1WcEp-EeuWfKxjSz8t0g" source="_JYRjZ0p-EeuWfKxjSz8t0g" target="_IAR1sEp-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/resources"/>
+        </edges>
+        <edges xmi:id="_sul7Q0p_EeuWfKxjSz8t0g" source="_JYRjZ0p-EeuWfKxjSz8t0g" target="_JYVNxUp-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/roles"/>
+        </edges>
+        <edges xmi:id="_tOXAckp_EeuWfKxjSz8t0g" source="_JYRjZ0p-EeuWfKxjSz8t0g" target="_JYVNzEp-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/roles"/>
+        </edges>
+      </lhs>
+      <rhs xmi:id="_JYRjYUp-EeuWfKxjSz8t0g" name="Rhs">
+        <nodes xmi:id="_JYRjYkp-EeuWfKxjSz8t0g" outgoing="_JYRjZkp-EeuWfKxjSz8t0g _Li1WcUp-EeuWfKxjSz8t0g _vKrYoUp-EeuWfKxjSz8t0g _sul7Qkp_EeuWfKxjSz8t0g _tOXAcUp_EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel"/>
+        </nodes>
+        <nodes xmi:id="_JYRjZEp-EeuWfKxjSz8t0g" incoming="_JYRjZkp-EeuWfKxjSz8t0g" outgoing="_JYT_o0p-EeuWfKxjSz8t0g _IkhLMUp-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule"/>
+        </nodes>
+        <nodes xmi:id="_JYT_oUp-EeuWfKxjSz8t0g" incoming="_JYT_o0p-EeuWfKxjSz8t0g" outgoing="_JYVNxEp-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth"/>
+        </nodes>
+        <nodes xmi:id="_IAR1sUp-EeuWfKxjSz8t0g" incoming="_IkhLMUp-EeuWfKxjSz8t0g _Li1WcUp-EeuWfKxjSz8t0g _uUhMsEp-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//ProtectedResource"/>
+        </nodes>
+        <nodes xmi:id="_JYVNwkp-EeuWfKxjSz8t0g" incoming="_JYVNxEp-EeuWfKxjSz8t0g _sul7Qkp_EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Role"/>
+        </nodes>
+        <nodes xmi:id="_JYVNyUp-EeuWfKxjSz8t0g" incoming="_Pt3-EUp_EeuWfKxjSz8t0g _tOXAcUp_EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Role"/>
+        </nodes>
+        <nodes xmi:id="_oSEiEEp-EeuWfKxjSz8t0g" incoming="_vKrYoUp-EeuWfKxjSz8t0g" outgoing="_uUhMsEp-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule"/>
+        </nodes>
+        <nodes xmi:id="_MPGKEkp_EeuWfKxjSz8t0g" outgoing="_Pt3-EUp_EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth"/>
+        </nodes>
+        <edges xmi:id="_JYRjZkp-EeuWfKxjSz8t0g" source="_JYRjYkp-EeuWfKxjSz8t0g" target="_JYRjZEp-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/rules"/>
+        </edges>
+        <edges xmi:id="_JYT_o0p-EeuWfKxjSz8t0g" source="_JYRjZEp-EeuWfKxjSz8t0g" target="_JYT_oUp-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/auths"/>
+        </edges>
+        <edges xmi:id="_JYVNxEp-EeuWfKxjSz8t0g" source="_JYT_oUp-EeuWfKxjSz8t0g" target="_JYVNwkp-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/roles"/>
+        </edges>
+        <edges xmi:id="_IkhLMUp-EeuWfKxjSz8t0g" source="_JYRjZEp-EeuWfKxjSz8t0g" target="_IAR1sUp-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/protectedResources"/>
+        </edges>
+        <edges xmi:id="_Li1WcUp-EeuWfKxjSz8t0g" source="_JYRjYkp-EeuWfKxjSz8t0g" target="_IAR1sUp-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/resources"/>
+        </edges>
+        <edges xmi:id="_uUhMsEp-EeuWfKxjSz8t0g" source="_oSEiEEp-EeuWfKxjSz8t0g" target="_IAR1sUp-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/protectedResources"/>
+        </edges>
+        <edges xmi:id="_vKrYoUp-EeuWfKxjSz8t0g" source="_JYRjYkp-EeuWfKxjSz8t0g" target="_oSEiEEp-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/rules"/>
+        </edges>
+        <edges xmi:id="_Pt3-EUp_EeuWfKxjSz8t0g" source="_MPGKEkp_EeuWfKxjSz8t0g" target="_JYVNyUp-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/roles"/>
+        </edges>
+        <edges xmi:id="_sul7Qkp_EeuWfKxjSz8t0g" source="_JYRjYkp-EeuWfKxjSz8t0g" target="_JYVNwkp-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/roles"/>
+        </edges>
+        <edges xmi:id="_tOXAcUp_EeuWfKxjSz8t0g" source="_JYRjYkp-EeuWfKxjSz8t0g" target="_JYVNyUp-EeuWfKxjSz8t0g">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/roles"/>
+        </edges>
+      </rhs>
+      <mappings xmi:id="_JYT_oEp-EeuWfKxjSz8t0g" origin="_JYRjZ0p-EeuWfKxjSz8t0g" image="_JYRjYkp-EeuWfKxjSz8t0g"/>
+      <mappings xmi:id="_JYVNwUp-EeuWfKxjSz8t0g" origin="_JYRjaUp-EeuWfKxjSz8t0g" image="_JYRjZEp-EeuWfKxjSz8t0g"/>
+      <mappings xmi:id="_JYVNyEp-EeuWfKxjSz8t0g" origin="_JYUmtEp-EeuWfKxjSz8t0g" image="_JYT_oUp-EeuWfKxjSz8t0g"/>
+      <mappings xmi:id="_JYV00Ep-EeuWfKxjSz8t0g" origin="_JYVNxUp-EeuWfKxjSz8t0g" image="_JYVNwkp-EeuWfKxjSz8t0g"/>
+      <mappings xmi:id="_JYV00Up-EeuWfKxjSz8t0g" origin="_JYVNzEp-EeuWfKxjSz8t0g" image="_JYVNyUp-EeuWfKxjSz8t0g"/>
+      <mappings xmi:id="_IAR1skp-EeuWfKxjSz8t0g" origin="_IAR1sEp-EeuWfKxjSz8t0g" image="_IAR1sUp-EeuWfKxjSz8t0g"/>
+      <mappings xmi:id="_oSEiFEp-EeuWfKxjSz8t0g" origin="_oSEiEkp-EeuWfKxjSz8t0g" image="_oSEiEEp-EeuWfKxjSz8t0g"/>
+      <mappings xmi:id="_MPGKFkp_EeuWfKxjSz8t0g" origin="_MPGKFEp_EeuWfKxjSz8t0g" image="_MPGKEkp_EeuWfKxjSz8t0g"/>
+      <multiMappings xmi:id="_JYRjY0p-EeuWfKxjSz8t0g" origin="_55hWYUp9EeuWfKxjSz8t0g" image="_JYRjYkp-EeuWfKxjSz8t0g"/>
+      <multiMappings xmi:id="_JYRjZUp-EeuWfKxjSz8t0g" origin="_6wmIUUp9EeuWfKxjSz8t0g" image="_JYRjZEp-EeuWfKxjSz8t0g"/>
+      <multiMappings xmi:id="_JYRjaEp-EeuWfKxjSz8t0g" origin="_55hWYEp9EeuWfKxjSz8t0g" image="_JYRjZ0p-EeuWfKxjSz8t0g"/>
+      <multiMappings xmi:id="_JYRjakp-EeuWfKxjSz8t0g" origin="_6wmIUEp9EeuWfKxjSz8t0g" image="_JYRjaUp-EeuWfKxjSz8t0g"/>
+      <multiMappings xmi:id="_JYT_okp-EeuWfKxjSz8t0g" origin="_7USrQUp9EeuWfKxjSz8t0g" image="_JYT_oUp-EeuWfKxjSz8t0g"/>
+      <multiMappings xmi:id="_JYUmtUp-EeuWfKxjSz8t0g" origin="_7USrQEp9EeuWfKxjSz8t0g" image="_JYUmtEp-EeuWfKxjSz8t0g"/>
+      <multiMappings xmi:id="_JYUmuEp-EeuWfKxjSz8t0g" origin="_8QueUEp9EeuWfKxjSz8t0g" image="_JYUmt0p-EeuWfKxjSz8t0g"/>
+      <multiMappings xmi:id="_JYVNw0p-EeuWfKxjSz8t0g" origin="__CHA0Up9EeuWfKxjSz8t0g" image="_JYVNwkp-EeuWfKxjSz8t0g"/>
+      <multiMappings xmi:id="_JYVNxkp-EeuWfKxjSz8t0g" origin="__CHA0Ep9EeuWfKxjSz8t0g" image="_JYVNxUp-EeuWfKxjSz8t0g"/>
+      <multiMappings xmi:id="_JYVNykp-EeuWfKxjSz8t0g" origin="__KLXsUp9EeuWfKxjSz8t0g" image="_JYVNyUp-EeuWfKxjSz8t0g"/>
+      <multiMappings xmi:id="_JYVNzUp-EeuWfKxjSz8t0g" origin="__KLXsEp9EeuWfKxjSz8t0g" image="_JYVNzEp-EeuWfKxjSz8t0g"/>
+      <multiMappings xmi:id="_oSEiEUp-EeuWfKxjSz8t0g" origin="_oSAQoEp-EeuWfKxjSz8t0g" image="_oSEiEEp-EeuWfKxjSz8t0g"/>
+      <multiMappings xmi:id="_MPGKE0p_EeuWfKxjSz8t0g" origin="_MPB4oEp_EeuWfKxjSz8t0g" image="_MPGKEkp_EeuWfKxjSz8t0g"/>
+    </multiRules>
+  </units>
+  <units xsi:type="henshin:LoopUnit" xmi:id="_TK_IsEqAEeuWfKxjSz8t0g" name="loopAtomizeRuleAuth" subUnit="_zPj_0Ep9EeuWfKxjSz8t0g"/>
+  <units xsi:type="henshin:Rule" xmi:id="_QyD3kEqCEeuWfKxjSz8t0g" name="atomizeRuleProtectedResource">
+    <parameters xmi:id="__XH1QEqCEeuWfKxjSz8t0g" name="x" kind="VAR">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="__XH1QUqCEeuWfKxjSz8t0g" name="y" kind="VAR">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="__XH1QkqCEeuWfKxjSz8t0g" name="z" kind="VAR">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="__XH1Q0qCEeuWfKxjSz8t0g" name="n" kind="VAR">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="__XH1REqCEeuWfKxjSz8t0g" name="r" kind="VAR">
+      <type xsi:type="ecore:EEnum" href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Action"/>
+    </parameters>
+    <lhs xmi:id="_QyLMUEqCEeuWfKxjSz8t0g" name="Lhs">
+      <nodes xmi:id="_WZR-wEqCEeuWfKxjSz8t0g" outgoing="_ZWZQIEqCEeuWfKxjSz8t0g _ZhLj0EqCEeuWfKxjSz8t0g _aq5k8EqCEeuWfKxjSz8t0g _mDBTwEqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel"/>
+      </nodes>
+      <nodes xmi:id="_YyqQ8EqCEeuWfKxjSz8t0g" incoming="_ZhLj0EqCEeuWfKxjSz8t0g _cZ7SkEqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//ProtectedResource"/>
+      </nodes>
+      <nodes xmi:id="_Y6NqcEqCEeuWfKxjSz8t0g" incoming="_ZWZQIEqCEeuWfKxjSz8t0g _bV_JUEqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//ProtectedResource"/>
+      </nodes>
+      <nodes xmi:id="_aR5PEEqCEeuWfKxjSz8t0g" incoming="_aq5k8EqCEeuWfKxjSz8t0g" outgoing="_bV_JUEqCEeuWfKxjSz8t0g _cZ7SkEqCEeuWfKxjSz8t0g _inTa0EqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule"/>
+        <attributes xmi:id="_vqBqQEqCEeuWfKxjSz8t0g" value="r">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/action"/>
+        </attributes>
+        <attributes xmi:id="_wei3cEqCEeuWfKxjSz8t0g" value="n">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_gX9OYEqCEeuWfKxjSz8t0g" incoming="_inTa0EqCEeuWfKxjSz8t0g" outgoing="_k_O7gEqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth"/>
+        <attributes xmi:id="_xZakQEqCEeuWfKxjSz8t0g" value="x">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/oclExp"/>
+        </attributes>
+        <attributes xmi:id="_yRolsEqCEeuWfKxjSz8t0g" value="y">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/sqlStm"/>
+        </attributes>
+        <attributes xmi:id="_zAJ4kEqCEeuWfKxjSz8t0g" value="z">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/textual"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_kgctwEqCEeuWfKxjSz8t0g" incoming="_k_O7gEqCEeuWfKxjSz8t0g _mDBTwEqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Role"/>
+      </nodes>
+      <edges xmi:id="_ZWZQIEqCEeuWfKxjSz8t0g" source="_WZR-wEqCEeuWfKxjSz8t0g" target="_Y6NqcEqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/resources"/>
+      </edges>
+      <edges xmi:id="_ZhLj0EqCEeuWfKxjSz8t0g" source="_WZR-wEqCEeuWfKxjSz8t0g" target="_YyqQ8EqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/resources"/>
+      </edges>
+      <edges xmi:id="_aq5k8EqCEeuWfKxjSz8t0g" source="_WZR-wEqCEeuWfKxjSz8t0g" target="_aR5PEEqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/rules"/>
+      </edges>
+      <edges xmi:id="_bV_JUEqCEeuWfKxjSz8t0g" source="_aR5PEEqCEeuWfKxjSz8t0g" target="_Y6NqcEqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/protectedResources"/>
+      </edges>
+      <edges xmi:id="_cZ7SkEqCEeuWfKxjSz8t0g" source="_aR5PEEqCEeuWfKxjSz8t0g" target="_YyqQ8EqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/protectedResources"/>
+      </edges>
+      <edges xmi:id="_inTa0EqCEeuWfKxjSz8t0g" source="_aR5PEEqCEeuWfKxjSz8t0g" target="_gX9OYEqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/auths"/>
+      </edges>
+      <edges xmi:id="_k_O7gEqCEeuWfKxjSz8t0g" source="_gX9OYEqCEeuWfKxjSz8t0g" target="_kgctwEqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/roles"/>
+      </edges>
+      <edges xmi:id="_mDBTwEqCEeuWfKxjSz8t0g" source="_WZR-wEqCEeuWfKxjSz8t0g" target="_kgctwEqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/roles"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_QyLMUUqCEeuWfKxjSz8t0g" name="Rhs">
+      <nodes xmi:id="_WZR-wUqCEeuWfKxjSz8t0g" outgoing="_ZWZQIUqCEeuWfKxjSz8t0g _aq5k8UqCEeuWfKxjSz8t0g _mDBTwUqCEeuWfKxjSz8t0g _r47-QEqCEeuWfKxjSz8t0g _8t2F4EqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel"/>
+      </nodes>
+      <nodes xmi:id="_YyqQ8UqCEeuWfKxjSz8t0g" incoming="_sKyjQEqCEeuWfKxjSz8t0g _8t2F4EqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//ProtectedResource"/>
+      </nodes>
+      <nodes xmi:id="_Y6NqcUqCEeuWfKxjSz8t0g" incoming="_ZWZQIUqCEeuWfKxjSz8t0g _bV_JUUqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//ProtectedResource"/>
+      </nodes>
+      <nodes xmi:id="_aR5PEUqCEeuWfKxjSz8t0g" incoming="_aq5k8UqCEeuWfKxjSz8t0g" outgoing="_bV_JUUqCEeuWfKxjSz8t0g _inTa0UqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule"/>
+        <attributes xmi:id="_vqBqQUqCEeuWfKxjSz8t0g" value="r">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/action"/>
+        </attributes>
+        <attributes xmi:id="_wei3cUqCEeuWfKxjSz8t0g" value="n">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_gX9OYUqCEeuWfKxjSz8t0g" incoming="_inTa0UqCEeuWfKxjSz8t0g" outgoing="_k_O7gUqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth"/>
+        <attributes xmi:id="_xZbyYEqCEeuWfKxjSz8t0g" value="x">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/oclExp"/>
+        </attributes>
+        <attributes xmi:id="_yRolsUqCEeuWfKxjSz8t0g" value="y">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/sqlStm"/>
+        </attributes>
+        <attributes xmi:id="_zAJ4kUqCEeuWfKxjSz8t0g" value="z">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/textual"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_kgctwUqCEeuWfKxjSz8t0g" incoming="_k_O7gUqCEeuWfKxjSz8t0g _mDBTwUqCEeuWfKxjSz8t0g _uTIIwEqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Role"/>
+      </nodes>
+      <nodes xmi:id="_qxOvUEqCEeuWfKxjSz8t0g" incoming="_r47-QEqCEeuWfKxjSz8t0g" outgoing="_sKyjQEqCEeuWfKxjSz8t0g _t7z08EqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule"/>
+        <attributes xmi:id="_4MZ7AEqCEeuWfKxjSz8t0g" value="r">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/action"/>
+        </attributes>
+        <attributes xmi:id="_5ptmgEqCEeuWfKxjSz8t0g" value="n">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_s7JCIEqCEeuWfKxjSz8t0g" incoming="_t7z08EqCEeuWfKxjSz8t0g" outgoing="_uTIIwEqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth"/>
+        <attributes xmi:id="_0vcE4EqCEeuWfKxjSz8t0g" value="x">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/oclExp"/>
+        </attributes>
+        <attributes xmi:id="_2B0SwEqCEeuWfKxjSz8t0g" value="y">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/sqlStm"/>
+        </attributes>
+        <attributes xmi:id="_3KtNcEqCEeuWfKxjSz8t0g" value="z">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/textual"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_ZWZQIUqCEeuWfKxjSz8t0g" source="_WZR-wUqCEeuWfKxjSz8t0g" target="_Y6NqcUqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/resources"/>
+      </edges>
+      <edges xmi:id="_aq5k8UqCEeuWfKxjSz8t0g" source="_WZR-wUqCEeuWfKxjSz8t0g" target="_aR5PEUqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/rules"/>
+      </edges>
+      <edges xmi:id="_bV_JUUqCEeuWfKxjSz8t0g" source="_aR5PEUqCEeuWfKxjSz8t0g" target="_Y6NqcUqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/protectedResources"/>
+      </edges>
+      <edges xmi:id="_inTa0UqCEeuWfKxjSz8t0g" source="_aR5PEUqCEeuWfKxjSz8t0g" target="_gX9OYUqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/auths"/>
+      </edges>
+      <edges xmi:id="_k_O7gUqCEeuWfKxjSz8t0g" source="_gX9OYUqCEeuWfKxjSz8t0g" target="_kgctwUqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/roles"/>
+      </edges>
+      <edges xmi:id="_mDBTwUqCEeuWfKxjSz8t0g" source="_WZR-wUqCEeuWfKxjSz8t0g" target="_kgctwUqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/roles"/>
+      </edges>
+      <edges xmi:id="_r47-QEqCEeuWfKxjSz8t0g" source="_WZR-wUqCEeuWfKxjSz8t0g" target="_qxOvUEqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/rules"/>
+      </edges>
+      <edges xmi:id="_sKyjQEqCEeuWfKxjSz8t0g" source="_qxOvUEqCEeuWfKxjSz8t0g" target="_YyqQ8UqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/protectedResources"/>
+      </edges>
+      <edges xmi:id="_t7z08EqCEeuWfKxjSz8t0g" source="_qxOvUEqCEeuWfKxjSz8t0g" target="_s7JCIEqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/auths"/>
+      </edges>
+      <edges xmi:id="_uTIIwEqCEeuWfKxjSz8t0g" source="_s7JCIEqCEeuWfKxjSz8t0g" target="_kgctwUqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/roles"/>
+      </edges>
+      <edges xmi:id="_8t2F4EqCEeuWfKxjSz8t0g" source="_WZR-wUqCEeuWfKxjSz8t0g" target="_YyqQ8UqCEeuWfKxjSz8t0g">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/resources"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_WZR-wkqCEeuWfKxjSz8t0g" origin="_WZR-wEqCEeuWfKxjSz8t0g" image="_WZR-wUqCEeuWfKxjSz8t0g"/>
+    <mappings xmi:id="_YyqQ8kqCEeuWfKxjSz8t0g" origin="_YyqQ8EqCEeuWfKxjSz8t0g" image="_YyqQ8UqCEeuWfKxjSz8t0g"/>
+    <mappings xmi:id="_Y6NqckqCEeuWfKxjSz8t0g" origin="_Y6NqcEqCEeuWfKxjSz8t0g" image="_Y6NqcUqCEeuWfKxjSz8t0g"/>
+    <mappings xmi:id="_aR5PEkqCEeuWfKxjSz8t0g" origin="_aR5PEEqCEeuWfKxjSz8t0g" image="_aR5PEUqCEeuWfKxjSz8t0g"/>
+    <mappings xmi:id="_gX9OYkqCEeuWfKxjSz8t0g" origin="_gX9OYEqCEeuWfKxjSz8t0g" image="_gX9OYUqCEeuWfKxjSz8t0g"/>
+    <mappings xmi:id="_kgctwkqCEeuWfKxjSz8t0g" origin="_kgctwEqCEeuWfKxjSz8t0g" image="_kgctwUqCEeuWfKxjSz8t0g"/>
+  </units>
+  <units xsi:type="henshin:LoopUnit" xmi:id="_KG81AEqDEeuWfKxjSz8t0g" name="loopAtomizeRuleProtectedResource" subUnit="_QyD3kEqCEeuWfKxjSz8t0g"/>
+  <units xsi:type="henshin:Rule" xmi:id="_SZCs8EsFEeual43XO1Mi-Q" name="mergeRule">
+    <parameters xmi:id="_G8r3AEsIEeual43XO1Mi-Q" name="r" kind="VAR">
+      <type xsi:type="ecore:EEnum" href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Action"/>
+    </parameters>
+    <parameters xmi:id="_I0X0kEsMEeual43XO1Mi-Q" name="n" kind="VAR">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_I0X0kUsMEeual43XO1Mi-Q" name="nr" kind="VAR">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_SZZSQEsFEeual43XO1Mi-Q" name="Lhs">
+      <nodes xmi:id="_jOvewEsFEeual43XO1Mi-Q" outgoing="_BbslkEsGEeual43XO1Mi-Q _BuipEEsGEeual43XO1Mi-Q _CG768EsGEeual43XO1Mi-Q _CXpQcEsGEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel"/>
+      </nodes>
+      <nodes xmi:id="_lESEEEsFEeual43XO1Mi-Q" incoming="_BuipEEsGEeual43XO1Mi-Q _GvgBgEsGEeual43XO1Mi-Q _HJgc8EsGEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//ProtectedResource"/>
+        <attributes xmi:id="_CZjtQEsMEeual43XO1Mi-Q" value="n">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//ProtectedResource/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_lnJgkEsFEeual43XO1Mi-Q" incoming="_BbslkEsGEeual43XO1Mi-Q _HgjD8EsGEeual43XO1Mi-Q _H0FD8EsGEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Role"/>
+        <attributes xmi:id="_DnuJgEsMEeual43XO1Mi-Q" value="nr">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Role/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_l7SkkEsFEeual43XO1Mi-Q" incoming="_CG768EsGEeual43XO1Mi-Q" outgoing="_FFORAEsGEeual43XO1Mi-Q _GvgBgEsGEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule"/>
+        <attributes xmi:id="_HDSqwEsHEeual43XO1Mi-Q" value="r">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/action"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_mBi9kEsFEeual43XO1Mi-Q" incoming="_CXpQcEsGEeual43XO1Mi-Q" outgoing="_E4A7cEsGEeual43XO1Mi-Q _HJgc8EsGEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule"/>
+        <attributes xmi:id="_IN6q0EsHEeual43XO1Mi-Q" value="r">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/action"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_m2V3kEsFEeual43XO1Mi-Q" incoming="_FFORAEsGEeual43XO1Mi-Q" outgoing="_H0FD8EsGEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth"/>
+      </nodes>
+      <nodes xmi:id="_nRgJkEsFEeual43XO1Mi-Q" incoming="_E4A7cEsGEeual43XO1Mi-Q" outgoing="_HgjD8EsGEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth"/>
+      </nodes>
+      <edges xmi:id="_BbslkEsGEeual43XO1Mi-Q" source="_jOvewEsFEeual43XO1Mi-Q" target="_lnJgkEsFEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/roles"/>
+      </edges>
+      <edges xmi:id="_BuipEEsGEeual43XO1Mi-Q" source="_jOvewEsFEeual43XO1Mi-Q" target="_lESEEEsFEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/resources"/>
+      </edges>
+      <edges xmi:id="_CG768EsGEeual43XO1Mi-Q" source="_jOvewEsFEeual43XO1Mi-Q" target="_l7SkkEsFEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/rules"/>
+      </edges>
+      <edges xmi:id="_CXpQcEsGEeual43XO1Mi-Q" source="_jOvewEsFEeual43XO1Mi-Q" target="_mBi9kEsFEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/rules"/>
+      </edges>
+      <edges xmi:id="_E4A7cEsGEeual43XO1Mi-Q" source="_mBi9kEsFEeual43XO1Mi-Q" target="_nRgJkEsFEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/auths"/>
+      </edges>
+      <edges xmi:id="_FFORAEsGEeual43XO1Mi-Q" source="_l7SkkEsFEeual43XO1Mi-Q" target="_m2V3kEsFEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/auths"/>
+      </edges>
+      <edges xmi:id="_GvgBgEsGEeual43XO1Mi-Q" source="_l7SkkEsFEeual43XO1Mi-Q" target="_lESEEEsFEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/protectedResources"/>
+      </edges>
+      <edges xmi:id="_HJgc8EsGEeual43XO1Mi-Q" source="_mBi9kEsFEeual43XO1Mi-Q" target="_lESEEEsFEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/protectedResources"/>
+      </edges>
+      <edges xmi:id="_HgjD8EsGEeual43XO1Mi-Q" source="_nRgJkEsFEeual43XO1Mi-Q" target="_lnJgkEsFEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/roles"/>
+      </edges>
+      <edges xmi:id="_H0FD8EsGEeual43XO1Mi-Q" source="_m2V3kEsFEeual43XO1Mi-Q" target="_lnJgkEsFEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/roles"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_SZZSQUsFEeual43XO1Mi-Q" name="Rhs">
+      <nodes xmi:id="_jOwF0EsFEeual43XO1Mi-Q" outgoing="_BbtMoEsGEeual43XO1Mi-Q _BujQIEsGEeual43XO1Mi-Q _CXp3gEsGEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel"/>
+      </nodes>
+      <nodes xmi:id="_lESEEUsFEeual43XO1Mi-Q" incoming="_BujQIEsGEeual43XO1Mi-Q _HJgc8UsGEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//ProtectedResource"/>
+        <attributes xmi:id="_CZjtQUsMEeual43XO1Mi-Q" value="n">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//ProtectedResource/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_lnJgkUsFEeual43XO1Mi-Q" incoming="_BbtMoEsGEeual43XO1Mi-Q _HgjrAEsGEeual43XO1Mi-Q _H0FD8UsGEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Role"/>
+        <attributes xmi:id="_DnuJgUsMEeual43XO1Mi-Q" value="nr">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Role/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_mBi9kUsFEeual43XO1Mi-Q" incoming="_CXp3gEsGEeual43XO1Mi-Q" outgoing="_E4A7cUsGEeual43XO1Mi-Q _HJgc8UsGEeual43XO1Mi-Q _7mdbEEsGEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule"/>
+        <attributes xmi:id="_IN6q0UsHEeual43XO1Mi-Q" value="r">
+          <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/action"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_m2V3kUsFEeual43XO1Mi-Q" incoming="_7mdbEEsGEeual43XO1Mi-Q" outgoing="_H0FD8UsGEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth"/>
+      </nodes>
+      <nodes xmi:id="_nRgJkUsFEeual43XO1Mi-Q" incoming="_E4A7cUsGEeual43XO1Mi-Q" outgoing="_HgjrAEsGEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth"/>
+      </nodes>
+      <edges xmi:id="_BbtMoEsGEeual43XO1Mi-Q" source="_jOwF0EsFEeual43XO1Mi-Q" target="_lnJgkUsFEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/roles"/>
+      </edges>
+      <edges xmi:id="_BujQIEsGEeual43XO1Mi-Q" source="_jOwF0EsFEeual43XO1Mi-Q" target="_lESEEUsFEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/resources"/>
+      </edges>
+      <edges xmi:id="_CXp3gEsGEeual43XO1Mi-Q" source="_jOwF0EsFEeual43XO1Mi-Q" target="_mBi9kUsFEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//SecurityModel/rules"/>
+      </edges>
+      <edges xmi:id="_E4A7cUsGEeual43XO1Mi-Q" source="_mBi9kUsFEeual43XO1Mi-Q" target="_nRgJkUsFEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/auths"/>
+      </edges>
+      <edges xmi:id="_HJgc8UsGEeual43XO1Mi-Q" source="_mBi9kUsFEeual43XO1Mi-Q" target="_lESEEUsFEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/protectedResources"/>
+      </edges>
+      <edges xmi:id="_HgjrAEsGEeual43XO1Mi-Q" source="_nRgJkUsFEeual43XO1Mi-Q" target="_lnJgkUsFEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/roles"/>
+      </edges>
+      <edges xmi:id="_H0FD8UsGEeual43XO1Mi-Q" source="_m2V3kUsFEeual43XO1Mi-Q" target="_lnJgkUsFEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Auth/roles"/>
+      </edges>
+      <edges xmi:id="_7mdbEEsGEeual43XO1Mi-Q" source="_mBi9kUsFEeual43XO1Mi-Q" target="_m2V3kUsFEeual43XO1Mi-Q">
+        <type href="../uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore#//Rule/auths"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_jOwF0UsFEeual43XO1Mi-Q" origin="_jOvewEsFEeual43XO1Mi-Q" image="_jOwF0EsFEeual43XO1Mi-Q"/>
+    <mappings xmi:id="_lESEEksFEeual43XO1Mi-Q" origin="_lESEEEsFEeual43XO1Mi-Q" image="_lESEEUsFEeual43XO1Mi-Q"/>
+    <mappings xmi:id="_lnJgkksFEeual43XO1Mi-Q" origin="_lnJgkEsFEeual43XO1Mi-Q" image="_lnJgkUsFEeual43XO1Mi-Q"/>
+    <mappings xmi:id="_mBi9kksFEeual43XO1Mi-Q" origin="_mBi9kEsFEeual43XO1Mi-Q" image="_mBi9kUsFEeual43XO1Mi-Q"/>
+    <mappings xmi:id="_m2V3kksFEeual43XO1Mi-Q" origin="_m2V3kEsFEeual43XO1Mi-Q" image="_m2V3kUsFEeual43XO1Mi-Q"/>
+    <mappings xmi:id="_nRgJkksFEeual43XO1Mi-Q" origin="_nRgJkEsFEeual43XO1Mi-Q" image="_nRgJkUsFEeual43XO1Mi-Q"/>
+  </units>
+  <units xsi:type="henshin:LoopUnit" xmi:id="_0W7c0EsHEeual43XO1Mi-Q" name="loopMergeRule" subUnit="_SZCs8EsFEeual43XO1Mi-Q"/>
+  <units xsi:type="henshin:LoopUnit" xmi:id="_g1BfQEsOEeual43XO1Mi-Q" name="main" description="" subUnit="_p6l8oEsOEeual43XO1Mi-Q"/>
+  <units xsi:type="henshin:PriorityUnit" xmi:id="_p6l8oEsOEeual43XO1Mi-Q" name="prioritize" subUnits="_gfQNYEp7EeuWfKxjSz8t0g _zPj_0Ep9EeuWfKxjSz8t0g _QyD3kEqCEeuWfKxjSz8t0g _SZCs8EsFEeual43XO1Mi-Q"/>
+</henshin:Module>

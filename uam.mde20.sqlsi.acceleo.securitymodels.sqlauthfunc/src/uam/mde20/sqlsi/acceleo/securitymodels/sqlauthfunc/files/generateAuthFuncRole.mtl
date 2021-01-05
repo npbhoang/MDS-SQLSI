@@ -1,0 +1,29 @@
+[comment encoding = UTF-8 /]
+[module generateAuthFuncRole('/uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore')]
+
+[import uam::mde20::sqlsi::acceleo::securitymodels::sqlauthfunc::common::AuthFuncUtils /]
+[import uam::mde20::sqlsi::acceleo::securitymodels::sqlauthfunc::queries::queriesAuths /]
+
+[template public generateConditionalAuthRoleClause(aRole : Role, aProtectedResource : ProtectedResource)  post (trim())]
+IF ([getProperty('role')/] = '[aRole.name/]')
+	THEN RETURN [AuthFuncRole(aProtectedResource,aRole)/]([getProperty('self')/], [getProperty('caller')/]);
+END IF;
+[/template]
+
+[template public generateSQLAuthFuncRole(aRole : Role, aProtectedResource : ProtectedResource, aSecurityModel : SecurityModel) post (trim())]
+DROP FUNCTION IF EXISTS [ AuthFuncRole(aProtectedResource, aRole) /];
+DELIMITER //
+CREATE FUNCTION [ AuthFuncRole(aProtectedResource, aRole) /] ([getProperty('self')/] [getProperty('integerDataType')/], [getProperty('caller')/] [getProperty('integerDataType')/]) 
+RETURNS INT DETERMINISTIC
+BEGIN
+	DECLARE result INT DEFAULT 0;
+	SELECT res INTO result FROM ([generateCondition(aRole, aProtectedResource, aSecurityModel)/]) AS TEMP;
+	RETURN result;
+END //
+DELIMITER ;
+[/template]
+
+[template public generateCondition(aRole : Role, aProtectedResource : ProtectedResource, aSecurityModel : SecurityModel) post (trim())]
+SELECT 0 [for (au : Auth | getAllRelatedAuths(aRole, aProtectedResource, aSecurityModel))] OR ([ au.sqlStm /])[/for]
+[/template]
+

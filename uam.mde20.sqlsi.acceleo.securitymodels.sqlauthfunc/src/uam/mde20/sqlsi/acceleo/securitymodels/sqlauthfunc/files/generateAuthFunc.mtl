@@ -1,0 +1,26 @@
+[comment encoding = UTF-8 /]
+[module generateAuthFunc('/uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.ecore')]
+
+[import uam::mde20::sqlsi::acceleo::securitymodels::sqlauthfunc::common::AuthFuncUtils /]
+[import uam::mde20::sqlsi::acceleo::securitymodels::sqlauthfunc::files::generateAuthFuncRole /]
+
+[template public generateSQLAuthFunc(aProtectedResource : ProtectedResource, aSecurityModel : SecurityModel) post (trim())]
+DROP FUNCTION IF EXISTS [ AuthFunc(aProtectedResource) /];
+DELIMITER //
+CREATE FUNCTION [ AuthFunc(aProtectedResource) /] ([getProperty('self')/] [getProperty('integerDataType')/], [getProperty('caller')/] [getProperty('integerDataType')/], [getProperty('role')/] [getProperty('stringDataType')/]) 
+RETURNS INT DETERMINISTIC
+BEGIN
+	DECLARE result INT DEFAULT 0;
+	[for (r : Role | aSecurityModel.roles)]
+	[ r.generateConditionalAuthRoleClause(aProtectedResource) /]
+	[/for]
+END //
+DELIMITER ;
+[/template]
+
+[template public generateSQLAuthFuncRole(aProtectedResource : ProtectedResource, aSecurityModel : SecurityModel) post (trim())]
+[for (r : Role | aSecurityModel.roles)]
+
+[ r.generateSQLAuthFuncRole(aProtectedResource, aSecurityModel) /]
+[/for]
+[/template]
