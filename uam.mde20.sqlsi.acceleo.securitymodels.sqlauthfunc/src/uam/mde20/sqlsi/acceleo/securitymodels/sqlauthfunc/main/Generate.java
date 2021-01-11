@@ -306,7 +306,7 @@ public class Generate extends AbstractAcceleoGenerator {
          * 
          * To learn more about Properties Files, have a look at the Acceleo documentation (Help -> Help Contents).
          */
-    	propertiesFiles.add("uam.mde20.sqlsi.acceleo.securitymodel.sqlauthfunc.properties.mysql");
+    	propertiesFiles.add("uam.mde20.sqlsi.acceleo.securitymodels.sqlauthfunc.properties.mysql");
         return propertiesFiles;
     }
     
