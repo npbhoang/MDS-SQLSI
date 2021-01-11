@@ -5,6 +5,10 @@
 # Compiled class file
 *.class
 /target/
+*.xtendbin
+*/xtend-gen/*
+*/generate.xml
+*/generateTarget.xml
 
 # Log file
 *.log
