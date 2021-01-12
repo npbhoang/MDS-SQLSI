@@ -15,8 +15,8 @@ import uam.mde20.sqlsi.xtext.DatamodelsStandaloneSetup;
 import uam.mde20.sqlsi.xtext.SecuritymodelsStandaloneSetup;
 
 public class Main {
-	static final String datamodelURI = "C:\\Users\\ngpbh\\Desktop\\Formal Methods in CS\\Formal Model Driven Software Engineering\\2020\\FinalProject\\usecase.university\\universityDM.dm";
-	static final String securitymodelURI = "C:\\Users\\ngpbh\\Desktop\\Formal Methods in CS\\Formal Model Driven Software Engineering\\2020\\FinalProject\\usecase.university\\universitySM.sm";
+	static final String datamodelURI = "";
+	static final String securitymodelURI = "";
 	static final String XMIFileExtension = "xmi";
 	
 	private static Resource transformDataModelXText2XMI() throws IOException {
