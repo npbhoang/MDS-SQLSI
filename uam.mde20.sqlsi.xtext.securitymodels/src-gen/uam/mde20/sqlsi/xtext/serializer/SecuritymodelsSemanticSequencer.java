@@ -94,7 +94,7 @@ public class SecuritymodelsSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     Role returns Role
 	 *
 	 * Constraint:
-	 *     (name=EString userEntity=[Entity|EString])
+	 *     (name=EString userEntity=EString)
 	 */
 	protected void sequence_Role(ISerializationContext context, Role semanticObject) {
 		if (errorAcceptor != null) {
@@ -105,7 +105,7 @@ public class SecuritymodelsSemanticSequencer extends AbstractDelegatingSemanticS
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getRoleAccess().getNameEStringParserRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getRoleAccess().getUserEntityEntityEStringParserRuleCall_2_0_1(), semanticObject.eGet(SecuritymodelsPackage.Literals.ROLE__USER_ENTITY, false));
+		feeder.accept(grammarAccess.getRoleAccess().getUserEntityEStringParserRuleCall_2_0(), semanticObject.getUserEntity());
 		feeder.finish();
 	}
 	

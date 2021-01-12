@@ -4,9 +4,9 @@ protect "University.RegUser.name" as regUserName
 protect "University.Lecturer.salary" as lecturerSalary
 protect "University.Student.intake" as studentIntake
 roles {
-	Administrator <- "University.RegUser",
-	Lecturer <- "University.RegUser",
-	Student <- "University.RegUser"
+	Administrator <- "RegUser",
+	Lecturer <- "RegUser",
+	Student <- "RegUser"
 }
 rules {
 	Rule readBasicInfo {

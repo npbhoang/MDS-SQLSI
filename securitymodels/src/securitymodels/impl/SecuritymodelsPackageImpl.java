@@ -292,8 +292,8 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRole_UserEntity() {
-		return (EReference)roleEClass.getEStructuralFeatures().get(1);
+	public EAttribute getRole_UserEntity() {
+		return (EAttribute)roleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -380,7 +380,7 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 
 		roleEClass = createEClass(ROLE);
 		createEAttribute(roleEClass, ROLE__NAME);
-		createEReference(roleEClass, ROLE__USER_ENTITY);
+		createEAttribute(roleEClass, ROLE__USER_ENTITY);
 
 		protectedResourceEClass = createEClass(PROTECTED_RESOURCE);
 		createEAttribute(protectedResourceEClass, PROTECTED_RESOURCE__NAME);
@@ -443,7 +443,7 @@ public class SecuritymodelsPackageImpl extends EPackageImpl implements Securitym
 
 		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRole_Name(), ecorePackage.getEString(), "name", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRole_UserEntity(), theDatamodelsPackage.getEntity(), null, "userEntity", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRole_UserEntity(), ecorePackage.getEString(), "userEntity", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(protectedResourceEClass, ProtectedResource.class, "ProtectedResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProtectedResource_Name(), ecorePackage.getEString(), "name", null, 1, 1, ProtectedResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

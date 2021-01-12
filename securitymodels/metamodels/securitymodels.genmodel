@@ -3,9 +3,9 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/uam.mde20.sqlsi.securitymodels/src" modelPluginID="uam.mde20.sqlsi.securitymodels"
     modelName="Securitymodels" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
-    usedGenPackages="../uam.mde20.sqlsi.datamodels/metamodels/datamodels.genmodel#//datamodels"
+    usedGenPackages="../../uam.mde20.sqlsi.datamodels/metamodels/datamodels.genmodel#//datamodels"
     operationReflection="true" importOrganizing="true">
-  <foreignModel>metamodels/securitymodels.ecore</foreignModel>
+  <foreignModel>securitymodels.ecore</foreignModel>
   <genPackages prefix="Securitymodels" disposableProviderFactory="true" ecorePackage="securitymodels.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="securitymodels.ecore#//Action">
       <genEnumLiterals ecoreEnumLiteral="securitymodels.ecore#//Action/READ"/>
@@ -33,7 +33,7 @@
     </genClasses>
     <genClasses ecoreClass="securitymodels.ecore#//Role">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute securitymodels.ecore#//Role/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference securitymodels.ecore#//Role/userEntity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute securitymodels.ecore#//Role/userEntity"/>
     </genClasses>
     <genClasses ecoreClass="securitymodels.ecore#//ProtectedResource">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute securitymodels.ecore#//ProtectedResource/name"/>

@@ -7,3 +7,7 @@
 	->collect(r|r.auths)
 	->select(au|au.roles->includes(aRole))
 /]
+
+[query public getUserRoleClass (aRole : Role) : String
+	= aRole.userEntity.concat('Role')
+/]

@@ -4,7 +4,7 @@
 [import uam::mde20::sqlsi::acceleo::relational::script::queries::tableQueries /]
 
 [template public generateColumn(aColumn : Column)]
-	[ aColumn.name /] [ getDataType(aColumn.type) /][if aColumn.isPrimary] [ getProperty('primarySpecification') /][elseif aColumn.isForeign] [ getProperty('foreignSpecification') /][elseif aColumn.isUnique] [ getProperty('uniqueSpecification') /][/if][if aColumn.isForeign],
+	[ aColumn.name /] [ getDataType(aColumn.type) /][if aColumn.isPrimary] [ getProperty('primarySpecification') /] [ getProperty('autoIncrementSpecification')/][elseif aColumn.isForeign] [ getProperty('foreignSpecification') /][elseif aColumn.isUnique] [ getProperty('uniqueSpecification') /][/if][if aColumn.isForeign],
 	[ aColumn.getForeignKeySpecification() /][/if]
 [/template]
 

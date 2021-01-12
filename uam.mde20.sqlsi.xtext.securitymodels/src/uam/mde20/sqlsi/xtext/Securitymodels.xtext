@@ -27,7 +27,7 @@ Rule returns Rule:
 Role returns Role:
 	name=EString
 	'<-'
-	userEntity=[datamodels::Entity|EString];
+	userEntity=EString;
 
 ProtectedResource returns ProtectedResource:
 	property=[datamodels::Property|EString]

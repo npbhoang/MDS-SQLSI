@@ -2,12 +2,9 @@
  */
 package securitymodels.impl;
 
-import datamodels.Entity;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -51,14 +48,24 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getUserEntity() <em>User Entity</em>}' reference.
+	 * The default value of the '{@link #getUserEntity() <em>User Entity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getUserEntity()
 	 * @generated
 	 * @ordered
 	 */
-	protected Entity userEntity;
+	protected static final String USER_ENTITY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getUserEntity() <em>User Entity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUserEntity()
+	 * @generated
+	 * @ordered
+	 */
+	protected String userEntity = USER_ENTITY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -105,15 +112,7 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Entity getUserEntity() {
-		if (userEntity != null && userEntity.eIsProxy()) {
-			InternalEObject oldUserEntity = (InternalEObject)userEntity;
-			userEntity = (Entity)eResolveProxy(oldUserEntity);
-			if (userEntity != oldUserEntity) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecuritymodelsPackage.ROLE__USER_ENTITY, oldUserEntity, userEntity));
-			}
-		}
+	public String getUserEntity() {
 		return userEntity;
 	}
 
@@ -122,17 +121,8 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Entity basicGetUserEntity() {
-		return userEntity;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUserEntity(Entity newUserEntity) {
-		Entity oldUserEntity = userEntity;
+	public void setUserEntity(String newUserEntity) {
+		String oldUserEntity = userEntity;
 		userEntity = newUserEntity;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SecuritymodelsPackage.ROLE__USER_ENTITY, oldUserEntity, userEntity));
@@ -149,8 +139,7 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 			case SecuritymodelsPackage.ROLE__NAME:
 				return getName();
 			case SecuritymodelsPackage.ROLE__USER_ENTITY:
-				if (resolve) return getUserEntity();
-				return basicGetUserEntity();
+				return getUserEntity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -167,7 +156,7 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 				setName((String)newValue);
 				return;
 			case SecuritymodelsPackage.ROLE__USER_ENTITY:
-				setUserEntity((Entity)newValue);
+				setUserEntity((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -185,7 +174,7 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 				setName(NAME_EDEFAULT);
 				return;
 			case SecuritymodelsPackage.ROLE__USER_ENTITY:
-				setUserEntity((Entity)null);
+				setUserEntity(USER_ENTITY_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -202,7 +191,7 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 			case SecuritymodelsPackage.ROLE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case SecuritymodelsPackage.ROLE__USER_ENTITY:
-				return userEntity != null;
+				return USER_ENTITY_EDEFAULT == null ? userEntity != null : !USER_ENTITY_EDEFAULT.equals(userEntity);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -219,6 +208,8 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", userEntity: ");
+		result.append(userEntity);
 		result.append(')');
 		return result.toString();
 	}

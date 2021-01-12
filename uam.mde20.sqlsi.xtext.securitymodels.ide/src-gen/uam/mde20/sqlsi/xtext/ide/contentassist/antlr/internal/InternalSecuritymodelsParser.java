@@ -6565,33 +6565,25 @@ public class InternalSecuritymodelsParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Role__UserEntityAssignment_2"
-    // InternalSecuritymodels.g:2218:1: rule__Role__UserEntityAssignment_2 : ( ( ruleEString ) ) ;
+    // InternalSecuritymodels.g:2218:1: rule__Role__UserEntityAssignment_2 : ( ruleEString ) ;
     public final void rule__Role__UserEntityAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecuritymodels.g:2222:1: ( ( ( ruleEString ) ) )
-            // InternalSecuritymodels.g:2223:2: ( ( ruleEString ) )
+            // InternalSecuritymodels.g:2222:1: ( ( ruleEString ) )
+            // InternalSecuritymodels.g:2223:2: ( ruleEString )
             {
-            // InternalSecuritymodels.g:2223:2: ( ( ruleEString ) )
-            // InternalSecuritymodels.g:2224:3: ( ruleEString )
+            // InternalSecuritymodels.g:2223:2: ( ruleEString )
+            // InternalSecuritymodels.g:2224:3: ruleEString
             {
-             before(grammarAccess.getRoleAccess().getUserEntityEntityCrossReference_2_0()); 
-            // InternalSecuritymodels.g:2225:3: ( ruleEString )
-            // InternalSecuritymodels.g:2226:4: ruleEString
-            {
-             before(grammarAccess.getRoleAccess().getUserEntityEntityEStringParserRuleCall_2_0_1()); 
+             before(grammarAccess.getRoleAccess().getUserEntityEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getRoleAccess().getUserEntityEntityEStringParserRuleCall_2_0_1()); 
-
-            }
-
-             after(grammarAccess.getRoleAccess().getUserEntityEntityCrossReference_2_0()); 
+             after(grammarAccess.getRoleAccess().getUserEntityEStringParserRuleCall_2_0()); 
 
             }
 
@@ -6614,21 +6606,21 @@ public class InternalSecuritymodelsParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ProtectedResource__PropertyAssignment_0"
-    // InternalSecuritymodels.g:2237:1: rule__ProtectedResource__PropertyAssignment_0 : ( ( ruleEString ) ) ;
+    // InternalSecuritymodels.g:2233:1: rule__ProtectedResource__PropertyAssignment_0 : ( ( ruleEString ) ) ;
     public final void rule__ProtectedResource__PropertyAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecuritymodels.g:2241:1: ( ( ( ruleEString ) ) )
-            // InternalSecuritymodels.g:2242:2: ( ( ruleEString ) )
+            // InternalSecuritymodels.g:2237:1: ( ( ( ruleEString ) ) )
+            // InternalSecuritymodels.g:2238:2: ( ( ruleEString ) )
             {
-            // InternalSecuritymodels.g:2242:2: ( ( ruleEString ) )
-            // InternalSecuritymodels.g:2243:3: ( ruleEString )
+            // InternalSecuritymodels.g:2238:2: ( ( ruleEString ) )
+            // InternalSecuritymodels.g:2239:3: ( ruleEString )
             {
              before(grammarAccess.getProtectedResourceAccess().getPropertyPropertyCrossReference_0_0()); 
-            // InternalSecuritymodels.g:2244:3: ( ruleEString )
-            // InternalSecuritymodels.g:2245:4: ruleEString
+            // InternalSecuritymodels.g:2240:3: ( ruleEString )
+            // InternalSecuritymodels.g:2241:4: ruleEString
             {
              before(grammarAccess.getProtectedResourceAccess().getPropertyPropertyEStringParserRuleCall_0_0_1()); 
             pushFollow(FOLLOW_2);
@@ -6663,17 +6655,17 @@ public class InternalSecuritymodelsParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ProtectedResource__NameAssignment_2"
-    // InternalSecuritymodels.g:2256:1: rule__ProtectedResource__NameAssignment_2 : ( ruleEString ) ;
+    // InternalSecuritymodels.g:2252:1: rule__ProtectedResource__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__ProtectedResource__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecuritymodels.g:2260:1: ( ( ruleEString ) )
-            // InternalSecuritymodels.g:2261:2: ( ruleEString )
+            // InternalSecuritymodels.g:2256:1: ( ( ruleEString ) )
+            // InternalSecuritymodels.g:2257:2: ( ruleEString )
             {
-            // InternalSecuritymodels.g:2261:2: ( ruleEString )
-            // InternalSecuritymodels.g:2262:3: ruleEString
+            // InternalSecuritymodels.g:2257:2: ( ruleEString )
+            // InternalSecuritymodels.g:2258:3: ruleEString
             {
              before(grammarAccess.getProtectedResourceAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -6704,21 +6696,21 @@ public class InternalSecuritymodelsParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Auth__RolesAssignment_2"
-    // InternalSecuritymodels.g:2271:1: rule__Auth__RolesAssignment_2 : ( ( ruleEString ) ) ;
+    // InternalSecuritymodels.g:2267:1: rule__Auth__RolesAssignment_2 : ( ( ruleEString ) ) ;
     public final void rule__Auth__RolesAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecuritymodels.g:2275:1: ( ( ( ruleEString ) ) )
-            // InternalSecuritymodels.g:2276:2: ( ( ruleEString ) )
+            // InternalSecuritymodels.g:2271:1: ( ( ( ruleEString ) ) )
+            // InternalSecuritymodels.g:2272:2: ( ( ruleEString ) )
             {
-            // InternalSecuritymodels.g:2276:2: ( ( ruleEString ) )
-            // InternalSecuritymodels.g:2277:3: ( ruleEString )
+            // InternalSecuritymodels.g:2272:2: ( ( ruleEString ) )
+            // InternalSecuritymodels.g:2273:3: ( ruleEString )
             {
              before(grammarAccess.getAuthAccess().getRolesRoleCrossReference_2_0()); 
-            // InternalSecuritymodels.g:2278:3: ( ruleEString )
-            // InternalSecuritymodels.g:2279:4: ruleEString
+            // InternalSecuritymodels.g:2274:3: ( ruleEString )
+            // InternalSecuritymodels.g:2275:4: ruleEString
             {
              before(grammarAccess.getAuthAccess().getRolesRoleEStringParserRuleCall_2_0_1()); 
             pushFollow(FOLLOW_2);
@@ -6753,21 +6745,21 @@ public class InternalSecuritymodelsParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Auth__RolesAssignment_3_1"
-    // InternalSecuritymodels.g:2290:1: rule__Auth__RolesAssignment_3_1 : ( ( ruleEString ) ) ;
+    // InternalSecuritymodels.g:2286:1: rule__Auth__RolesAssignment_3_1 : ( ( ruleEString ) ) ;
     public final void rule__Auth__RolesAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecuritymodels.g:2294:1: ( ( ( ruleEString ) ) )
-            // InternalSecuritymodels.g:2295:2: ( ( ruleEString ) )
+            // InternalSecuritymodels.g:2290:1: ( ( ( ruleEString ) ) )
+            // InternalSecuritymodels.g:2291:2: ( ( ruleEString ) )
             {
-            // InternalSecuritymodels.g:2295:2: ( ( ruleEString ) )
-            // InternalSecuritymodels.g:2296:3: ( ruleEString )
+            // InternalSecuritymodels.g:2291:2: ( ( ruleEString ) )
+            // InternalSecuritymodels.g:2292:3: ( ruleEString )
             {
              before(grammarAccess.getAuthAccess().getRolesRoleCrossReference_3_1_0()); 
-            // InternalSecuritymodels.g:2297:3: ( ruleEString )
-            // InternalSecuritymodels.g:2298:4: ruleEString
+            // InternalSecuritymodels.g:2293:3: ( ruleEString )
+            // InternalSecuritymodels.g:2294:4: ruleEString
             {
              before(grammarAccess.getAuthAccess().getRolesRoleEStringParserRuleCall_3_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -6802,17 +6794,17 @@ public class InternalSecuritymodelsParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Auth__TextualAssignment_8"
-    // InternalSecuritymodels.g:2309:1: rule__Auth__TextualAssignment_8 : ( ruleEString ) ;
+    // InternalSecuritymodels.g:2305:1: rule__Auth__TextualAssignment_8 : ( ruleEString ) ;
     public final void rule__Auth__TextualAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecuritymodels.g:2313:1: ( ( ruleEString ) )
-            // InternalSecuritymodels.g:2314:2: ( ruleEString )
+            // InternalSecuritymodels.g:2309:1: ( ( ruleEString ) )
+            // InternalSecuritymodels.g:2310:2: ( ruleEString )
             {
-            // InternalSecuritymodels.g:2314:2: ( ruleEString )
-            // InternalSecuritymodels.g:2315:3: ruleEString
+            // InternalSecuritymodels.g:2310:2: ( ruleEString )
+            // InternalSecuritymodels.g:2311:3: ruleEString
             {
              before(grammarAccess.getAuthAccess().getTextualEStringParserRuleCall_8_0()); 
             pushFollow(FOLLOW_2);
@@ -6843,17 +6835,17 @@ public class InternalSecuritymodelsParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Auth__OclExpAssignment_10"
-    // InternalSecuritymodels.g:2324:1: rule__Auth__OclExpAssignment_10 : ( ruleEString ) ;
+    // InternalSecuritymodels.g:2320:1: rule__Auth__OclExpAssignment_10 : ( ruleEString ) ;
     public final void rule__Auth__OclExpAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecuritymodels.g:2328:1: ( ( ruleEString ) )
-            // InternalSecuritymodels.g:2329:2: ( ruleEString )
+            // InternalSecuritymodels.g:2324:1: ( ( ruleEString ) )
+            // InternalSecuritymodels.g:2325:2: ( ruleEString )
             {
-            // InternalSecuritymodels.g:2329:2: ( ruleEString )
-            // InternalSecuritymodels.g:2330:3: ruleEString
+            // InternalSecuritymodels.g:2325:2: ( ruleEString )
+            // InternalSecuritymodels.g:2326:3: ruleEString
             {
              before(grammarAccess.getAuthAccess().getOclExpEStringParserRuleCall_10_0()); 
             pushFollow(FOLLOW_2);
@@ -6884,17 +6876,17 @@ public class InternalSecuritymodelsParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Auth__SqlStmAssignment_12"
-    // InternalSecuritymodels.g:2339:1: rule__Auth__SqlStmAssignment_12 : ( ruleEString ) ;
+    // InternalSecuritymodels.g:2335:1: rule__Auth__SqlStmAssignment_12 : ( ruleEString ) ;
     public final void rule__Auth__SqlStmAssignment_12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSecuritymodels.g:2343:1: ( ( ruleEString ) )
-            // InternalSecuritymodels.g:2344:2: ( ruleEString )
+            // InternalSecuritymodels.g:2339:1: ( ( ruleEString ) )
+            // InternalSecuritymodels.g:2340:2: ( ruleEString )
             {
-            // InternalSecuritymodels.g:2344:2: ( ruleEString )
-            // InternalSecuritymodels.g:2345:3: ruleEString
+            // InternalSecuritymodels.g:2340:2: ( ruleEString )
+            // InternalSecuritymodels.g:2341:3: ruleEString
             {
              before(grammarAccess.getAuthAccess().getSqlStmEStringParserRuleCall_12_0()); 
             pushFollow(FOLLOW_2);

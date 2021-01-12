@@ -269,7 +269,7 @@ public interface SecuritymodelsPackage extends EPackage {
 	int ROLE__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>User Entity</b></em>' reference.
+	 * The feature id for the '<em><b>User Entity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -536,15 +536,15 @@ public interface SecuritymodelsPackage extends EPackage {
 	EAttribute getRole_Name();
 
 	/**
-	 * Returns the meta object for the reference '{@link securitymodels.Role#getUserEntity <em>User Entity</em>}'.
+	 * Returns the meta object for the attribute '{@link securitymodels.Role#getUserEntity <em>User Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>User Entity</em>'.
+	 * @return the meta object for the attribute '<em>User Entity</em>'.
 	 * @see securitymodels.Role#getUserEntity()
 	 * @see #getRole()
 	 * @generated
 	 */
-	EReference getRole_UserEntity();
+	EAttribute getRole_UserEntity();
 
 	/**
 	 * Returns the meta object for class '{@link securitymodels.ProtectedResource <em>Protected Resource</em>}'.
@@ -756,12 +756,12 @@ public interface SecuritymodelsPackage extends EPackage {
 		EAttribute ROLE__NAME = eINSTANCE.getRole_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>User Entity</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>User Entity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROLE__USER_ENTITY = eINSTANCE.getRole_UserEntity();
+		EAttribute ROLE__USER_ENTITY = eINSTANCE.getRole_UserEntity();
 
 		/**
 		 * The meta object literal for the '{@link securitymodels.impl.ProtectedResourceImpl <em>Protected Resource</em>}' class.

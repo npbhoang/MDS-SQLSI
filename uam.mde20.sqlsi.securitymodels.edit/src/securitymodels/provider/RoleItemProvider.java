@@ -104,8 +104,8 @@ public class RoleItemProvider
 				 SecuritymodelsPackage.Literals.ROLE__USER_ENTITY,
 				 true,
 				 false,
-				 true,
-				 null,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -149,6 +149,7 @@ public class RoleItemProvider
 
 		switch (notification.getFeatureID(Role.class)) {
 			case SecuritymodelsPackage.ROLE__NAME:
+			case SecuritymodelsPackage.ROLE__USER_ENTITY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -14,6 +14,7 @@ BEGIN
 	[for (r : Role | aSecurityModel.roles)]
 	[ r.generateConditionalAuthRoleClause(aProtectedResource) /]
 	[/for]
+	RETURN 0;
 END //
 DELIMITER ;
 [/template]

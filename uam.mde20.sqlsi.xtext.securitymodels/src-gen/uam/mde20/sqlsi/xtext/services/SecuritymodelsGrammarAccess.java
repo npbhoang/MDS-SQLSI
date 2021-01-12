@@ -312,16 +312,15 @@ public class SecuritymodelsGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameEStringParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Keyword cLessThanSignHyphenMinusKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cUserEntityAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cUserEntityEntityCrossReference_2_0 = (CrossReference)cUserEntityAssignment_2.eContents().get(0);
-		private final RuleCall cUserEntityEntityEStringParserRuleCall_2_0_1 = (RuleCall)cUserEntityEntityCrossReference_2_0.eContents().get(1);
+		private final RuleCall cUserEntityEStringParserRuleCall_2_0 = (RuleCall)cUserEntityAssignment_2.eContents().get(0);
 		
 		//Role:
 		//	name=EString
 		//	'<-'
-		//	userEntity=[datamodels::Entity|EString];
+		//	userEntity=EString;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=EString '<-' userEntity=[datamodels::Entity|EString]
+		//name=EString '<-' userEntity=EString
 		public Group getGroup() { return cGroup; }
 		
 		//name=EString
@@ -333,14 +332,11 @@ public class SecuritymodelsGrammarAccess extends AbstractGrammarElementFinder {
 		//'<-'
 		public Keyword getLessThanSignHyphenMinusKeyword_1() { return cLessThanSignHyphenMinusKeyword_1; }
 		
-		//userEntity=[datamodels::Entity|EString]
+		//userEntity=EString
 		public Assignment getUserEntityAssignment_2() { return cUserEntityAssignment_2; }
 		
-		//[datamodels::Entity|EString]
-		public CrossReference getUserEntityEntityCrossReference_2_0() { return cUserEntityEntityCrossReference_2_0; }
-		
 		//EString
-		public RuleCall getUserEntityEntityEStringParserRuleCall_2_0_1() { return cUserEntityEntityEStringParserRuleCall_2_0_1; }
+		public RuleCall getUserEntityEStringParserRuleCall_2_0() { return cUserEntityEStringParserRuleCall_2_0; }
 	}
 	public class ProtectedResourceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uam.mde20.sqlsi.xtext.Securitymodels.ProtectedResource");
@@ -626,7 +622,7 @@ public class SecuritymodelsGrammarAccess extends AbstractGrammarElementFinder {
 	//Role:
 	//	name=EString
 	//	'<-'
-	//	userEntity=[datamodels::Entity|EString];
+	//	userEntity=EString;
 	public RoleElements getRoleAccess() {
 		return pRole;
 	}

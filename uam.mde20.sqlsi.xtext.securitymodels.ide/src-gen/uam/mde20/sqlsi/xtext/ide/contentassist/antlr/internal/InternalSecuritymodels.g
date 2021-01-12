@@ -2221,13 +2221,9 @@ rule__Role__UserEntityAssignment_2
 	}
 :
 	(
-		{ before(grammarAccess.getRoleAccess().getUserEntityEntityCrossReference_2_0()); }
-		(
-			{ before(grammarAccess.getRoleAccess().getUserEntityEntityEStringParserRuleCall_2_0_1()); }
-			ruleEString
-			{ after(grammarAccess.getRoleAccess().getUserEntityEntityEStringParserRuleCall_2_0_1()); }
-		)
-		{ after(grammarAccess.getRoleAccess().getUserEntityEntityCrossReference_2_0()); }
+		{ before(grammarAccess.getRoleAccess().getUserEntityEStringParserRuleCall_2_0()); }
+		ruleEString
+		{ after(grammarAccess.getRoleAccess().getUserEntityEStringParserRuleCall_2_0()); }
 	)
 ;
 finally {

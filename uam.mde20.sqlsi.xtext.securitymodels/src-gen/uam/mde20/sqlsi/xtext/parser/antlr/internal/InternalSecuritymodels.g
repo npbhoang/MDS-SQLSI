@@ -518,15 +518,18 @@ ruleRole returns [EObject current=null]
 		(
 			(
 				{
+					newCompositeNode(grammarAccess.getRoleAccess().getUserEntityEStringParserRuleCall_2_0());
+				}
+				lv_userEntity_2_0=ruleEString
+				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getRoleRule());
+						$current = createModelElementForParent(grammarAccess.getRoleRule());
 					}
-				}
-				{
-					newCompositeNode(grammarAccess.getRoleAccess().getUserEntityEntityCrossReference_2_0());
-				}
-				ruleEString
-				{
+					set(
+						$current,
+						"userEntity",
+						lv_userEntity_2_0,
+						"uam.mde20.sqlsi.xtext.Securitymodels.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)

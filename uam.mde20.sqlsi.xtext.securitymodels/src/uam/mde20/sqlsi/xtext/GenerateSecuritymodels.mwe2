@@ -32,7 +32,7 @@ Workflow {
 		language = StandardLanguage {
 			name = "uam.mde20.sqlsi.xtext.Securitymodels"
 			fileExtensions = "sm"
-			referencedResource = "platform:/resource/uam.mde20.sqlsi.securitymodels/securitymodels.genmodel"
+			referencedResource = "platform:/resource/uam.mde20.sqlsi.securitymodels/metamodels/securitymodels.genmodel"
 			
 			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}
 

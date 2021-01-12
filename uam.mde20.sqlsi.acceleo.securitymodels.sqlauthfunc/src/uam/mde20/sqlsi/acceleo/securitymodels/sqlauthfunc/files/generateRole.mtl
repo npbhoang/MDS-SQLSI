@@ -1,0 +1,6 @@
+[comment encoding = UTF-8 /]
+[module generateRole('/final/metamodel/securitymodels.ecore')]
+
+[template public generateRoleInsertion(aRole : Role) post (trim())]
+INSERT INTO Role(name) VALUES ('[ aRole.name /]');
+[/template]

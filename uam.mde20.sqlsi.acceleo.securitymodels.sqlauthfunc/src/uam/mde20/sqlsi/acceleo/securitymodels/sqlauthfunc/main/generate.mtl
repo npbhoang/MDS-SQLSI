@@ -3,16 +3,41 @@
 
 [import uam::mde20::sqlsi::acceleo::securitymodels::sqlauthfunc::common::StringUtils /]
 [import uam::mde20::sqlsi::acceleo::securitymodels::sqlauthfunc::files::generateAuthFunc /]
+[import uam::mde20::sqlsi::acceleo::securitymodels::sqlauthfunc::files::generateRole /]
 
 [template public generateElement(aSecurityModel : SecurityModel)]
 [comment @main/]
 [file (trimAndCapitalize(aSecurityModel.name).concat('_authfunction.').concat(getProperty('SQLFileExtension')), false, 'UTF-8')]
 USE [ trimAndCapitalize(aSecurityModel.name) /];
 
+[ aSecurityModel.generateRoleInsertion() /]
+
 [ aSecurityModel.generateSQLAuthFuncs() /]
 
 [ aSecurityModel.generateSQLAuthFuncRoles() /]
+
+[ aSecurityModel.generateErrorFunction() /]
 [/file]
+[/template]
+
+[template public generateErrorFunction(aSecurityModel : SecurityModel) post (trim())]
+DROP FUNCTION IF EXISTS throw_error;
+DELIMITER //
+CREATE FUNCTION throw_error()
+RETURNS INT DETERMINISTIC
+BEGIN
+DECLARE result INT DEFAULT 0;
+SIGNAL SQLSTATE '45000'
+SET MESSAGE_TEXT = 'Unauthorized access';
+RETURN (0);
+END //
+DELIMITER ;
+[/template]
+
+[template public generateRoleInsertion(aSecurityModel : SecurityModel) post (trim())]
+[for (r : Role | aSecurityModel.roles)]
+[ r.generateRoleInsertion() /]
+[/for]
 [/template]
 
 [template public generateSQLAuthFuncs(aSecurityModel : SecurityModel) post (trim())]

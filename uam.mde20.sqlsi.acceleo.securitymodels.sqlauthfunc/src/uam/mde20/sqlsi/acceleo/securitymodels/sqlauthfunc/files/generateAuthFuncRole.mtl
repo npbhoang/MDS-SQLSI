@@ -5,7 +5,9 @@
 [import uam::mde20::sqlsi::acceleo::securitymodels::sqlauthfunc::queries::queriesAuths /]
 
 [template public generateConditionalAuthRoleClause(aRole : Role, aProtectedResource : ProtectedResource)  post (trim())]
-IF ([getProperty('role')/] = '[aRole.name/]')
+IF (EXISTS (SELECT 1 FROM [ getUserRoleClass(aRole) /] l 
+		    JOIN Role r ON l.Role = r.RoleID 
+			WHERE l.[ getUserRoleClass(aRole) /] = caller AND r.name = role))
 	THEN RETURN [AuthFuncRole(aProtectedResource,aRole)/]([getProperty('self')/], [getProperty('caller')/]);
 END IF;
 [/template]
@@ -24,6 +26,6 @@ DELIMITER ;
 [/template]
 
 [template public generateCondition(aRole : Role, aProtectedResource : ProtectedResource, aSecurityModel : SecurityModel) post (trim())]
-SELECT 0 [for (au : Auth | getAllRelatedAuths(aRole, aProtectedResource, aSecurityModel))] OR ([ au.sqlStm /])[/for]
+SELECT 0[for (au : Auth | getAllRelatedAuths(aRole, aProtectedResource, aSecurityModel))] OR ([ au.sqlStm /])[/for]
 [/template]
 
