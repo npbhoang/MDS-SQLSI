@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Exec
+Bundle-SymbolicName: uam.mde20.sqlsi.henshin.securitymodels.exec
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.emf.henshin.interpreter,
+ org.eclipse.emf.ecore.xmi;bundle-version="2.15.0",
+ uam.mde20.sqlsi.securitymodels
