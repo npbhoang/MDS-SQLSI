@@ -248,5 +248,15 @@
 	<classpathentry kind="src" path="/uam.mde20.sqlsi.datamodels"/>
 	<classpathentry kind="src" path="/uam.mde20.sqlsi.xtext.datamodels"/>
 	<classpathentry kind="src" path="/uam.mde20.sqlsi.xtext.securitymodels"/>
+	<classpathentry kind="lib" path="C:/Users/ngpbh/Desktop/Formal Methods in CS/Formal Model Driven Software Engineering/2020/3_MetaModelling/eclipse/plugins/org.eclipse.equinox.common_3.10.100.v20180827-1235.jar" sourcepath="C:/Users/ngpbh/Desktop/Formal Methods in CS/Formal Model Driven Software Engineering/2020/3_MetaModelling/eclipse/plugins/org.eclipse.equinox.common_3.10.100.v20180827-1235.jar">
+		<accessrules>
+			<accessrule kind="discouraged" pattern="org/eclipse/core/internal/boot/*"/>
+			<accessrule kind="discouraged" pattern="org/eclipse/core/internal/runtime/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/core/runtime/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/equinox/events/*"/>
+			<accessrule ignoreifbetter="true" kind="nonaccessible" pattern="**/*"/>
+		</accessrules>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Xmi
+Bundle-SymbolicName: uam.mde20.sqlsi.xtext.xmi
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: xmi.jar,
+  ngpbh/Desktop/Formal Methods in CS/Formal Model Driven Software Engineering/2020/3_MetaModelling/eclipse/plugins/com.google.inject_3.0.0.v201605172100.jar,
+  ngpbh/Desktop/Formal Methods in CS/Formal Model Driven Software Engineering/2020/3_MetaModelling/eclipse/plugins/org.eclipse.emf.ecore_2.15.0.v20180722-1159.jar,
+  ngpbh/Desktop/Formal Methods in CS/Formal Model Driven Software Engineering/2020/3_MetaModelling/eclipse/plugins/org.eclipse.emf.common_2.15.0.v20180723-1316.jar,
+  ngpbh/Desktop/Formal Methods in CS/Formal Model Driven Software Engineering/2020/3_MetaModelling/eclipse/plugins/org.eclipse.emf.mwe.core_1.5.3.v20200520-0756.jar,
+  ngpbh/Desktop/Formal Methods in CS/Formal Model Driven Software Engineering/2020/3_MetaModelling/eclipse/plugins/org.eclipse.xtext_2.15.0.v20180916-0722.jar,
+  ngpbh/Desktop/Formal Methods in CS/Formal Model Driven Software Engineering/2020/3_MetaModelling/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.15.0.v20180706-1146.jar,
+  ngpbh/Desktop/Formal Methods in CS/Formal Model Driven Software Engineering/2020/3_MetaModelling/eclipse/plugins/org.eclipse.xtext.ui_2.15.0.v20180916-1016.jar,
+  ngpbh/Desktop/Formal Methods in CS/Formal Model Driven Software Engineering/2020/3_MetaModelling/eclipse/plugins/org.eclipse.emf.mwe.utils_1.5.3.v20200520-0756.jar,
+  ngpbh/Desktop/Formal Methods in CS/Formal Model Driven Software Engineering/2020/3_MetaModelling/eclipse/plugins/org.eclipse.equinox.common_3.10.100.v20180827-1235.jar
+Export-Package: xmi
+Import-Package: org.eclipse.m2m.atl.core.launch
